@@ -18,10 +18,14 @@
   <title>Ludovico Papalia — Legal Informatics Researcher</title>
 
   <!-- ► REDIRECT ITALIANO — gli utenti con browser in italiano vengono
-       indirizzati su index-it.html. Googlebot non esegue JS, quindi
-       per i crawler la versione EN rimane quella canonica. -->
+       indirizzati su index-it.html, SALVO che abbiano cliccato
+       esplicitamente "English version" (parametro ?lang=en). -->
   <script>
-    if (navigator.language && navigator.language.startsWith('it')) {
+    if (
+      navigator.language &&
+      navigator.language.startsWith('it') &&
+      !new URLSearchParams(window.location.search).has('lang')
+    ) {
       window.location.replace('/index-it.html');
     }
   </script>
