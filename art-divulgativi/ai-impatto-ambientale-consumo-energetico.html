@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── SEO & SOCIAL ───────────────────────────────────────── -->
+  <title>Quanto inquina l'AI? Non tutti i modelli sono uguali — Ludovico Papalia</title>
+  <meta name="description" content="L'intelligenza artificiale consuma davvero troppa energia? Ludovico Papalia esperto di diritto informatico e tecnologia distingue tra training e inference, spiega i dati reali e cosa dice la normativa europea.">
+  <meta name="author" content="Ludovico Papalia">
+  <meta name="keywords" content="intelligenza artificiale impatto ambientale consumo energetico AI data center CO2 AI Act Ludovico Papalia sostenibilità digitale diritto informatico">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Quanto inquina l'AI? Non tutti i modelli sono uguali">
+  <meta property="og:description" content="L'AI consuma davvero troppa energia? I dati reali su training, inference e data center — e perché la domanda è più complicata di come sembra.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html">
+  <meta property="og:site_name"   content="Ludovico Papalia — Legal Informatics">
+  <meta property="article:author" content="Ludovico Papalia">
+  <meta property="article:published_time" content="2024-01-01">
+  <meta property="article:section" content="Diritto Informatico">
+  <meta property="article:tag"    content="Intelligenza Artificiale">
+  <meta property="article:tag"    content="Impatto Ambientale">
+  <meta property="article:tag"    content="Data Center">
+  <meta property="article:tag"    content="Sostenibilità">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Quanto inquina l'AI? Non tutti i modelli sono uguali">
+  <meta name="twitter:description" content="I dati reali sul consumo energetico dell'intelligenza artificiale e perché la distinzione tra training e inference cambia tutto.">
+
+  <!-- ─── STRUCTURED DATA FOR LLMs & CRAWLERS ──────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html#article",
+        "headline": "Quanto inquina l'AI? Non tutti i modelli sono uguali",
+        "description": "Ludovico Papalia esperto di diritto informatico e tecnologia distingue training e inference, analizza i dati reali sul consumo energetico dell'AI e spiega cosa prevede la normativa europea sulla sostenibilità dei data center.",
+        "keywords": ["intelligenza artificiale", "impatto ambientale", "consumo energetico", "data center", "CO2", "AI Act", "sostenibilità digitale", "Ludovico Papalia"],
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-01-01",
+        "inLanguage": "it",
+        "articleSection": "Diritto Informatico",
+        "genre": "Divulgazione giuridica",
+        "url": "https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html",
+        "isPartOf": {
+          "@id": "https://www.ludovicopapalia.com/#website"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.ludovicopapalia.com/#person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com",
+          "jobTitle": "PhD Candidate in Legal Informatics",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Università di Bologna"
+          }
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Consumo energetico dell'intelligenza artificiale" },
+          { "@type": "Thing", "name": "Data center", "description": "Infrastrutture fisiche che ospitano i server per il training e l'inference dei modelli AI" },
+          { "@type": "Thing", "name": "Sostenibilità digitale" },
+          { "@type": "Thing", "name": "AI Act", "description": "Regolamento europeo per la regolamentazione dell'intelligenza artificiale" }
+        ],
+        "mentions": [
+          { "@type": "Organization", "name": "MIT — Massachusetts Institute of Technology" },
+          { "@type": "Organization", "name": "IEA — International Energy Agency" },
+          { "@type": "Organization", "name": "OpenAI" },
+          { "@type": "Organization", "name": "Google" },
+          { "@type": "Organization", "name": "Politecnico di Milano" }
+        ],
+        "video": {
+          "@type": "VideoObject",
+          "name": "Intervista a Ludovico Papalia: intelligenza artificiale, lavoro e ambiente",
+          "embedUrl": "https://www.youtube.com/embed/Tznjei5RKLU",
+          "url": "https://youtu.be/Tznjei5RKLU",
+          "description": "Ludovico Papalia analizza il consumo energetico dell'intelligenza artificiale, la differenza tra i modelli e le soluzioni di sostenibilità emergenti.",
+          "uploadDate": "2024-01-01"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ludovicopapalia.com" },
+          { "@type": "ListItem", "position": 2, "name": "Articoli", "item": "https://www.ludovicopapalia.com/divulgativi-index.html" },
+          { "@type": "ListItem", "position": 3, "name": "Quanto inquina l'AI? Non tutti i modelli sono uguali", "item": "https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ► Nav italiana override — deve precedere site-config.js -->
+  <script>
+    window.LP_NAV_TYPE   = 'it';
+    window.LP_NAV_ACTIVE = 'Divulgazione';
+  </script>
+
+  <!-- ► MASTER SITE CONFIG -->
+  <script src="/site-config.js"></script>
+
+  <style>
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── GRAIN OVERLAY ──────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── ARTICLE WRAPPER ────────────────────────────────────── */
+    .article-page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    /* ─── HEADER AREA ────────────────────────────────────────── */
+    .article-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp .7s ease both;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-dim);
+      padding: .28rem .85rem; border-radius: 99px;
+    }
+    .tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    .article-meta-line {
+      font-size: .75rem; letter-spacing: .06em; color: var(--muted);
+    }
+    .article-meta-line span { margin: 0 .4rem; color: var(--gold-dim); }
+
+    h1.article-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 300; line-height: 1.1;
+      letter-spacing: -.015em; color: var(--accent);
+      animation: fadeUp .7s .08s ease both;
+    }
+    h1.article-title em { font-style: italic; color: var(--gold); }
+
+    .article-lead {
+      margin-top: 1.6rem;
+      font-family: var(--ff-serif);
+      font-size: 1.35rem; font-weight: 300;
+      font-style: italic; line-height: 1.65;
+      color: var(--text);
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 1.4rem;
+      animation: fadeUp .7s .16s ease both;
+    }
+
+    .article-divider {
+      width: 40px; height: 1px;
+      background: var(--gold-dim);
+      margin: 2.5rem 0;
+      animation: fadeUp .7s .22s ease both;
+    }
+
+    /* ─── BODY TEXT ──────────────────────────────────────────── */
+    .article-body {
+      animation: fadeUp .8s .28s ease both;
+    }
+    .article-body p {
+      font-size: .97rem; color: var(--muted);
+      line-height: 1.95; margin-bottom: 1.5rem;
+    }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body em { font-style: italic; color: var(--accent); }
+
+    .article-body h2 {
+      font-family: var(--ff-serif);
+      font-size: 1.7rem; font-weight: 400;
+      color: var(--accent); line-height: 1.2;
+      margin: 2.8rem 0 1rem;
+    }
+    .article-body h2 em { font-style: italic; color: var(--gold); }
+
+    .pull-quote {
+      margin: 2.5rem 0;
+      padding: 1.2rem 1.6rem;
+      border-left: 2px solid var(--gold);
+      background: var(--bg-card);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .pull-quote p {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem !important;
+      font-style: italic;
+      color: var(--accent) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* data box */
+    .data-box {
+      margin: 2rem 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.8rem;
+    }
+    .data-box-label {
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold-dim); margin-bottom: .8rem;
+    }
+    .data-box p {
+      font-size: .88rem !important;
+      margin-bottom: .6rem !important;
+      color: var(--muted) !important;
+    }
+    .data-box p strong { color: var(--text); }
+    .data-box p:last-child { margin-bottom: 0 !important; }
+
+    /* ─── VIDEO SECTION ──────────────────────────────────────── */
+    .video-section {
+      margin-top: 4rem;
+      animation: fadeUp .8s .4s ease both;
+    }
+    .video-label-row {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .video-label-text {
+      font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+    .video-label-line {
+      flex: 1; height: 1px; background: var(--border);
+    }
+
+    .video-container {
+      position: relative; width: 100%; aspect-ratio: 16/9;
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); background: var(--bg-card);
+      cursor: pointer;
+    }
+    .video-container::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      z-index: 3; pointer-events: none;
+    }
+    .video-container iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+    }
+    .video-thumb {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
+      background: var(--bg-card2);
+      transition: opacity .3s;
+    }
+    .video-thumb.gone { opacity: 0; pointer-events: none; }
+    .play-ring {
+      width: 68px; height: 68px; border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .2s, background .2s;
+    }
+    .video-thumb:hover .play-ring { transform: scale(1.08); background: var(--accent); }
+    .play-ring svg { margin-left: 4px; }
+    .video-cta { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: 740px; margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-sig { font-family: var(--ff-serif); font-size: 1rem; color: var(--muted); }
+    .footer-back { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .footer-back:hover { color: var(--gold); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .article-page { padding: 7rem 1.2rem 4rem; }
+      footer { padding: 1.5rem 1.2rem 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <article class="article-page" itemscope itemtype="https://schema.org/Article">
+
+      <meta itemprop="datePublished" content="2024-01-01">
+      <meta itemprop="dateModified"  content="2024-01-01">
+      <meta itemprop="author"        content="Ludovico Papalia">
+      <meta itemprop="inLanguage"    content="it">
+
+      <!-- ─── EYEBROW ────────────────────────────────────────── -->
+      <div class="article-eyebrow">
+        <div class="tag"><span class="tag-dot"></span>Sostenibilità Digitale</div>
+        <span class="article-meta-line">2024 <span>·</span> 8 min di lettura <span>·</span> Intervista</span>
+      </div>
+
+      <!-- ─── TITLE ──────────────────────────────────────────── -->
+      <h1 class="article-title" itemprop="headline">
+        Quanto inquina l'AI? <em>Non tutti</em><br>i modelli sono uguali
+      </h1>
+
+      <!-- ─── LEAD ────────────────────────────────────────────── -->
+      <p class="article-lead" itemprop="description">
+        Si dice che l'intelligenza artificiale consumi quanto un paese intero. È vero, ma è anche fuorviante. Addestrare GPT-4 e chiedere a ChatGPT di riscrivere una mail sono operazioni con un impatto ambientale che differisce di cinque ordini di grandezza. Capire questa differenza cambia tutto il ragionamento.
+      </p>
+
+      <div class="article-divider"></div>
+
+      <!-- ─── BODY ────────────────────────────────────────────── -->
+      <div class="article-body" itemprop="articleBody">
+
+        <p>
+          Partiamo da un numero che circola spesso e che è corretto: i data center statunitensi nel 2024 hanno consumato circa <strong>200 terawattora di elettricità</strong>, una quantità paragonabile all'intero fabbisogno annuo dell'Italia. Di questi, i server dedicati specificamente all'AI hanno assorbito tra i 53 e i 76 TWh, sufficiente a far funzionare più di sette milioni di abitazioni americane per un anno. L'IEA prevede che entro il 2026 il consumo energetico globale legato all'AI potrebbe raggiungere i 134 TWh.
+        </p>
+
+        <p>
+          Questi numeri sono reali. Il problema è che vengono spesso presentati senza il contesto necessario per capire <em>da dove vengono</em> e soprattutto <em>cosa li guida</em>. Perché fare quel ragionamento — come ho spiegato in un'intervista per la serie "A Tu per Tu con l'Esperto di Diritto Informatico" — cambia radicalmente le conclusioni su cosa si può fare per limitare l'impatto.
+        </p>
+
+        <h2>La distinzione fondamentale: <em>training vs inference</em></h2>
+
+        <p>
+          Ogni modello di AI attraversa due fasi con caratteristiche completamente diverse. La prima è il <strong>training</strong>: il processo di addestramento iniziale, durante il quale il modello viene esposto a enormi quantità di dati e i suoi parametri vengono aggiustati. È computazionalmente brutalissimo, dura settimane o mesi, e avviene una volta sola — o raramente. Il training di GPT-3 ha consumato circa 1.287 MWh di elettricità, generando circa 552 tonnellate di CO₂, secondo stime del MIT e di ricercatori di Google e UC Berkeley. GPT-4 si stima abbia consumato circa 50.000 MWh — cinquanta gigawattora, per avere un ordine di grandezza.
+        </p>
+
+        <p>
+          La seconda fase è l'<strong>inference</strong>: ogni volta che qualcuno usa ChatGPT, chiede una sintesi a Gemini o genera un'immagine, il modello già addestrato esegue un calcolo per produrre una risposta. Una singola query a ChatGPT consuma nell'ordine di 0,3 wattora — circa dieci volte più di una ricerca Google, ma in assoluto una quantità trascurabile. Il problema è che ChatGPT riceve decine di milioni di richieste al giorno, e quella quantità moltiplicata per miliardi di interazioni globali diventa enorme. Oggi l'inference rappresenta l'80-90% del consumo computazionale totale dell'AI.
+        </p>
+
+        <div class="data-box">
+          <div class="data-box-label">Dati a confronto — consumo per singola operazione</div>
+          <p><strong>Una query a ChatGPT:</strong> circa 0,3 Wh</p>
+          <p><strong>Una ricerca Google:</strong> circa 0,03–0,04 Wh</p>
+          <p><strong>Un'immagine generata (Stable Diffusion):</strong> circa 2.280 J (~0,63 Wh)</p>
+          <p><strong>Un video AI da 5 secondi (alta qualità):</strong> circa 3.400.000 J (~944 Wh)</p>
+          <p><strong>Training GPT-3 (totale):</strong> 1.287.000 Wh (1.287 MWh)</p>
+        </div>
+
+        <p>
+          Questo cambia il quadro. Non è "l'AI" a consumare troppo: è la scala a cui opera e, in modo molto più acuto, il tipo di operazione. Generare un video di cinque secondi in alta qualità consuma migliaia di volte più di una risposta testuale. Addestrare un grande modello da zero costa quanto servire miliardi di query. Usare localmente un modello leggero come Llama 8B costa un centesimo di quello che costa la stessa operazione su GPT-4.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            «Dire che l'AI inquina è come dire che "i veicoli inquinano". È vero. Ma la differenza tra una bici elettrica e un aereo cargo non è un dettaglio.»
+          </p>
+        </div>
+
+        <h2>Il problema <em>non dichiarato</em>: dove si trovano i data center</h2>
+
+        <p>
+          C'è una variabile che la maggior parte delle discussioni trascura: l'impatto ambientale di un data center dipende enormemente da dove si trova fisicamente e da quale mix energetico alimenta quella rete elettrica. Uno studio dell'Harvard T.H. Chan School of Public Health ha rilevato che l'intensità carbonica dell'elettricità usata dai data center è mediamente il 48% più alta rispetto alla media statunitense — perché i data center tendono a concentrarsi in stati con reti energetiche più inquinanti.
+        </p>
+
+        <p>
+          La stessa query inviata a ChatGPT da un server alimentato da energia solare in California produce meno di un quarto delle emissioni rispetto alla stessa query servita da un data center in Virginia alimentato principalmente da gas naturale. In Europa, la Germania ha il maggior numero di data center del continente ed è anche uno degli stati con più alta intensità carbonica. Queste non sono sfumature tecniche — determinano in modo diretto l'effettivo impatto climatico di ogni interazione.
+        </p>
+
+        <h2>Acqua, chip e i costi <em>nascosti</em></h2>
+
+        <p>
+          Il consumo energetico non è l'unico problema. I data center utilizzano grandi quantità di acqua per il raffreddamento: si stima che l'addestramento di GPT-3 abbia richiesto circa <strong>700.000 litri di acqua dolce</strong>, secondo uno studio dell'Università della California. Ogni kWh consumato dai server corrisponde in media a circa un litro di acqua evaporata per il raffreddamento. In aree già sotto stress idrico — come alcune zone degli Stati Uniti dove si concentrano i grandi data center — questo rappresenta un impatto locale significativo.
+        </p>
+
+        <p>
+          C'è poi la filiera hardware. Un report di Greenpeace East Asia ha calcolato che le emissioni legate alla produzione di semiconduttori per l'AI sono aumentate di oltre il 350% tra il 2023 e il 2024. Ogni GPU — e i nuovi data center ne ordinano a milioni — richiede processi produttivi altamente energetici e materiali rari. Questo costo non appare nelle statistiche sul consumo operativo, ma esiste ed è rilevante.
+        </p>
+
+        <h2>Cosa sta cambiando, <em>concretamente</em></h2>
+
+        <p>
+          Sarebbe sbagliato concludere che non si sta facendo nulla. Google riporta che nel corso degli ultimi dodici mesi l'energia per prompt mediano è diminuita di 33 volte, e l'impronta carbonica totale di 44 volte — grazie a ottimizzazioni nei modelli e nei data center. Microsoft sta sperimentando data center a raffreddamento senza acqua. Alcune aziende posizionano server in prossimità di fonti di calore industriale per riutilizzarlo, o in paesi nordici dove il freddo riduce i costi di raffreddamento. I modelli "piccoli" — quelli che possono girare localmente sul proprio computer senza comunicare con il cloud — stanno diventando più capaci e accessibili.
+        </p>
+
+        <p>
+          Dal punto di vista normativo, e qui torna la mia prospettiva da ricercatore in diritto informatico, la Direttiva Europea sull'Efficienza Energetica del 2024 ha introdotto obblighi di trasparenza e rendicontazione energetica per i data center di grandi dimensioni. È un passo avanti, ma la vera lacuna rimane la mancanza di disclosure obbligatoria sul consumo per operazione da parte dei grandi modelli commerciali. OpenAI, Anthropic, Google: nessuno pubblica dati granulari su quanto costa in energia ogni categoria di query. Senza quei dati è impossibile per utenti, regolatori e mercati fare scelte informate.
+        </p>
+
+        <h2>Come usare l'AI <em>in modo più consapevole</em></h2>
+
+        <p>
+          La questione non è se usare o non usare l'AI. È usarla con consapevolezza del costo. Alcune indicazioni pratiche: i modelli testuali consumano drasticamente meno dei modelli di generazione di immagini e video — se il compito lo permette, preferirli ha senso. I modelli più piccoli che girano localmente (come le versioni quantizzate di Llama) hanno un impatto ambientale molto inferiore ai grandi modelli cloud. Evitare prompt ridondanti o richieste multiple per lo stesso compito riduce il consumo aggregato. E scegliere fornitori che pubblicano dati sull'energia rinnovabile utilizzata è un modo per orientare il mercato.
+        </p>
+
+        <p>
+          Il punto finale, che mi sembra importante sottolineare, è che la sostenibilità dell'AI non è solo una questione tecnica o ambientale — è una questione di governance. Decidere dove costruire i data center, con quali fonti energetiche alimentarli, quali tipi di operazioni siano proporzionali al loro costo ambientale: queste sono scelte politiche. E come tutte le scelte politiche rilevanti, non possono essere lasciate esclusivamente alle aziende che ci guadagnano.
+        </p>
+
+      </div><!-- /article-body -->
+
+      <!-- ─── VIDEO EMBED ──────────────────────────────────────── -->
+      <section class="video-section">
+        <div class="video-label-row">
+          <span class="video-label-text">Guarda l'intervista</span>
+          <div class="video-label-line"></div>
+        </div>
+        <div class="video-container" onclick="loadVideo()">
+          <iframe id="ytframe" src="" title="Intervista a Ludovico Papalia — AI e ambiente" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          <div class="video-thumb" id="vthumb">
+            <div class="play-ring">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="video-cta">Guarda l'intervista completa</span>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <span class="footer-sig">Ludovico Papalia</span>
+    <a class="footer-back" href="/divulgativi-index.html">← Altri articoli</a>
+  </footer>
+
+  <script>
+    function loadVideo() {
+      const iframe = document.getElementById('ytframe');
+      const thumb  = document.getElementById('vthumb');
+      if (!iframe.src || iframe.src === window.location.href) {
+        iframe.src = 'https://www.youtube.com/embed/Tznjei5RKLU?autoplay=1&rel=0&modestbranding=1';
+      }
+      thumb.classList.add('gone');
+    }
+  </script>
+
+</body>
+</html>
