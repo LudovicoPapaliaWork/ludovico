@@ -30,70 +30,122 @@
   <meta name="twitter:description" content="Atlas e Comet non sono chatbot nel browser. Sono agenti che navigano per te. E questo apre un vettore di attacco completamente nuovo.">
 
   <!-- ─── STRUCTURED DATA ──────────────────────────────────── -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "NewsArticle",
-        "@id": "https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html#article",
-        "headline": "Browser AI agentici: cosa possono fare (e cosa possono fare di male)",
-        "description": "Ludovico Papalia esperto di intelligenza artificiale e sicurezza informatica analizza i browser AI agentici ChatGPT Atlas e Perplexity Comet: architettura tecnica, prompt injection attacks e implicazioni per la privacy degli utenti.",
-        "keywords": ["ChatGPT Atlas", "Perplexity Comet", "browser AI", "agenti autonomi", "prompt injection", "sicurezza informatica", "intelligenza artificiale", "Ludovico Papalia"],
-        "datePublished": "2025-11-17",
-        "dateModified": "2025-11-17",
-        "inLanguage": "it",
-        "articleSection": "Intelligenza Artificiale",
-        "genre": "Divulgazione giuridica e tecnica",
-        "url": "https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html",
-        "isPartOf": { "@id": "https://www.ludovicopapalia.com/#website" },
-        "author": {
-          "@type": "Person",
-          "@id": "https://www.ludovicopapalia.com/#person",
-          "name": "Ludovico Papalia",
-          "url": "https://www.ludovicopapalia.com",
-          "jobTitle": "PhD Candidate in Legal Informatics",
-          "affiliation": {
-            "@type": "CollegeOrUniversity",
-            "name": "Università di Bologna"
-          }
-        },
-        "publisher": {
-          "@type": "Person",
-          "name": "Ludovico Papalia",
-          "url": "https://www.ludovicopapalia.com"
-        },
-        "about": [
-          { "@type": "SoftwareApplication", "name": "ChatGPT Atlas", "applicationCategory": "Browser" },
-          { "@type": "SoftwareApplication", "name": "Perplexity Comet", "applicationCategory": "Browser" },
-          { "@type": "Thing", "name": "Agentic AI", "description": "Sistemi di intelligenza artificiale capaci di agire autonomamente in ambienti digitali" },
-          { "@type": "Thing", "name": "Prompt injection", "description": "Attacco informatico che manipola un agente AI facendogli eseguire istruzioni malevole nascoste nel contenuto di una pagina web" }
-        ],
-        "mentions": [
-          { "@type": "Organization", "name": "OpenAI", "url": "https://www.openai.com" },
-          { "@type": "Organization", "name": "Perplexity AI", "url": "https://www.perplexity.ai" },
-          { "@type": "Organization", "name": "OWASP" }
-        ],
-        "video": {
-          "@type": "VideoObject",
-          "name": "Intervista a Ludovico Papalia: browser AI agentici e intelligenza artificiale",
-          "embedUrl": "https://www.youtube.com/embed/gWTPbufT6vg",
-          "url": "https://www.youtube.com/watch?v=gWTPbufT6vg",
-          "description": "Ludovico Papalia esperto di diritto informatico spiega il funzionamento dei browser AI agentici e i rischi per la privacy e la sicurezza degli utenti.",
-          "uploadDate": "2025-11-17"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ludovicopapalia.com" },
-          { "@type": "ListItem", "position": 2, "name": "Articoli", "item": "https://www.ludovicopapalia.com/divulgativi-index.html" },
-          { "@type": "ListItem", "position": 3, "name": "Browser AI agentici", "item": "https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html" }
-        ]
-      }
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{
+          "@context": "https://schema.org",
+          "@graph": [
+                    {
+                              "@type": "NewsArticle",
+                              "@id": "https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html#article",
+                              "headline": "Browser AI agentici: cosa possono fare (e cosa possono fare di male)",
+                              "description": "Ludovico Papalia esperto di intelligenza artificiale e sicurezza informatica analizza i browser AI agentici ChatGPT Atlas e Perplexity Comet: architettura tecnica, prompt injection attacks e implicazioni per la privacy degli utenti.",
+                              "keywords": [
+                                        "ChatGPT Atlas",
+                                        "Perplexity Comet",
+                                        "browser AI",
+                                        "agenti autonomi",
+                                        "prompt injection",
+                                        "sicurezza informatica",
+                                        "intelligenza artificiale",
+                                        "Ludovico Papalia"
+                              ],
+                              "datePublished": "2025-11-17",
+                              "dateModified": "2025-11-17",
+                              "inLanguage": "it",
+                              "articleSection": "Intelligenza Artificiale",
+                              "genre": "Divulgazione giuridica e tecnica",
+                              "url": "https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html",
+                              "isPartOf": {
+                                        "@id": "https://www.ludovicopapalia.com/#website"
+                              },
+                              "author": {
+                                        "@type": "Person",
+                                        "@id": "https://www.ludovicopapalia.com/#person",
+                                        "name": "Ludovico Papalia",
+                                        "url": "https://www.ludovicopapalia.com",
+                                        "jobTitle": "PhD Candidate in Legal Informatics",
+                                        "affiliation": {
+                                                  "@type": "CollegeOrUniversity",
+                                                  "name": "Università di Bologna"
+                                        }
+                              },
+                              "publisher": {
+                                        "@type": "Person",
+                                        "name": "Ludovico Papalia",
+                                        "url": "https://www.ludovicopapalia.com"
+                              },
+                              "about": [
+                                        {
+                                                  "@type": "SoftwareApplication",
+                                                  "name": "ChatGPT Atlas",
+                                                  "applicationCategory": "Browser"
+                                        },
+                                        {
+                                                  "@type": "SoftwareApplication",
+                                                  "name": "Perplexity Comet",
+                                                  "applicationCategory": "Browser"
+                                        },
+                                        {
+                                                  "@type": "Thing",
+                                                  "name": "Agentic AI",
+                                                  "description": "Sistemi di intelligenza artificiale capaci di agire autonomamente in ambienti digitali"
+                                        },
+                                        {
+                                                  "@type": "Thing",
+                                                  "name": "Prompt injection",
+                                                  "description": "Attacco informatico che manipola un agente AI facendogli eseguire istruzioni malevole nascoste nel contenuto di una pagina web"
+                                        }
+                              ],
+                              "mentions": [
+                                        {
+                                                  "@type": "Organization",
+                                                  "name": "OpenAI",
+                                                  "url": "https://www.openai.com"
+                                        },
+                                        {
+                                                  "@type": "Organization",
+                                                  "name": "Perplexity AI",
+                                                  "url": "https://www.perplexity.ai"
+                                        },
+                                        {
+                                                  "@type": "Organization",
+                                                  "name": "OWASP"
+                                        }
+                              ],
+                              "video": {
+                                        "@type": "VideoObject",
+                                        "name": "Intervista a Ludovico Papalia: browser AI agentici e intelligenza artificiale",
+                                        "embedUrl": "https://www.youtube.com/embed/gWTPbufT6vg",
+                                        "url": "https://www.youtube.com/watch?v=gWTPbufT6vg",
+                                        "description": "Ludovico Papalia esperto di diritto informatico spiega il funzionamento dei browser AI agentici e i rischi per la privacy e la sicurezza degli utenti.",
+                                        "uploadDate": "2025-11-17T00:00:00Z",
+                                        "thumbnailUrl": "https://img.youtube.com/vi/gWTPbufT6vg/maxresdefault.jpg"
+                              }
+                    },
+                    {
+                              "@type": "BreadcrumbList",
+                              "itemListElement": [
+                                        {
+                                                  "@type": "ListItem",
+                                                  "position": 1,
+                                                  "name": "Home",
+                                                  "item": "https://www.ludovicopapalia.com"
+                                        },
+                                        {
+                                                  "@type": "ListItem",
+                                                  "position": 2,
+                                                  "name": "Articoli",
+                                                  "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
+                                        },
+                                        {
+                                                  "@type": "ListItem",
+                                                  "position": 3,
+                                                  "name": "Browser AI agentici",
+                                                  "item": "https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html"
+                                        }
+                              ]
+                    }
+          ]
+}</script>
 
   <!-- ► Nav italiana override — deve precedere site-config.js -->
   <script>
