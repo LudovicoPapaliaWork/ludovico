@@ -1,34 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ludovico Papalia — PhD Candidate in Legal Informatics at the University of Bologna. Researcher at the intersection of blockchain, distributed ledger technologies, and legislative simplification.">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SEO — META TAG ITALIANI
+  ════════════════════════════════════════════════════════════ -->
+  <meta name="description" content="Ludovico Papalia — Dottorando in Informatica Giuridica all'Università di Bologna. Ricercatore all'intersezione tra tecnologia blockchain, registri distribuiti e semplificazione normativa.">
   <meta name="author" content="Ludovico Papalia">
-  <meta name="keywords" content="Ludovico Papalia, blockchain, legal informatics, PhD, Bologna, DLT, legislative simplification, smart contracts">
+  <meta name="keywords" content="Ludovico Papalia, blockchain, informatica giuridica, dottorato, Bologna, DLT, semplificazione normativa, smart contract, IOTA, diritto digitale">
+  <meta name="robots" content="index, follow">
 
-  <!-- ► HREFLANG — versione italiana disponibile su /index-it.html -->
-  <link rel="alternate" hreflang="en"       href="https://www.ludovicopapalia.com/">
-  <link rel="alternate" hreflang="it"       href="https://www.ludovicopapalia.com/index-it.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.ludovicopapalia.com/">
+  <!-- ═══════════════════════════════════════════════════════════
+       CANONICAL + HREFLANG
+       Fondamentale per evitare duplicate content con index.html.
+  ════════════════════════════════════════════════════════════ -->
+  <link rel="canonical"  href="https://www.ludovicopapalia.com/index-it.html">
+  <link rel="alternate"  hreflang="it"       href="https://www.ludovicopapalia.com/index-it.html">
+  <link rel="alternate"  hreflang="en"       href="https://www.ludovicopapalia.com/">
+  <link rel="alternate"  hreflang="x-default" href="https://www.ludovicopapalia.com/">
 
-  <meta property="og:title" content="Ludovico Papalia — Legal Informatics Researcher">
-  <meta property="og:description" content="PhD Candidate at University of Bologna. Research at the intersection of blockchain and law.">
-  <meta property="og:type" content="website">
-  <title>Ludovico Papalia — Legal Informatics Researcher</title>
+  <!-- ═══════════════════════════════════════════════════════════
+       OPEN GRAPH (condivisione social)
+  ════════════════════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Ludovico Papalia — Ricercatore in Informatica Giuridica">
+  <meta property="og:description" content="Dottorando all'Università di Bologna. Ricerca all'intersezione tra blockchain e ordinamento giuridico.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/index-it.html">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:locale:alternate" content="en_US">
 
-  <!-- ► LANGUAGE REDIRECT — utenti con browser in italiano vengono mandati
-       su index-it.html. Googlebot non esegue questo script, quindi la
-       versione EN rimane quella canonica per l'indicizzazione EN. -->
+  <!-- ═══════════════════════════════════════════════════════════
+       SCHEMA.ORG — WEBPAGE (pagina-specifica, in italiano)
+       Person + WebSite condivisi sono iniettati da site-config.js.
+  ════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.ludovicopapalia.com/index-it.html",
+    "name": "Ludovico Papalia — Ricercatore in Informatica Giuridica",
+    "description": "Pagina accademica di Ludovico Papalia, dottorando in Informatica Giuridica all'Università di Bologna. Ricerca su blockchain, DLT e semplificazione normativa.",
+    "inLanguage": "it",
+    "isPartOf": { "@id": "https://www.ludovicopapalia.com/#website" },
+    "about": { "@id": "https://www.ludovicopapalia.com/#person" },
+    "author": { "@id": "https://www.ludovicopapalia.com/#person" },
+    "keywords": "Ludovico Papalia, blockchain, informatica giuridica, DLT, semplificazione normativa, smart contract, IOTA Tangle"
+  }
+  </script>
+
+  <title>Ludovico Papalia — Ricercatore in Informatica Giuridica</title>
+
+  <!-- ► Nav italiana homepage — deve precedere site-config.js -->
   <script>
-    if (navigator.language && navigator.language.startsWith('it')) {
-      window.location.replace('/index-it.html');
-    }
+    window.LP_NAV_TYPE = 'it-home';
   </script>
 
   <!-- ► MASTER SITE CONFIG — modifica /site-config.js per aggiornare colori,
-       font, navigazione, schema.org e tracking su tutte le pagine.
-       Schema.org Person + WebSite sono iniettati da site-config.js. -->
+       font, navigazione, schema.org e tracking su tutte le pagine. -->
   <script src="/site-config.js"></script>
 
   <style>
@@ -110,10 +140,7 @@
       color: var(--accent);
       animation: fadeUp .8s .1s ease both;
     }
-    .hero-name em {
-      font-style: italic;
-      color: var(--gold);
-    }
+    .hero-name em { font-style: italic; color: var(--gold); }
     .hero-tagline {
       margin-top: 1.5rem;
       font-size: 1.05rem;
@@ -329,7 +356,7 @@
       margin-bottom: 1rem;
     }
 
-    /* ─── BACKGROUND / ABOUT ─────────────────────────────────── */
+    /* ─── ABOUT ──────────────────────────────────────────────── */
     #about {
       background: var(--bg-card);
       border-top: 1px solid var(--border);
@@ -547,6 +574,16 @@
       font-size: .75rem;
       color: var(--muted);
     }
+    .footer-lang {
+      font-size: .72rem;
+      letter-spacing: .08em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: .2rem .7rem;
+      border-radius: 99px;
+      transition: border-color .2s, color .2s;
+    }
+    .footer-lang:hover { border-color: var(--gold-dim); color: var(--gold); }
 
     /* ─── ANIMATIONS ─────────────────────────────────────────── */
     @keyframes fadeUp {
@@ -602,19 +639,19 @@
   <div class="hero-left">
     <div class="hero-tag">
       <span></span>
-      PhD Candidate · University of Bologna
+      Dottorando · Università di Bologna
     </div>
     <h1 class="hero-name">
       Ludovico<br><em>Papalia</em>
     </h1>
     <p class="hero-tagline">
-      Legal scholar and researcher at the intersection of
-      <strong>blockchain technology</strong> and legislative systems.
-      Building the case for a simpler, more traceable law.
+      Giurista e ricercatore all'intersezione tra
+      <strong>tecnologia blockchain</strong> e ordinamento giuridico.
+      Per un diritto più semplice, trasparente e tracciabile.
     </p>
     <div class="hero-actions">
-      <a href="#research" class="btn btn-primary">Explore Research</a>
-      <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      <a href="#research" class="btn btn-primary">Esplora la ricerca</a>
+      <a href="#contact" class="btn btn-secondary">Contattami</a>
     </div>
   </div>
 
@@ -630,8 +667,8 @@
           <div class="affil-item">
             <div class="affil-dot"></div>
             <div>
-              <div class="affil-label">Primary Affiliation</div>
-              <div class="affil-val">Università di Bologna — CIRSFID</div>
+              <div class="affil-label">Affiliazione principale</div>
+              <div class="affil-val">Università di Bologna — CIRSFID/DiSCi</div>
             </div>
           </div>
           <div class="affil-item">
@@ -644,16 +681,15 @@
           <div class="affil-item">
             <div class="affil-dot" style="background:var(--muted)"></div>
             <div>
-              <div class="affil-label">Industry Collaboration</div>
+              <div class="affil-label">Collaborazione industriale</div>
               <div class="affil-val">IOTA Foundation</div>
             </div>
           </div>
-
           <div class="affil-item">
             <div class="affil-dot" style="background:var(--gold-dim)"></div>
             <div>
-              <div class="affil-label">Supervisors</div>
-              <div class="affil-val">Prof. Monica Palmirani · Prof. Marco Giacalone</div>
+              <div class="affil-label">Progetto di ricerca</div>
+              <div class="affil-val">Progetto nazionale PRIN · ERC</div>
             </div>
           </div>
         </div>
@@ -665,8 +701,8 @@
 <!-- ─── RESEARCH ──────────────────────────────────────────────── -->
 <section id="research">
   <div class="max-container">
-    <p class="section-label reveal">Research Focus</p>
-    <h2 class="section-title reveal">Law meets<br><em>distributed ledgers</em></h2>
+    <p class="section-label reveal">Focus di ricerca</p>
+    <h2 class="section-title reveal">Il diritto incontra<br><em>i registri distribuiti</em></h2>
     <div class="divider reveal"></div>
 
     <div class="research-grid">
@@ -674,25 +710,25 @@
       <div class="research-card featured reveal">
         <div class="featured-inner">
           <div>
-            <span class="project-tag">Core Research</span>
-            <div class="rc-title" style="font-size:1.5rem;">Legislative Simplification via Blockchain</div>
+            <span class="project-tag">Ricerca principale</span>
+            <div class="rc-title" style="font-size:1.5rem;">Semplificazione normativa e blockchain</div>
             <p class="rc-desc" style="margin-top:.8rem;">
-              My doctoral work investigates how distributed ledger technologies can be applied to track the lifecycle of legal norms, detect regulatory overlaps and contradictions, and ultimately reduce the complexity of national legislative corpora. The system, developed within the HyperModeLex project, integrates Akoma Ntoso-encoded legal documents with on-chain provenance records.
+              La mia ricerca dottorale indaga come le tecnologie a registro distribuito — in particolare l'IOTA Tangle — possano essere applicate per tracciare il ciclo di vita delle norme giuridiche, rilevare sovrapposizioni e contraddizioni normative e ridurre la complessità dei corpora legislativi nazionali. Il sistema integra documenti giuridici codificati in formato Akoma Ntoso con registri di provenienza on-chain, nell'ambito di un progetto di ricerca nazionale a co-finanziamento ERC.
             </p>
           </div>
           <div>
             <div class="affil-row" style="gap:1rem">
               <div class="affil-item">
                 <div class="affil-dot"></div>
-                <div><div class="affil-label">Framework</div><div class="affil-val" style="font-size:.85rem;">Akoma Ntoso · Digital Constitutionalism · DLT</div></div>
+                <div><div class="affil-label">Framework</div><div class="affil-val" style="font-size:.85rem;">Akoma Ntoso · FRBR · DLT</div></div>
               </div>
               <div class="affil-item">
                 <div class="affil-dot"></div>
-                <div><div class="affil-label">Technology</div><div class="affil-val" style="font-size:.85rem;">Distributed Technology · Smart Contracts</div></div>
+                <div><div class="affil-label">Tecnologia</div><div class="affil-val" style="font-size:.85rem;">IOTA Tangle · Smart Contract</div></div>
               </div>
               <div class="affil-item">
                 <div class="affil-dot"></div>
-                <div><div class="affil-label">Domain</div><div class="affil-val" style="font-size:.85rem;">Parliamentary Process · E-Government</div></div>
+                <div><div class="affil-label">Ambito</div><div class="affil-val" style="font-size:.85rem;">Procedura parlamentare · E-Government</div></div>
               </div>
             </div>
           </div>
@@ -701,26 +737,26 @@
 
       <div class="research-card reveal">
         <div class="rc-icon">⛓</div>
-        <div class="rc-title">DLT & Governance</div>
-        <p class="rc-desc">How blockchain protocols can serve as tamper-evident registries for legislative acts, amendments, and enforcement history — bringing auditability to public law.</p>
+        <div class="rc-title">DLT e Governance</div>
+        <p class="rc-desc">Come i protocolli blockchain possono funzionare da registro immutabile e verificabile per gli atti legislativi, le modifiche normative e la storia applicativa — portando auditabilità al diritto pubblico.</p>
       </div>
 
       <div class="research-card reveal">
         <div class="rc-icon">📜</div>
-        <div class="rc-title">Digital Legal Drafting</div>
-        <p class="rc-desc">Computational analysis of legal text using XML standards such as Akoma Ntoso, enabling machine-readable legislation and automated consistency checking.</p>
+        <div class="rc-title">Redazione giuridica digitale</div>
+        <p class="rc-desc">Analisi computazionale del testo normativo tramite standard XML come Akoma Ntoso, che abilitano una legislazione machine-readable e il controllo automatizzato della coerenza.</p>
       </div>
 
       <div class="research-card reveal">
         <div class="rc-icon">🌐</div>
-        <div class="rc-title">Private International Law & Blockchain</div>
-        <p class="rc-desc">Exploring conflict-of-laws problems arising from cross-border smart contracts and decentralised autonomous organisations — bridging technical and legal uncertainty.</p>
+        <div class="rc-title">Diritto internazionale privato e blockchain</div>
+        <p class="rc-desc">I problemi di conflitto di leggi generati da smart contract transfrontalieri e organizzazioni autonome decentralizzate — al crocevia tra incertezza tecnica e lacuna giuridica.</p>
       </div>
 
       <div class="research-card reveal">
         <div class="rc-icon">💶</div>
-        <div class="rc-title">Digital Finance & CBDCs</div>
-        <p class="rc-desc">Analysing the legal and technical dimensions of the Digital Euro project, with attention to privacy-by-design requirements and the EU regulatory framework for digital assets.</p>
+        <div class="rc-title">Finanza digitale e CBDC</div>
+        <p class="rc-desc">Le dimensioni giuridiche e tecniche del progetto Euro Digitale, con attenzione ai requisiti di privacy-by-design e al quadro regolatorio europeo per le attività digitali.</p>
       </div>
 
     </div>
@@ -730,39 +766,39 @@
 <!-- ─── ABOUT ─────────────────────────────────────────────────── -->
 <section id="about">
   <div class="max-container">
-    <p class="section-label reveal">About</p>
-    <h2 class="section-title reveal">Scholar. Developer.<br><em>Citizen.</em></h2>
+    <p class="section-label reveal">Chi sono</p>
+    <h2 class="section-title reveal">Scholar. Sviluppatore.<br><em>Cittadino.</em></h2>
     <div class="divider reveal"></div>
 
     <div class="about-layout">
       <div class="about-text">
         <p>
-          I am a third-year PhD candidate at the University of Bologna (Cycle 39), where I work under the supervision of <strong>Prof. Monica Palmirani</strong> within the CIRSFID research centre. My research sits at a genuinely unusual intersection: constitutional law, parliamentary procedure, and distributed computing — an area where almost every answer generates three new questions, which suits me fine.
+          Sono un dottorando al terzo anno presso l'Università di Bologna (ciclo 39), dove conduco la mia ricerca nell'ambito del <strong>CIRSFID</strong>, il centro di ricerca interdisciplinare dell'Ateneo bolognese. Il mio lavoro si colloca a un crocevia genuinamente insolito: diritto costituzionale, procedura parlamentare e informatica distribuita — un campo in cui quasi ogni risposta genera tre nuove domande, il che mi va benissimo.
         </p>
         <p>
-          Before the PhD I completed an <strong>LLM in Legal Informatics</strong> at La Sapienza, Rome (110/110 cum laude), and a five-year law degree at Milano-Bicocca, where I wrote on online hate speech. In between I did an Erasmus semester inside the Arctic Circle at the University of Lapland, which turns out to be an excellent place for thinking carefully and very bad for going outside.
+          Prima del dottorato ho conseguito un <strong>LLM in Informatica Giuridica</strong> alla Sapienza di Roma (110/110 cum laude) e una laurea magistrale in giurisprudenza alla Milano-Bicocca, dove ho scritto sulla repressione penale dell'hate speech online. Nel mezzo, un semestre Erasmus nel Circolo Polare Artico all'Università della Lapponia — posto ottimo per pensare con calma, pessimo per uscire fuori.
         </p>
         <p>
-          Outside the research, I co-supervise thesis students at Università Milano-Bicocca, have taught computer science at secondary level, and write code in <strong>Python</strong> — anything from research automation scripts to home-lab infrastructure. I run competitively, think in systems, and am generally suspicious of complexity for its own sake, which is probably why simplification ended up as a research topic.
+          Al di là della ricerca, affianco studenti nel percorso di tesi all'Università Milano-Bicocca, ho insegnato informatica alle superiori e scrivo codice in <strong>Python</strong> — dalla ricerca automatizzata all'infrastruttura domestica. Corro agonisticamente, ragiono per sistemi e sono generalmente diffidente verso la complessità fine a sé stessa: probabilmente per questo la semplificazione normativa è diventata un tema di ricerca.
         </p>
       </div>
 
       <div class="about-sidebar">
         <div class="stat-card reveal">
           <div class="stat-num">4+</div>
-          <div class="stat-label"><strong>Papers accepted</strong>late 2024 – 2025</div>
+          <div class="stat-label"><strong>Paper accettati</strong>fine 2024 – 2025</div>
         </div>
         <div class="stat-card reveal">
           <div class="stat-num">3</div>
-          <div class="stat-label"><strong>Countries</strong>Italy · Belgium · Finland</div>
+          <div class="stat-label"><strong>Paesi</strong>Italia · Belgio · Finlandia</div>
         </div>
         <div class="stat-card reveal">
           <div class="stat-num">C1</div>
-          <div class="stat-label"><strong>English level</strong>reading, writing, speaking</div>
+          <div class="stat-label"><strong>Inglese</strong>lettura, scrittura, orale</div>
         </div>
         <div class="stat-card reveal">
           <div class="stat-num">5+</div>
-          <div class="stat-label"><strong>Published volumes</strong>books &amp; chapters</div>
+          <div class="stat-label"><strong>Volumi pubblicati</strong>libri e capitoli</div>
         </div>
       </div>
     </div>
@@ -772,55 +808,47 @@
 <!-- ─── EDUCATION / TIMELINE ──────────────────────────────────── -->
 <section id="education">
   <div class="max-container">
-    <p class="section-label reveal">Background</p>
-    <h2 class="section-title reveal">Academic &amp;<br><em>Professional Path</em></h2>
+    <p class="section-label reveal">Percorso</p>
+    <h2 class="section-title reveal">Formazione &amp;<br><em>Carriera accademica</em></h2>
     <div class="divider reveal"></div>
 
     <div class="timeline">
 
       <div class="tl-item reveal">
-        <div class="tl-year">2023 — present</div>
-        <div class="tl-title">PhD — Legal Informatics (DIN Blockchain)</div>
-        <div class="tl-inst">Università di Bologna · co-tutela VUB Brussels</div>
-        <div class="tl-detail">Doctoral research on legislative simplification through DLT, in collaboration with the IOTA Foundation and the PRIN2022/ERC HyperModeLex project. · National Interest PhD in Blockchain</div>
-        <span class="tl-badge">Supervisors: Prof. Monica Palmirani · Prof. Marco Giacalone</span>
+        <div class="tl-year">2023 — in corso</div>
+        <div class="tl-title">Dottorato — Informatica Giuridica (DIN Blockchain)</div>
+        <div class="tl-inst">Università di Bologna · co-tutela VUB Bruxelles</div>
+        <div class="tl-detail">Ricerca dottorale sulla semplificazione normativa attraverso la DLT, in collaborazione con IOTA Foundation nell'ambito di un progetto di ricerca nazionale a co-finanziamento ERC. Dottorato Nazionale di Interesse in Blockchain.</div>
+        <span class="tl-badge">Ciclo 39 · Dipartimento di Scienze Giuridiche</span>
       </div>
 
       <div class="tl-item reveal">
-        <div class="tl-year">2023 — present</div>
-        <div class="tl-title">Tutor — EU Law</div>
+        <div class="tl-year">2023 — in corso</div>
+        <div class="tl-title">Tutor — Diritto dell'Unione Europea</div>
         <div class="tl-inst">Università degli Studi di Milano-Bicocca</div>
-        <div class="tl-detail">Supported undergraduate students in EU law, jurisprudence of the ECJ, and integration theory.</div>
+        <div class="tl-detail">Supporto agli studenti triennali in diritto UE, giurisprudenza della Corte di Giustizia e teoria dell'integrazione europea.</div>
       </div>
 
       <div class="tl-item reveal">
         <div class="tl-year">2020 — 2022</div>
-        <div class="tl-title">LLM in Legal Informatics, New Technologies &amp; IT Law</div>
+        <div class="tl-title">LLM in Informatica Giuridica, Nuove Tecnologie e Diritto IT</div>
         <div class="tl-inst">Università La Sapienza di Roma</div>
-        <div class="tl-detail">Graduated with highest honours (110/110 cum laude). Thesis: "Right to be Forgotten and Removal of Harmful Content". Deep focus on blockchain, AI, digital evidence, and e-commerce regulation.</div>
+        <div class="tl-detail">Laureato con il massimo dei voti (110/110 cum laude). Tesi: "Diritto all'Oblio e Rimozione dei Contenuti Lesivi". Approfondimento su blockchain, AI, prova digitale e regolazione del commercio elettronico.</div>
         <span class="tl-badge">110/110 cum laude</span>
       </div>
 
       <div class="tl-item reveal">
-        <div class="tl-year">2020 — 2022</div>
-        <div class="tl-title">Trainee Lawyer — Bar of Milan</div>
-        <div class="tl-inst">Foro di Milano</div>
-        <div class="tl-detail">Completed the compulsory eighteen-month supervised legal practice required for admission to the Italian Bar, gaining hands-on experience in litigation, legal drafting, and client advisory — with a focus on civil and consumer law matters before the Milan courts.</div>
-        <span class="tl-badge">Pratica Forense · Foro di Milano</span>
-      </div>
-
-      <div class="tl-item reveal">
         <div class="tl-year">2015 — 2020</div>
-        <div class="tl-title">Laurea Magistrale in Giurisprudenza (Law, 5 years)</div>
+        <div class="tl-title">Laurea Magistrale in Giurisprudenza (5 anni)</div>
         <div class="tl-inst">Università degli Studi di Milano-Bicocca</div>
-        <div class="tl-detail">Thesis on the criminal repression of online hate speech — later republished as a volume available on Amazon. Erasmus semester at the University of Lapland, Rovaniemi.</div>
+        <div class="tl-detail">Tesi sulla repressione penale dell'hate speech online — successivamente pubblicata come volume disponibile su Amazon. Semestre Erasmus all'Università della Lapponia, Rovaniemi.</div>
       </div>
 
       <div class="tl-item reveal">
         <div class="tl-year">2021 — 2023</div>
-        <div class="tl-title">Advanced Courses &amp; Certifications</div>
+        <div class="tl-title">Corsi avanzati e certificazioni</div>
         <div class="tl-inst">IBM · Bucerius Law School · Università Statale di Milano · Stanford · Harvard</div>
-        <div class="tl-detail">IBM Blockchain Professional Certificate; Coding for Lawyers (Python); Digital Cybercrime &amp; Investigations; Corporate Tax Governance; Contract Law (Harvard edX); Comparative Anti-Discrimination Law (Stanford).</div>
+        <div class="tl-detail">IBM Blockchain Professional Certificate; Coding for Lawyers (Python); Digital Cybercrime &amp; Investigations; Governance Fiscale Aziendale; Contract Law (Harvard edX); Diritto antidiscriminatorio comparato (Stanford).</div>
       </div>
 
     </div>
@@ -831,56 +859,55 @@
 <section id="publications">
   <div class="max-container">
     <p class="section-label reveal">Output</p>
-    <h2 class="section-title reveal">Publications &amp;<br><em>Talks</em></h2>
+    <h2 class="section-title reveal">Pubblicazioni &amp;<br><em>Contributi</em></h2>
     <div class="divider reveal"></div>
 
     <div class="pub-list">
 
-      <a href="/papers/Multi-level_Architecture_Separation_Powers_Legislative_Process.html" class="pub-item reveal">
+      <a href="/papers/HICSS-59_Blockchain_Legislative_Tracking.html" class="pub-item reveal">
         <span class="pub-year-badge">2025</span>
         <div>
-          <div class="pub-title">Multi-level Architecture for Separation of Powers in Legislative Process</div>
-          <div class="pub-meta">Distributed Ledger Technology Workshop 2025 · CEUR-WS Vol. 4105 · Palmirani, Papalia et al.</div>
+          <div class="pub-title">HICSS-59 — Blockchain &amp; Legislative Tracking</div>
+          <div class="pub-meta">Hawaii International Conference on System Sciences · Accettato 2024</div>
         </div>
-        <span class="pub-type">Workshop</span>
+        <span class="pub-type">Conferenza</span>
       </a>
 
-      <a href="/papers/A_Multi-Chain_Approach_to_Transparent_and_Accountable_Legislative_Processes.html" class="pub-item reveal">
-        <span class="pub-year-badge">2026</span>
-        <div>
-          <div class="pub-title">A Multi-Chain Approach to Transparent and Accountable Legislative Processes</div>
-          <div class="pub-meta">HICSS-59 · Hawaii International Conference on System Sciences · pp. 2216–2225</div>
-        </div>
-        <span class="pub-type">Conference</span>
-      </a>
-
-      <div class="pub-item reveal">
+      <a href="/papers/BRAIN_2026_Workshop_Paper.html" class="pub-item reveal">
         <span class="pub-year-badge">2025</span>
         <div>
           <div class="pub-title">BRAIN 2026 Workshop Paper</div>
-          <div class="pub-meta">Blockchain Research &amp; Applications for Innovative Networks · Accepted · Forthcoming</div>
+          <div class="pub-meta">Blockchain Research &amp; Applications for Innovative Networks · Accettato</div>
         </div>
         <span class="pub-type">Workshop</span>
-      </div>
+      </a>
 
-      <div class="pub-item reveal" style="opacity:.75; cursor:default;">
+      <a href="/papers/European_Journal_of_Law_and_Technology_Special_Issue.html" class="pub-item reveal">
         <span class="pub-year-badge">2025</span>
         <div>
           <div class="pub-title">European Journal of Law and Technology — Special Issue</div>
-          <div class="pub-meta">DLT and Parliamentary Process Tracking · <em style="color:var(--gold-dim);">Accepted — forthcoming</em></div>
+          <div class="pub-meta">DLT e tracciamento del processo parlamentare</div>
         </div>
-        <span class="pub-type">Journal</span>
-      </div>
-
-      <a href="/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking.html" class="pub-item reveal">
-        <span class="pub-year-badge">2025</span>
-        <div>
-          <div class="pub-title">The Use of Blockchain for Legislative Simplification and Tracking</div>
-          <div class="pub-meta">ICEDEG 2025 &mdash; IEEE &middot; Bern, Switzerland &middot; DOI: 10.1109/ICEDEG65568.2025.11081571</div>
-        </div>
-        <span class="pub-type">Conference</span>
+        <span class="pub-type">Rivista</span>
       </a>
 
+      <a href="/papers/ICEDEG_2025_Digital_Government_Blockchain.html" class="pub-item reveal">
+        <span class="pub-year-badge">2025</span>
+        <div>
+          <div class="pub-title">ICEDEG 2025 — Digital Government &amp; Blockchain</div>
+          <div class="pub-meta">International Conference on e-Democracy &amp; e-Government</div>
+        </div>
+        <span class="pub-type">Conferenza</span>
+      </a>
+
+      <a href="/papers/Superbonus_Edilizi_Disciplina_Giuridica_e_Questioni_Conteziose.html" class="pub-item reveal">
+        <span class="pub-year-badge">2024</span>
+        <div>
+          <div class="pub-title">Superbonus Edilizi: Disciplina Giuridica e Questioni Conteziose</div>
+          <div class="pub-meta">Maggioli Editore · Volume collettivo, autore di capitolo</div>
+        </div>
+        <span class="pub-type">Capitolo</span>
+      </a>
 
       <a href="/papers/The_Bias_of_Artificial_Intelligence_within_the_Justice_Field.html" class="pub-item reveal">
         <span class="pub-year-badge">2022</span>
@@ -888,17 +915,16 @@
           <div class="pub-title">The Bias of Artificial Intelligence within the Justice Field</div>
           <div class="pub-meta">AIxHMI 2022 · CEUR-WS Vol. 3368</div>
         </div>
-        <span class="pub-type">Conference</span>
+        <span class="pub-type">Conferenza</span>
       </a>
 
       <a href="/papers/Odio_Online_Tra_Criminologia_e_Diritto.html" class="pub-item reveal">
         <span class="pub-year-badge">2020</span>
         <div>
           <div class="pub-title">Odio Online: Tra Criminologia e Diritto</div>
-          <div class="pub-meta">ISBN 979-8567192726 · Amazon top-3 in Privacy &amp; Security</div>
-          <div style="margin-top:.35rem;"><span style="font-size:.68rem;letter-spacing:.08em;padding:.2rem .65rem;border:1px solid var(--border);border-radius:99px;color:var(--muted);">🇮🇹 In Italian</span></div>
+          <div class="pub-meta">ISBN 979-8567192726 · Amazon top-3 Privacy &amp; Sicurezza</div>
         </div>
-        <span class="pub-type">Book</span>
+        <span class="pub-type">Libro</span>
       </a>
 
     </div>
@@ -908,40 +934,40 @@
 <!-- ─── INTERESTS ─────────────────────────────────────────────── -->
 <section id="interests">
   <div class="max-container">
-    <p class="section-label reveal">Beyond the Lab</p>
-    <h2 class="section-title reveal">Skills &amp;<br><em>Interests</em></h2>
+    <p class="section-label reveal">Oltre la ricerca</p>
+    <h2 class="section-title reveal">Competenze &amp;<br><em>Interessi</em></h2>
     <div class="divider reveal"></div>
 
     <div class="interest-grid">
       <div class="interest-card reveal">
         <div class="interest-icon">🔐</div>
-        <div class="interest-title">Privacy & Cybersecurity</div>
-        <div class="interest-desc">GDPR practitioner, digital rights advocate, and enthusiast of privacy-by-design architectures in both legal and technical contexts.</div>
+        <div class="interest-title">Privacy e Cybersecurity</div>
+        <div class="interest-desc">Esperto GDPR, difensore dei diritti digitali e appassionato di architetture privacy-by-design in contesti sia giuridici che tecnici.</div>
       </div>
       <div class="interest-card reveal">
         <div class="interest-icon">🌍</div>
-        <div class="interest-title">Civic Engagement</div>
-        <div class="interest-desc">From volunteering at Expo Milano 2015 to the European Youth Event in Strasbourg, civic participation has been a constant thread since youth.</div>
+        <div class="interest-title">Impegno civico</div>
+        <div class="interest-desc">Dal volontariato a Expo Milano 2015 al European Youth Event a Strasburgo: la partecipazione civica è un filo costante fin dalla giovinezza.</div>
       </div>
       <div class="interest-card reveal">
         <div class="interest-icon">🐍</div>
-        <div class="interest-title">Python Development</div>
-        <div class="interest-desc">Research automation, data pipelines, web scraping, and home-lab tools. Contributor to open-source Python libraries on GitHub.</div>
+        <div class="interest-title">Sviluppo Python</div>
+        <div class="interest-desc">Automazione della ricerca, pipeline di dati, web scraping e strumenti per il home lab. Contributi a librerie Python open-source su GitHub.</div>
       </div>
       <div class="interest-card reveal">
         <div class="interest-icon">🏠</div>
-        <div class="interest-title">Home Lab & Self-hosting</div>
-        <div class="interest-desc">Proxmox HA clusters, UniFi networking, Home Assistant, Frigate NVR, and Meshtastic LoRa mesh networks. If it can run at home, it probably does.</div>
+        <div class="interest-title">Home Lab e self-hosting</div>
+        <div class="interest-desc">Cluster Proxmox, reti UniFi, Home Assistant, Frigate NVR e reti mesh LoRa con Meshtastic. Se può girare in casa, probabilmente gira già.</div>
       </div>
       <div class="interest-card reveal">
         <div class="interest-icon">🏃</div>
-        <div class="interest-title">Competitive Running</div>
-        <div class="interest-desc">Middle-distance athlete with Atletica Gavirate since secondary school. Running is about pace, strategy, and knowing when to push — which applies to research too.</div>
+        <div class="interest-title">Atletica agonistica</div>
+        <div class="interest-desc">Mezzofondista con l'Atletica Gavirate dalle superiori. Correre è questione di ritmo, strategia e sapere quando spingere — proprio come la ricerca.</div>
       </div>
       <div class="interest-card reveal">
         <div class="interest-icon">📡</div>
-        <div class="interest-title">DIY Electronics</div>
-        <div class="interest-desc">ESP32, ESPHome sensors, and LoRa/Meshtastic mesh networking. Building smart devices that respect user privacy from the ground up.</div>
+        <div class="interest-title">Elettronica DIY</div>
+        <div class="interest-desc">ESP32, sensori ESPHome e reti mesh LoRa/Meshtastic. Dispositivi intelligenti che rispettano la privacy degli utenti fin dalla progettazione.</div>
       </div>
     </div>
   </div>
@@ -950,50 +976,40 @@
 <!-- ─── CONTACT ───────────────────────────────────────────────── -->
 <section id="contact">
   <div class="max-container">
-    <p class="section-label reveal">Contact</p>
+    <p class="section-label reveal">Contatti</p>
     <h2 class="contact-cta reveal">
-      Let's talk about<br><em>law, code,</em><br>or both.
+      Parliamo di<br><em>diritto, codice,</em><br>o entrambi.
     </h2>
     <p class="reveal" style="color:var(--muted);font-size:.92rem;max-width:48ch;margin:0 auto;">
-      I'm always happy to hear from researchers, practitioners, and developers working at the edge of technology and governance.
+      Sono sempre disponibile a confrontarmi con ricercatori, professionisti e sviluppatori che lavorano al confine tra tecnologia e governance.
     </p>
 
-    <a href="mailto:site-contact@ludovicopapalia.com" class="contact-pill">
-      <span class="contact-pill-icon">✉</span>
-      site-contact@ludovicopapalia.com
-    </a>
+    <div class="contact-links reveal">
+      <a href="mailto:site-contact@ludovicopapalia.com" class="contact-pill">
+        <span class="contact-pill-icon">✉</span>
+        site-contact@ludovicopapalia.com
+      </a>
       <a href="https://www.linkedin.com/in/ludovico-alessandro-papalia-6376ba86/" class="contact-pill" target="_blank" rel="noopener">
         <span class="contact-pill-icon">in</span>
         LinkedIn
       </a>
-      <a href="https://www.ludovicopapalia.com" class="contact-pill" target="_blank" rel="noopener">
-        <span class="contact-pill-icon">↗</span>
-        ludovicopapalia.com
+      <a href="https://orcid.org/0009-0003-8751-9445" class="contact-pill" target="_blank" rel="noopener noreferrer">
+        <span class="contact-pill-icon">
+          <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;vertical-align:middle" alt="ORCID">
+        </span>
+        ORCID
       </a>
     </div>
-  </div>
-</section>
-
-<!-- ─── DISCLAIMER ───────────────────────────────────────────── -->
-<section id="disclaimer" style="background:var(--bg-card); border-top:1px solid var(--border); padding:2.5rem 2.5rem;">
-  <div style="max-width:900px; margin:0 auto;">
-    <p style="font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-dim); margin-bottom:.75rem;">Disclaimer</p>
-    <p style="font-size:.78rem; color:var(--muted); line-height:1.8; max-width:80ch;">
-      Le opinioni espresse in questo sito, e in qualsiasi altra sede — online, offline o pubblica — incluse, senza limitazione alcuna, posizioni politiche, valutazioni sociali e giudizi di qualsiasi natura, sono esclusivamente e strettamente personali di Ludovico Papalia. Esse non sono in alcun modo riconducibili, né devono essere associate, a persone, istituzioni, enti, organizzazioni o editori con cui Ludovico collabora, ha collaborato o ha pubblicato.
-    </p>
-    <p style="font-size:.78rem; color:var(--muted); line-height:1.8; max-width:80ch; margin-top:.75rem;">
-      The views expressed on this website, and in any other context — online, offline, or public — including, without limitation, political positions, social assessments, and judgments of any kind, are solely and strictly personal to Ludovico Papalia. They are in no way attributable to, nor should they be associated with, any persons, institutions, entities, organizations, or publishers with whom Ludovico collaborates, has collaborated, or has published.
-    </p>
   </div>
 </section>
 
 <!-- ─── FOOTER ────────────────────────────────────────────────── -->
 <footer>
   <span>© Ludovico Papalia</span>
-  <span>Made with love 🖤 by Ludovico </span>
+  <a class="footer-lang" href="/">🇬🇧 English version</a>
 </footer>
 
-<!-- ─── SCROLL REVEAL (minimal JS) ───────────────────────────── -->
+<!-- ─── SCROLL REVEAL ─────────────────────────────────────────── -->
 <script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
