@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── SEO & SOCIAL ───────────────────────────────────────── -->
+  <title>Doppia autenticazione: non tutti i sistemi sono uguali — e spesso sei tu il problema — Ludovico Papalia</title>
+  <meta name="description" content="Password manager, 2FA, OTP e passkey: Ludovico Papalia esperto di cybersicurezza e diritto digitale spiega la gerarchia dei sistemi di autenticazione e perché l'anello debole sei tu.">
+  <meta name="author" content="Ludovico Papalia">
+  <meta name="keywords" content="autenticazione a due fattori, 2FA, password manager, OTP, passkey, SIM swap, cybersicurezza, Ludovico Papalia, sicurezza digitale, FIDO2, Bitwarden, Have I Been Pwned">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Doppia autenticazione: non tutti i sistemi sono uguali — e spesso sei tu il problema">
+  <meta property="og:description" content="Password manager, 2FA, OTP e passkey: la gerarchia dei sistemi di autenticazione spiegata da Ludovico Papalia, esperto di diritto informatico.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html">
+  <meta property="og:site_name"   content="Ludovico Papalia — Legal Informatics">
+  <meta property="article:author" content="Ludovico Papalia">
+  <meta property="article:published_time" content="2025-05-09">
+  <meta property="article:section" content="Diritto Informatico">
+  <meta property="article:tag"    content="Cybersicurezza">
+  <meta property="article:tag"    content="2FA">
+  <meta property="article:tag"    content="Password Manager">
+  <meta property="article:tag"    content="Sicurezza digitale">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Doppia autenticazione: non tutti i sistemi sono uguali — e spesso sei tu il problema">
+  <meta name="twitter:description" content="La gerarchia dei sistemi 2FA e perché la vulnerabilità principale resti tu: la guida di Ludovico Papalia.">
+
+  <!-- ─── STRUCTURED DATA ───────────────────────────────────── -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NewsArticle",
+        "@id": "https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html#article",
+        "headline": "Doppia autenticazione: non tutti i sistemi sono uguali — e spesso sei tu il problema",
+        "description": "Ludovico Papalia esperto di cybersicurezza e diritto digitale spiega la gerarchia dei sistemi di autenticazione a due fattori, i rischi dell'SMS come secondo fattore e perché l'anello debole nella catena di sicurezza resti quasi sempre l'utente.",
+        "keywords": [
+          "autenticazione a due fattori",
+          "2FA",
+          "password manager",
+          "OTP",
+          "passkey",
+          "FIDO2",
+          "SIM swap",
+          "Bitwarden",
+          "cybersicurezza",
+          "Ludovico Papalia",
+          "diritto informatico"
+        ],
+        "datePublished": "2025-05-09",
+        "dateModified": "2025-05-09",
+        "inLanguage": "it",
+        "articleSection": "Cybersicurezza",
+        "genre": "Divulgazione giuridica",
+        "url": "https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html",
+        "isPartOf": {
+          "@id": "https://www.ludovicopapalia.com/#website"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.ludovicopapalia.com/#person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com",
+          "jobTitle": "PhD Candidate in Legal Informatics",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Università di Bologna"
+          }
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Autenticazione a due fattori" },
+          { "@type": "Thing", "name": "Password manager" },
+          { "@type": "Thing", "name": "OTP — One Time Password" },
+          { "@type": "Thing", "name": "Passkey e FIDO2" },
+          { "@type": "Thing", "name": "SIM swap" },
+          { "@type": "Thing", "name": "GDPR e sicurezza dei dati" }
+        ],
+        "video": {
+          "@type": "VideoObject",
+          "name": "Intervista a Ludovico Papalia: password manager, 2FA e SIM swap",
+          "embedUrl": "https://www.youtube.com/embed/Bpwq92ltSTc",
+          "url": "https://youtu.be/Bpwq92ltSTc",
+          "description": "Ludovico Papalia spiega live su Milano Pavia TV i sistemi di autenticazione a due fattori, i rischi del SIM swap e come scegliere il gestore di password giusto.",
+          "uploadDate": "2025-05-09T00:00:00Z",
+          "thumbnailUrl": "https://img.youtube.com/vi/Bpwq92ltSTc/maxresdefault.jpg"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ludovicopapalia.com" },
+          { "@type": "ListItem", "position": 2, "name": "Articoli", "item": "https://www.ludovicopapalia.com/divulgativi-index.html" },
+          { "@type": "ListItem", "position": 3, "name": "Doppia autenticazione: non tutti i sistemi sono uguali", "item": "https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html" }
+        ]
+      }
+    ]
+  }</script>
+
+  <!-- ► Nav italiana override — deve precedere site-config.js -->
+  <script>
+    window.LP_NAV_TYPE   = 'it';
+    window.LP_NAV_ACTIVE = 'Divulgazione';
+  </script>
+
+  <!-- ► MASTER SITE CONFIG -->
+  <script src="/site-config.js"></script>
+
+  <style>
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── GRAIN OVERLAY ──────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── ARTICLE WRAPPER ────────────────────────────────────── */
+    .article-page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    /* ─── HEADER AREA ────────────────────────────────────────── */
+    .article-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp .7s ease both;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-dim);
+      padding: .28rem .85rem; border-radius: 99px;
+    }
+    .tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    .article-meta-line {
+      font-size: .75rem; letter-spacing: .06em; color: var(--muted);
+    }
+    .article-meta-line span { margin: 0 .4rem; color: var(--gold-dim); }
+
+    h1.article-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 300; line-height: 1.1;
+      letter-spacing: -.015em; color: var(--accent);
+      animation: fadeUp .7s .08s ease both;
+    }
+    h1.article-title em { font-style: italic; color: var(--gold); }
+
+    .article-lead {
+      margin-top: 1.6rem;
+      font-family: var(--ff-serif);
+      font-size: 1.35rem; font-weight: 300;
+      font-style: italic; line-height: 1.65;
+      color: var(--text);
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 1.4rem;
+      animation: fadeUp .7s .16s ease both;
+    }
+
+    .article-divider {
+      width: 40px; height: 1px;
+      background: var(--gold-dim);
+      margin: 2.5rem 0;
+      animation: fadeUp .7s .22s ease both;
+    }
+
+    /* ─── BODY TEXT ──────────────────────────────────────────── */
+    .article-body {
+      animation: fadeUp .8s .28s ease both;
+    }
+    .article-body p {
+      font-size: .97rem; color: var(--muted);
+      line-height: 1.95; margin-bottom: 1.5rem;
+    }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body em { font-style: italic; color: var(--accent); }
+    .article-body a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+    .article-body a:hover { color: var(--accent); }
+
+    .article-body h2 {
+      font-family: var(--ff-serif);
+      font-size: 1.7rem; font-weight: 400;
+      color: var(--accent); line-height: 1.2;
+      margin: 2.8rem 0 1rem;
+    }
+    .article-body h2 em { font-style: italic; color: var(--gold); }
+
+    /* rank list */
+    .rank-list {
+      margin: 1.5rem 0 2rem;
+      display: flex; flex-direction: column; gap: .75rem;
+    }
+    .rank-item {
+      display: grid;
+      grid-template-columns: 2.2rem 1fr;
+      gap: .8rem;
+      align-items: start;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      transition: border-color .2s;
+    }
+    .rank-item:hover { border-color: var(--gold-dim); }
+    .rank-num {
+      font-family: var(--ff-serif);
+      font-size: 1.4rem; font-weight: 300;
+      color: var(--gold-dim);
+      line-height: 1.2;
+    }
+    .rank-label { font-size: .88rem; font-weight: 500; color: var(--text); margin-bottom: .2rem; }
+    .rank-desc { font-size: .8rem; color: var(--muted); line-height: 1.6; }
+    .rank-item.worst .rank-num { color: #b05050; }
+    .rank-item.best .rank-num { color: var(--gold); }
+
+    /* pull quote */
+    .pull-quote {
+      margin: 2.5rem 0;
+      padding: 1.2rem 1.6rem;
+      border-left: 2px solid var(--gold);
+      background: var(--bg-card);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .pull-quote p {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem !important;
+      font-style: italic;
+      color: var(--accent) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* ─── VIDEO SECTION ──────────────────────────────────────── */
+    .video-section {
+      margin-top: 4rem;
+      animation: fadeUp .8s .4s ease both;
+    }
+    .video-label-row {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .video-label-text {
+      font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+    .video-label-line { flex: 1; height: 1px; background: var(--border); }
+
+    .video-container {
+      position: relative; width: 100%; aspect-ratio: 16/9;
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); background: var(--bg-card);
+      cursor: pointer;
+    }
+    .video-container::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      z-index: 3; pointer-events: none;
+    }
+    .video-container iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+    }
+    .video-thumb {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
+      background: var(--bg-card2);
+      transition: opacity .3s;
+    }
+    .video-thumb.gone { opacity: 0; pointer-events: none; }
+    .play-ring {
+      width: 68px; height: 68px; border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .2s, background .2s;
+    }
+    .video-thumb:hover .play-ring { transform: scale(1.08); background: var(--accent); }
+    .play-ring svg { margin-left: 4px; }
+    .video-cta { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: 740px; margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-sig { font-family: var(--ff-serif); font-size: 1rem; color: var(--muted); }
+    .footer-back { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .footer-back:hover { color: var(--gold); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .article-page { padding: 7rem 1.2rem 4rem; }
+      footer { padding: 1.5rem 1.2rem 2.5rem; flex-direction: column; gap: .8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <article class="article-page" itemscope itemtype="https://schema.org/Article">
+
+      <meta itemprop="datePublished" content="2025-05-09">
+      <meta itemprop="dateModified"  content="2025-05-09">
+      <meta itemprop="author"        content="Ludovico Papalia">
+      <meta itemprop="inLanguage"    content="it">
+
+      <!-- ─── EYEBROW ────────────────────────────────────────── -->
+      <div class="article-eyebrow">
+        <div class="tag"><span class="tag-dot"></span>Cybersicurezza</div>
+        <span class="article-meta-line">Maggio 2025 <span>·</span> 9 min di lettura <span>·</span> Intervista</span>
+      </div>
+
+      <!-- ─── TITLE ──────────────────────────────────────────── -->
+      <h1 class="article-title" itemprop="headline">
+        Hai la 2FA attiva:<br><em>sei ancora vulnerabile.</em>
+      </h1>
+
+      <!-- ─── LEAD ────────────────────────────────────────────── -->
+      <p class="article-lead" itemprop="description">
+        Password manager, doppio fattore, OTP, passkey. Tutti li sentono nominare, pochi capiscono davvero come funzionano e quasi nessuno sa che non tutti i sistemi si equivalgono. La cosa che accomuna tutte le violazioni che vediamo ogni giorno? Non è la tecnologia che cede — sei tu.
+      </p>
+
+      <div class="article-divider"></div>
+
+      <!-- ─── BODY ────────────────────────────────────────────── -->
+      <div class="article-body" itemprop="articleBody">
+
+        <p>
+          Ogni volta che affronto il tema della sicurezza degli account online — e lo faccio spesso, perché faccio ricerca nell'area del diritto informatico e mi occupo di come le norme si intreccino con i sistemi digitali — mi rendo conto che le persone tendono ad avere uno dei due atteggiamenti sbagliati. O pensano di essere al sicuro perché hanno attivato la doppia autenticazione, oppure la evitano completamente per paura di restare chiuse fuori dal proprio account. In entrambi i casi, il ragionamento è incompleto.
+        </p>
+
+        <p>
+          Partiamo dall'inizio, cioè dalle password. Da anni gli esperti ripetono di non usare la stessa password ovunque, di non metterci il nome del cane o la data di nascita. Eppure dalle analisi dei data breach più grandi — le cosiddette <em>fuoriuscite di dati</em> — emerge sempre la stessa situazione: migliaia di account con password come "password123", "Fido2024" o varianti minimali dello stesso schema. <strong>Il problema non è più solo la password debole in sé</strong>, però. È che i servizi online ci obbligano a usare maiuscole, numeri e caratteri speciali, e noi finiamo per avere tutti la stessa password leggermente variata — magari aggiungendo un numero progressivo quando ci chiedono di cambiarla. Il risultato è che la sicurezza percepita aumenta, quella reale resta piatta.
+        </p>
+
+        <h2>Il problema della <em>password unica</em></h2>
+
+        <p>
+          La cosa più pericolosa non è avere una password debole su un sito importante. È avere la stessa password su un sito importante <em>e</em> su quel forum di cucina in cui vi siete registrati nel 2017. Se il forum viene violato — e i siti minori vengono violati continuamente, spesso senza che nessuno se ne accorga — i vostri dati finiscono in un database che gira liberamente nei mercati clandestini. A quel punto chiunque può provare quella stessa password su tutti i servizi che usate, in modo automatizzato, migliaia di tentativi al secondo. Questa tecnica si chiama <em>credential stuffing</em> ed è tra le più diffuse.
+        </p>
+
+        <p>
+          Per verificare se le vostre credenziali siano già state compromesse esiste un servizio gratuito che consiglio sempre: <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">haveibeenpwned.com</a> — "sono stato violato?" — permette di inserire il proprio indirizzo email e scoprire se è comparso in qualche data breach noto. Non è un sito di terze parti sospette: è gestito da Troy Hunt, uno dei ricercatori di sicurezza più rispettati al mondo, ed è usato anche da organizzazioni governative.
+        </p>
+
+        <div class="pull-quote">
+          <p>«Potete scegliere la password migliore del mondo, ma la vulnerabilità restate voi. Nel momento in cui qualcuno vi chiama e vi dice di essere la polizia, qualcuno lo farà.»</p>
+        </div>
+
+        <h2>I gestori di password: <em>la soluzione che nessuno vuole usare</em></h2>
+
+        <p>
+          La risposta tecnica al problema della password unica è il gestore di password, e lo so già che molti a questo punto hanno pensato "e se perdo la master password?" o "e se viene violato anche quello?". Le obiezioni sono legittime ma risolvibili.
+        </p>
+
+        <p>
+          Un gestore di password funziona come una cassaforte cifrata: all'interno ci sono tutte le vostre password, crittografate con una chiave che solo voi conoscete. L'unica password che dovrete ricordare è quella della cassaforte — e dovrà essere lunga, casuale, non correlata alla vostra vita. Per tutti gli altri account il gestore genera password randomiche di venti caratteri che non dovreste mai conoscere, né ricordare. <strong>Questo è il punto chiave</strong>: non dovete ricordare le password, dovete solo ricordare di non annotarle altrove.
+        </p>
+
+        <p>
+          Tra le opzioni disponibili segnalo <strong>Bitwarden</strong>, che è open source — ossia il suo codice è pubblicamente verificabile da chiunque voglia controllare che non ci siano backdoor o vulnerabilità nascoste. Il gestore di Google, integrato in Chrome e Android, è anch'esso ragionevolmente sicuro per un uso quotidiano, e può essere ulteriormente protetto attivando la crittografia end-to-end nelle impostazioni avanzate. Per chi non si fida di nessun sistema digitale, l'alternativa è un quaderno fisico tenuto in un posto sicuro — vecchio sistema, ma non sbagliato, a patto di non portarselo dietro ovunque.
+        </p>
+
+        <h2>La doppia autenticazione: <em>sì, ma non tutta uguale</em></h2>
+
+        <p>
+          Arriviamo al punto centrale. La doppia autenticazione — 2FA, o MFA — è il secondo livello di protezione che si aggiunge alla password. L'idea è che per accedere a un account non basti sapere qualcosa (la password), ma serva anche avere qualcosa (il telefono, una chiavetta, un'impronta digitale). In teoria è un'ottima idea. In pratica, esistono almeno cinque implementazioni diverse e la differenza di sicurezza tra la peggiore e la migliore è abissale.
+        </p>
+
+        <p>
+          Questa è la mia classifica, dal meno al più sicuro, con le ragioni concrete di ogni posizione:
+        </p>
+
+        <div class="rank-list">
+          <div class="rank-item worst">
+            <div class="rank-num">5°</div>
+            <div>
+              <div class="rank-label">SMS / chiamata telefonica</div>
+              <div class="rank-desc">Il più diffuso nelle banche italiane, purtroppo anche il più vulnerabile. Il codice transita sulla rete telefonica e può essere intercettato tramite SIM swap — una truffa in forte crescita di cui parliamo nell'articolo dedicato. Quando non avete alternative, usatelo, ma sappiate che non è sicuro.</div>
+            </div>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">4°</div>
+            <div>
+              <div class="rank-label">Notifica push (app)</div>
+              <div class="rank-desc">Più sicuro dell'SMS perché viaggia su canale cifrato, ma vulnerabile al <em>notification bombing</em>: un attaccante che conosce la vostra password può inviare decine di richieste di approvazione consecutive finché, per errore o per stanchezza, non schiacciate "Sì". Alcuni servizi come Apple e Google hanno aggiunto un passaggio aggiuntivo (selezionare un numero tra quelli mostrati) che riduce significativamente questo rischio.</div>
+            </div>
+          </div>
+          <div class="rank-item">
+            <div class="rank-num">3°</div>
+            <div>
+              <div class="rank-label">App TOTP (Google Authenticator, Authy, ecc.)</div>
+              <div class="rank-desc">Genera codici OTP (One Time Password) di sei cifre che scadono ogni 30 secondi, funziona anche offline. Il meccanismo si basa su una chiave condivisa e sull'orario Unix (calcolato dall'1 gennaio 1970). Non richiede SIM, non dipende dalla rete telefonica. È quello che dovreste chiedere anche alla vostra banca.</div>
+            </div>
+          </div>
+          <div class="rank-item best">
+            <div class="rank-num">2°</div>
+            <div>
+              <div class="rank-label">Passkey (impronta digitale / Face ID)</div>
+              <div class="rank-desc">Standard recente supportato da Apple, Google e Microsoft. L'autenticazione avviene tramite un certificato crittografico legato al dispositivo, verificato con biometria locale. Nessun codice da intercettare, nessuna password da dimenticare. È il futuro della sicurezza consumer.</div>
+            </div>
+          </div>
+          <div class="rank-item best">
+            <div class="rank-num">1°</div>
+            <div>
+              <div class="rank-label">Chiavetta hardware FIDO2 (YubiKey, ecc.)</div>
+              <div class="rank-desc">Una chiavetta USB fisica che si inserisce nel dispositivo per autenticarsi. Zero interazione umana possibile da remoto, nessun codice intercettabile. Usata da giornalisti, attivisti, manager con profili ad alto rischio. Costo intorno ai 50 euro: considera quanto valgono i tuoi account, poi decidi.</div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Il problema che nessuno vuole ammettere: <em>sei tu</em></h2>
+
+        <p>
+          Qualsiasi sia il sistema che scegliete, esiste una vulnerabilità che non potete eliminare del tutto con la tecnologia. Si chiama ingegneria sociale, e consiste nel convincere l'utente — voi — a consegnare il codice di accesso di propria spontanea volontà.
+        </p>
+
+        <p>
+          Il meccanismo tipico: ricevete una chiamata da un numero che appare come quello della vostra banca. Una voce autorevole vi spiega che c'è un'operazione sospetta in corso sul vostro conto e che per bloccarla dovete comunicare il codice che vi arriverà per SMS. Voi lo fate, convinti di proteggere i vostri soldi. In quel momento avete appena dato le chiavi di casa a qualcuno. <strong>Le truffe di questo tipo in Italia avvengono su base giornaliera</strong>, con centinaia di segnalazioni ogni mese. Non riguardano solo le persone anziane o meno digitalizzate — riguardano chiunque, perché la pressione psicologica è costruita professionalmente.
+        </p>
+
+        <p>
+          La regola è una sola: nessun ente — banca, polizia, gestore telefonico, piattaforma social — ha mai bisogno che voi gli comunichiate un codice ricevuto per SMS o dall'app. Mai. Se qualcuno ve lo chiede, è una truffa.
+        </p>
+
+        <h2>Il SIM swap: quando <em>il secondo fattore diventa il punto debole</em></h2>
+
+        <p>
+          C'è però un attacco ancora più sofisticato che non richiede di convincervi a dare nulla — e che bypassa completamente l'SMS come sistema di autenticazione. Si chiama SIM swap, e ne ho scritto in un articolo dedicato perché merita uno spazio a parte. In sintesi: un attaccante riesce a far trasferire il vostro numero di telefono su una SIM sotto il suo controllo, diventando di fatto il destinatario di tutti i vostri codici. Il vostro telefono smette di ricevere segnale. Voi non sapete ancora niente. Lui entra nel vostro conto bancario. <a href="/art-divulgativi/sim-swap-il-numero-non-e-identita.html">Leggete l'articolo per capire come funziona e come difendersi.</a>
+        </p>
+
+        <h2>Il GDPR e chi <em>deve</em> preoccuparsene</h2>
+
+        <p>
+          Una nota finale che riguarda chiunque gestisca un'attività, anche piccola. Il Regolamento europeo sulla protezione dei dati — il GDPR — non impone semplicemente di "tenere i dati al sicuro". Impone di mettere in atto tutte le misure tecniche e organizzative adeguate al livello di rischio. Se avete un'attività con dipendenti, clienti, fornitori e gestite i loro dati su sistemi digitali — email, cloud, software di fatturazione — la responsabilità di un eventuale data breach ricade su di voi, non sul vostro provider. <strong>Non avere attivato la 2FA sugli account aziendali, nel 2025, difficilmente sarà considerato una misura adeguata</strong> in caso di violazione con conseguente notifica al Garante.
+        </p>
+
+        <p>
+          Il punto di equilibrio tra sicurezza e comodità esiste, ed è diverso per ognuno. Chi gestisce dati di clienti o documenti sensibili ha una soglia di rischio accettabile molto più bassa di chi usa il computer solo per guardare ricette. L'importante è scegliere consapevolmente, non per abitudine o per pigrizia.
+        </p>
+
+      </div><!-- /article-body -->
+
+      <!-- ─── VIDEO EMBED ──────────────────────────────────────── -->
+      <div class="video-section">
+        <div class="video-label-row">
+          <span class="video-label-text">Guarda l'intervista originale</span>
+          <div class="video-label-line"></div>
+        </div>
+        <div class="video-container" onclick="loadVideo()">
+          <div class="video-thumb" id="vthumb">
+            <div class="play-ring">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <span class="video-cta">Guarda l'intervista su Milano Pavia TV</span>
+          </div>
+          <iframe id="ytframe" src="" title="Intervista a Ludovico Papalia — password manager, 2FA e sicurezza digitale" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <span class="footer-sig">Ludovico Papalia</span>
+    <a class="footer-back" href="/divulgativi-index.html">← Altri articoli</a>
+  </footer>
+
+  <script>
+    function loadVideo() {
+      var iframe = document.getElementById('ytframe');
+      var thumb  = document.getElementById('vthumb');
+      if (!iframe.src || iframe.src === window.location.href) {
+        iframe.src = 'https://www.youtube.com/embed/Bpwq92ltSTc?autoplay=1&rel=0&modestbranding=1';
+      }
+      thumb.classList.add('gone');
+    }
+  </script>
+
+</body>
+</html>
