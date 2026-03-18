@@ -310,8 +310,78 @@ var LP_SCHEMA = {
     '  nav { padding: 1rem 1.5rem; }',
     '  .nav-links { gap: 1.2rem; font-size: .72rem; }',
     '}',
+
+    /* ── Hamburger button — visibile solo su mobile ── */
+    '.nav-hamburger {',
+    '  display: none;',
+    '  flex-direction: column;',
+    '  justify-content: center;',
+    '  align-items: center;',
+    '  gap: 5px;',
+    '  width: 36px; height: 36px;',
+    '  background: none;',
+    '  border: 1px solid var(--border);',
+    '  border-radius: 8px;',
+    '  cursor: pointer;',
+    '  padding: 0;',
+    '  transition: border-color .2s;',
+    '}',
+    '.nav-hamburger:hover { border-color: var(--gold-dim); }',
+    '.nav-hamburger span {',
+    '  display: block;',
+    '  width: 16px; height: 1.5px;',
+    '  background: var(--muted);',
+    '  transition: all .22s ease;',
+    '  transform-origin: center;',
+    '}',
+    /* Animazione → X quando aperto */
+    '.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }',
+    '.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }',
+    '.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }',
+
+    /* ── Mobile menu drawer — appare sotto la nav ── */
+    '.nav-mobile-menu {',
+    '  position: fixed;',
+    '  top: 57px;',            /* verrà sovrascritto in JS con la vera altezza nav */
+    '  left: 0; right: 0;',
+    '  z-index: 99;',
+    '  background: var(--bg-nav);',
+    '  backdrop-filter: blur(18px) saturate(1.4);',
+    '  -webkit-backdrop-filter: blur(18px) saturate(1.4);',
+    '  border-bottom: 1px solid var(--border);',
+    '  max-height: 0;',
+    '  overflow: hidden;',
+    '  transition: max-height .28s ease, opacity .22s ease;',
+    '  opacity: 0;',
+    '  pointer-events: none;',
+    '}',
+    '.nav-mobile-menu.open {',
+    '  max-height: 500px;',
+    '  opacity: 1;',
+    '  pointer-events: auto;',
+    '}',
+    '.nav-mobile-menu-inner {',
+    '  padding: .6rem 1.5rem 1.2rem;',
+    '}',
+    '.nav-mobile-menu a {',
+    '  display: flex;',
+    '  align-items: center;',
+    '  padding: .9rem 0;',
+    '  font-size: .78rem;',
+    '  font-weight: 500;',
+    '  letter-spacing: .12em;',
+    '  text-transform: uppercase;',
+    '  color: var(--muted);',
+    '  border-bottom: 1px solid var(--border);',
+    '  transition: color .18s;',
+    '}',
+    '.nav-mobile-menu a:last-child { border-bottom: none; }',
+    '.nav-mobile-menu a:hover { color: var(--gold); }',
+    '.nav-mobile-menu a.active { color: var(--gold); }',
+
     '@media (max-width: 540px) {',
     '  .nav-links { display: none; }',
+    '  .nav-hamburger { display: flex; }',
     '}',
   ].join('\n');
   document.head.appendChild(s);
@@ -407,10 +477,75 @@ function _injectNav() {
       });
       nav.appendChild(div);
     }
+
+    /* ── Hamburger button (visibile solo su mobile via CSS) ──────────────── */
+    var hamburger = document.createElement('button');
+    hamburger.className = 'nav-hamburger';
+    hamburger.setAttribute('aria-label', 'Apri menu di navigazione');
+    hamburger.setAttribute('aria-expanded', 'false');
+    /* Tre barre che animano in X */
+    hamburger.innerHTML = '<span></span><span></span><span></span>';
+    nav.appendChild(hamburger);
+
+    /* ── Mobile menu drawer — inserito come figlio diretto di <body> ──────── */
+    var mobileMenu = document.createElement('div');
+    mobileMenu.className = 'nav-mobile-menu';
+    mobileMenu.setAttribute('role', 'navigation');
+    mobileMenu.setAttribute('aria-label', 'Navigazione mobile');
+
+    var mobileInner = document.createElement('div');
+    mobileInner.className = 'nav-mobile-menu-inner';
+
+    /* Stessi link della nav desktop */
+    links.forEach(function (link) {
+      var a = document.createElement('a');
+      a.href = link.href;
+      a.textContent = link.label;
+      if (link.label === active) a.className = 'active';
+      /* Chiudi il menu al click su un link */
+      a.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+      mobileInner.appendChild(a);
+    });
+
+    mobileMenu.appendChild(mobileInner);
+
+    /* ── Toggle logic ─────────────────────────────────────────────────────── */
+    hamburger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    /* Chiudi cliccando fuori dal menu */
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
   /* Inserisci come primo figlio di <body> */
   document.body.insertBefore(nav, document.body.firstChild);
+
+  /* Inserisci il mobile menu dopo la nav e allineane il top alla vera altezza */
+  if (typeof mobileMenu !== 'undefined') {
+    document.body.insertBefore(mobileMenu, nav.nextSibling);
+    /* Aggiorna il top dinamicamente in base all'altezza reale della nav */
+    requestAnimationFrame(function () {
+      mobileMenu.style.top = nav.offsetHeight + 'px';
+    });
+    /* Ricalcola al resize (orientamento, zoom) */
+    window.addEventListener('resize', function () {
+      mobileMenu.style.top = nav.offsetHeight + 'px';
+    });
+  }
 }
 
 /* ── D2. Schema.org Person + WebSite ─────────────────────────────────────── */
