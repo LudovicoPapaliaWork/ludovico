@@ -1,63 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.ludovicopapalia.com/UNUSED-papers-index.html</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/divulgativo-template.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/divulgativi-index.html</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.ludovicopapalia.com/</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/old_content/index copia.html</loc>
+    <loc>https://www.ludovicopapalia.com/divulgativi-index.html</loc>
     <lastmod>2026-03-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/old_content/index1.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <loc>https://www.ludovicopapalia.com/papers/Multi-level_Architecture_Separation_Powers_Legislative_Process.html</loc>
+    <lastmod>2025-06-14</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/papers/The_Bias_of_Artificial_Intelligence_within_the_Justice_Field.html</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/papers/paper-template.html</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking.html</loc>
     <lastmod>2025-06-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/papers/The_Bias_of_Artificial_Intelligence_within_the_Justice_Field.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/UNUSED-papers-index.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/divulgativo-template.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
