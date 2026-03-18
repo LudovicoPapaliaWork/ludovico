@@ -32,20 +32,32 @@
   </url>
   <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/UNUSED-papers-index.html</loc>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/spid-siti-adulti-privacy.html</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/divulgativo-template.html</loc>
-    <lastmod>2026-03-16</lastmod>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html</loc>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-lavoro-trasformazione.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
