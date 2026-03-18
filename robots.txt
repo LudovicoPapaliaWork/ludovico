@@ -1,0 +1,84 @@
+# ──────────────────────────────────────────────────────────────
+# robots.txt — ludovicopapalia.com
+# Politica: accesso aperto a tutti i crawler (motori di ricerca,
+# AI, aggregatori), con esclusione delle sole pagine template
+# e non utilizzate per evitare penalizzazioni SEO.
+# ──────────────────────────────────────────────────────────────
+
+# ── REGOLA GLOBALE (vale per tutti i bot non elencati sotto) ──
+User-agent: *
+Disallow: /papers/paper-template.html
+Disallow: /art-divulgativi/divulgativo-template.html
+Disallow: /UNUSED-papers-index.html
+Disallow: /old_content
+
+# ── GOOGLE ────────────────────────────────────────────────────
+User-agent: Googlebot
+Disallow: /papers/paper-template.html
+Disallow: /art-divulgativi/divulgativo-template.html
+Disallow: /UNUSED-papers-index.html
+
+User-agent: Googlebot-Image
+Disallow:
+
+User-agent: Googlebot-News
+Disallow:
+
+# ── GOOGLE SCHOLAR ────────────────────────────────────────────
+User-agent: Googlebot-Scholar
+Disallow:
+
+# ── AI — OPENAI ───────────────────────────────────────────────
+User-agent: GPTBot
+Disallow:
+
+User-agent: ChatGPT-User
+Disallow:
+
+User-agent: OAI-SearchBot
+Disallow:
+
+# ── AI — ANTHROPIC ────────────────────────────────────────────
+User-agent: ClaudeBot
+Disallow:
+
+User-agent: Claude-Web
+Disallow:
+
+# ── AI — PERPLEXITY ───────────────────────────────────────────
+User-agent: PerplexityBot
+Disallow:
+
+# ── AI — COMMON CRAWL (base per molti LLM) ────────────────────
+User-agent: CCBot
+Disallow:
+
+# ── AI — META ─────────────────────────────────────────────────
+User-agent: FacebookBot
+Disallow:
+
+# ── AI — APPLE ────────────────────────────────────────────────
+User-agent: Applebot
+Disallow:
+
+# ── AI — AMAZON / ALEXA ───────────────────────────────────────
+User-agent: Amazonbot
+Disallow:
+
+# ── AI — MICROSOFT / BING ─────────────────────────────────────
+User-agent: Bingbot
+Disallow:
+
+User-agent: msnbot
+Disallow:
+
+# ── AI — COHERE ───────────────────────────────────────────────
+User-agent: cohere-ai
+Disallow:
+
+# ── AI — YOU.COM ──────────────────────────────────────────────
+User-agent: YouBot
+Disallow:
+
+# ── SITEMAP ───────────────────────────────────────────────────
+Sitemap: https://www.ludovicopapalia.com/sitemap.xml

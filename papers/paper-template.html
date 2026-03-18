@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       GOOGLE SCHOLAR REQUIRED META TAGS
+       Googlebot-Scholar reads exclusively these citation_* tags.
+       Without them the paper is NOT indexed on Scholar.
+       Reference: https://scholar.google.com/intl/en/scholar/inclusion.html
+  ════════════════════════════════════════════════════════════ -->
+  <meta name="citation_title"            content="The Bias of Artificial Intelligence within the Justice Field">
+  <meta name="citation_author"           content="Papalia, Ludovico">
+  <!-- Add one tag per co-author if applicable:
+  <meta name="citation_author"           content="Doe, Jane"> -->
+  <meta name="citation_publication_date" content="2022/11/28">
+  <meta name="citation_conference_title" content="AIxHMI 2022: Artificial Intelligence for Human Machine Interaction">
+  <!-- For journal papers use citation_journal_title instead:
+  <meta name="citation_journal_title"    content="European Journal of Law and Technology"> -->
+  <!-- For journal papers also add:
+  <meta name="citation_volume"           content="1">
+  <meta name="citation_issue"            content="1">
+  <meta name="citation_firstpage"        content="1">
+  <meta name="citation_lastpage"         content="12"> -->
+  <meta name="citation_language"         content="en">
+  <meta name="citation_keywords"         content="artificial intelligence; algorithmic bias; justice; criminal justice; legal informatics; fairness">
+  <meta name="citation_abstract_html_url" content="https://www.ludovicopapalia.com/papers/ai-bias-justice-field">
+  <meta name="citation_pdf_url"          content="https://ceur-ws.org/Vol-3368/paper.pdf">
+  <!-- If you have a DOI:
+  <meta name="citation_doi"             content="10.xxxx/xxxxx"> -->
+  <meta name="citation_issn"             content=""><!-- fill if applicable -->
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STANDARD SEO META TAGS
+  ════════════════════════════════════════════════════════════ -->
+  <title>The Bias of AI within the Justice Field — Ludovico Papalia</title>
+  <meta name="description" content="This paper analyses how algorithmic bias manifests in judicial and law enforcement contexts, examining technical root causes and their legal consequences under EU and international frameworks.">
+  <meta name="author" content="Ludovico Papalia">
+  <meta name="keywords" content="artificial intelligence, bias, justice, criminal justice, legal informatics, algorithmic fairness, Ludovico Papalia">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/papers/ai-bias-justice-field">
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="The Bias of Artificial Intelligence within the Justice Field">
+  <meta property="og:description" content="Analysis of algorithmic bias in judicial and law enforcement contexts, examining technical root causes and legal consequences.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/papers/ai-bias-justice-field">
+  <meta property="article:author" content="Ludovico Papalia">
+  <meta property="article:published_time" content="2022-11-28">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCHEMA.ORG — SCHOLARLYARTICLE (page-specific)
+       Person + WebSite nodes are injected globally by site-config.js.
+       Both Google and LLM crawlers use this for structured data.
+  ════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "The Bias of Artificial Intelligence within the Justice Field",
+    "name": "The Bias of Artificial Intelligence within the Justice Field",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.ludovicopapalia.com/#person",
+      "name": "Ludovico Papalia",
+      "url": "https://www.ludovicopapalia.com",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Università degli Studi di Milano-Bicocca"
+      }
+    },
+    "datePublished": "2022-11-28",
+    "inLanguage": "en",
+    "keywords": ["artificial intelligence", "bias", "justice", "criminal justice", "legal informatics"],
+    "abstract": "This paper analyses how algorithmic bias manifests in judicial and law enforcement contexts, examining the technical root causes of bias in machine learning systems and their legal and ethical consequences under EU and international frameworks. It argues that current regulatory approaches are insufficient to address the structural nature of AI bias in high-stakes legal decision-making.",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "name": "CEUR Workshop Proceedings",
+      "volumeNumber": "3368",
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "CEUR-WS"
+      }
+    },
+    "url": "https://www.ludovicopapalia.com/papers/ai-bias-justice-field",
+    "sameAs": "https://ceur-ws.org/Vol-3368/",
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+  </script>
+
+  <!-- ► Nav back-link override — must precede site-config.js -->
+  <script>
+    window.LP_NAV_TYPE = 'back';
+    window.LP_NAV_BACK = { href: '/index.html#publications', label: 'All publications' };
+  </script>
+
+  <!-- ► MASTER SITE CONFIG — modifica /site-config.js per aggiornare colori,
+       font, navigazione, schema.org e tracking su tutte le pagine. -->
+  <script src="/site-config.js"></script>
+
+  <style>
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* hero */
+    .paper-hero {
+      padding: 8rem 2.5rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeUp .8s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .paper-type-row {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .28rem .8rem;
+      border-radius: 99px;
+    }
+    .badge-type {
+      background: rgba(200,169,110,.1);
+      border: 1px solid rgba(200,169,110,.25);
+      color: var(--gold);
+    }
+    .badge-year {
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .badge-oa {
+      background: rgba(60,180,100,.08);
+      border: 1px solid rgba(60,180,100,.2);
+      color: #6ecf8e;
+    }
+
+    .paper-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .paper-title em { font-style: italic; color: var(--gold); }
+
+    .paper-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 2rem;
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .paper-meta-item { display: flex; align-items: center; gap: .4rem; }
+    .paper-meta-item strong { color: var(--text); font-weight: 400; }
+
+    /* action buttons */
+    .paper-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .75rem 1.6rem;
+      border-radius: 99px;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      transition: all .22s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0c0c0b;
+      border: none;
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--gold-dim); color: var(--gold); transform: translateY(-1px); }
+
+    /* content body */
+    .paper-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2.5rem 6rem;
+    }
+
+    .content-section { margin-bottom: 3rem; }
+    .content-label {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: .9rem;
+    }
+    .abstract-text {
+      font-family: var(--ff-serif);
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.85;
+    }
+
+    /* keywords */
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .kw {
+      font-size: .75rem;
+      letter-spacing: .06em;
+      padding: .3rem .85rem;
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      color: var(--muted);
+      background: var(--bg-card);
+      transition: border-color .2s, color .2s;
+    }
+    .kw:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* citation box */
+    .citation-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      position: relative;
+    }
+    .citation-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-dim), transparent);
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .citation-formats {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .cite-tab {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem .85rem;
+      border-radius: 99px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: all .18s;
+      background: none;
+      font-family: var(--ff-sans);
+    }
+    .cite-tab.active { border-color: var(--gold-dim); color: var(--gold); background: rgba(200,169,110,.06); }
+    .citation-text {
+      font-family: 'Courier New', monospace;
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .copy-btn {
+      margin-top: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .75rem;
+      letter-spacing: .08em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: .35rem .9rem;
+      border-radius: 99px;
+      cursor: pointer;
+      background: none;
+      font-family: var(--ff-sans);
+      transition: all .2s;
+    }
+    .copy-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* related */
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      transition: border-color .2s, transform .2s;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .related-card:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+    .related-year { font-size: .68rem; letter-spacing: .1em; color: var(--gold-dim); }
+    .related-title {
+      font-family: var(--ff-serif);
+      font-size: 1rem;
+      color: var(--accent);
+      line-height: 1.3;
+    }
+    .related-venue { font-size: .78rem; color: var(--muted); }
+
+    /* divider */
+    .divider { width: 40px; height: 1px; background: var(--gold-dim); margin: .8rem 0 1.5rem; }
+
+    footer {
+      padding: 1.5rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    /* mobile */
+    @media (max-width: 700px) {
+      .paper-hero { padding: 7rem 1.5rem 3rem; }
+      .paper-body { padding: 0 1.5rem 4rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: .4rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── PAPER HERO ────────────────────────────────────────────── -->
+<header class="paper-hero">
+
+  <div class="paper-type-row">
+    <span class="badge badge-type">Conference Paper</span>
+    <span class="badge badge-year">2022</span>
+    <span class="badge badge-oa">● Open Access</span>
+  </div>
+
+  <h1 class="paper-title">
+    The Bias of <em>Artificial Intelligence</em><br>within the Justice Field
+  </h1>
+
+  <div class="paper-meta">
+    <div class="paper-meta-item">
+      <strong>Author</strong>
+      Ludovico Papalia
+    </div>
+    <div class="paper-meta-item">
+      <strong>Published</strong>
+      28 November 2022
+    </div>
+    <div class="paper-meta-item">
+      <strong>Venue</strong>
+      AIxHMI 2022 — CEUR-WS Vol. 3368
+    </div>
+    <div class="paper-meta-item">
+      <strong>Language</strong>
+      English
+    </div>
+  </div>
+
+  <div class="paper-actions">
+    <!-- Replace href with actual PDF URL -->
+    <a href="https://ceur-ws.org/Vol-3368/paper6.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l5 3 5-3M8 15V8M5 5l3-3 3 3M8 2v6"/></svg>
+      Download PDF
+    </a>
+    <a href="https://ceur-ws.org/Vol-3368/" class="btn btn-secondary" target="_blank" rel="noopener">
+      View on CEUR-WS ↗
+    </a>
+    <a href="#cite" class="btn btn-secondary">
+      Cite this paper
+    </a>
+  </div>
+
+</header>
+
+<!-- ─── PAPER BODY ────────────────────────────────────────────── -->
+<main class="paper-body">
+
+  <!-- Abstract -->
+  <div class="content-section">
+    <div class="content-label">Abstract</div>
+    <div class="divider"></div>
+    <p class="abstract-text">
+      Algorithmic systems are increasingly deployed in judicial and law enforcement contexts — from recidivism prediction to facial recognition in police investigations. This paper analyses how bias originates in machine learning models used within the justice system, tracing its sources to training data, feature selection, and model design choices. It examines the legal and ethical consequences of biased AI under EU and international frameworks, arguing that current regulatory approaches, including the EU AI Act, remain structurally insufficient to address the feedback loops that entrench historical discrimination. The paper proposes a set of transparency and auditability requirements that could be operationalised within existing legal instruments.
+    </p>
+  </div>
+
+  <!-- Keywords -->
+  <div class="content-section">
+    <div class="content-label">Keywords</div>
+    <div class="divider"></div>
+    <div class="keyword-list">
+      <span class="kw">Artificial Intelligence</span>
+      <span class="kw">Algorithmic Bias</span>
+      <span class="kw">Justice System</span>
+      <span class="kw">Criminal Justice</span>
+      <span class="kw">Legal Informatics</span>
+      <span class="kw">EU AI Act</span>
+      <span class="kw">Fairness</span>
+      <span class="kw">Transparency</span>
+      <span class="kw">Recidivism Prediction</span>
+    </div>
+  </div>
+
+  <!-- Citation -->
+  <div class="content-section" id="cite">
+    <div class="content-label">Cite this paper</div>
+    <div class="divider"></div>
+    <div class="citation-box">
+      <div class="citation-formats">
+        <button class="cite-tab active" onclick="switchCite(this,'apa')">APA</button>
+        <button class="cite-tab" onclick="switchCite(this,'bibtex')">BibTeX</button>
+        <button class="cite-tab" onclick="switchCite(this,'mla')">MLA</button>
+      </div>
+
+      <div id="cite-apa" class="citation-text">Papalia, L. (2022). The bias of artificial intelligence within the justice field. In <em>Proceedings of AIxHMI 2022: Artificial Intelligence for Human Machine Interaction</em>. CEUR Workshop Proceedings, Vol. 3368. https://ceur-ws.org/Vol-3368/</div>
+
+      <div id="cite-bibtex" class="citation-text" style="display:none">@inproceedings{papalia2022bias,
+  title     = {The Bias of Artificial Intelligence within the Justice Field},
+  author    = {Papalia, Ludovico},
+  booktitle = {Proceedings of AIxHMI 2022: Artificial Intelligence
+               for Human Machine Interaction},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {3368},
+  year      = {2022},
+  url       = {https://ceur-ws.org/Vol-3368/}
+}</div>
+
+      <div id="cite-mla" class="citation-text" style="display:none">Papalia, Ludovico. "The Bias of Artificial Intelligence within the Justice Field." <em>AIxHMI 2022: Artificial Intelligence for Human Machine Interaction</em>, CEUR Workshop Proceedings, vol. 3368, 2022, https://ceur-ws.org/Vol-3368/.</div>
+
+      <button class="copy-btn" onclick="copyCitation()">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="5" width="9" height="9" rx="2"/><path d="M3 11H2a1 1 0 01-1-1V2a1 1 0 011-1h8a1 1 0 011 1v1"/></svg>
+        <span id="copy-label">Copy citation</span>
+      </button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>© 2025 Ludovico Papalia</span>
+  <span>PhD Candidate · University of Bologna</span>
+</footer>
+
+<script>
+  // ─── Citation tab switcher ───────────────────────────────────
+  function switchCite(btn, id) {
+    document.querySelectorAll('.cite-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    ['apa','bibtex','mla'].forEach(k => {
+      document.getElementById('cite-' + k).style.display = k === id ? 'block' : 'none';
+    });
+  }
+
+  // ─── Copy citation to clipboard ─────────────────────────────
+  function copyCitation() {
+    const active = document.querySelector('.cite-tab.active').getAttribute('onclick').match(/'(\w+)'/)[1];
+    const text = document.getElementById('cite-' + active).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const lbl = document.getElementById('copy-label');
+      lbl.textContent = 'Copied!';
+      setTimeout(() => lbl.textContent = 'Copy citation', 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
