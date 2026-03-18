@@ -11,12 +11,14 @@ Disallow: /papers/paper-template.html
 Disallow: /art-divulgativi/divulgativo-template.html
 Disallow: /UNUSED-papers-index.html
 Disallow: /old_content
+Disallow: /tutte-interviste-nuove.txt
 
 # ── GOOGLE ────────────────────────────────────────────────────
 User-agent: Googlebot
 Disallow: /papers/paper-template.html
 Disallow: /art-divulgativi/divulgativo-template.html
 Disallow: /UNUSED-papers-index.html
+Disallow: /tutte-interviste-nuove.txt
 
 User-agent: Googlebot-Image
 Disallow:
