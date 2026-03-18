@@ -180,7 +180,7 @@ var LP_SCHEMA = {
         }
       ],
       "knowsAbout": [
-        "Blockchain", "Distributed Ledger Technology", "IOTA Tangle",
+        "Blockchain", "Distributed Ledger Technology", "Distributed Technology",
         "Legislative Simplification", "Legal Informatics", "Smart Contracts",
         "Akoma Ntoso", "Digital Government", "Parliamentary Informatics",
         "Privacy Law", "GDPR", "Online Hate Speech", "Artificial Intelligence in Law",
