@@ -84,3 +84,4 @@ Disallow:
 
 # ── SITEMAP ───────────────────────────────────────────────────
 Sitemap: https://www.ludovicopapalia.com/sitemap.xml
+Sitemap: https://www.ludovicopapalia.com/sitemap-news.xml
