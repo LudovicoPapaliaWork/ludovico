@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap-news.xml — ludovicopapalia.com
+  ──────────────────────────────────────
+  Google News sitemap (namespace news:).
+  Contiene tutti gli articoli divulgativi in italiano.
+
+  Riferimento: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
+  Aggiorna questo file (o rigenera con generate_sitemap.py) ogni volta che
+  pubblichi un nuovo articolo.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-lavoro-trasformazione.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-15T00:00:00+01:00</news:publication_date>
+      <news:title>L'AI non ruba lavoro, lo trasforma: una storia vecchia</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-15T00:00:00+01:00</news:publication_date>
+      <news:title>Quanto inquina l'AI? Non tutti i modelli sono uguali</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2025-11-17T00:00:00+01:00</news:publication_date>
+      <news:title>Browser AI agentici: cosa possono fare (e cosa possono fare di male)</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/spid-siti-adulti-privacy.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2025-11-17T00:00:00+01:00</news:publication_date>
+      <news:title>SPID per i siti adulti: la privacy è davvero protetta?</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2023-04-01T00:00:00+02:00</news:publication_date>
+      <news:title>SIAE contro Meta: chi ha perso davvero?</news:title>
+    </news:news>
+  </url>
+
+</urlset>
