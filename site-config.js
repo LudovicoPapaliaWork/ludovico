@@ -114,12 +114,22 @@ var LP_NAV_LINKS = {
     { label: 'Contact',      href: '/index.html#contact' },
   ],
 
-  /* Nav italiana — usata sulle pagine /articoli */
+  /* Nav italiana — usata sulle pagine /art-divulgativi */
   'it': [
-    { label: 'Home',      href: '/' },
-    { label: 'Divulgazione',  href: '/divulgativi-index.html' },
-    { label: 'Ricerca',   href: '/index.html#research' },
-    { label: 'Contatti',  href: '/index.html#contact' },
+    { label: 'Home',         href: '/index-it.html' },
+    { label: 'Divulgazione', href: '/divulgativi-index.html' },
+    { label: 'Ricerca',      href: '/index-it.html#research' },
+    { label: 'Contatti',     href: '/index-it.html#contact' },
+  ],
+
+  /* Nav italiana per la homepage index-it.html — link interni hash */
+  'it-home': [
+    { label: 'Ricerca',          href: '#research' },
+    { label: 'Chi sono',         href: '#about' },
+    { label: 'Percorso',         href: '#education' },
+    { label: 'Pubblicazioni',    href: '#publications' },
+    { label: 'Divulgazione 🇮🇹', href: '/divulgativi-index.html' },
+    { label: 'Contatti',         href: '#contact' },
   ],
 
 };
