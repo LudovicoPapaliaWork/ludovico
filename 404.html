@@ -3,224 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pagina non trovata — Ludovico Papalia">
   <meta name="robots" content="noindex, nofollow">
+  <!-- Redirect istantaneo anche qui come fallback per URL non previsti -->
+  <meta http-equiv="refresh" content="0;url=https://www.ludovicopapalia.com/">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/">
   <title>404 — Ludovico Papalia</title>
 
-  <!-- ► REDIRECT AUTOMATICO verso la homepage dopo 3 secondi (fallback meta) -->
-  <meta http-equiv="refresh" content="3;url=https://www.ludovicopapalia.com/">
-
-  <!-- ► MASTER SITE CONFIG — colori, font, nav, schema.org e tracking -->
   <script src="/site-config.js"></script>
 
-  <!-- ► REDIRECT IMMEDIATO via JS (più veloce del meta refresh) -->
   <script>
-    // Se arrivi su questa pagina da un vecchio link (es. /curriculum, /chi-sono, ecc.)
-    // vieni rispedito alla homepage senza passare per il 404.
-    // Salviamo l'URL di provenienza in sessionStorage così la homepage
-    // può eventualmente mostrare un banner informativo in futuro.
-    try {
-      sessionStorage.setItem('lp_404_from', window.location.pathname);
-    } catch(e) {}
-
-    // Redirect immediato — cambia window.location invece di replace()
-    // così il backbutton del browser funziona correttamente.
-    setTimeout(function() {
-      window.location.replace('https://www.ludovicopapalia.com/');
-    }, 2800); // leggermente prima del meta refresh come safety net
+    // Salva il path per eventuale debug futuro
+    try { sessionStorage.setItem('lp_404_from', window.location.pathname); } catch(e) {}
+    // Redirect immediato
+    window.location.replace('https://www.ludovicopapalia.com/');
   </script>
 
   <style>
-    /* ─── RESET ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
       color: var(--text);
       font-family: var(--ff-sans);
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      /* centra verticalmente il contenuto */
       min-height: 100svh;
       display: flex;
-      flex-direction: column;
-    }
-    a { color: inherit; text-decoration: none; }
-
-    /* ─── GRAIN OVERLAY (uguale a index.html) ─────────── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: .025;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 200px;
-    }
-
-    /* ─── MAIN CONTENT ───────────────────────────────── */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 6rem 2rem 4rem;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
     }
-
-    .error-code {
-      font-family: var(--ff-serif);
-      font-size: clamp(5rem, 18vw, 12rem);
-      font-weight: 300;
-      line-height: 1;
+    a {
       color: var(--gold);
-      opacity: .18;
-      letter-spacing: -.04em;
-      user-select: none;
-      margin-bottom: -1rem; /* sovrapposto al titolo per effetto grafico */
-      position: relative;
-      z-index: 0;
+      font-size: .9rem;
+      letter-spacing: .06em;
     }
-
-    .error-title {
-      font-family: var(--ff-serif);
-      font-size: clamp(1.6rem, 4vw, 2.8rem);
-      font-weight: 300;
-      color: var(--accent);
-      position: relative;
-      z-index: 1;
-      margin-bottom: 1.2rem;
-    }
-    .error-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .error-msg {
-      font-size: .92rem;
-      color: var(--muted);
-      max-width: 44ch;
-      margin: 0 auto 2.5rem;
-      line-height: 1.8;
-    }
-
-    /* ─── COUNTDOWN PILL ────────────────────────────── */
-    .redirect-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      font-size: .78rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      padding: .45rem 1.1rem;
-      border-radius: 99px;
-      margin-bottom: 2.5rem;
-    }
-    .redirect-pill .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      animation: pulse 1s ease infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: .3; }
-    }
-
-    /* ─── CTA BUTTON ───────────────────────────────── */
-    .home-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .75rem 2rem;
-      border: 1px solid var(--gold-dim);
-      border-radius: 99px;
-      font-size: .85rem;
-      letter-spacing: .08em;
-      color: var(--text);
-      transition: border-color .2s, color .2s;
-      cursor: pointer;
-    }
-    .home-btn:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    /* ─── FOOTER ──────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: .72rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      letter-spacing: .08em;
-    }
-
-    /* ─── FADE-IN ────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .error-code, .error-title, .error-msg, .redirect-pill, .home-btn {
-      animation: fadeUp .7s ease both;
-    }
-    .error-title   { animation-delay: .05s; }
-    .error-msg     { animation-delay: .1s; }
-    .redirect-pill { animation-delay: .15s; }
-    .home-btn      { animation-delay: .2s; }
   </style>
 </head>
 <body>
-
-  <!-- ► NAV — iniettata da site-config.js -->
-
-  <main>
-    <div class="error-code" aria-hidden="true">404</div>
-
-    <h1 class="error-title">
-      Pagina <em>non trovata</em>
-    </h1>
-
-    <p class="error-msg">
-      La pagina che cerchi non esiste o è stata spostata.<br>
-      Stai per essere reindirizzato alla homepage.
-    </p>
-
-    <div class="redirect-pill">
-      <span class="dot"></span>
-      Reindirizzamento in corso&hellip; (<span id="countdown">3</span>s)
-    </div>
-
-    <a href="https://www.ludovicopapalia.com/" class="home-btn">
-      ← Torna alla homepage
-    </a>
-  </main>
-
-  <footer>
-    <span>© Ludovico Papalia</span>
-  </footer>
-
-  <!-- ─── COUNTDOWN JS ──────────────────────────────────────────── -->
-  <script>
-    (function() {
-      var el = document.getElementById('countdown');
-      var count = 3;
-      var interval = setInterval(function() {
-        count--;
-        if (el) el.textContent = count;
-        if (count <= 0) {
-          clearInterval(interval);
-          window.location.replace('https://www.ludovicopapalia.com/');
-        }
-      }, 1000);
-    })();
-  </script>
-
+  <!-- Mostrato solo se JS è disabilitato o lentissimo -->
+  <p>Reindirizzamento in corso… <a href="https://www.ludovicopapalia.com/">Clicca qui</a> se non vieni reindirizzato.</p>
 </body>
 </html>
