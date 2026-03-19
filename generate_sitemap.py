@@ -46,6 +46,9 @@ EXCLUDE_FILES = {
     "sitemap-news.xml",
     "robots.txt",
     "llms.txt",
+    "divulgativo-template.html",    # template, non contenuto reale
+    "paper-template.html",          # template, non contenuto reale
+    "UNUSED-papers-index.html",     # pagina non in uso
 }
 
 # Cartelle da escludere (nomi, non path completi)
@@ -66,16 +69,20 @@ OUTPUT_SITEMAP_NEWS = os.path.join(SITE_ROOT, "sitemap-news.xml")
 
 # Priorità per percorso (default 0.5 se non specificato)
 PRIORITY_MAP = {
-    "/index.html": "1.0",
-    "/":           "1.0",
-    "/articoli/index.html": "0.8",
-    "/articoli/":           "0.8",
+    "/index.html":              "1.0",
+    "/":                        "1.0",
+    "/index-it.html":           "0.9",
+    "/divulgativi-index.html":  "0.8",
+    "/articoli/index.html":     "0.8",
+    "/articoli/":               "0.8",
 }
 
 # Frequenza di cambiamento di default
 CHANGEFREQ_MAP = {
-    "/index.html": "monthly",
-    "/":           "monthly",
+    "/index.html":             "monthly",
+    "/":                       "monthly",
+    "/index-it.html":          "monthly",
+    "/divulgativi-index.html": "monthly",
 }
 DEFAULT_CHANGEFREQ = "yearly"
 
@@ -89,6 +96,26 @@ DEFAULT_CHANGEFREQ = "yearly"
 #   inverno (CET+1): "YYYY-MM-DDT00:00:00+01:00"
 
 NEWS_ARTICLES = [
+    {
+        "path":  "art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html",
+        "title": "OpenClaw: quando l'AI agisce per te, ma il diritto non sa ancora chi risponde",
+        "date":  "2026-03-19T00:00:00+01:00",
+    },
+    {
+        "path":  "art-divulgativi/autenticazione-due-fattori-punto-debole.html",
+        "title": "Doppia autenticazione: non tutti i sistemi sono uguali — e spesso sei tu il problema",
+        "date":  "2025-05-09T00:00:00+02:00",
+    },
+    {
+        "path":  "art-divulgativi/sim-swap-il-numero-non-e-identita.html",
+        "title": "SIM Swap: il tuo numero di telefono non è una prova d'identità",
+        "date":  "2025-05-09T00:00:00+02:00",
+    },
+    {
+        "path":  "art-divulgativi/signalgate-federal-records-act.html",
+        "title": "Signalgate: Signal funzionava. La legge no.",
+        "date":  "2025-04-04T00:00:00+02:00",
+    },
     {
         "path":  "art-divulgativi/ai-lavoro-trasformazione.html",
         "title": "L'AI non ruba lavoro, lo trasforma: una storia vecchia",
@@ -108,6 +135,31 @@ NEWS_ARTICLES = [
         "path":  "art-divulgativi/spid-siti-adulti-privacy.html",
         "title": "SPID per i siti adulti: la privacy è davvero protetta?",
         "date":  "2025-11-17T00:00:00+01:00",
+    },
+    {
+        "path":  "art-divulgativi/cellulare-scuola-divieto-applicabile.html",
+        "title": "Vietare il cellulare a scuola: la norma c'è, ma è applicabile?",
+        "date":  "2024-11-05T00:00:00+01:00",
+    },
+    {
+        "path":  "art-divulgativi/chat-genitori-scuola-dati-sensibili-privacy.html",
+        "title": "La chat dei genitori viola la privacy dei tuoi figli",
+        "date":  "2024-11-05T00:00:00+01:00",
+    },
+    {
+        "path":  "art-divulgativi/instagram-teen-account-profilo-privato-minori.html",
+        "title": "Instagram Teen Account: il profilo privato obbligatorio per i minori",
+        "date":  "2024-11-05T00:00:00+01:00",
+    },
+    {
+        "path":  "art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html",
+        "title": "Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche",
+        "date":  "2024-11-05T00:00:00+01:00",
+    },
+    {
+        "path":  "art-divulgativi/social-dipendenza-minori-class-action.html",
+        "title": "I social creano dipendenza come le sigarette? Arriva la causa legale",
+        "date":  "2024-11-05T00:00:00+01:00",
     },
     {
         "path":  "art-divulgativi/siae-contro-meta.html",
