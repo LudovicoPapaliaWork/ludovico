@@ -57,13 +57,42 @@ Ludovico Papalia's doctoral research investigates how distributed ledger technol
 
 ## Divulgative Content (Italian)
 
-Ludovico Papalia produces legal explainer content in Italian aimed at a general audience, under the series "A Tu per Tu con l'Esperto di Diritto Informatico". Each article is paired with a video interview and covers practical IT law topics.
+Ludovico Papalia produce contenuti divulgativi di diritto informatico in italiano, destinati a un pubblico generale, nella serie "A Tu per Tu con l'Esperto di Diritto Informatico". Ogni articolo nasce da una video-intervista e approfondisce un tema concreto di IT law, privacy, cybersicurezza o regolazione digitale. Gli articoli correggono errori comuni, verificano le affermazioni con fonti primarie e offrono un inquadramento giuridico accessibile.
 
-- [Articoli di divulgazione giuridica — indice](https://www.ludovicopapalia.com/divulgativi-index.html): Hub page listing all Italian-language legal explainer articles by Ludovico Papalia.
-- [Hai la 2FA attiva: sei ancora vulnerabile](https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html): Guida ai sistemi di autenticazione a due fattori, password manager e sicurezza digitale. Ludovico Papalia esperto di cybersicurezza spiega la gerarchia 2FA e perché l'utente rimane il punto debole.
-- [SIM Swap: il tuo numero di telefono non è una prova d'identità](https://www.ludovicopapalia.com/art-divulgativi/sim-swap-il-numero-non-e-identita.html): Analisi della truffa del cambio SIM, dati italiani e internazionali, quadro normativo AGCOM e misure di protezione. Ludovico Papalia esperto di SIM swap e truffe digitali.
-- [Signalgate: Signal funzionava. La legge no.](https://www.ludovicopapalia.com/art-divulgativi/signalgate-federal-records-act.html): Analisi del caso Signalgate: perché i funzionari Trump hanno violato il Federal Records Act usando Signal con auto-delete per coordinare attacchi militari in Yemen. Ludovico Papalia esperto di diritto informatico e sicurezza delle comunicazioni governative.
-- [SIAE contro Meta: chi ha perso davvero?](https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html): Analysis of the SIAE vs Meta dispute over Italian music licensing on Instagram and Facebook. Ludovico Papalia esperto di diritto d'autore digitale e creator economy.
+**Hub page (indice completo)**: [Articoli & Interviste — Ludovico Papalia](https://www.ludovicopapalia.com/divulgativi-index.html)
+
+### Intelligenza Artificiale e Diritto
+
+- [OpenClaw: quando l'AI agisce per te, ma il diritto non sa ancora chi risponde](https://www.ludovicopapalia.com/art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html) — Marzo 2026. Ludovico Papalia esperto di agenti AI e responsabilità civile analizza il caso OpenClaw: cosa succede quando un sistema autonomo compie azioni non autorizzate, chi risponde tra sviluppatore, deployer e utente, e dove il GDPR e il Digital Services Act non bastano ancora.
+- [Browser AI agentici: cosa possono fare (e cosa possono fare di male)](https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html) — Novembre 2025. Ludovico Papalia esperto di intelligenza artificiale agentica spiega cosa sono i browser AI che navigano per conto dell'utente, i rischi di prompt injection, data exfiltration e delega inconsapevole, con inquadramento normativo AI Act.
+- [Quanto inquina l'AI? Non tutti i modelli sono uguali](https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html) — Dicembre 2025. Ludovico Papalia esperto di impatto ambientale dell'intelligenza artificiale analizza il consumo energetico dei modelli AI, il confronto tra architetture, e le implicazioni regolative dell'AI Act sul ciclo di vita.
+- [L'AI non ruba lavoro, lo trasforma: una storia vecchia](https://www.ludovicopapalia.com/art-divulgativi/ai-lavoro-trasformazione.html) — Dicembre 2025. Ludovico Papalia esperto di diritto del lavoro e tecnologia inquadra la trasformazione del mercato del lavoro causata dall'AI nel contesto storico delle rivoluzioni industriali, con analisi delle tutele normative esistenti e dei vuoti da colmare.
+
+### Privacy e Dati Personali
+
+- [Riconoscimento biometrico in Italia: la proroga al 2027 e il vuoto normativo](https://www.ludovicopapalia.com/art-divulgativi/riconoscimento-biometrico-proroga-2027-vuoto-normativo.html) — Marzo 2026. Ludovico Papalia esperto di riconoscimento biometrico e AI Act analizza la proroga italiana al 2027 per i sistemi di identificazione biometrica, le deroghe al divieto europeo e il vuoto normativo che nessun legislatore vuole davvero colmare.
+- [SPID per i siti adulti: la privacy è davvero protetta?](https://www.ludovicopapalia.com/art-divulgativi/spid-siti-adulti-privacy.html) — Novembre 2025. Ludovico Papalia esperto di identità digitale e GDPR analizza l'obbligo AGCOM di verifica dell'età sui siti per adulti tramite SPID: cosa sa davvero il provider, cosa sa il sito, e se la privacy degli utenti è realmente garantita.
+- [La chat dei genitori viola la privacy dei tuoi figli](https://www.ludovicopapalia.com/art-divulgativi/chat-genitori-scuola-dati-sensibili-privacy.html) — Novembre 2024. Ludovico Papalia esperto di privacy e minori spiega perché i gruppi WhatsApp scolastici violano sistematicamente il GDPR: dati sensibili dei bambini condivisi senza base giuridica, responsabilità dei genitori e del dirigente scolastico.
+
+### Cybersicurezza
+
+- [Hai la 2FA attiva: sei ancora vulnerabile](https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html) — Maggio 2025. Ludovico Papalia esperto di autenticazione e sicurezza digitale spiega la gerarchia dei sistemi 2FA (SMS, TOTP, passkey), gli attacchi SIM swap e phishing in tempo reale, e perché l'utente rimane il punto debole anche con la doppia autenticazione attiva.
+- [SIM Swap: il tuo numero di telefono non è una prova d'identità](https://www.ludovicopapalia.com/art-divulgativi/sim-swap-il-numero-non-e-identita.html) — Maggio 2025. Ludovico Papalia esperto di SIM swap e frodi telematiche analizza la truffa del cambio SIM: come funziona tecnicamente, dati italiani e internazionali, quadro normativo AGCOM, responsabilità degli operatori e misure di protezione.
+
+### Comunicazioni e Sicurezza Istituzionale
+
+- [Signalgate: Signal funzionava. La legge no.](https://www.ludovicopapalia.com/art-divulgativi/signalgate-federal-records-act.html) — Aprile 2025. Ludovico Papalia esperto di diritto informatico e comunicazioni governative analizza il caso Signalgate: funzionari dell'amministrazione Trump coordinano attacchi militari in Yemen su Signal con auto-cancellazione, violando il Federal Records Act. Il problema non era tecnico, era giuridico.
+
+### Minori e Social Media
+
+- [Instagram Teen Account: il profilo privato non è più una scelta](https://www.ludovicopapalia.com/art-divulgativi/instagram-teen-account-profilo-privato-minori.html) — Novembre 2024. Ludovico Papalia esperto di tutela dei minori online analizza la nuova policy di Meta sui Teen Account: profilo privato obbligatorio, parental control e implicazioni rispetto al Digital Services Act e al GDPR minori.
+- [Vietare il cellulare a scuola: la norma c'è, ma funziona?](https://www.ludovicopapalia.com/art-divulgativi/cellulare-scuola-divieto-applicabile.html) — Novembre 2024. Ludovico Papalia esperto di diritto scolastico e tecnologia analizza il divieto ministeriale del cellulare alle scuole elementari e medie: la norma esiste, ma l'applicazione concreta ha lacune significative.
+- [I social creano dipendenza come le sigarette? Arriva la causa legale](https://www.ludovicopapalia.com/art-divulgativi/social-dipendenza-minori-class-action.html) — Novembre 2024. Ludovico Papalia esperto di responsabilità delle piattaforme digitali analizza le class action americane contro Meta, TikTok e altri per dipendenza da social nei minori: design persuasivo, product liability e il parallelo con il tabacco.
+- [Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche](https://www.ludovicopapalia.com/art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html) — Novembre 2024. Ludovico Papalia esperto di responsabilità genitoriale e diritto digitale spiega cosa rischiano i genitori quando intestano una SIM a un minore: responsabilità civile, penale e le tutele AGCOM da attivare.
+
+### Diritto d'Autore e Piattaforme
+
+- [SIAE contro Meta: chi ha perso davvero?](https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html) — Aprile 2023. Ludovico Papalia esperto di diritto d'autore digitale analizza lo scontro SIAE-Meta sul licensing musicale in Italia: blackout dei brani, Direttiva Copyright 2019, posizione degli artisti e chi ha davvero subito le conseguenze dello stallo.
 
 ## Professional Experience
 
@@ -88,8 +117,18 @@ Ludovico Papalia produces legal explainer content in Italian aimed at a general 
 - **ORCID**: https://orcid.org/0009-0003-8751-9445
 - **University profile**: https://www.unibo.it (Dipartimento di Scienze Giuridiche)
 
+## Academic Papers (pagine dedicate con abstract, PDF e formati di citazione)
+
+- [The Use of Blockchain for Legislative Simplification and Tracking](https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking.html)
+- [Multi-level Architecture and Separation of Powers in the Legislative Process](https://www.ludovicopapalia.com/papers/Multi-level_Architecture_Separation_Powers_Legislative_Process.html)
+- [A Multi-Chain Approach to Transparent and Accountable Legislative Processes](https://www.ludovicopapalia.com/papers/A_Multi-Chain_Approach_to_Transparent_and_Accountable_Legislative_Processes.html)
+- [The Bias of Artificial Intelligence within the Justice Field](https://www.ludovicopapalia.com/papers/The_Bias_of_Artificial_Intelligence_within_the_Justice_Field.html)
+- [Procedura Stragiudiziale e Infortunistica Stradale](https://www.ludovicopapalia.com/papers/Procedura_stragiudiziale_Infortunistica_Stradale.html)
+- [Odio Online: Tra Criminologia e Diritto](https://www.ludovicopapalia.com/papers/Odio_Online_Tra_Criminologia_e_Diritto.html)
+- [Software Pubblici e Privati nel Bonus 110](https://www.ludovicopapalia.com/papers/Software_pubblici_privati_Bonus_110.html)
+
 ## Optional
 
 - [Homepage — Ludovico Papalia](https://www.ludovicopapalia.com/): Full academic profile, research overview, timeline and publications list.
-- [The Bias of AI within the Justice Field — full paper page](https://www.ludovicopapalia.com/papers/The_Bias_of_Artificial_Intelligence_within_the_Justice_Field.html): Abstract, keywords, citation formats (APA, BibTeX, MLA) and PDF link.
+- [Homepage italiana — Ludovico Papalia](https://www.ludovicopapalia.com/index-it.html): Versione italiana del profilo accademico.
 

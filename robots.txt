@@ -41,7 +41,17 @@ User-agent: OAI-SearchBot
 Disallow:
 
 # ── AI — ANTHROPIC ────────────────────────────────────────────
+# ClaudeBot      : crawl per training e knowledge base
+# Claude-SearchBot: indicizzazione per i risultati di ricerca di Claude
+# Claude-User    : fetch pagine quando un utente fa una domanda in tempo reale
+# Claude-Web     : user agent precedente, deprecato ma incluso per retrocompatibilità
 User-agent: ClaudeBot
+Disallow:
+
+User-agent: Claude-SearchBot
+Disallow:
+
+User-agent: Claude-User
 Disallow:
 
 User-agent: Claude-Web
