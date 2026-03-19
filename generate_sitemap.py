@@ -15,16 +15,24 @@ Uso:
 Configura le variabili nella sezione CONFIG prima di eseguire.
 
 ──────────────────────────────────────────────────────────────────────
-COME AGGIUNGERE UN NUOVO ARTICOLO ALLA NEWS SITEMAP
+NEWS SITEMAP — fonte automatica
 ──────────────────────────────────────────────────────────────────────
-Aggiungi un dizionario alla lista NEWS_ARTICLES in basso con i campi:
-  - path:  percorso relativo al file HTML (es. "art-divulgativi/mio-articolo.html")
-  - title: titolo dell'articolo (stringa)
-  - date:  data ISO 8601 con timezone (es. "2025-12-20T00:00:00+01:00")
+Gli articoli per sitemap-news.xml vengono estratti automaticamente da
+divulgativi-index.html, leggendo l'array JS  var ARTICLES = [...].
+
+Per aggiungere un articolo alla news sitemap è sufficiente aggiungerlo
+a ARTICLES in divulgativi-index.html come al solito: nessun altro
+intervento è necessario su questo script.
+
+La data viene convertita da formato italiano (es. "Marzo 2026") a ISO 8601.
+Poiché nell'indice il giorno esatto non è memorizzato, viene usato il
+giorno 1 del mese. Il timezone segue la regola CET/CEST italiana:
+mesi aprile-ottobre → +02:00, mesi novembre-marzo → +01:00.
 ──────────────────────────────────────────────────────────────────────
 """
 
 import os
+import re
 import datetime
 import json
 import urllib.request
@@ -45,6 +53,9 @@ BASE_URL = "https://www.ludovicopapalia.com"
 NEWS_PUBLICATION_NAME = "Ludovico Papalia — Diritto Informatico"
 NEWS_LANGUAGE = "it"
 
+# Path del file indice degli articoli divulgativi, relativo a SITE_ROOT
+DIVULGATIVI_INDEX = "divulgativi-index.html"
+
 # ─────────────────────────────────────────────────────────────────────────────
 # INDEXNOW CONFIG
 # ─────────────────────────────────────────────────────────────────────────────
@@ -57,7 +68,7 @@ NEWS_LANGUAGE = "it"
 # Google NON supporta IndexNow — per Google continuano a valere sitemap + Search Console.
 # Inviando a api.indexnow.org il ping viene automaticamente redistribuito
 # a tutti i motori partecipanti.
-INDEXNOW_KEY = "acaa81d24b20e17ebf85f615e130e6f4"
+INDEXNOW_KEY      = "acaa81d24b20e17ebf85f615e130e6f4"
 INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
 INDEXNOW_KEY_LOCATION = f"{BASE_URL}/{INDEXNOW_KEY}.txt"
 
@@ -113,107 +124,181 @@ CHANGEFREQ_MAP = {
 DEFAULT_CHANGEFREQ = "yearly"
 
 # ─────────────────────────────────────────────────────────────────────────────
-# NEWS ARTICLES — aggiorna questa lista ogni volta che pubblichi un articolo
+# MAPPA MESI ITALIANI → numero mese
 # ─────────────────────────────────────────────────────────────────────────────
-# Ordine: dal più recente al più vecchio.
-# "path" deve corrispondere esattamente al file HTML nella root del sito.
-# "date" usa il formato ISO 8601 con timezone:
-#   estate (CET+2): "YYYY-MM-DDT00:00:00+02:00"
-#   inverno (CET+1): "YYYY-MM-DDT00:00:00+01:00"
+MESI_IT = {
+    "gennaio":   1,  "febbraio":  2,  "marzo":    3,
+    "aprile":    4,  "maggio":    5,  "giugno":   6,
+    "luglio":    7,  "agosto":    8,  "settembre":9,
+    "ottobre":  10,  "novembre": 11,  "dicembre": 12,
+}
 
-NEWS_ARTICLES = [
-    {
-        "path":  "art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html",
-        "title": "OpenClaw: quando l'AI agisce per te, ma il diritto non sa ancora chi risponde",
-        "date":  "2026-03-19T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/autenticazione-due-fattori-punto-debole.html",
-        "title": "Doppia autenticazione: non tutti i sistemi sono uguali — e spesso sei tu il problema",
-        "date":  "2025-05-09T00:00:00+02:00",
-    },
-    {
-        "path":  "art-divulgativi/sim-swap-il-numero-non-e-identita.html",
-        "title": "SIM Swap: il tuo numero di telefono non è una prova d'identità",
-        "date":  "2025-05-09T00:00:00+02:00",
-    },
-    {
-        "path":  "art-divulgativi/signalgate-federal-records-act.html",
-        "title": "Signalgate: Signal funzionava. La legge no.",
-        "date":  "2025-04-04T00:00:00+02:00",
-    },
-    {
-        "path":  "art-divulgativi/ai-lavoro-trasformazione.html",
-        "title": "L'AI non ruba lavoro, lo trasforma: una storia vecchia",
-        "date":  "2025-12-15T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/ai-impatto-ambientale-consumo-energetico.html",
-        "title": "Quanto inquina l'AI? Non tutti i modelli sono uguali",
-        "date":  "2025-12-15T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/browser-ai-agentici.html",
-        "title": "Browser AI agentici: cosa possono fare (e cosa possono fare di male)",
-        "date":  "2025-11-17T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/spid-siti-adulti-privacy.html",
-        "title": "SPID per i siti adulti: la privacy è davvero protetta?",
-        "date":  "2025-11-17T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/cellulare-scuola-divieto-applicabile.html",
-        "title": "Vietare il cellulare a scuola: la norma c'è, ma è applicabile?",
-        "date":  "2024-11-05T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/chat-genitori-scuola-dati-sensibili-privacy.html",
-        "title": "La chat dei genitori viola la privacy dei tuoi figli",
-        "date":  "2024-11-05T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/instagram-teen-account-profilo-privato-minori.html",
-        "title": "Instagram Teen Account: il profilo privato obbligatorio per i minori",
-        "date":  "2024-11-05T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html",
-        "title": "Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche",
-        "date":  "2024-11-05T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/social-dipendenza-minori-class-action.html",
-        "title": "I social creano dipendenza come le sigarette? Arriva la causa legale",
-        "date":  "2024-11-05T00:00:00+01:00",
-    },
-    {
-        "path":  "art-divulgativi/siae-contro-meta.html",
-        "title": "SIAE contro Meta: chi ha perso davvero?",
-        "date":  "2023-04-01T00:00:00+02:00",
-    },
-]
+# Mesi in cui vige l'ora legale italiana (CEST = UTC+2)
+# Nota: la transizione è fine marzo/fine ottobre, ma per semplicità
+# usiamo aprile-ottobre come CEST e novembre-marzo come CET.
+MESI_CEST = {4, 5, 6, 7, 8, 9, 10}
+
+
+def italian_date_to_iso(date_str: str) -> str:
+    """
+    Converte una stringa di data italiana tipo "Marzo 2026" in formato ISO 8601
+    con timezone CET/CEST corretta.
+
+    Esempi:
+        "Marzo 2026"   → "2026-03-01T00:00:00+01:00"
+        "Aprile 2023"  → "2023-04-01T00:00:00+02:00"
+        "Novembre 2024"→ "2024-11-01T00:00:00+01:00"
+
+    Se il parsing fallisce, restituisce la data odierna come fallback,
+    stampando un avviso, così la sitemap non si blocca.
+    """
+    print(f"  [DATE] Parsing data: '{date_str}'")
+
+    # Normalizza: rimuovi spazi extra, porta tutto in minuscolo per il match
+    parts = date_str.strip().split()
+    if len(parts) == 2:
+        mese_str = parts[0].lower()
+        anno_str = parts[1]
+        mese_num = MESI_IT.get(mese_str)
+        if mese_num and anno_str.isdigit():
+            anno = int(anno_str)
+            tz   = "+02:00" if mese_num in MESI_CEST else "+01:00"
+            iso  = f"{anno:04d}-{mese_num:02d}-01T00:00:00{tz}"
+            print(f"  [DATE] → {iso}")
+            return iso
+
+    # Fallback: usa la data odierna con timezone CET
+    today = datetime.date.today()
+    fallback = f"{today.isoformat()}T00:00:00+01:00"
+    print(f"  [DATE] ATTENZIONE: parsing fallito per '{date_str}', uso data odierna: {fallback}")
+    return fallback
+
+
+def parse_articles_from_index() -> list[dict]:
+    """
+    Legge divulgativi-index.html ed estrae automaticamente gli articoli
+    dall'array JS  var ARTICLES = [...].
+
+    Restituisce una lista di dizionari con chiavi:
+        path   — percorso relativo al file HTML (es. "art-divulgativi/foo.html")
+        title  — titolo dell'articolo
+        date   — data ISO 8601 con timezone
+
+    La funzione usa regex per estrarre i campi dal codice JS, che non è
+    JSON valido (virgole finali, apostrofi nei valori, ecc.), quindi non
+    si può usare json.loads() direttamente.
+    """
+    index_path = os.path.join(SITE_ROOT, DIVULGATIVI_INDEX)
+    print(f"\n[NEWS] Lettura articoli da: {index_path}")
+
+    if not os.path.isfile(index_path):
+        print(f"[NEWS] ERRORE: file non trovato → {index_path}")
+        return []
+
+    with open(index_path, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    # Estrai il blocco dell'array ARTICLES dal JS inline.
+    # Il pattern cattura tutto tra "var ARTICLES = [" e il ";" che chiude
+    # l'array, attraverso multiple righe.
+    array_match = re.search(
+        r'var\s+ARTICLES\s*=\s*\[(.*?)\]\s*;',
+        html,
+        re.DOTALL
+    )
+    if not array_match:
+        print("[NEWS] ERRORE: array ARTICLES non trovato in divulgativi-index.html")
+        print("       Verifica che la sintassi  var ARTICLES = [...]  sia presente.")
+        return []
+
+    array_body = array_match.group(1)
+    print(f"[NEWS] Blocco ARTICLES trovato ({len(array_body)} caratteri).")
+
+    # Estrai i singoli oggetti { ... } dall'array.
+    # Usiamo una regex che cattura il contenuto tra { e } per ogni entry.
+    entries_raw = re.findall(r'\{([^}]+)\}', array_body, re.DOTALL)
+    print(f"[NEWS] Entry grezze trovate: {len(entries_raw)}")
+
+    articles = []
+    for i, entry_raw in enumerate(entries_raw):
+        print(f"\n[NEWS] Entry #{i+1}:")
+        print(f"  [RAW] {entry_raw.strip()[:120]}...")
+
+        # Estrai i singoli campi con regex flessibili che gestiscono
+        # sia apici singoli che doppi, e virgole finali.
+        # Campo "date" — es.  date:  "Marzo 2026",  oppure  date: 'Aprile 2023'
+        date_match = re.search(r'date\s*:\s*["\']([^"\']+)["\']', entry_raw)
+
+        # Campo "title"
+        title_match = re.search(r'title\s*:\s*["\']([^"\']+)["\']', entry_raw)
+
+        # Campo "href" — es.  href:  "/art-divulgativi/foo.html"
+        href_match  = re.search(r'href\s*:\s*["\']([^"\']+)["\']', entry_raw)
+
+        # Se manca uno dei campi obbligatori, salta l'entry con avviso
+        if not all([date_match, title_match, href_match]):
+            missing = []
+            if not date_match:  missing.append("date")
+            if not title_match: missing.append("title")
+            if not href_match:  missing.append("href")
+            print(f"  [SKIP] Campi mancanti: {missing} — entry ignorata.")
+            continue
+
+        date_raw = date_match.group(1).strip()
+        title    = title_match.group(1).strip()
+        href     = href_match.group(1).strip()
+
+        # Converti href ("/art-divulgativi/foo.html") in path relativo
+        # rimuovendo lo slash iniziale per coerenza con SITE_ROOT
+        path = href.lstrip("/")
+
+        # Converti la data italiana in ISO 8601
+        date_iso = italian_date_to_iso(date_raw)
+
+        # Verifica che il file HTML esista realmente su disco.
+        # Questo filtra automaticamente le entry segnaposto del template
+        # (es. href="/art-divulgativi/nome-articolo.html") senza richiedere
+        # nessuna gestione manuale.
+        abs_html = os.path.join(SITE_ROOT, path)
+        if not os.path.isfile(abs_html):
+            print(f"  [SKIP] File non trovato su disco → {path} (entry template o link errato)")
+            continue
+
+        articles.append({
+            "path":  path,
+            "title": title,
+            "date":  date_iso,
+        })
+        print(f"  [OK]  title={title[:60]!r}")
+        print(f"        path={path}")
+        print(f"        date={date_iso}")
+
+    print(f"\n[NEWS] Articoli estratti con successo: {len(articles)}")
+    return articles
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # SCRIPT — non modificare oltre questo punto
 # ─────────────────────────────────────────────────────────────────────────────
 
-def url_for_path(abs_path):
+def url_for_path(abs_path: str) -> str:
     """Converte un percorso assoluto in URL relativa alla root del sito."""
     rel = os.path.relpath(abs_path, SITE_ROOT)
+    # Normalizza separatori su Windows
     rel = rel.replace("\\", "/")
+    # Aggiungi slash iniziale
     if not rel.startswith("/"):
         rel = "/" + rel
     return rel
 
 
-def get_lastmod(abs_path):
+def get_lastmod(abs_path: str) -> str:
     """Restituisce la data di ultima modifica del file in formato W3C (YYYY-MM-DD)."""
     mtime = os.path.getmtime(abs_path)
     return datetime.datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
 
 
-def collect_html_files(root):
+def collect_html_files(root: str) -> list[str]:
     """
     Scansiona ricorsivamente la cartella root e restituisce
     la lista dei file HTML da includere nella sitemap standard.
@@ -222,7 +307,7 @@ def collect_html_files(root):
     print(f"[SCAN] Scansione cartella: {root}")
 
     for dirpath, dirnames, filenames in os.walk(root):
-        # Rimuovi in-place le cartelle escluse
+        # Rimuovi in-place le cartelle escluse (evita di scenderci dentro)
         dirnames[:] = [
             d for d in dirnames
             if d not in EXCLUDE_DIRS and not d.startswith(".")
@@ -244,7 +329,7 @@ def collect_html_files(root):
     return found
 
 
-def build_sitemap(files):
+def build_sitemap(files: list[str]) -> str:
     """Genera il contenuto XML della sitemap standard."""
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
@@ -275,7 +360,7 @@ def build_sitemap(files):
     return "\n".join(lines)
 
 
-def build_sitemap_news():
+def build_sitemap_news(news_articles: list[dict]) -> str:
     """
     Genera il contenuto XML della Google News sitemap.
 
@@ -291,12 +376,13 @@ def build_sitemap_news():
     lines.append('  sitemap-news.xml — ludovicopapalia.com')
     lines.append('  Google News sitemap (namespace news:).')
     lines.append('  Aggiornata automaticamente da generate_sitemap.py')
+    lines.append('  Fonte: divulgativi-index.html (array ARTICLES)')
     lines.append('  Ref: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap')
     lines.append('-->')
     lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')
     lines.append('        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">')
 
-    for article in NEWS_ARTICLES:
+    for article in news_articles:
         full_url = BASE_URL + "/" + article["path"].lstrip("/")
 
         # Escape caratteri XML nel titolo
@@ -324,11 +410,11 @@ def build_sitemap_news():
         print(f"  [NEWS] {full_url}  |  date={article['date']}")
 
     lines.append("</urlset>")
-    print(f"[NEWS] Totale articoli: {len(NEWS_ARTICLES)}")
+    print(f"[NEWS] Totale articoli: {len(news_articles)}")
     return "\n".join(lines)
 
 
-def ping_indexnow(url_list):
+def ping_indexnow(url_list: list[str]) -> None:
     """
     Invia una notifica IndexNow con la lista degli URL aggiornati.
 
@@ -350,7 +436,6 @@ def ping_indexnow(url_list):
     print(f"[INDEXNOW] Key file : {INDEXNOW_KEY_LOCATION}")
     print(f"[INDEXNOW] URL da notificare: {len(url_list)}")
 
-    # Stampa ogni URL che verrà inviato, per trasparenza
     for u in url_list:
         print(f"  → {u}")
 
@@ -369,7 +454,6 @@ def ping_indexnow(url_list):
     print(f"\n[INDEXNOW] Payload JSON ({len(payload_bytes)} bytes):")
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
-    # Costruisci la richiesta HTTP POST
     req = urllib.request.Request(
         url=INDEXNOW_ENDPOINT,
         data=payload_bytes,
@@ -406,12 +490,10 @@ def ping_indexnow(url_list):
                     print(f"[INDEXNOW]   Body: {body[:500]}")
 
     except urllib.error.HTTPError as e:
-        # Leggi il corpo dell'errore per diagnosticare il problema
         error_body = e.read().decode("utf-8", errors="replace") if e.fp else ""
         print(f"[INDEXNOW] ✗ Errore HTTP {e.code}: {e.reason}")
         if error_body:
             print(f"[INDEXNOW]   Dettaglio: {error_body[:500]}")
-        # Suggerimenti per i codici di errore più comuni
         if e.code == 403:
             print("[INDEXNOW]   → Verifica che il file chiave sia raggiungibile:")
             print(f"[INDEXNOW]     {INDEXNOW_KEY_LOCATION}")
@@ -428,7 +510,7 @@ def ping_indexnow(url_list):
         print(f"[INDEXNOW] ✗ Errore imprevisto: {type(e).__name__}: {e}")
 
 
-def collect_urls_for_indexnow(files):
+def collect_urls_for_indexnow(files: list[str]) -> list[str]:
     """
     Costruisce la lista di URL assoluti da passare a IndexNow,
     partendo dai file HTML già raccolti per la sitemap.
@@ -476,10 +558,16 @@ def main():
     print(f"\n[DONE]  sitemap.xml salvata: {len(files)} URL incluse.")
 
     # ── SITEMAP NEWS ──────────────────────────────────────────────────────────
-    xml_news = build_sitemap_news()
-    with open(OUTPUT_SITEMAP_NEWS, "w", encoding="utf-8") as f:
-        f.write(xml_news)
-    print(f"[DONE]  sitemap-news.xml salvata: {len(NEWS_ARTICLES)} articoli inclusi.")
+    # Estrai gli articoli automaticamente da divulgativi-index.html
+    news_articles = parse_articles_from_index()
+
+    if not news_articles:
+        print("[AVVISO] Nessun articolo estratto. sitemap-news.xml non verrà aggiornata.")
+    else:
+        xml_news = build_sitemap_news(news_articles)
+        with open(OUTPUT_SITEMAP_NEWS, "w", encoding="utf-8") as f:
+            f.write(xml_news)
+        print(f"[DONE]  sitemap-news.xml salvata: {len(news_articles)} articoli inclusi.")
 
     # ── INDEXNOW ──────────────────────────────────────────────────────────────
     if INDEXNOW_ENABLED:

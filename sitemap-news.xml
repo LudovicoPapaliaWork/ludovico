@@ -3,10 +3,22 @@
   sitemap-news.xml — ludovicopapalia.com
   Google News sitemap (namespace news:).
   Aggiornata automaticamente da generate_sitemap.py
+  Fonte: divulgativi-index.html (array ARTICLES)
   Ref: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/riconoscimento-biometrico-proroga-2027-vuoto-normativo.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-03-01T00:00:00+01:00</news:publication_date>
+      <news:title>Riconoscimento biometrico in Italia: la proroga al 2027 e il vuoto normativo che nessuno vuole colmare</news:title>
+    </news:news>
+  </url>
   <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html</loc>
     <news:news>
@@ -14,30 +26,8 @@
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2026-03-19T00:00:00+01:00</news:publication_date>
-      <news:title>OpenClaw: quando l&apos;AI agisce per te, ma il diritto non sa ancora chi risponde</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-09T00:00:00+02:00</news:publication_date>
-      <news:title>Doppia autenticazione: non tutti i sistemi sono uguali — e spesso sei tu il problema</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/sim-swap-il-numero-non-e-identita.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2025-05-09T00:00:00+02:00</news:publication_date>
-      <news:title>SIM Swap: il tuo numero di telefono non è una prova d&apos;identità</news:title>
+      <news:publication_date>2026-03-01T00:00:00+01:00</news:publication_date>
+      <news:title>OpenClaw: quando l</news:title>
     </news:news>
   </url>
   <url>
@@ -47,41 +37,30 @@
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2025-04-04T00:00:00+02:00</news:publication_date>
+      <news:publication_date>2025-04-01T00:00:00+02:00</news:publication_date>
       <news:title>Signalgate: Signal funzionava. La legge no.</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-lavoro-trasformazione.html</loc>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/sim-swap-il-numero-non-e-identita.html</loc>
     <news:news>
       <news:publication>
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2025-12-15T00:00:00+01:00</news:publication_date>
-      <news:title>L&apos;AI non ruba lavoro, lo trasforma: una storia vecchia</news:title>
+      <news:publication_date>2025-05-01T00:00:00+02:00</news:publication_date>
+      <news:title>SIM Swap: il tuo numero di telefono non è una prova d</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html</loc>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html</loc>
     <news:news>
       <news:publication>
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2025-12-15T00:00:00+01:00</news:publication_date>
-      <news:title>Quanto inquina l&apos;AI? Non tutti i modelli sono uguali</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2025-11-17T00:00:00+01:00</news:publication_date>
-      <news:title>Browser AI agentici: cosa possono fare (e cosa possono fare di male)</news:title>
+      <news:publication_date>2025-05-01T00:00:00+02:00</news:publication_date>
+      <news:title>Hai la 2FA attiva: sei ancora vulnerabile</news:title>
     </news:news>
   </url>
   <url>
@@ -91,63 +70,41 @@
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2025-11-17T00:00:00+01:00</news:publication_date>
+      <news:publication_date>2025-11-01T00:00:00+01:00</news:publication_date>
       <news:title>SPID per i siti adulti: la privacy è davvero protetta?</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/cellulare-scuola-divieto-applicabile.html</loc>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html</loc>
     <news:news>
       <news:publication>
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
-      <news:title>Vietare il cellulare a scuola: la norma c&apos;è, ma è applicabile?</news:title>
+      <news:publication_date>2025-11-01T00:00:00+01:00</news:publication_date>
+      <news:title>Browser AI agentici: cosa possono fare (e cosa possono fare di male)</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/chat-genitori-scuola-dati-sensibili-privacy.html</loc>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html</loc>
     <news:news>
       <news:publication>
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
-      <news:title>La chat dei genitori viola la privacy dei tuoi figli</news:title>
+      <news:publication_date>2025-12-01T00:00:00+01:00</news:publication_date>
+      <news:title>Quanto inquina l</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/instagram-teen-account-profilo-privato-minori.html</loc>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-lavoro-trasformazione.html</loc>
     <news:news>
       <news:publication>
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
-      <news:title>Instagram Teen Account: il profilo privato obbligatorio per i minori</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
-      <news:title>Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/social-dipendenza-minori-class-action.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
-      <news:title>I social creano dipendenza come le sigarette? Arriva la causa legale</news:title>
+      <news:publication_date>2025-12-01T00:00:00+01:00</news:publication_date>
+      <news:title>L</news:title>
     </news:news>
   </url>
   <url>
@@ -159,6 +116,61 @@
       </news:publication>
       <news:publication_date>2023-04-01T00:00:00+02:00</news:publication_date>
       <news:title>SIAE contro Meta: chi ha perso davvero?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/instagram-teen-account-profilo-privato-minori.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-01T00:00:00+01:00</news:publication_date>
+      <news:title>Instagram Teen Account: il profilo privato non è più una scelta</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/cellulare-scuola-divieto-applicabile.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-01T00:00:00+01:00</news:publication_date>
+      <news:title>Vietare il cellulare a scuola: la norma c</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/social-dipendenza-minori-class-action.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-01T00:00:00+01:00</news:publication_date>
+      <news:title>I social creano dipendenza come le sigarette? Arriva la causa legale</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/chat-genitori-scuola-dati-sensibili-privacy.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-01T00:00:00+01:00</news:publication_date>
+      <news:title>La chat dei genitori viola la privacy dei tuoi figli</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-01T00:00:00+01:00</news:publication_date>
+      <news:title>Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche</news:title>
     </news:news>
   </url>
 </urlset>
