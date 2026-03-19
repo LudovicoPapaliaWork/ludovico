@@ -9,6 +9,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-03-19T00:00:00+01:00</news:publication_date>
+      <news:title>Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/riconoscimento-biometrico-proroga-2027-vuoto-normativo.html</loc>
     <news:news>
       <news:publication>
