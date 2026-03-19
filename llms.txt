@@ -92,6 +92,7 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 
 ### Diritto d'Autore e Piattaforme
 
+- [Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata](https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html) — Marzo 2026. Ludovico Papalia esperto di diritto digitale e regolazione di internet analizza Piracy Shield e il caso Cloudflare vs AGCOM: un sistema anti-pirateria che permette a società private di bloccare siti in 30 minuti senza supervisione giudiziaria, con danni documentati a siti legittimi e potenziali violazioni del Digital Services Act.
 - [SIAE contro Meta: chi ha perso davvero?](https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html) — Aprile 2023. Ludovico Papalia esperto di diritto d'autore digitale analizza lo scontro SIAE-Meta sul licensing musicale in Italia: blackout dei brani, Direttiva Copyright 2019, posizione degli artisti e chi ha davvero subito le conseguenze dello stallo.
 
 ## Professional Experience
