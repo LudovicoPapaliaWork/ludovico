@@ -6,6 +6,9 @@ Scansiona una cartella locale del sito e genera due file:
   - sitemap.xml        (sitemap standard per Googlebot e tutti i crawler)
   - sitemap-news.xml   (Google News sitemap, solo articoli divulgativi)
 
+Alla fine, notifica automaticamente IndexNow con tutti gli URL HTML trovati,
+in modo che Bing, Yandex, Naver e altri motori ricrawlino le pagine aggiornate.
+
 Uso:
     python3 generate_sitemap.py
 
@@ -23,6 +26,9 @@ Aggiungi un dizionario alla lista NEWS_ARTICLES in basso con i campi:
 
 import os
 import datetime
+import json
+import urllib.request
+import urllib.error
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG — modifica questi valori prima di eseguire
@@ -38,6 +44,26 @@ BASE_URL = "https://www.ludovicopapalia.com"
 # Nome della testata per la News sitemap (deve essere coerente con il Publisher Center)
 NEWS_PUBLICATION_NAME = "Ludovico Papalia — Diritto Informatico"
 NEWS_LANGUAGE = "it"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# INDEXNOW CONFIG
+# ─────────────────────────────────────────────────────────────────────────────
+# Chiave generata una volta sola. Il file {INDEXNOW_KEY}.txt deve essere
+# presente nella root del sito (es. ludovicopapalia.com/acaa81d24b20e17ebf85f615e130e6f4.txt)
+# Non è un segreto: è un meccanismo di verifica della proprietà del dominio,
+# esattamente come la verifica DNS TXT per Search Console.
+#
+# Motori supportati (marzo 2026): Bing, Yandex, Naver, Seznam, Yep.
+# Google NON supporta IndexNow — per Google continuano a valere sitemap + Search Console.
+# Inviando a api.indexnow.org il ping viene automaticamente redistribuito
+# a tutti i motori partecipanti.
+INDEXNOW_KEY = "acaa81d24b20e17ebf85f615e130e6f4"
+INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
+INDEXNOW_KEY_LOCATION = f"{BASE_URL}/{INDEXNOW_KEY}.txt"
+
+# Se True, invia il ping IndexNow al termine dello script.
+# Metti False se vuoi solo rigenerare le sitemap senza notificare i motori.
+INDEXNOW_ENABLED = True
 
 # File da escludere sempre (nomi esatti, case-sensitive)
 EXCLUDE_FILES = {
@@ -302,6 +328,123 @@ def build_sitemap_news():
     return "\n".join(lines)
 
 
+def ping_indexnow(url_list):
+    """
+    Invia una notifica IndexNow con la lista degli URL aggiornati.
+
+    Il protocollo IndexNow è supportato da: Bing, Yandex, Naver, Seznam, Yep.
+    Inviando a api.indexnow.org il ping viene automaticamente redistribuito
+    a tutti i motori partecipanti — una sola chiamata è sufficiente.
+
+    Google NON supporta IndexNow (marzo 2026): per Google valgono le sitemap
+    e la Search Console come al solito.
+
+    Il file {INDEXNOW_KEY}.txt deve essere presente e raggiungibile sulla root
+    del sito, altrimenti il motore rifiuta la richiesta con 403.
+    """
+    print("\n" + "─" * 60)
+    print("[INDEXNOW] Preparazione ping...")
+    print(f"[INDEXNOW] Endpoint : {INDEXNOW_ENDPOINT}")
+    print(f"[INDEXNOW] Host     : {BASE_URL.replace('https://', '').replace('http://', '')}")
+    print(f"[INDEXNOW] Key      : {INDEXNOW_KEY}")
+    print(f"[INDEXNOW] Key file : {INDEXNOW_KEY_LOCATION}")
+    print(f"[INDEXNOW] URL da notificare: {len(url_list)}")
+
+    # Stampa ogni URL che verrà inviato, per trasparenza
+    for u in url_list:
+        print(f"  → {u}")
+
+    # Costruisci il payload JSON secondo le specifiche del protocollo
+    # Ref: https://www.indexnow.org/documentation
+    host = BASE_URL.replace("https://", "").replace("http://", "")
+    payload = {
+        "host":        host,
+        "key":         INDEXNOW_KEY,
+        "keyLocation": INDEXNOW_KEY_LOCATION,
+        "urlList":     url_list,
+    }
+
+    payload_bytes = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+
+    print(f"\n[INDEXNOW] Payload JSON ({len(payload_bytes)} bytes):")
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+
+    # Costruisci la richiesta HTTP POST
+    req = urllib.request.Request(
+        url=INDEXNOW_ENDPOINT,
+        data=payload_bytes,
+        headers={
+            "Content-Type": "application/json; charset=utf-8",
+            "User-Agent":   "generate_sitemap.py/1.0 (ludovicopapalia.com)",
+        },
+        method="POST",
+    )
+
+    print("\n[INDEXNOW] Invio richiesta POST...")
+
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            status = response.status
+            body   = response.read().decode("utf-8", errors="replace")
+
+            print(f"[INDEXNOW] Risposta HTTP: {status}")
+
+            # Codici di risposta attesi secondo le specifiche IndexNow:
+            # 200 → OK, URL accettati
+            # 202 → Accepted (alcuni motori usano questo)
+            # 400 → Invalid format
+            # 403 → Forbidden — chiave non valida o file .txt non trovato sul sito
+            # 422 → Unprocessable — URL non appartengono all'host dichiarato
+            # 429 → Too Many Requests — quota superata, riprova più tardi
+            if status in (200, 202):
+                print("[INDEXNOW] ✓ Ping inviato con successo.")
+                print("[INDEXNOW]   I motori supportati (Bing, Yandex, Naver, ecc.) ")
+                print("[INDEXNOW]   ricrawleranno le pagine nelle prossime ore.")
+            else:
+                print(f"[INDEXNOW] ✗ Risposta inattesa: {status}")
+                if body:
+                    print(f"[INDEXNOW]   Body: {body[:500]}")
+
+    except urllib.error.HTTPError as e:
+        # Leggi il corpo dell'errore per diagnosticare il problema
+        error_body = e.read().decode("utf-8", errors="replace") if e.fp else ""
+        print(f"[INDEXNOW] ✗ Errore HTTP {e.code}: {e.reason}")
+        if error_body:
+            print(f"[INDEXNOW]   Dettaglio: {error_body[:500]}")
+        # Suggerimenti per i codici di errore più comuni
+        if e.code == 403:
+            print("[INDEXNOW]   → Verifica che il file chiave sia raggiungibile:")
+            print(f"[INDEXNOW]     {INDEXNOW_KEY_LOCATION}")
+        elif e.code == 422:
+            print("[INDEXNOW]   → Uno o più URL non appartengono all'host dichiarato.")
+        elif e.code == 429:
+            print("[INDEXNOW]   → Quota superata. Riprova più tardi.")
+
+    except urllib.error.URLError as e:
+        print(f"[INDEXNOW] ✗ Errore di rete: {e.reason}")
+        print("[INDEXNOW]   Verifica la connessione internet e riprova.")
+
+    except Exception as e:
+        print(f"[INDEXNOW] ✗ Errore imprevisto: {type(e).__name__}: {e}")
+
+
+def collect_urls_for_indexnow(files):
+    """
+    Costruisce la lista di URL assoluti da passare a IndexNow,
+    partendo dai file HTML già raccolti per la sitemap.
+    Applica la stessa normalizzazione usata in build_sitemap()
+    (es. /index.html → BASE_URL/).
+    """
+    urls = []
+    for abs_path in files:
+        url_path = url_for_path(abs_path)
+        if url_path == "/index.html":
+            urls.append(BASE_URL + "/")
+        else:
+            urls.append(BASE_URL + url_path)
+    return urls
+
+
 def main():
     print("=" * 60)
     print("  generate_sitemap.py — Ludovico Papalia")
@@ -310,6 +453,7 @@ def main():
     print(f"  BASE_URL         : {BASE_URL}")
     print(f"  OUTPUT (standard): {OUTPUT_SITEMAP}")
     print(f"  OUTPUT (news)    : {OUTPUT_SITEMAP_NEWS}")
+    print(f"  IndexNow         : {'ABILITATO' if INDEXNOW_ENABLED else 'disabilitato'}")
     print("=" * 60 + "\n")
 
     # Verifica che SITE_ROOT esista
@@ -337,12 +481,20 @@ def main():
         f.write(xml_news)
     print(f"[DONE]  sitemap-news.xml salvata: {len(NEWS_ARTICLES)} articoli inclusi.")
 
+    # ── INDEXNOW ──────────────────────────────────────────────────────────────
+    if INDEXNOW_ENABLED:
+        url_list = collect_urls_for_indexnow(files)
+        ping_indexnow(url_list)
+    else:
+        print("\n[INDEXNOW] Ping disabilitato (INDEXNOW_ENABLED = False).")
+
     print("\n──────────────────────────────────────────────────────")
     print("  Prossimi passi dopo aver caricato i file:")
-    print("  1. Search Console → Sitemap → invia entrambe")
+    print("  1. Search Console → Sitemap → invia entrambe (per Google)")
     print("     https://search.google.com/search-console/sitemaps")
     print("  2. Publisher Center → verifica inclusione")
     print("     https://publishercenter.google.com")
+    print("  3. IndexNow già inviato automaticamente ↑")
     print("──────────────────────────────────────────────────────")
 
 
