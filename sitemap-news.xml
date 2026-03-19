@@ -72,4 +72,65 @@
     </news:news>
   </url>
 
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/instagram-teen-account-profilo-privato-minori.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
+      <news:title>Instagram Teen Account: il profilo privato non è più una scelta</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/cellulare-scuola-divieto-applicabile.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
+      <news:title>Vietare il cellulare a scuola: la norma c'è, ma funziona?</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/social-dipendenza-minori-class-action.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
+      <news:title>I social creano dipendenza come le sigarette? Arriva la causa legale</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/chat-genitori-scuola-dati-sensibili-privacy.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
+      <news:title>La chat dei genitori viola la privacy dei tuoi figli</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
+      <news:title>Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche</news:title>
+    </news:news>
+  </url>
+
 </urlset>
