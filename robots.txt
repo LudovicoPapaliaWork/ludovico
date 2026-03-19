@@ -1,8 +1,8 @@
 # ──────────────────────────────────────────────────────────────
 # robots.txt — ludovicopapalia.com
 # Politica: accesso aperto a tutti i crawler (motori di ricerca,
-# AI, aggregatori), con esclusione delle sole pagine template
-# e non utilizzate per evitare penalizzazioni SEO.
+# AI, aggregatori), con esclusione delle sole pagine template,
+# non utilizzate e stub di redirect per evitare penalizzazioni SEO.
 # ──────────────────────────────────────────────────────────────
 
 # ── REGOLA GLOBALE (vale per tutti i bot non elencati sotto) ──
@@ -12,6 +12,8 @@ Disallow: /art-divulgativi/divulgativo-template.html
 Disallow: /UNUSED-papers-index.html
 Disallow: /old_content
 Disallow: /tutte-interviste-nuove.txt
+Disallow: /chi-sono.html
+Disallow: /curriculum/
 
 # ── GOOGLE ────────────────────────────────────────────────────
 User-agent: Googlebot
@@ -19,6 +21,8 @@ Disallow: /papers/paper-template.html
 Disallow: /art-divulgativi/divulgativo-template.html
 Disallow: /UNUSED-papers-index.html
 Disallow: /tutte-interviste-nuove.txt
+Disallow: /chi-sono.html
+Disallow: /curriculum/
 
 User-agent: Googlebot-Image
 Disallow:
