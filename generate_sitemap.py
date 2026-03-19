@@ -142,19 +142,18 @@ MESI_CEST = {4, 5, 6, 7, 8, 9, 10}
 def italian_date_to_iso(date_str: str) -> str:
     """
     Converte una stringa di data italiana tipo "Marzo 2026" in formato ISO 8601
-    con timezone CET/CEST corretta.
+    con timezone CET/CEST corretta. Usata solo come fallback se datePublished
+    non è presente nell'HTML dell'articolo.
 
     Esempi:
-        "Marzo 2026"   → "2026-03-01T00:00:00+01:00"
-        "Aprile 2023"  → "2023-04-01T00:00:00+02:00"
-        "Novembre 2024"→ "2024-11-01T00:00:00+01:00"
+        "Marzo 2026"    → "2026-03-01T00:00:00+01:00"
+        "Aprile 2023"   → "2023-04-01T00:00:00+02:00"
+        "Novembre 2024" → "2024-11-01T00:00:00+01:00"
 
-    Se il parsing fallisce, restituisce la data odierna come fallback,
-    stampando un avviso, così la sitemap non si blocca.
+    Se il parsing fallisce, restituisce la data odierna come fallback.
     """
-    print(f"  [DATE] Parsing data: '{date_str}'")
+    print(f"  [DATE] Fallback parsing data italiana: '{date_str}'")
 
-    # Normalizza: rimuovi spazi extra, porta tutto in minuscolo per il match
     parts = date_str.strip().split()
     if len(parts) == 2:
         mese_str = parts[0].lower()
@@ -164,14 +163,73 @@ def italian_date_to_iso(date_str: str) -> str:
             anno = int(anno_str)
             tz   = "+02:00" if mese_num in MESI_CEST else "+01:00"
             iso  = f"{anno:04d}-{mese_num:02d}-01T00:00:00{tz}"
-            print(f"  [DATE] → {iso}")
+            print(f"  [DATE] → {iso} (giorno 1, data approssimata)")
             return iso
 
-    # Fallback: usa la data odierna con timezone CET
+    # Fallback finale: data odierna
     today = datetime.date.today()
     fallback = f"{today.isoformat()}T00:00:00+01:00"
     print(f"  [DATE] ATTENZIONE: parsing fallito per '{date_str}', uso data odierna: {fallback}")
     return fallback
+
+
+def extract_date_published(abs_html: str) -> str | None:
+    """
+    Legge il file HTML dell'articolo ed estrae la data esatta da
+    'datePublished' nel JSON-LD o nel meta itemprop.
+
+    Fonti cercate in ordine di priorità:
+      1. JSON-LD:     "datePublished": "YYYY-MM-DD"
+      2. meta itemprop: <meta itemprop="datePublished" content="YYYY-MM-DD">
+
+    Restituisce la data in formato ISO 8601 con timezone CET/CEST corretta
+    (es. "2026-03-19T00:00:00+01:00"), oppure None se non trovata.
+    """
+    try:
+        with open(abs_html, "r", encoding="utf-8") as f:
+            html = f.read()
+    except OSError as e:
+        print(f"  [DATE] Impossibile leggere {abs_html}: {e}")
+        return None
+
+    # Prova 1: JSON-LD  "datePublished": "2026-03-19"
+    # Cattura sia date con che senza ora (YYYY-MM-DD oppure YYYY-MM-DDTHH:MM:SS...)
+    match = re.search(r'"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})', html)
+    if match:
+        date_part = match.group(1)   # es. "2026-03-19"
+        print(f"  [DATE] datePublished trovato nel JSON-LD: {date_part}")
+    else:
+        # Prova 2: <meta itemprop="datePublished" content="2026-03-19">
+        match = re.search(
+            r'<meta\s[^>]*itemprop=["\']datePublished["\'][^>]*content=["\'](\d{4}-\d{2}-\d{2})',
+            html,
+            re.IGNORECASE,
+        )
+        if not match:
+            # Prova 2b: ordine attributi invertito (content prima di itemprop)
+            match = re.search(
+                r'<meta\s[^>]*content=["\'](\d{4}-\d{2}-\d{2})["\'][^>]*itemprop=["\']datePublished["\']',
+                html,
+                re.IGNORECASE,
+            )
+        if match:
+            date_part = match.group(1)
+            print(f"  [DATE] datePublished trovato nel meta itemprop: {date_part}")
+        else:
+            print(f"  [DATE] datePublished non trovato in {os.path.basename(abs_html)}")
+            return None
+
+    # Aggiunge timezone CET/CEST in base al mese
+    # Formato atteso: "YYYY-MM-DD"
+    try:
+        mese_num = int(date_part[5:7])
+        tz = "+02:00" if mese_num in MESI_CEST else "+01:00"
+        iso = f"{date_part}T00:00:00{tz}"
+        print(f"  [DATE] → {iso}")
+        return iso
+    except (ValueError, IndexError) as e:
+        print(f"  [DATE] Errore parsing '{date_part}': {e}")
+        return None
 
 
 def parse_articles_from_index() -> list[dict]:
@@ -252,9 +310,6 @@ def parse_articles_from_index() -> list[dict]:
         # rimuovendo lo slash iniziale per coerenza con SITE_ROOT
         path = href.lstrip("/")
 
-        # Converti la data italiana in ISO 8601
-        date_iso = italian_date_to_iso(date_raw)
-
         # Verifica che il file HTML esista realmente su disco.
         # Questo filtra automaticamente le entry segnaposto del template
         # (es. href="/art-divulgativi/nome-articolo.html") senza richiedere
@@ -263,6 +318,14 @@ def parse_articles_from_index() -> list[dict]:
         if not os.path.isfile(abs_html):
             print(f"  [SKIP] File non trovato su disco → {path} (entry template o link errato)")
             continue
+
+        # Fonte primaria: legge datePublished dal JSON-LD/meta dell'articolo stesso.
+        # È il giorno esatto già presente negli header SEO di ogni pagina.
+        # Fallback: parsing della data italiana dall'indice (giorno 1 del mese).
+        date_iso = extract_date_published(abs_html)
+        if date_iso is None:
+            print(f"  [DATE] Fallback su data italiana dall'indice: '{date_raw}'")
+            date_iso = italian_date_to_iso(date_raw)
 
         articles.append({
             "path":  path,
