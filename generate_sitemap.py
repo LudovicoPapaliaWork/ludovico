@@ -6,8 +6,9 @@ Scansiona una cartella locale del sito e genera due file:
   - sitemap.xml        (sitemap standard per Googlebot e tutti i crawler)
   - sitemap-news.xml   (Google News sitemap, solo articoli divulgativi)
 
-Alla fine, notifica automaticamente IndexNow con tutti gli URL HTML trovati,
-in modo che Bing, Yandex, Naver e altri motori ricrawlino le pagine aggiornate.
+Alla fine, notifica automaticamente IndexNow con i soli URL HTML
+effettivamente modificati dall'ultima esecuzione, in modo che Bing,
+Yandex, Naver e altri motori ricrawlino solo le pagine che contano.
 
 Uso:
     python3 generate_sitemap.py
@@ -29,10 +30,26 @@ Poiché nell'indice il giorno esatto non è memorizzato, viene usato il
 giorno 1 del mese. Il timezone segue la regola CET/CEST italiana:
 mesi aprile-ottobre → +02:00, mesi novembre-marzo → +01:00.
 ──────────────────────────────────────────────────────────────────────
+
+──────────────────────────────────────────────────────────────────────
+CHANGE TRACKING — come funziona
+──────────────────────────────────────────────────────────────────────
+Ad ogni esecuzione lo script salva in sitemap-state.json un dizionario:
+  { "percorso/relativo.html": "sha256hex", ... }
+
+Al run successivo confronta l'hash attuale con quello salvato.
+Solo i file con hash diverso (o nuovi) vengono inviati a IndexNow.
+Questo è il comportamento corretto del protocollo: si notificano
+esclusivamente le pagine che sono state realmente modificate.
+
+Il file sitemap-state.json non va in sitemap.xml (è in EXCLUDE_FILES)
+e può essere committato nel repo senza problemi: non contiene segreti.
+──────────────────────────────────────────────────────────────────────
 """
 
 import os
 import re
+import hashlib
 import datetime
 import json
 import urllib.request
@@ -44,13 +61,12 @@ import urllib.error
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Cartella radice del sito: si posiziona automaticamente dove si trova questo script.
-# Non serve modificare nulla — metti generate_sitemap.py nella root del sito e giralo.
 SITE_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Dominio base (senza slash finale)
 BASE_URL = "https://www.ludovicopapalia.com"
 
-# Nome della testata per la News sitemap (deve essere coerente con il Publisher Center)
+# Nome della testata per la News sitemap
 NEWS_PUBLICATION_NAME = "Ludovico Papalia — Diritto Informatico"
 NEWS_LANGUAGE = "it"
 
@@ -60,33 +76,28 @@ DIVULGATIVI_INDEX = "divulgativi-index.html"
 # ─────────────────────────────────────────────────────────────────────────────
 # INDEXNOW CONFIG
 # ─────────────────────────────────────────────────────────────────────────────
-# Chiave generata una volta sola. Il file {INDEXNOW_KEY}.txt deve essere
-# presente nella root del sito (es. ludovicopapalia.com/acaa81d24b20e17ebf85f615e130e6f4.txt)
-# Non è un segreto: è un meccanismo di verifica della proprietà del dominio,
-# esattamente come la verifica DNS TXT per Search Console.
-#
-# Motori supportati (marzo 2026): Bing, Yandex, Naver, Seznam, Yep.
-# Google NON supporta IndexNow — per Google continuano a valere sitemap + Search Console.
-# Inviando a api.indexnow.org il ping viene automaticamente redistribuito
-# a tutti i motori partecipanti.
-INDEXNOW_KEY      = "acaa81d24b20e17ebf85f615e130e6f4"
-INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
+INDEXNOW_KEY          = "acaa81d24b20e17ebf85f615e130e6f4"
+INDEXNOW_ENDPOINT     = "https://api.indexnow.org/indexnow"
 INDEXNOW_KEY_LOCATION = f"{BASE_URL}/{INDEXNOW_KEY}.txt"
 
 # Se True, invia il ping IndexNow al termine dello script.
-# Metti False se vuoi solo rigenerare le sitemap senza notificare i motori.
 INDEXNOW_ENABLED = True
+
+# File dove viene salvato lo stato degli hash per il change tracking.
+# Non va incluso in sitemap.xml (è in EXCLUDE_FILES qui sotto).
+STATE_FILE = os.path.join(SITE_ROOT, "sitemap-state.json")
 
 # File da escludere sempre (nomi esatti, case-sensitive)
 EXCLUDE_FILES = {
     "404.html",
     "sitemap.xml",
     "sitemap-news.xml",
+    "sitemap-state.json",       # file di stato interno, non è una pagina
     "robots.txt",
     "llms.txt",
-    "divulgativo-template.html",    # template, non contenuto reale
-    "paper-template.html",          # template, non contenuto reale
-    "UNUSED-papers-index.html",     # pagina non in uso
+    "divulgativo-template.html",
+    "paper-template.html",
+    "UNUSED-papers-index.html",
 }
 
 # Cartelle da escludere (nomi, non path completi)
@@ -135,26 +146,110 @@ MESI_IT = {
 }
 
 # Mesi in cui vige l'ora legale italiana (CEST = UTC+2)
-# Nota: la transizione è fine marzo/fine ottobre, ma per semplicità
-# usiamo aprile-ottobre come CEST e novembre-marzo come CET.
 MESI_CEST = {4, 5, 6, 7, 8, 9, 10}
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CHANGE TRACKING
+# ─────────────────────────────────────────────────────────────────────────────
+
+def sha256_of_file(abs_path: str) -> str:
+    """
+    Calcola lo SHA-256 del contenuto di un file.
+    Restituisce l'hex digest (64 caratteri).
+    Usato per rilevare modifiche reali al contenuto, indipendentemente
+    dalla data di modifica del filesystem (che può cambiare con un clone git).
+    """
+    h = hashlib.sha256()
+    # Legge il file a blocchi per non saturare la RAM su file grandi
+    with open(abs_path, "rb") as f:
+        for chunk in iter(lambda: f.read(65536), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def load_state() -> dict:
+    """
+    Carica il dizionario di stato da sitemap-state.json.
+    Formato: { "percorso/relativo.html": "sha256hex", ... }
+    Restituisce un dict vuoto se il file non esiste (primo run).
+    """
+    if not os.path.isfile(STATE_FILE):
+        print("[STATE] sitemap-state.json non trovato — primo run, tutti i file saranno inviati.")
+        return {}
+    try:
+        with open(STATE_FILE, "r", encoding="utf-8") as f:
+            state = json.load(f)
+        print(f"[STATE] Stato caricato: {len(state)} file tracciati.")
+        return state
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"[STATE] ERRORE lettura stato: {e} — si riparte da zero.")
+        return {}
+
+
+def save_state(state: dict) -> None:
+    """
+    Salva il dizionario di stato aggiornato in sitemap-state.json.
+    Sovrascrive il file precedente.
+    """
+    try:
+        with open(STATE_FILE, "w", encoding="utf-8") as f:
+            json.dump(state, f, indent=2, ensure_ascii=False)
+        print(f"[STATE] Stato salvato: {len(state)} file tracciati → {STATE_FILE}")
+    except OSError as e:
+        print(f"[STATE] ERRORE salvataggio stato: {e}")
+
+
+def detect_changed_files(files: list[str], old_state: dict) -> tuple[list[str], dict]:
+    """
+    Confronta i file attuali con lo stato salvato e restituisce:
+      - changed_files : lista di percorsi assoluti dei file modificati o nuovi
+      - new_state     : dizionario aggiornato con tutti gli hash attuali
+
+    Un file è considerato "modificato" se:
+      - non è presente nel vecchio stato (file nuovo)
+      - il suo SHA-256 è diverso da quello salvato (contenuto cambiato)
+
+    I file rimossi vengono silenziosamente esclusi dal nuovo stato
+    (non vengono notificati a IndexNow perché non esistono più).
+    """
+    print("\n[TRACK] Calcolo hash e rilevamento modifiche...")
+    new_state   = {}
+    changed     = []
+
+    for abs_path in files:
+        # Calcola il percorso relativo per usarlo come chiave nello stato
+        rel_path = os.path.relpath(abs_path, SITE_ROOT).replace("\\", "/")
+
+        current_hash = sha256_of_file(abs_path)
+        new_state[rel_path] = current_hash
+
+        old_hash = old_state.get(rel_path)
+
+        if old_hash is None:
+            print(f"  [NEW]      {rel_path}  (hash: {current_hash[:12]}...)")
+            changed.append(abs_path)
+        elif old_hash != current_hash:
+            print(f"  [CHANGED]  {rel_path}  ({old_hash[:12]}... → {current_hash[:12]}...)")
+            changed.append(abs_path)
+        else:
+            print(f"  [unchanged] {rel_path}")
+
+    print(f"\n[TRACK] File modificati / nuovi: {len(changed)} su {len(files)} totali.")
+    return changed, new_state
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DATE HELPERS
+# ─────────────────────────────────────────────────────────────────────────────
 
 def italian_date_to_iso(date_str: str) -> str:
     """
     Converte una stringa di data italiana tipo "Marzo 2026" in formato ISO 8601
     con timezone CET/CEST corretta. Usata solo come fallback se datePublished
     non è presente nell'HTML dell'articolo.
-
-    Esempi:
-        "Marzo 2026"    → "2026-03-01T00:00:00+01:00"
-        "Aprile 2023"   → "2023-04-01T00:00:00+02:00"
-        "Novembre 2024" → "2024-11-01T00:00:00+01:00"
-
-    Se il parsing fallisce, restituisce la data odierna come fallback.
     """
     print(f"  [DATE] Fallback parsing data italiana: '{date_str}'")
-
     parts = date_str.strip().split()
     if len(parts) == 2:
         mese_str = parts[0].lower()
@@ -167,8 +262,7 @@ def italian_date_to_iso(date_str: str) -> str:
             print(f"  [DATE] → {iso} (giorno 1, data approssimata)")
             return iso
 
-    # Fallback finale: data odierna
-    today = datetime.date.today()
+    today    = datetime.date.today()
     fallback = f"{today.isoformat()}T00:00:00+01:00"
     print(f"  [DATE] ATTENZIONE: parsing fallito per '{date_str}', uso data odierna: {fallback}")
     return fallback
@@ -178,13 +272,7 @@ def extract_date_published(abs_html: str) -> str | None:
     """
     Legge il file HTML dell'articolo ed estrae la data esatta da
     'datePublished' nel JSON-LD o nel meta itemprop.
-
-    Fonti cercate in ordine di priorità:
-      1. JSON-LD:     "datePublished": "YYYY-MM-DD"
-      2. meta itemprop: <meta itemprop="datePublished" content="YYYY-MM-DD">
-
-    Restituisce la data in formato ISO 8601 con timezone CET/CEST corretta
-    (es. "2026-03-19T00:00:00+01:00"), oppure None se non trovata.
+    Restituisce la data in formato ISO 8601 con timezone, oppure None.
     """
     try:
         with open(abs_html, "r", encoding="utf-8") as f:
@@ -193,25 +281,19 @@ def extract_date_published(abs_html: str) -> str | None:
         print(f"  [DATE] Impossibile leggere {abs_html}: {e}")
         return None
 
-    # Prova 1: JSON-LD  "datePublished": "2026-03-19"
-    # Cattura sia date con che senza ora (YYYY-MM-DD oppure YYYY-MM-DDTHH:MM:SS...)
     match = re.search(r'"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})', html)
     if match:
-        date_part = match.group(1)   # es. "2026-03-19"
+        date_part = match.group(1)
         print(f"  [DATE] datePublished trovato nel JSON-LD: {date_part}")
     else:
-        # Prova 2: <meta itemprop="datePublished" content="2026-03-19">
         match = re.search(
             r'<meta\s[^>]*itemprop=["\']datePublished["\'][^>]*content=["\'](\d{4}-\d{2}-\d{2})',
-            html,
-            re.IGNORECASE,
+            html, re.IGNORECASE,
         )
         if not match:
-            # Prova 2b: ordine attributi invertito (content prima di itemprop)
             match = re.search(
                 r'<meta\s[^>]*content=["\'](\d{4}-\d{2}-\d{2})["\'][^>]*itemprop=["\']datePublished["\']',
-                html,
-                re.IGNORECASE,
+                html, re.IGNORECASE,
             )
         if match:
             date_part = match.group(1)
@@ -220,11 +302,9 @@ def extract_date_published(abs_html: str) -> str | None:
             print(f"  [DATE] datePublished non trovato in {os.path.basename(abs_html)}")
             return None
 
-    # Aggiunge timezone CET/CEST in base al mese
-    # Formato atteso: "YYYY-MM-DD"
     try:
         mese_num = int(date_part[5:7])
-        tz = "+02:00" if mese_num in MESI_CEST else "+01:00"
+        tz  = "+02:00" if mese_num in MESI_CEST else "+01:00"
         iso = f"{date_part}T00:00:00{tz}"
         print(f"  [DATE] → {iso}")
         return iso
@@ -233,19 +313,15 @@ def extract_date_published(abs_html: str) -> str | None:
         return None
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# NEWS SITEMAP — parsing articoli da divulgativi-index.html
+# ─────────────────────────────────────────────────────────────────────────────
+
 def parse_articles_from_index() -> list[dict]:
     """
     Legge divulgativi-index.html ed estrae automaticamente gli articoli
     dall'array JS  var ARTICLES = [...].
-
-    Restituisce una lista di dizionari con chiavi:
-        path   — percorso relativo al file HTML (es. "art-divulgativi/foo.html")
-        title  — titolo dell'articolo
-        date   — data ISO 8601 con timezone
-
-    La funzione usa regex per estrarre i campi dal codice JS, che non è
-    JSON valido (virgole finali, apostrofi nei valori, ecc.), quindi non
-    si può usare json.loads() direttamente.
+    Restituisce una lista di dizionari con chiavi: path, title, date.
     """
     index_path = os.path.join(SITE_ROOT, DIVULGATIVI_INDEX)
     print(f"\n[NEWS] Lettura articoli da: {index_path}")
@@ -257,24 +333,14 @@ def parse_articles_from_index() -> list[dict]:
     with open(index_path, "r", encoding="utf-8") as f:
         html = f.read()
 
-    # Estrai il blocco dell'array ARTICLES dal JS inline.
-    # Il pattern cattura tutto tra "var ARTICLES = [" e il ";" che chiude
-    # l'array, attraverso multiple righe.
-    array_match = re.search(
-        r'var\s+ARTICLES\s*=\s*\[(.*?)\]\s*;',
-        html,
-        re.DOTALL
-    )
+    array_match = re.search(r'var\s+ARTICLES\s*=\s*\[(.*?)\]\s*;', html, re.DOTALL)
     if not array_match:
         print("[NEWS] ERRORE: array ARTICLES non trovato in divulgativi-index.html")
-        print("       Verifica che la sintassi  var ARTICLES = [...]  sia presente.")
         return []
 
     array_body = array_match.group(1)
     print(f"[NEWS] Blocco ARTICLES trovato ({len(array_body)} caratteri).")
 
-    # Estrai i singoli oggetti { ... } dall'array.
-    # Usiamo una regex che cattura il contenuto tra { e } per ogni entry.
     entries_raw = re.findall(r'\{([^}]+)\}', array_body, re.DOTALL)
     print(f"[NEWS] Entry grezze trovate: {len(entries_raw)}")
 
@@ -283,19 +349,10 @@ def parse_articles_from_index() -> list[dict]:
         print(f"\n[NEWS] Entry #{i+1}:")
         print(f"  [RAW] {entry_raw.strip()[:120]}...")
 
-        # Estrai i singoli campi con regex flessibili che gestiscono
-        # sia apici singoli che doppi, e virgole finali.
-        # Campo "date" — es.  date:  "Marzo 2026",  oppure  date: 'Aprile 2023'
-        date_match = re.search(r'date\s*:\s*["\']([^"\']+)["\']', entry_raw)
-
-        # Campo "title"
-        # Fix apostrofi JS-escaped (es. l\'Europa): regex con backreference per riconoscere \. come token singolo
+        date_match  = re.search(r'date\s*:\s*["\']([^"\']+)["\']', entry_raw)
         title_match = re.search(r'title\s*:\s*(["\'])((?:[^\\]|\\.)*?)\1', entry_raw, re.DOTALL)
-
-        # Campo "href" — es.  href:  "/art-divulgativi/foo.html"
         href_match  = re.search(r'href\s*:\s*["\']([^"\']+)["\']', entry_raw)
 
-        # Se manca uno dei campi obbligatori, salta l'entry con avviso
         if not all([date_match, title_match, href_match]):
             missing = []
             if not date_match:  missing.append("date")
@@ -305,37 +362,21 @@ def parse_articles_from_index() -> list[dict]:
             continue
 
         date_raw = date_match.group(1).strip()
-        # group(2) perché il nuovo regex ha il delimitatore come gruppo 1
-        # re.sub risolve le sequenze escape JS: \' → '  \" → "  \\ → \
         title    = re.sub(r'\\(.)', r'\1', title_match.group(2).strip())
         href     = href_match.group(1).strip()
+        path     = href.lstrip("/")
 
-        # Converti href ("/art-divulgativi/foo.html") in path relativo
-        # rimuovendo lo slash iniziale per coerenza con SITE_ROOT
-        path = href.lstrip("/")
-
-        # Verifica che il file HTML esista realmente su disco.
-        # Questo filtra automaticamente le entry segnaposto del template
-        # (es. href="/art-divulgativi/nome-articolo.html") senza richiedere
-        # nessuna gestione manuale.
         abs_html = os.path.join(SITE_ROOT, path)
         if not os.path.isfile(abs_html):
             print(f"  [SKIP] File non trovato su disco → {path} (entry template o link errato)")
             continue
 
-        # Fonte primaria: legge datePublished dal JSON-LD/meta dell'articolo stesso.
-        # È il giorno esatto già presente negli header SEO di ogni pagina.
-        # Fallback: parsing della data italiana dall'indice (giorno 1 del mese).
         date_iso = extract_date_published(abs_html)
         if date_iso is None:
             print(f"  [DATE] Fallback su data italiana dall'indice: '{date_raw}'")
             date_iso = italian_date_to_iso(date_raw)
 
-        articles.append({
-            "path":  path,
-            "title": title,
-            "date":  date_iso,
-        })
+        articles.append({"path": path, "title": title, "date": date_iso})
         print(f"  [OK]  title={title[:60]!r}")
         print(f"        path={path}")
         print(f"        date={date_iso}")
@@ -345,15 +386,12 @@ def parse_articles_from_index() -> list[dict]:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# SCRIPT — non modificare oltre questo punto
+# SITEMAP HELPERS
 # ─────────────────────────────────────────────────────────────────────────────
 
 def url_for_path(abs_path: str) -> str:
     """Converte un percorso assoluto in URL relativa alla root del sito."""
-    rel = os.path.relpath(abs_path, SITE_ROOT)
-    # Normalizza separatori su Windows
-    rel = rel.replace("\\", "/")
-    # Aggiungi slash iniziale
+    rel = os.path.relpath(abs_path, SITE_ROOT).replace("\\", "/")
     if not rel.startswith("/"):
         rel = "/" + rel
     return rel
@@ -374,12 +412,10 @@ def collect_html_files(root: str) -> list[str]:
     print(f"[SCAN] Scansione cartella: {root}")
 
     for dirpath, dirnames, filenames in os.walk(root):
-        # Rimuovi in-place le cartelle escluse (evita di scenderci dentro)
         dirnames[:] = [
             d for d in dirnames
             if d not in EXCLUDE_DIRS and not d.startswith(".")
         ]
-
         for filename in filenames:
             ext = os.path.splitext(filename)[1].lower()
             if ext not in INCLUDE_EXTENSIONS:
@@ -387,7 +423,6 @@ def collect_html_files(root: str) -> list[str]:
             if filename in EXCLUDE_FILES:
                 print(f"  [SKIP] {filename} (escluso per nome)")
                 continue
-
             abs_path = os.path.join(dirpath, filename)
             found.append(abs_path)
             print(f"  [OK]   {os.path.relpath(abs_path, root)}")
@@ -398,29 +433,25 @@ def collect_html_files(root: str) -> list[str]:
 
 def build_sitemap(files: list[str]) -> str:
     """Genera il contenuto XML della sitemap standard."""
-    lines = []
-    lines.append('<?xml version="1.0" encoding="UTF-8"?>')
-    lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
-
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
     for abs_path in sorted(files):
-        url_path = url_for_path(abs_path)
-        full_url = BASE_URL + url_path
-
-        # Sostituisci /index.html con / per canonical più pulito
-        if url_path == "/index.html":
-            full_url = BASE_URL + "/"
-
+        url_path   = url_for_path(abs_path)
+        full_url   = BASE_URL + ("/" if url_path == "/index.html" else url_path)
         lastmod    = get_lastmod(abs_path)
         priority   = PRIORITY_MAP.get(url_path, "0.5")
         changefreq = CHANGEFREQ_MAP.get(url_path, DEFAULT_CHANGEFREQ)
 
-        lines.append("  <url>")
-        lines.append(f"    <loc>{full_url}</loc>")
-        lines.append(f"    <lastmod>{lastmod}</lastmod>")
-        lines.append(f"    <changefreq>{changefreq}</changefreq>")
-        lines.append(f"    <priority>{priority}</priority>")
-        lines.append("  </url>")
-
+        lines += [
+            "  <url>",
+            f"    <loc>{full_url}</loc>",
+            f"    <lastmod>{lastmod}</lastmod>",
+            f"    <changefreq>{changefreq}</changefreq>",
+            f"    <priority>{priority}</priority>",
+            "  </url>",
+        ]
         print(f"[ENTRY] {full_url}  |  lastmod={lastmod}  |  priority={priority}")
 
     lines.append("</urlset>")
@@ -428,48 +459,36 @@ def build_sitemap(files: list[str]) -> str:
 
 
 def build_sitemap_news(news_articles: list[dict]) -> str:
-    """
-    Genera il contenuto XML della Google News sitemap.
-
-    Nota: Google News usa questa sitemap principalmente per la scoperta
-    rapida di articoli recenti (ultimi 2 giorni), ma includiamo tutti gli
-    articoli perché il Publisher Center li usa per la configurazione.
-    """
+    """Genera il contenuto XML della Google News sitemap."""
     print("\n[NEWS] Generazione sitemap-news.xml...")
-
-    lines = []
-    lines.append('<?xml version="1.0" encoding="UTF-8"?>')
-    lines.append('<!--')
-    lines.append('  sitemap-news.xml — ludovicopapalia.com')
-    lines.append('  Google News sitemap (namespace news:).')
-    lines.append('  Aggiornata automaticamente da generate_sitemap.py')
-    lines.append('  Fonte: divulgativi-index.html (array ARTICLES)')
-    lines.append('  Ref: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap')
-    lines.append('-->')
-    lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')
-    lines.append('        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">')
-
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<!--',
+        '  sitemap-news.xml — ludovicopapalia.com',
+        '  Google News sitemap (namespace news:).',
+        '  Aggiornata automaticamente da generate_sitemap.py',
+        '  Fonte: divulgativi-index.html (array ARTICLES)',
+        '  Ref: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap',
+        '-->',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">',
+    ]
     for article in news_articles:
-        full_url = BASE_URL + "/" + article["path"].lstrip("/")
-
-        # Escape caratteri XML nel titolo
-        # xml_escape gestisce &, <, > (i soli obbligatori nei contenuti elemento XML)
-        # Gli apostrofi nei contenuti elemento non richiedono escaping — li lasciamo UTF-8
-        # per massima leggibilità e compatibilità con tutti i crawler news
+        full_url   = BASE_URL + "/" + article["path"].lstrip("/")
         title_safe = xml_escape(article["title"])
-
-        lines.append("  <url>")
-        lines.append(f"    <loc>{full_url}</loc>")
-        lines.append("    <news:news>")
-        lines.append("      <news:publication>")
-        lines.append(f"        <news:name>{NEWS_PUBLICATION_NAME}</news:name>")
-        lines.append(f"        <news:language>{NEWS_LANGUAGE}</news:language>")
-        lines.append("      </news:publication>")
-        lines.append(f"      <news:publication_date>{article['date']}</news:publication_date>")
-        lines.append(f"      <news:title>{title_safe}</news:title>")
-        lines.append("    </news:news>")
-        lines.append("  </url>")
-
+        lines += [
+            "  <url>",
+            f"    <loc>{full_url}</loc>",
+            "    <news:news>",
+            "      <news:publication>",
+            f"        <news:name>{NEWS_PUBLICATION_NAME}</news:name>",
+            f"        <news:language>{NEWS_LANGUAGE}</news:language>",
+            "      </news:publication>",
+            f"      <news:publication_date>{article['date']}</news:publication_date>",
+            f"      <news:title>{title_safe}</news:title>",
+            "    </news:news>",
+            "  </url>",
+        ]
         print(f"  [NEWS] {full_url}  |  date={article['date']}")
 
     lines.append("</urlset>")
@@ -477,33 +496,50 @@ def build_sitemap_news(news_articles: list[dict]) -> str:
     return "\n".join(lines)
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# INDEXNOW
+# ─────────────────────────────────────────────────────────────────────────────
+
+def collect_urls_for_indexnow(changed_files: list[str]) -> list[str]:
+    """
+    Converte i percorsi assoluti dei file modificati in URL assoluti
+    da passare a IndexNow. Applica la stessa normalizzazione di build_sitemap().
+    """
+    urls = []
+    for abs_path in changed_files:
+        url_path = url_for_path(abs_path)
+        urls.append(BASE_URL + ("/" if url_path == "/index.html" else url_path))
+    return urls
+
+
 def ping_indexnow(url_list: list[str]) -> None:
     """
-    Invia una notifica IndexNow con la lista degli URL aggiornati.
+    Invia una notifica IndexNow con la lista degli URL modificati.
 
     Il protocollo IndexNow è supportato da: Bing, Yandex, Naver, Seznam, Yep.
     Inviando a api.indexnow.org il ping viene automaticamente redistribuito
     a tutti i motori partecipanti — una sola chiamata è sufficiente.
 
-    Google NON supporta IndexNow (marzo 2026): per Google valgono le sitemap
-    e la Search Console come al solito.
+    IMPORTANTE: vengono inviati SOLO gli URL delle pagine effettivamente
+    cambiate dall'ultima esecuzione (change tracking via SHA-256).
+    Questo rispetta le specifiche del protocollo e preserva la quota.
 
-    Il file {INDEXNOW_KEY}.txt deve essere presente e raggiungibile sulla root
-    del sito, altrimenti il motore rifiuta la richiesta con 403.
+    Google NON supporta IndexNow: per Google valgono sitemap + Search Console.
     """
+    if not url_list:
+        print("\n[INDEXNOW] Nessuna pagina modificata — ping non necessario. ✓")
+        return
+
     print("\n" + "─" * 60)
     print("[INDEXNOW] Preparazione ping...")
-    print(f"[INDEXNOW] Endpoint : {INDEXNOW_ENDPOINT}")
-    print(f"[INDEXNOW] Host     : {BASE_URL.replace('https://', '').replace('http://', '')}")
-    print(f"[INDEXNOW] Key      : {INDEXNOW_KEY}")
-    print(f"[INDEXNOW] Key file : {INDEXNOW_KEY_LOCATION}")
-    print(f"[INDEXNOW] URL da notificare: {len(url_list)}")
-
+    print(f"[INDEXNOW] Endpoint   : {INDEXNOW_ENDPOINT}")
+    print(f"[INDEXNOW] Host       : {BASE_URL.replace('https://', '')}")
+    print(f"[INDEXNOW] Key        : {INDEXNOW_KEY}")
+    print(f"[INDEXNOW] Key file   : {INDEXNOW_KEY_LOCATION}")
+    print(f"[INDEXNOW] URL modificati da notificare: {len(url_list)}")
     for u in url_list:
         print(f"  → {u}")
 
-    # Costruisci il payload JSON secondo le specifiche del protocollo
-    # Ref: https://www.indexnow.org/documentation
     host = BASE_URL.replace("https://", "").replace("http://", "")
     payload = {
         "host":        host,
@@ -511,7 +547,6 @@ def ping_indexnow(url_list: list[str]) -> None:
         "keyLocation": INDEXNOW_KEY_LOCATION,
         "urlList":     url_list,
     }
-
     payload_bytes = json.dumps(payload, ensure_ascii=False).encode("utf-8")
 
     print(f"\n[INDEXNOW] Payload JSON ({len(payload_bytes)} bytes):")
@@ -522,31 +557,21 @@ def ping_indexnow(url_list: list[str]) -> None:
         data=payload_bytes,
         headers={
             "Content-Type": "application/json; charset=utf-8",
-            "User-Agent":   "generate_sitemap.py/1.0 (ludovicopapalia.com)",
+            "User-Agent":   "generate_sitemap.py/2.0 (ludovicopapalia.com)",
         },
         method="POST",
     )
 
     print("\n[INDEXNOW] Invio richiesta POST...")
-
     try:
         with urllib.request.urlopen(req, timeout=15) as response:
             status = response.status
             body   = response.read().decode("utf-8", errors="replace")
-
             print(f"[INDEXNOW] Risposta HTTP: {status}")
-
-            # Codici di risposta attesi secondo le specifiche IndexNow:
-            # 200 → OK, URL accettati
-            # 202 → Accepted (alcuni motori usano questo)
-            # 400 → Invalid format
-            # 403 → Forbidden — chiave non valida o file .txt non trovato sul sito
-            # 422 → Unprocessable — URL non appartengono all'host dichiarato
-            # 429 → Too Many Requests — quota superata, riprova più tardi
             if status in (200, 202):
                 print("[INDEXNOW] ✓ Ping inviato con successo.")
-                print("[INDEXNOW]   I motori supportati (Bing, Yandex, Naver, ecc.) ")
-                print("[INDEXNOW]   ricrawleranno le pagine nelle prossime ore.")
+                print("[INDEXNOW]   I motori supportati (Bing, Yandex, Naver, ecc.)")
+                print("[INDEXNOW]   ricrawleranno le pagine modificate nelle prossime ore.")
             else:
                 print(f"[INDEXNOW] ✗ Risposta inattesa: {status}")
                 if body:
@@ -558,7 +583,7 @@ def ping_indexnow(url_list: list[str]) -> None:
         if error_body:
             print(f"[INDEXNOW]   Dettaglio: {error_body[:500]}")
         if e.code == 403:
-            print("[INDEXNOW]   → Verifica che il file chiave sia raggiungibile:")
+            print(f"[INDEXNOW]   → Verifica che il file chiave sia raggiungibile:")
             print(f"[INDEXNOW]     {INDEXNOW_KEY_LOCATION}")
         elif e.code == 422:
             print("[INDEXNOW]   → Uno o più URL non appartengono all'host dichiarato.")
@@ -567,53 +592,38 @@ def ping_indexnow(url_list: list[str]) -> None:
 
     except urllib.error.URLError as e:
         print(f"[INDEXNOW] ✗ Errore di rete: {e.reason}")
-        print("[INDEXNOW]   Verifica la connessione internet e riprova.")
 
     except Exception as e:
         print(f"[INDEXNOW] ✗ Errore imprevisto: {type(e).__name__}: {e}")
 
 
-def collect_urls_for_indexnow(files: list[str]) -> list[str]:
-    """
-    Costruisce la lista di URL assoluti da passare a IndexNow,
-    partendo dai file HTML già raccolti per la sitemap.
-    Applica la stessa normalizzazione usata in build_sitemap()
-    (es. /index.html → BASE_URL/).
-    """
-    urls = []
-    for abs_path in files:
-        url_path = url_for_path(abs_path)
-        if url_path == "/index.html":
-            urls.append(BASE_URL + "/")
-        else:
-            urls.append(BASE_URL + url_path)
-    return urls
-
+# ─────────────────────────────────────────────────────────────────────────────
+# MAIN
+# ─────────────────────────────────────────────────────────────────────────────
 
 def main():
     print("=" * 60)
-    print("  generate_sitemap.py — Ludovico Papalia")
+    print("  generate_sitemap.py v2.0 — Ludovico Papalia")
     print("=" * 60)
     print(f"  SITE_ROOT        : {SITE_ROOT}")
     print(f"  BASE_URL         : {BASE_URL}")
     print(f"  OUTPUT (standard): {OUTPUT_SITEMAP}")
     print(f"  OUTPUT (news)    : {OUTPUT_SITEMAP_NEWS}")
-    print(f"  IndexNow         : {'ABILITATO' if INDEXNOW_ENABLED else 'disabilitato'}")
+    print(f"  STATE FILE       : {STATE_FILE}")
+    print(f"  IndexNow         : {'ABILITATO (solo pagine modificate)' if INDEXNOW_ENABLED else 'disabilitato'}")
     print("=" * 60 + "\n")
 
-    # Verifica che SITE_ROOT esista
     if not os.path.isdir(SITE_ROOT):
         print(f"[ERRORE] La cartella '{SITE_ROOT}' non esiste.")
-        print("         Aggiorna la variabile SITE_ROOT in CONFIG.")
         return
 
-    # ── SITEMAP STANDARD ──────────────────────────────────────────────────────
+    # ── RACCOLTA FILE ─────────────────────────────────────────────────────────
     files = collect_html_files(SITE_ROOT)
-
     if not files:
         print("[AVVISO] Nessun file HTML trovato. Controlla SITE_ROOT e EXCLUDE_DIRS.")
         return
 
+    # ── SITEMAP STANDARD ──────────────────────────────────────────────────────
     print("[BUILD] Generazione sitemap.xml...")
     xml_standard = build_sitemap(files)
     with open(OUTPUT_SITEMAP, "w", encoding="utf-8") as f:
@@ -621,9 +631,7 @@ def main():
     print(f"\n[DONE]  sitemap.xml salvata: {len(files)} URL incluse.")
 
     # ── SITEMAP NEWS ──────────────────────────────────────────────────────────
-    # Estrai gli articoli automaticamente da divulgativi-index.html
     news_articles = parse_articles_from_index()
-
     if not news_articles:
         print("[AVVISO] Nessun articolo estratto. sitemap-news.xml non verrà aggiornata.")
     else:
@@ -632,10 +640,20 @@ def main():
             f.write(xml_news)
         print(f"[DONE]  sitemap-news.xml salvata: {len(news_articles)} articoli inclusi.")
 
-    # ── INDEXNOW ──────────────────────────────────────────────────────────────
+    # ── CHANGE TRACKING + INDEXNOW ────────────────────────────────────────────
     if INDEXNOW_ENABLED:
-        url_list = collect_urls_for_indexnow(files)
-        ping_indexnow(url_list)
+        old_state = load_state()
+        changed_files, new_state = detect_changed_files(files, old_state)
+
+        # Salva sempre il nuovo stato, anche se non ci sono modifiche,
+        # così il file rimane allineato alla situazione attuale.
+        save_state(new_state)
+
+        if changed_files:
+            url_list = collect_urls_for_indexnow(changed_files)
+            ping_indexnow(url_list)
+        else:
+            print("\n[INDEXNOW] Nessuna pagina modificata — ping non necessario. ✓")
     else:
         print("\n[INDEXNOW] Ping disabilitato (INDEXNOW_ENABLED = False).")
 
@@ -645,10 +663,9 @@ def main():
     print("     https://search.google.com/search-console/sitemaps")
     print("  2. Publisher Center → verifica inclusione")
     print("     https://publishercenter.google.com")
-    print("  3. IndexNow già inviato automaticamente ↑")
+    print("  3. IndexNow già inviato automaticamente ↑ (solo modifiche)")
     print("──────────────────────────────────────────────────────")
 
 
 if __name__ == "__main__":
     main()
-
