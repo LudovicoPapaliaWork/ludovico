@@ -36,6 +36,7 @@ import re
 import datetime
 import json
 import urllib.request
+from xml.sax.saxutils import escape as xml_escape
 import urllib.error
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -288,7 +289,8 @@ def parse_articles_from_index() -> list[dict]:
         date_match = re.search(r'date\s*:\s*["\']([^"\']+)["\']', entry_raw)
 
         # Campo "title"
-        title_match = re.search(r'title\s*:\s*["\']([^"\']+)["\']', entry_raw)
+        # Fix apostrofi JS-escaped (es. l\'Europa): regex con backreference per riconoscere \. come token singolo
+        title_match = re.search(r'title\s*:\s*(["\'])((?:[^\\]|\\.)*?)\1', entry_raw, re.DOTALL)
 
         # Campo "href" — es.  href:  "/art-divulgativi/foo.html"
         href_match  = re.search(r'href\s*:\s*["\']([^"\']+)["\']', entry_raw)
@@ -303,7 +305,9 @@ def parse_articles_from_index() -> list[dict]:
             continue
 
         date_raw = date_match.group(1).strip()
-        title    = title_match.group(1).strip()
+        # group(2) perché il nuovo regex ha il delimitatore come gruppo 1
+        # re.sub risolve le sequenze escape JS: \' → '  \" → "  \\ → \
+        title    = re.sub(r'\\(.)', r'\1', title_match.group(2).strip())
         href     = href_match.group(1).strip()
 
         # Converti href ("/art-divulgativi/foo.html") in path relativo
@@ -449,14 +453,10 @@ def build_sitemap_news(news_articles: list[dict]) -> str:
         full_url = BASE_URL + "/" + article["path"].lstrip("/")
 
         # Escape caratteri XML nel titolo
-        title_safe = (
-            article["title"]
-            .replace("&", "&amp;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;")
-            .replace('"', "&quot;")
-            .replace("'", "&apos;")
-        )
+        # xml_escape gestisce &, <, > (i soli obbligatori nei contenuti elemento XML)
+        # Gli apostrofi nei contenuti elemento non richiedono escaping — li lasciamo UTF-8
+        # per massima leggibilità e compatibilità con tutti i crawler news
+        title_safe = xml_escape(article["title"])
 
         lines.append("  <url>")
         lines.append(f"    <loc>{full_url}</loc>")
@@ -651,3 +651,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
