@@ -563,6 +563,10 @@ function _injectNav() {
 
 /* ── D2. Schema.org Person + WebSite ─────────────────────────────────────── */
 function _injectSchemaOrg() {
+  /* Se la homepage ha già un blocco JSON-LD statico (data-lp-static="1"),
+     non iniettare un duplicato. La pagina è già ottimizzata per il crawling
+     di prima ondata. Tutte le altre pagine ricevono l'iniezione normale. */
+  if (document.querySelector('script[type="application/ld+json"][data-lp-static]')) return;
   var script = document.createElement('script');
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify(LP_SCHEMA, null, 2);
