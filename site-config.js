@@ -160,7 +160,10 @@ var LP_SCHEMA = {
         "https://orcid.org/0009-0003-8751-9445",
         "https://www.unibo.it/sitoweb/ludovico.papalia2/",
         "https://dike.research.vub.be/en/ludovico-alessandro-papalia",
-        "https://www.linkedin.com/in/ludovico-alessandro-papalia-6376ba86/"
+        "https://www.linkedin.com/in/ludovico-papalia/",
+        "https://www.linkedin.com/in/ludovico-alessandro-papalia-6376ba86/",
+        "https://scholar.google.com/citations?user=WFQmMZIAAAAJ&hl=it",
+        "https://www.instagram.com/ludovicopapalia/"
       ],
       "affiliation": [
         {
