@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── SEO & SOCIAL ───────────────────────────────────────── -->
+  <title>Il web non è più solo per te — Ludovico Papalia</title>
+  <meta name="description" content="Ludovico Papalia esperto di diritto informatico e intelligenza artificiale analizza la transizione silenziosa del web: da interfaccia per occhi umani a infrastruttura per agenti AI. Cosa è MCP, perché Google ha fermato Project Mariner e cosa cambia davvero.">
+  <meta name="author" content="Ludovico Papalia">
+  <meta name="keywords" content="MCP Model Context Protocol agenti AI web internet macchine Google Mariner diritto informatico Ludovico Papalia intelligenza artificiale">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Il web non è più solo per te">
+  <meta property="og:description" content="Google ha fermato l'agente che navigava il web come un umano. Non è una sconfitta. È il segnale che qualcosa di più profondo sta già succedendo.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html">
+  <!-- ─── OG:IMAGE ─────────────────────────────────────────────────────────
+       OBBLIGATORIO per Google News. Se l'articolo non ha un video embed,
+       usa profile.png come fallback. Se hai un'immagine tematica, usala.
+       Minimo 696px di larghezza.
+       Fallback: https://www.ludovicopapalia.com/profile.png
+  ──────────────────────────────────────────────────────────────────────── -->
+  <meta property="og:image"       content="https://www.ludovicopapalia.com/profile.png">
+  <meta property="og:site_name"   content="Ludovico Papalia — Legal Informatics">
+  <meta property="article:author" content="Ludovico Papalia">
+  <meta property="article:published_time" content="2026-03-23">
+  <meta property="article:section" content="Diritto Informatico">
+  <meta property="article:tag"    content="MCP">
+  <meta property="article:tag"    content="Agenti AI">
+  <meta property="article:tag"    content="Google">
+  <meta property="article:tag"    content="Intelligenza Artificiale">
+  <meta property="article:tag"    content="Web">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Il web non è più solo per te">
+  <meta name="twitter:description" content="Google ha fermato l'agente che navigava il web come un umano. Non è una sconfitta. È il segnale che qualcosa di più profondo sta già succedendo.">
+  <meta name="twitter:image"       content="https://www.ludovicopapalia.com/profile.png">
+
+  <!-- ─── STRUCTURED DATA FOR LLMs & CRAWLERS ──────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NewsArticle",
+        "@id": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html#article",
+        "headline": "Il web non è più solo per te",
+        "description": "Ludovico Papalia esperto di diritto informatico e intelligenza artificiale analizza la transizione silenziosa del web: da interfaccia per occhi umani a infrastruttura per agenti AI attraverso il Model Context Protocol.",
+        "keywords": ["MCP", "Model Context Protocol", "agenti AI", "Google Mariner", "web", "intelligenza artificiale", "diritto informatico", "Ludovico Papalia"],
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "inLanguage": "it",
+        "articleSection": "Diritto Informatico",
+        "genre": "Divulgazione giuridica",
+        "url": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html",
+        "isPartOf": {
+          "@id": "https://www.ludovicopapalia.com/#website"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.ludovicopapalia.com/#person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com",
+          "jobTitle": "PhD Candidate in Legal Informatics",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Università di Bologna"
+          }
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Model Context Protocol", "description": "Standard aperto introdotto da Anthropic nel 2024 per connettere agenti AI a sistemi e dati esterni in modo standardizzato" },
+          { "@type": "Thing", "name": "Google Project Mariner", "description": "Agente AI di Google capace di navigare il web in modo autonomo, presentato nel dicembre 2024" },
+          { "@type": "Thing", "name": "Agenti AI", "description": "Sistemi di intelligenza artificiale capaci di compiere azioni autonome in ambienti digitali" },
+          { "@type": "Thing", "name": "Web semantico per macchine" }
+        ],
+        "mentions": [
+          { "@type": "Organization", "name": "Google", "url": "https://www.google.com" },
+          { "@type": "Organization", "name": "Anthropic", "url": "https://www.anthropic.com" },
+          { "@type": "Organization", "name": "OpenAI", "url": "https://www.openai.com" },
+          { "@type": "Organization", "name": "Linux Foundation", "url": "https://www.linuxfoundation.org" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ludovicopapalia.com" },
+          { "@type": "ListItem", "position": 2, "name": "Articoli", "item": "https://www.ludovicopapalia.com/divulgativi-index.html" },
+          { "@type": "ListItem", "position": 3, "name": "Il web non è più solo per te", "item": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ► Nav italiana override — deve precedere site-config.js -->
+  <script>
+    window.LP_NAV_TYPE   = 'it';
+    window.LP_NAV_ACTIVE = 'Articoli';
+  </script>
+
+  <!-- ► MASTER SITE CONFIG -->
+  <script src="/site-config.js"></script>
+
+  <style>
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── GRAIN OVERLAY ──────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── ARTICLE WRAPPER ────────────────────────────────────── */
+    .article-page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    /* ─── HEADER AREA ────────────────────────────────────────── */
+    .article-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp .7s ease both;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-dim);
+      padding: .28rem .85rem; border-radius: 99px;
+    }
+    .tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    .article-meta-line {
+      font-size: .75rem; letter-spacing: .06em; color: var(--muted);
+    }
+    .article-meta-line span { margin: 0 .4rem; color: var(--gold-dim); }
+
+    h1.article-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 300; line-height: 1.1;
+      letter-spacing: -.015em; color: var(--accent);
+      animation: fadeUp .7s .08s ease both;
+    }
+    h1.article-title em { font-style: italic; color: var(--gold); }
+
+    .article-lead {
+      margin-top: 1.6rem;
+      font-family: var(--ff-serif);
+      font-size: 1.35rem; font-weight: 300;
+      font-style: italic; line-height: 1.65;
+      color: var(--text);
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 1.4rem;
+      animation: fadeUp .7s .16s ease both;
+    }
+
+    .article-divider {
+      width: 40px; height: 1px;
+      background: var(--gold-dim);
+      margin: 2.5rem 0;
+      animation: fadeUp .7s .22s ease both;
+    }
+
+    /* ─── BODY TEXT ──────────────────────────────────────────── */
+    .article-body {
+      animation: fadeUp .8s .28s ease both;
+    }
+    .article-body p {
+      font-size: .97rem; color: var(--muted);
+      line-height: 1.95; margin-bottom: 1.5rem;
+    }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body em { font-style: italic; color: var(--accent); }
+
+    /* section headings inside article */
+    .article-body h2 {
+      font-family: var(--ff-serif);
+      font-size: 1.7rem; font-weight: 400;
+      color: var(--accent); line-height: 1.2;
+      margin: 2.8rem 0 1rem;
+    }
+    .article-body h2 em { font-style: italic; color: var(--gold); }
+
+    /* pull quote */
+    .pull-quote {
+      margin: 2.5rem 0;
+      padding: 1.2rem 1.6rem;
+      border-left: 2px solid var(--gold);
+      background: var(--bg-card);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .pull-quote p {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem !important;
+      font-style: italic;
+      color: var(--accent) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* box tecnico MCP */
+    .tech-box {
+      margin: 2.5rem 0;
+      padding: 1.6rem 1.8rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+    .tech-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold-dim), transparent);
+    }
+    .tech-box-label {
+      font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .9rem;
+    }
+    .tech-box p {
+      font-size: .9rem !important;
+      color: var(--muted) !important;
+      line-height: 1.85 !important;
+      margin-bottom: .9rem !important;
+    }
+    .tech-box p:last-child { margin-bottom: 0 !important; }
+    .tech-box strong { color: var(--text) !important; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: 740px; margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-sig { font-family: var(--ff-serif); font-size: 1rem; color: var(--muted); }
+    .footer-back { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .footer-back:hover { color: var(--gold); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .article-page { padding: 7rem 1.2rem 4rem; }
+      footer { padding: 1.5rem 1.2rem 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <article class="article-page" itemscope itemtype="https://schema.org/Article">
+
+      <meta itemprop="datePublished" content="2026-03-23">
+      <meta itemprop="dateModified"  content="2026-03-23">
+      <meta itemprop="author"        content="Ludovico Papalia">
+      <meta itemprop="inLanguage"    content="it">
+
+      <!-- ─── EYEBROW ────────────────────────────────────────── -->
+      <div class="article-eyebrow">
+        <div class="tag"><span class="tag-dot"></span>Intelligenza Artificiale</div>
+        <span class="article-meta-line">Marzo 2026 <span>·</span> 8 min di lettura</span>
+      </div>
+
+      <!-- ─── TITLE ──────────────────────────────────────────── -->
+      <h1 class="article-title" itemprop="headline">
+        Il web non è più <em>solo per te</em>
+      </h1>
+
+      <!-- ─── LEAD ────────────────────────────────────────────── -->
+      <p class="article-lead" itemprop="description">
+        Google ha fermato il progetto che insegnava all'AI a navigare internet come farebbe un umano. Non è una sconfitta. È il segnale che qualcosa di più profondo sta già succedendo, silenziosamente, sotto la superficie del web che usiamo ogni giorno.
+      </p>
+
+      <div class="article-divider"></div>
+
+      <!-- ─── BODY ────────────────────────────────────────────── -->
+      <div class="article-body" itemprop="articleBody">
+
+        <p>
+          A dicembre 2024 Google presentò Project Mariner con toni entusiastici: un agente AI capace di aprire il browser, leggere le pagine, riempire moduli, comprare prodotti, prenotare voli, cercare informazioni. In pratica, un assistente che fa le cose al posto tuo, navigando internet esattamente come faresti tu. Quindici mesi dopo, il team è stato smantellato e le risorse redistribuite su altri progetti. Una notizia di settore, in apparenza. In realtà, uno specchio di qualcosa di molto più interessante.
+        </p>
+
+        <h2>Perché navigare il web è <em>difficile per le macchine</em></h2>
+
+        <p>
+          Per capire perché Mariner ha faticato, bisogna partire da una cosa che diamo così per scontata da non vederla più: <strong>il web è stato progettato per gli occhi umani</strong>. Ogni pagina web che apri è, nella sua essenza, un documento visuale. Il suo scopo è essere percepito, letto, interpretato da un cervello che sa cosa significa un bottone, che riconosce un campo di testo, che capisce l'ironia nel titolo di una notizia.
+        </p>
+
+        <p>
+          Un agente AI non vede nulla di tutto questo. Riceve un fiume di codice HTML, centinaia di elementi sovrapposti, stili CSS che ridisegnano continuamente la struttura, script JavaScript che modificano la pagina in tempo reale dopo il caricamento. Per un agente che deve capire dove cliccare, distinguere il prezzo di un prodotto da quello della spedizione, o riconoscere che quel testo in grigio chiaro è disabilitato, si tratta di un problema di interpretazione enorme. Ogni sito è diverso dagli altri. Ogni aggiornamento di layout rompe quello che l'agente aveva imparato a fare. È come insegnare a qualcuno a guidare su una strada che cambia forma ogni giorno.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Il web è stato progettato per gli occhi umani. Chiedere a un agente AI di navigarlo è come chiedere a qualcuno di leggere un libro tenendolo sotto una luce che si accende e si spegne ogni due secondi.
+          </p>
+        </div>
+
+        <p>
+          C'è poi il problema dei costi. Ogni volta che un agente analizza una pagina web, consuma una quantità enorme di token, l'unità di misura del lavoro che un modello AI compie. Analizzare visivamente un'interfaccia, interpretare i suoi elementi, decidere quale azione compiere e verificare se l'azione ha avuto effetto: tutto questo costa. Su scala, costa moltissimo. Ed è lento, perché ogni passaggio richiede un ciclo completo di elaborazione. Il risultato pratico è che un agente che prenota un volo autonomamente impiega minuti, non secondi, e può sbagliare in modo imprevedibile se il sito nel frattempo ha cambiato anche solo la posizione di un elemento.
+        </p>
+
+        <h2>Il problema non era l'AI. Era <em>il mezzo</em></h2>
+
+        <p>
+          Qui sta il punto che mi sembra più sottovalutato nel racconto pubblico di questa storia. Il fallimento relativo di Mariner non dice nulla sulle capacità dell'intelligenza artificiale. Dice tutto sulla natura del web attuale. Abbiamo costruito, nel corso di trent'anni, un'infrastruttura pensata esclusivamente per la percezione umana, e ora proviamo a farci sopra girare macchine che non hanno occhi.
+        </p>
+
+        <p>
+          È un po' come se avessimo costruito un sistema autostradale bellissimo, con cartelli colorati, segnali visivi, rotatorie intuitive per un guidatore, e poi provassimo a farci girare veicoli autonomi che si orientano solo tramite dati GPS e sensori. Funziona, ma con uno sforzo sproporzionato rispetto a quello che sarebbe necessario se il sistema fosse stato pensato anche per loro fin dall'inizio.
+        </p>
+
+        <p>
+          La risposta dell'industria a questo problema non è arrivata sotto forma di annunci o conferenze stampa. È arrivata sotto forma di uno standard tecnico, pubblicato quasi in silenzio, che nel giro di poco più di un anno è diventato il protocollo di riferimento di tutta l'industria AI. Si chiama MCP, Model Context Protocol. Ed è, a mio avviso, una delle cose più interessanti che stanno succedendo nel settore tecnologico in questo momento.
+        </p>
+
+        <h2>Cos'è MCP: <em>spiegato bene</em></h2>
+
+        <div class="tech-box">
+          <div class="tech-box-label">Approfondimento tecnico</div>
+          <p>
+            MCP, Model Context Protocol, è uno standard aperto introdotto da Anthropic nel novembre 2024 e rapidamente adottato da OpenAI, Google DeepMind e Microsoft. Da dicembre 2025 è gestito dalla Linux Foundation sotto una fondazione neutrale, il che significa che nessuna singola azienda lo controlla.
+          </p>
+          <p>
+            Il modo più semplice per capire cosa fa è partire da un'analogia. Prima che esistesse il cavo USB-C, ogni dispositivo elettronico aveva il suo connettore proprietario: Lightning per gli iPhone, micro-USB per gli Android, connettori diversi per fotocamere, hard disk, cuffie. Se volevi collegare due dispositivi, dovevi avere il cavo giusto, e spesso non esisteva. <strong>MCP è l'equivalente dell'USB-C per l'intelligenza artificiale</strong>: uno standard unico che permette a qualsiasi agente AI di connettersi a qualsiasi sistema esterno, senza bisogno di un connettore su misura per ogni combinazione.
+          </p>
+          <p>
+            Concretamente funziona così. Un servizio, diciamo Google Drive, espone un "server MCP": un piccolo programma che descrive all'agente AI cosa può fare (leggere file, cercare documenti, creare cartelle) e come farlo, usando un linguaggio standardizzato. L'agente AI, che è il "client MCP", legge questa descrizione e sa esattamente come interagire con Drive, senza dover interpretare nessuna interfaccia visuale. Non vede pulsanti, non analizza layout, non legge HTML. Riceve direttamente dati strutturati e può agire in modo preciso, veloce e prevedibile.
+          </p>
+          <p>
+            Prima di MCP, ogni sviluppatore che voleva connettere un'AI a un servizio esterno doveva scrivere un'integrazione personalizzata. Se aveva dieci servizi e tre modelli AI diversi, erano potenzialmente trenta integrazioni diverse da costruire e mantenere. Con MCP, ogni servizio scrive il connettore una volta sola, e qualsiasi AI compatibile con lo standard può usarlo immediatamente.
+          </p>
+        </div>
+
+        <p>
+          Al momento esistono già migliaia di server MCP pubblici: per Google Drive, Slack, GitHub, database, sistemi di ticketing aziendali, strumenti di analisi dati. La crescita è stata così rapida che Anthropic, OpenAI e Microsoft hanno deciso insieme di affidarne la governance a una fondazione neutrale, per impedire che diventasse un campo di battaglia competitivo. Quando i principali rivali di un settore si siedono allo stesso tavolo per dichiarare che un pezzo di infrastruttura deve rimanere aperto e condiviso, di solito significa che quella infrastruttura è considerata fondamentale.
+        </p>
+
+        <h2>Il web che si sta <em>costruendo al piano di sotto</em></h2>
+
+        <p>
+          Mettendo insieme questi elementi, il quadro che emerge è quello di una transizione silenziosa in corso. Da un lato, il web visuale che tutti conoscono continua ad esistere per gli utenti umani, con le sue pagine, i suoi layout, le sue animazioni. Dall'altro, si sta costruendo un secondo livello di internet, invisibile all'utente finale, fatto di server MCP e connettori strutturati, pensato esclusivamente per essere consumato da agenti AI.
+        </p>
+
+        <p>
+          Non è fantascienza. È già adesso. Quando usi Claude o un altro assistente AI e gli chiedi di cercare qualcosa nei tuoi documenti di lavoro, o di creare un evento nel calendario, o di analizzare i dati di un database aziendale, molto probabilmente sta usando un connettore MCP, non navigando una pagina web. La risposta arriva in pochi secondi, è precisa, non sbaglia perché il layout è cambiato.
+        </p>
+
+        <p>
+          La mossa di Google di spostare risorse da Mariner verso i coding agents si legge perfettamente in questa chiave. Formare sviluppatori che costruiscano connettori MCP è strategicamente molto più efficiente che insegnare a un agente a fingere di essere un umano davanti a un browser. <strong>Non si tratta di abbandonare l'idea di un web navigabile dagli agenti. Si tratta di costruire un web che non abbia bisogno di essere "navigato" nel senso tradizionale del termine</strong>, perché è stato progettato fin dall'inizio per essere interrogato in modo diretto e strutturato.
+        </p>
+
+        <h2>Cosa cambia, <em>concretamente</em></h2>
+
+        <p>
+          Per chi usa l'AI nel lavoro quotidiano, questa transizione porta benefici molto concreti. Gli agenti che operano su MCP sono più veloci, più economici da far girare, molto più affidabili. Possono compiere azioni su sistemi complessi senza i problemi di instabilità che affliggono chi prova a fargli usare interfacce grafiche. Un agente che gestisce i ticket del supporto clienti tramite un connettore MCP con il CRM aziendale fa un lavoro qualitativamente diverso da uno che cerca di cliccare sui pulsanti dell'interfaccia web.
+        </p>
+
+        <p>
+          Per chi sviluppa servizi digitali, la questione è ancora più rilevante. Nei prossimi anni, avere un server MCP per il proprio servizio diventerà probabilmente tanto importante quanto avere oggi un'app mobile. Se il tuo servizio non è raggiungibile dagli agenti AI in modo strutturato, semplicemente non esisterà nel loro mondo. Sarà come avere un negozio senza insegna in una strada dove tutti guidano a velocità doppia e non possono permettersi di fermarsi a leggere.
+        </p>
+
+        <p>
+          La domanda che trovo più interessante, e che per il momento rimane aperta, riguarda chi controlla questo nuovo livello. Il web visuale è distribuito, caotico, difficilmente censurabile proprio perché è fatto di milioni di pagine diverse. Il layer MCP, per funzionare bene, tende verso la standardizzazione e la concentrazione: pochi server grandi, molto usati, gestiti da chi ha le risorse per mantenerli. Chi decide quali dati esporre, in quale formato, con quale granularità, avrà un potere sull'ecosistema AI che oggi è difficile da immaginare appieno. È una conversazione che vale la pena iniziare adesso, prima che l'infrastruttura sia già costruita.
+        </p>
+
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <span class="footer-sig">Ludovico Papalia</span>
+    <a class="footer-back" href="/divulgativi-index.html">← Altri articoli</a>
+  </footer>
+
+</body>
+</html>
