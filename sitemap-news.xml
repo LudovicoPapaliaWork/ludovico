@@ -195,4 +195,15 @@
       <news:title>Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche</news:title>
     </news:news>
   </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-03-23T00:00:00+01:00</news:publication_date>
+      <news:title>Il web non è più solo per te</news:title>
+    </news:news>
+  </url>
 </urlset>
