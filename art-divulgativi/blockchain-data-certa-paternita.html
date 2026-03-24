@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── SEO & SOCIAL ───────────────────────────────────────── -->
+  <title>Data certa, paternità incerta: cosa certifica davvero la blockchain — Ludovico Papalia</title>
+  <meta name="description" content="Mettere un file nella blockchain è gratis e tecnicamente inattaccabile. Ma quello che certifica non è quello che la maggior parte delle persone crede. E la distanza tra la matematica e il diritto è più grande del previsto.">
+  <meta name="author" content="Ludovico Papalia">
+  <meta name="keywords" content="blockchain, data certa, notarizzazione, hash, OpenTimestamps, diritto informatico, Ludovico Papalia, art. 8-ter, eIDAS, prova digitale, paternità digitale">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Data certa, paternità incerta: cosa certifica davvero la blockchain">
+  <meta property="og:description" content="Mettere un file nella blockchain è gratis e tecnicamente inattaccabile. Ma quello che certifica non è quello che la maggior parte delle persone crede.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html">
+  <meta property="og:image"       content="https://www.ludovicopapalia.com/profile.png">
+  <meta property="og:site_name"   content="Ludovico Papalia — Legal Informatics">
+  <meta property="article:author"           content="Ludovico Papalia">
+  <meta property="article:published_time"   content="2026-03-24">
+  <meta property="article:section"          content="Diritto Informatico">
+  <meta property="article:tag"              content="Blockchain">
+  <meta property="article:tag"              content="Data Certa">
+  <meta property="article:tag"              content="Prova Digitale">
+  <meta property="article:tag"              content="Diritto Informatico">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Data certa, paternità incerta: cosa certifica davvero la blockchain">
+  <meta name="twitter:description" content="Mettere un file nella blockchain è gratis e tecnicamente inattaccabile. Ma quello che certifica non è quello che la maggior parte delle persone crede.">
+
+  <!-- ─── STRUCTURED DATA ───────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NewsArticle",
+        "@id": "https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html#article",
+        "headline": "Data certa, paternità incerta: cosa certifica davvero la blockchain",
+        "description": "Ludovico Papalia esperto di blockchain e diritto informatico analizza cosa certifica davvero un timestamp su blockchain: perché la prova matematica dell'esistenza di un file non equivale a data certa in senso giuridico, non certifica la paternità e non sostituisce il notaio.",
+        "keywords": ["blockchain", "data certa", "notarizzazione", "hash", "OpenTimestamps", "eIDAS", "art. 8-ter", "prova digitale", "diritto informatico", "Ludovico Papalia"],
+        "datePublished": "2026-03-24",
+        "dateModified":  "2026-03-24",
+        "inLanguage": "it",
+        "articleSection": "Diritto Informatico",
+        "genre": "Divulgazione giuridica",
+        "url": "https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html",
+        "isPartOf": {
+          "@id": "https://www.ludovicopapalia.com/#website"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.ludovicopapalia.com/#person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com",
+          "jobTitle": "PhD Candidate in Legal Informatics",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Università di Bologna"
+          }
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Blockchain" },
+          { "@type": "Thing", "name": "Data certa", "description": "Istituto civilistico che rende un documento opponibile a terzi da una data certa" },
+          { "@type": "Thing", "name": "Notarizzazione digitale" },
+          { "@type": "Thing", "name": "eIDAS", "description": "Regolamento UE 910/2014 sull'identità digitale e i servizi fiduciari" },
+          { "@type": "Thing", "name": "Art. 8-ter D.L. 135/2018", "description": "Norma italiana che riconosce valore giuridico alle tecnologie basate su registri distribuiti" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home",        "item": "https://www.ludovicopapalia.com" },
+          { "@type": "ListItem", "position": 2, "name": "Divulgazione","item": "https://www.ludovicopapalia.com/divulgativi-index.html" },
+          { "@type": "ListItem", "position": 3, "name": "Data certa, paternità incerta: cosa certifica davvero la blockchain", "item": "https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ► Nav italiana override — deve precedere site-config.js -->
+  <script>
+    window.LP_NAV_TYPE   = 'it';
+    window.LP_NAV_ACTIVE = 'Divulgazione';
+  </script>
+
+  <!-- ► MASTER SITE CONFIG -->
+  <script src="/site-config.js"></script>
+
+  <style>
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── GRAIN OVERLAY ──────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── ARTICLE WRAPPER ────────────────────────────────────── */
+    .article-page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    /* ─── HEADER AREA ────────────────────────────────────────── */
+    .article-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp .7s ease both;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-dim);
+      padding: .28rem .85rem; border-radius: 99px;
+    }
+    .tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    .article-meta-line {
+      font-size: .75rem; letter-spacing: .06em; color: var(--muted);
+    }
+    .article-meta-line span { margin: 0 .4rem; color: var(--gold-dim); }
+
+    h1.article-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 300; line-height: 1.1;
+      letter-spacing: -.015em; color: var(--accent);
+      animation: fadeUp .7s .08s ease both;
+    }
+    h1.article-title em { font-style: italic; color: var(--gold); }
+
+    .article-lead {
+      margin-top: 1.6rem;
+      font-family: var(--ff-serif);
+      font-size: 1.35rem; font-weight: 300;
+      font-style: italic; line-height: 1.65;
+      color: var(--text);
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 1.4rem;
+      animation: fadeUp .7s .16s ease both;
+    }
+
+    .article-divider {
+      width: 40px; height: 1px;
+      background: var(--gold-dim);
+      margin: 2.5rem 0;
+      animation: fadeUp .7s .22s ease both;
+    }
+
+    /* ─── BODY TEXT ──────────────────────────────────────────── */
+    .article-body {
+      animation: fadeUp .8s .28s ease both;
+    }
+    .article-body p {
+      font-size: .97rem; color: var(--muted);
+      line-height: 1.95; margin-bottom: 1.5rem;
+    }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body em { font-style: italic; color: var(--accent); }
+
+    /* section headings inside article */
+    .article-body h2 {
+      font-family: var(--ff-serif);
+      font-size: 1.7rem; font-weight: 400;
+      color: var(--accent); line-height: 1.2;
+      margin: 2.8rem 0 1rem;
+    }
+    .article-body h2 em { font-style: italic; color: var(--gold); }
+
+    .article-body h3 {
+      font-family: var(--ff-sans);
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 2rem 0 .8rem;
+    }
+
+    /* pull quote */
+    .pull-quote {
+      margin: 2.5rem 0;
+      padding: 1.2rem 1.6rem;
+      border-left: 2px solid var(--gold);
+      background: var(--bg-card);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .pull-quote p {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem !important;
+      font-style: italic;
+      color: var(--accent) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* info box */
+    .info-box {
+      margin: 2rem 0;
+      padding: 1.4rem 1.8rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+    .info-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold-dim), transparent);
+    }
+    .info-box-label {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: .7rem;
+    }
+    .info-box p {
+      font-size: .88rem !important;
+      margin-bottom: .6rem !important;
+    }
+    .info-box p:last-child { margin-bottom: 0 !important; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: 740px; margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-sig { font-family: var(--ff-serif); font-size: 1rem; color: var(--muted); }
+    .footer-back { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .footer-back:hover { color: var(--gold); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .article-page { padding: 7rem 1.2rem 4rem; }
+      footer { padding: 1.5rem 1.2rem 2.5rem; flex-direction: column; gap: .5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <article class="article-page" itemscope itemtype="https://schema.org/Article">
+
+      <!-- hidden metadata for crawlers -->
+      <meta itemprop="datePublished" content="2026-03-24">
+      <meta itemprop="dateModified"  content="2026-03-24">
+      <meta itemprop="author"        content="Ludovico Papalia">
+      <meta itemprop="inLanguage"    content="it">
+
+      <!-- ─── EYEBROW ────────────────────────────────────────── -->
+      <div class="article-eyebrow">
+        <div class="tag"><span class="tag-dot"></span>Blockchain</div>
+        <span class="article-meta-line">Marzo 2026 <span>·</span> 8 min di lettura</span>
+      </div>
+
+      <!-- ─── TITLE ──────────────────────────────────────────── -->
+      <h1 class="article-title" itemprop="headline">
+        Data certa, <em>paternità incerta</em>:<br>cosa certifica davvero la blockchain
+      </h1>
+
+      <!-- ─── LEAD ────────────────────────────────────────────── -->
+      <p class="article-lead" itemprop="description">
+        Mettere un file nella blockchain è gratis, immediato e tecnicamente inattaccabile. Ma quello che certifica non è quello che la maggior parte delle persone crede. E la distanza tra la matematica e il diritto, in Italia, è più grande di quanto sembri.
+      </p>
+
+      <div class="article-divider"></div>
+
+      <!-- ─── BODY ────────────────────────────────────────────── -->
+      <div class="article-body" itemprop="articleBody">
+
+        <p>
+          Esiste un problema molto concreto con la datazione dei file digitali: <strong>le date che il sistema operativo mostra sono totalmente falsificabili</strong>. In pochi secondi, da terminale, si può retrodatare un documento a dieci anni fa. Questo rende praticamente inutile, come prova autonoma, qualsiasi data visibile nelle proprietà di un file. La stessa cosa vale per le email, che si possono archiviare a posteriori, e per le fotografie, i cui metadati si riscrivono con un editor qualsiasi.
+        </p>
+
+        <p>
+          Nasce da qui l'interesse per la blockchain come strumento di certificazione. L'idea di fondo è elegante: se ancori l'impronta del tuo file a una struttura distribuita e immutabile, la data di quel blocco diventa un riferimento che nessuno può alterare retroattivamente. È una logica corretta. Il problema è che tra questa premessa tecnica e le conclusioni che molti ne traggono si apre un divario piuttosto ampio.
+        </p>
+
+        <h2>Come funziona, <em>in concreto</em></h2>
+
+        <p>
+          Prima di parlare di limiti, vale la pena capire cosa succede davvero quando si usa uno strumento come OpenTimestamps. Il file non viene caricato da nessuna parte. Quello che viene calcolato è il suo hash SHA-256: una sequenza di 64 caratteri alfanumerici che rappresenta il file in modo univoco, come un codice fiscale. Se cambi anche solo uno spazio nel documento, l'hash cambia completamente. È questa proprietà che rende il meccanismo affidabile dal punto di vista matematico.
+        </p>
+
+        <p>
+          OpenTimestamps raccoglie migliaia di hash da utenti diversi, li organizza in una struttura ad albero chiamata Merkle tree, ne calcola un'unica radice e inserisce solo quella nella blockchain di Bitcoin. Il risultato è una ricevuta, un file <em>.ots</em>, che contiene la prova crittografica del legame tra il tuo documento e quel blocco specifico. <strong>Non costa nulla, non richiede un account, non dipende da un intermediario</strong>. Da questo punto di vista, lo strumento è genuinamente potente.
+        </p>
+
+        <h2>Cosa certifica e cosa <em>non</em> certifica</h2>
+
+        <p>
+          Il timestamp blockchain risponde a una sola domanda: questo specifico file esisteva già in questa data precisa? La risposta è matematicamente solida. Ma in molti contesti pratici quella non è la domanda giusta. Ci sono almeno tre limiti strutturali che è fondamentale tenere a mente.
+        </p>
+
+        <p>
+          Il primo riguarda la <strong>paternità</strong>. La blockchain certifica che quel file, con quella precisa sequenza di bit, esisteva in quella data. Non certifica che tu ne sia l'autore. Chiunque può calcolare l'hash di un file altrui e inserirlo nella blockchain. Se qualcuno ruba un romanzo inedito e lo registra prima dell'autore, la blockchain attesta il furto, non la paternità originaria. Questo vale per software, fotografie, testi, composizioni musicali: qualunque opera creativa.
+        </p>
+
+        <p>
+          Il secondo limite riguarda la <strong>liceità dell'atto</strong>. Se certifico nella blockchain uno screenshot di una chat in cui qualcuno mi minaccia, provo che quello screenshot esisteva in quella data. Non provo che non sia stato manipolato prima della registrazione. Non provo che la conversazione si sia svolta nel modo che sembra. Non provo nulla sulla controparte. Il contenuto del file rimane oggetto di valutazione separata.
+        </p>
+
+        <p>
+          Il terzo limite è più sottile ma cruciale: la blockchain non <strong>verifica la regolarità dell'atto sottostante</strong>. Se registro un accordo privato nella blockchain, ho la prova che quel testo esisteva in quella data, non che l'accordo sia valido, che le parti avessero capacità giuridica, che non ci fosse vizio del consenso. Elementi che, nel diritto, contano quanto o più della data.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            La blockchain ricorda tutto. Ma ricordare non è capire, e registrare non è verificare.
+          </p>
+        </div>
+
+        <h2>La legge italiana: <em>un lavoro a metà</em></h2>
+
+        <p>
+          Il quadro normativo italiano è più avanzato di quanto si creda comunemente, ma anche più incompleto di quanto si vorrebe. Tre aspetti meritano attenzione distinta.
+        </p>
+
+        <h3>Il legislatore ha fatto la sua parte</h3>
+
+        <p>
+          Con il decreto semplificazioni del 2018, convertito nella Legge 11 febbraio 2019 n. 12, l'Italia ha introdotto nell'ordinamento l'art. 8-ter. La norma riconosce ufficialmente le tecnologie basate su registri distribuiti e stabilisce, al comma 3, che la memorizzazione di un documento informatico tramite DLT produce gli effetti giuridici della validazione temporale elettronica prevista dall'art. 41 del Regolamento eIDAS. In termini pratici: il legislatore italiano ha già detto che il timestamp blockchain ha rilevanza giuridica. Non è un territorio di frontiera normativa. La legge c'è dal 2019.
+        </p>
+
+        <h3>Il nodo irrisolto</h3>
+
+        <p>
+          La stessa norma, al comma 4, stabiliva che l'Agenzia per l'Italia Digitale avrebbe dovuto individuare gli standard tecnici necessari entro novanta giorni. Erano il maggio 2019. A oggi, quegli standard specifici non sono stati pubblicati in forma definitiva. Questo dettaglio ha conseguenze concrete: il Regolamento eIDAS distingue tra validazione temporale semplice e validazione temporale qualificata. Solo la seconda gode di una presunzione automatica di accuratezza e integrità dei dati. Senza gli standard AgID, una blockchain pubblica come Bitcoin non può raggiungere il livello qualificato. Il risultato è che il timestamp blockchain è riconosciuto come strumento giuridicamente rilevante, ma privo della corazza piena che la legge aveva promesso.
+        </p>
+
+        <h3>In tribunale, oggi</h3>
+
+        <p>
+          La giurisprudenza italiana non ha ancora definito un orientamento consolidato sul valore probatorio specifico del timestamp blockchain. Alcune sentenze lo hanno trattato come prova atipica, valutabile liberamente dal giudice sulla base delle circostanze del caso concreto. Questo significa che può essere ammissibile, ma il suo peso dipende da come viene presentata, dalla qualità della catena di custodia del file originale e dalla capacità della controparte di contestarla. Non è automaticamente accettata, e non è automaticamente respinta. È uno strumento probatorio da costruire correttamente, non una garanzia in sé. Quando si tratta di difendere una creazione intellettuale, una sequenza di bozze certificate nel tempo racconta una storia più convincente di un singolo file con un timestamp.
+        </p>
+
+        <div class="info-box">
+          <div class="info-box-label">In sintesi: cosa vale davvero</div>
+          <p>Un timestamp blockchain <strong>è ammissibile come prova</strong> nei procedimenti italiani, ma il giudice ne valuta il peso liberamente.</p>
+          <p>Non gode di presunzione automatica di accuratezza, a differenza di una marca temporale qualificata eIDAS rilasciata da un prestatore di servizi fiduciari accreditato.</p>
+          <p>Il file originale deve essere conservato integro e la catena di custodia documentata. Senza questi elementi, il timestamp da solo prova poco.</p>
+        </div>
+
+        <h2>Non è un notaio. <em>Affatto.</em></h2>
+
+        <p>
+          Il confronto più ricorrente è quello con il notaio, o con la marca da bollo, o con la raccomandata. Si dice: "costa zero, fa lo stesso". Non è così, e la differenza non è di dettaglio.
+        </p>
+
+        <p>
+          Un notaio, quando autentica un atto, <strong>verifica l'identità delle parti</strong> tramite documenti ufficiali. <strong>Accerta la capacità giuridica</strong> dei soggetti coinvolti, cioè che siano in grado di comprendere e volere l'atto. <strong>Controlla la liceità</strong> di quello che sta formalizzando, rifiutandosi di rogare atti contrari alla legge o all'ordine pubblico. <strong>Conserva l'originale</strong> in archivio, garantendo la reperibilità nel tempo. E soprattutto, la sua firma conferisce all'atto <strong>pubblica fede</strong>: salvo querela di falso, il contenuto è presunto vero.
+        </p>
+
+        <p>
+          La blockchain non sa chi sei. Non verifica nulla sul tuo conto. Non controlla il contenuto di quello che registri. Non conserva il file. Non ha alcuna responsabilità professionale verso di te. È uno strumento diverso, pensato per risolvere un problema diverso: la certezza della data e l'immutabilità del riferimento. Usata per quello che è, è eccellente. Usata come sostituto del notaio, crea false sicurezze.
+        </p>
+
+        <h2>Quando vale la pena usarla <em>(e quando no)</em></h2>
+
+        <p>
+          Ci sono contesti in cui il timestamp blockchain è genuinamente utile. Se sei un fotografo e vuoi creare una prova di anteriorità per le tue immagini, certificare una sequenza di scatti nel tempo costa zero e aggiunge un elemento difficile da contestare. Se stai sviluppando un software e vuoi documentare l'evoluzione del codice, un hash per ogni versione significativa costruisce una storia verificabile. Se hai ricevuto una comunicazione minacciosa e vuoi cristallizzarne l'esistenza prima che venga cancellata, registrarne l'hash è un gesto rapido e sensato.
+        </p>
+
+        <p>
+          Vale la pena chiarire però il concetto fondamentale che Ludovico Papalia, che segue queste tematiche nell'ambito della sua ricerca sulla semplificazione normativa e il ruolo dei registri distribuiti nel diritto, evidenzia spesso: <strong>il timestamp è utile come elemento di un insieme probatorio, non come prova autonoma</strong>. Da solo non basta quasi mai. Integrato con altri elementi, come metadati coerenti, una cronologia documentabile del flusso di lavoro, la presenza del nome dell'autore dentro il file stesso, diventa un contributo credibile.
+        </p>
+
+        <p>
+          I casi in cui non bisogna affidarsi ciecamente alla blockchain sono quelli in cui si pensa di sostituire la forma solenne richiesta dalla legge per determinati atti. Un contratto di compravendita immobiliare, un testamento, un accordo societario: per questi la forma non è un formalismo burocratico, è una garanzia di certezza giuridica che nessuno strumento tecnico può replicare senza una riforma normativa esplicita. E quella riforma, almeno in Italia, non è ancora arrivata.
+        </p>
+
+        <p>
+          La tecnologia funziona. Il problema non è la matematica. Il problema è credere che la matematica basti.
+        </p>
+
+      </div><!-- /article-body -->
+
+    </article>
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <span class="footer-sig">Ludovico Papalia</span>
+    <a class="footer-back" href="/divulgativi-index.html">← Tutti gli articoli</a>
+  </footer>
+
+</body>
+</html>
