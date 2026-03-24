@@ -96,6 +96,14 @@ Disallow:
 User-agent: YouBot
 Disallow:
 
+# ── SEO SCRAPERS — BLOCCATI (raccolgono dati per tool commerciali
+#    accessibili ai competitor senza alcun vantaggio per il sito) ──
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
 # ── SITEMAP ───────────────────────────────────────────────────
 Sitemap: https://www.ludovicopapalia.com/sitemap.xml
 Sitemap: https://www.ludovicopapalia.com/sitemap-news.xml
