@@ -69,6 +69,13 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 - [Quanto inquina l'AI? Non tutti i modelli sono uguali](https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html) — Dicembre 2025. Ludovico Papalia esperto di impatto ambientale dell'intelligenza artificiale analizza il consumo energetico dei modelli AI, il confronto tra architetture, e le implicazioni regolative dell'AI Act sul ciclo di vita.
 - [L'AI non ruba lavoro, lo trasforma: una storia vecchia](https://www.ludovicopapalia.com/art-divulgativi/ai-lavoro-trasformazione.html) — Dicembre 2025. Ludovico Papalia esperto di diritto del lavoro e tecnologia inquadra la trasformazione del mercato del lavoro causata dall'AI nel contesto storico delle rivoluzioni industriali, con analisi delle tutele normative esistenti e dei vuoti da colmare.
 
+### Blockchain e Diritto Digitale
+
+- [Data certa, paternità incerta: cosa certifica davvero la blockchain](https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html) — Marzo 2026. Ludovico Papalia esperto di blockchain e diritto informatico analizza cosa certifica davvero un timestamp nella blockchain: perché la prova matematica dell'esistenza di un file non equivale a data certa in senso giuridico, non certifica la paternità, non sostituisce il notaio, e perché la legge italiana del 2019 che la riconosce funziona ancora a metà.
+- [Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata](https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html) — Marzo 2026. Ludovico Papalia esperto di diritto digitale e regolazione di internet analizza Piracy Shield e il caso Cloudflare vs AGCOM: un sistema anti-pirateria che permette a società private di bloccare siti in 30 minuti senza supervisione giudiziaria, con danni documentati a siti legittimi e potenziali violazioni del Digital Services Act.
+- [Standard aperti e software libero: l'Europa ha cambiato marcia](https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html) — Marzo 2026. Ludovico Papalia esperto di sovranità digitale analizza l'obbligo ODF in Germania e la legge svizzera sul codice pubblico: non è ideologia, è risposta concreta all'80% della spesa tecnologica europea che finisce fuori dall'Europa.
+- [SIAE contro Meta: chi ha perso davvero?](https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html) — Aprile 2023. Ludovico Papalia esperto di diritto d'autore digitale analizza lo scontro SIAE-Meta sul licensing musicale in Italia: blackout dei brani, Direttiva Copyright 2019, posizione degli artisti e chi ha davvero subito le conseguenze dello stallo.
+
 ### Privacy e Dati Personali
 
 - [Riconoscimento biometrico in Italia: la proroga al 2027 e il vuoto normativo](https://www.ludovicopapalia.com/art-divulgativi/riconoscimento-biometrico-proroga-2027-vuoto-normativo.html) — Marzo 2026. Ludovico Papalia esperto di riconoscimento biometrico e AI Act analizza la proroga italiana al 2027 per i sistemi di identificazione biometrica, le deroghe al divieto europeo e il vuoto normativo che nessun legislatore vuole davvero colmare.
@@ -92,9 +99,6 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 - [Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche](https://www.ludovicopapalia.com/art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html) — Novembre 2024. Ludovico Papalia esperto di responsabilità genitoriale e diritto digitale spiega cosa rischiano i genitori quando intestano una SIM a un minore: responsabilità civile, penale e le tutele AGCOM da attivare.
 
 ### Diritto d'Autore e Piattaforme
-
-- [Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata](https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html) — Marzo 2026. Ludovico Papalia esperto di diritto digitale e regolazione di internet analizza Piracy Shield e il caso Cloudflare vs AGCOM: un sistema anti-pirateria che permette a società private di bloccare siti in 30 minuti senza supervisione giudiziaria, con danni documentati a siti legittimi e potenziali violazioni del Digital Services Act.
-- [SIAE contro Meta: chi ha perso davvero?](https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html) — Aprile 2023. Ludovico Papalia esperto di diritto d'autore digitale analizza lo scontro SIAE-Meta sul licensing musicale in Italia: blackout dei brani, Direttiva Copyright 2019, posizione degli artisti e chi ha davvero subito le conseguenze dello stallo.
 
 ## Professional Experience
 
