@@ -9,6 +9,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-03-24T00:00:00+01:00</news:publication_date>
+      <news:title>Data certa, paternità incerta: cosa certifica davvero la blockchain</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html</loc>
     <news:news>
       <news:publication>
