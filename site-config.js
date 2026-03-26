@@ -82,7 +82,7 @@ var LP_COLORS = {
 var LP_FONTS = {
   serif:     "'Cormorant Garamond', Georgia, serif",
   sans:      "'Sora', system-ui, sans-serif",
-  googleUrl: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Sora:wght@300;400;500&display=swap',
+  localCss:  '/fonts/fonts.css',  /* Font self-hosted: nessun trasferimento dati a Google */
 };
 
 
@@ -431,21 +431,10 @@ var LP_SCHEMA = {
  *    per caricare i font prima del primo paint.
  */
 (function injectFonts() {
-  var pc1 = document.createElement('link');
-  pc1.rel = 'preconnect';
-  pc1.href = 'https://fonts.googleapis.com';
-
-  var pc2 = document.createElement('link');
-  pc2.rel = 'preconnect';
-  pc2.href = 'https://fonts.gstatic.com';
-  pc2.setAttribute('crossorigin', '');
-
+  /* Font self-hosted in /fonts/ — nessuna richiesta a Google, nessun trasferimento IP */
   var lf = document.createElement('link');
   lf.rel = 'stylesheet';
-  lf.href = LP_FONTS.googleUrl;
-
-  document.head.appendChild(pc1);
-  document.head.appendChild(pc2);
+  lf.href = LP_FONTS.localCss;
   document.head.appendChild(lf);
 }());
 
