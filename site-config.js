@@ -150,7 +150,7 @@ var LP_SCHEMA = {
       "name": "Ludovico Papalia",
       "givenName": "Ludovico",
       "familyName": "Papalia",
-      "birthDate": "1996-11-21",
+      "birthDate": "1996-11-22",
       "nationality": { "@type": "Country", "name": "Italy" },
       "jobTitle": "PhD Candidate in Legal Informatics",
       "description": "PhD researcher at the University of Bologna specialising in blockchain technology applied to legislative simplification and parliamentary process tracking. Co-tutela with Vrije Universiteit Brussel. Collaborates with the IOTA Foundation within the PRIN2022/ERC HyperModeLex project.",
