@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Training, fine-tuning, open source: non è tutto uguale, e la legge se ne sta accorgendo — Ludovico Papalia</title>
+  <meta name="description" content="Addestrare un modello AI da zero, farne il fine-tuning, usarlo tramite API o costruirci sopra una applicazione sono cose tecnicamente molto diverse. Questa distinzione ha conseguenze legali precise che entrano in gioco proprio adesso, con l'AI Act europeo che assegna obblighi diversi in base al ruolo nella catena di sviluppo.">
+  <meta name="author" content="Ludovico Papalia">
+  <meta name="keywords" content="Ludovico Papalia, training AI, fine-tuning, open source AI, AI Act responsabilità, provider deployer, LoRA, modelli linguistici, open washing, AI legge">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Training, fine-tuning, open source: non è tutto uguale, e la legge se ne sta accorgendo">
+  <meta property="og:description" content="Addestrare, affinare, usare: tre cose diverse con conseguenze legali diverse. Una guida alle distinzioni tecniche che contano per chi costruisce o usa sistemi AI oggi.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html">
+  <meta property="og:image"       content="https://www.ludovicopapalia.com/profile.png">
+  <meta property="og:site_name"   content="Ludovico Papalia — Legal Informatics">
+  <meta property="article:author" content="Ludovico Papalia">
+  <meta property="article:published_time" content="2026-03-26">
+  <meta property="article:section" content="Diritto Informatico">
+  <meta property="article:tag"    content="Intelligenza Artificiale">
+  <meta property="article:tag"    content="AI Act">
+  <meta property="article:tag"    content="Open Source AI">
+  <meta property="article:tag"    content="Fine-tuning">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Training, fine-tuning, open source: non è tutto uguale, e la legge se ne sta accorgendo">
+  <meta name="twitter:description" content="Addestrare, affinare, usare: tre cose diverse con conseguenze legali diverse. Una guida alle distinzioni tecniche che contano oggi.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NewsArticle",
+        "@id": "https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html#article",
+        "headline": "Training, fine-tuning, open source: non è tutto uguale, e la legge se ne sta accorgendo",
+        "description": "Ludovico Papalia esperto di AI Act e diritto informatico spiega le differenze tecniche tra training da zero, fine-tuning e semplice utilizzo di modelli AI, e perché questa distinzione determina catene di responsabilità giuridica diverse sotto l'AI Act europeo e nell'ambito della responsabilità civile per danni causati da sistemi di intelligenza artificiale.",
+        "keywords": ["Ludovico Papalia", "training AI", "fine-tuning", "open source AI", "AI Act", "provider deployer", "responsabilità AI", "open washing"],
+        "datePublished": "2026-03-26",
+        "dateModified": "2026-03-26",
+        "inLanguage": "it",
+        "articleSection": "Diritto Informatico",
+        "genre": "Divulgazione giuridica",
+        "url": "https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html",
+        "isPartOf": {
+          "@id": "https://www.ludovicopapalia.com/#website"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.ludovicopapalia.com/#person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com",
+          "jobTitle": "PhD Candidate in Legal Informatics",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Università di Bologna"
+          }
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Ludovico Papalia",
+          "url": "https://www.ludovicopapalia.com"
+        },
+        "about": [
+          { "@type": "Thing", "name": "Training AI", "description": "Processo di addestramento di un modello di intelligenza artificiale su dati" },
+          { "@type": "Thing", "name": "Fine-tuning", "description": "Processo di adattamento di un modello AI pre-addestrato a un compito specifico" },
+          { "@type": "Thing", "name": "Open Source AI", "description": "Modelli AI distribuiti con licenze aperte, con diversi gradi di trasparenza sui dati di training e sui pesi" },
+          { "@type": "Thing", "name": "AI Act", "description": "Regolamento europeo sull'intelligenza artificiale" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ludovicopapalia.com" },
+          { "@type": "ListItem", "position": 2, "name": "Articoli", "item": "https://www.ludovicopapalia.com/divulgativi-index.html" },
+          { "@type": "ListItem", "position": 3, "name": "Training, fine-tuning, open source: non è tutto uguale", "item": "https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    window.LP_NAV_TYPE   = 'it';
+    window.LP_NAV_ACTIVE = 'Articoli';
+  </script>
+  <script src="/site-config.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .article-page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    .article-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp .7s ease both;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-dim);
+      padding: .28rem .85rem; border-radius: 99px;
+    }
+    .tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    .article-meta-line {
+      font-size: .75rem; letter-spacing: .06em; color: var(--muted);
+    }
+    .article-meta-line span { margin: 0 .4rem; color: var(--gold-dim); }
+
+    h1.article-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+      font-weight: 300; line-height: 1.1;
+      letter-spacing: -.015em; color: var(--accent);
+      animation: fadeUp .7s .08s ease both;
+    }
+    h1.article-title em { font-style: italic; color: var(--gold); }
+
+    .article-lead {
+      margin-top: 1.6rem;
+      font-family: var(--ff-serif);
+      font-size: 1.35rem; font-weight: 300;
+      font-style: italic; line-height: 1.65;
+      color: var(--text);
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 1.4rem;
+      animation: fadeUp .7s .16s ease both;
+    }
+
+    .article-divider {
+      width: 40px; height: 1px;
+      background: var(--gold-dim);
+      margin: 2.5rem 0;
+      animation: fadeUp .7s .22s ease both;
+    }
+
+    .article-body { animation: fadeUp .8s .28s ease both; }
+    .article-body p {
+      font-size: .97rem; color: var(--muted);
+      line-height: 1.95; margin-bottom: 1.5rem;
+    }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body em { font-style: italic; color: var(--accent); }
+    .article-body a { color: var(--gold); border-bottom: 1px solid var(--gold-dim); transition: border-color .2s; }
+    .article-body a:hover { border-color: var(--gold); }
+
+    .article-body h2 {
+      font-family: var(--ff-serif);
+      font-size: 1.7rem; font-weight: 400;
+      color: var(--accent); line-height: 1.2;
+      margin: 2.8rem 0 1rem;
+    }
+    .article-body h2 em { font-style: italic; color: var(--gold); }
+
+    .pull-quote {
+      margin: 2.5rem 0;
+      padding: 1.2rem 1.6rem;
+      border-left: 2px solid var(--gold);
+      background: var(--bg-card);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .pull-quote p {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem !important;
+      font-style: italic;
+      color: var(--accent) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Schema tecnico livelli */
+    .tech-levels {
+      margin: 2rem 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .tech-level-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.4rem;
+    }
+    .tech-level-row:last-child { border-bottom: none; }
+    .tech-level-row.header {
+      background: var(--bg-card2);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+    .tech-level-name { font-size: .88rem; font-weight: 500; color: var(--text); }
+    .tech-level-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; padding: 0 1rem; }
+    .tech-level-who { font-size: .78rem; color: var(--muted); font-style: italic; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: 740px; margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-sig { font-family: var(--ff-serif); font-size: 1rem; color: var(--muted); }
+    .footer-back { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .footer-back:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .article-page { padding: 7rem 1.2rem 4rem; }
+      footer { padding: 1.5rem 1.2rem 2.5rem; }
+      .tech-level-row { grid-template-columns: 1fr; gap: .3rem; }
+      .tech-level-desc { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <article class="article-page" itemscope itemtype="https://schema.org/Article">
+
+      <meta itemprop="datePublished" content="2026-03-26">
+      <meta itemprop="dateModified"  content="2026-03-26">
+      <meta itemprop="author"        content="Ludovico Papalia">
+      <meta itemprop="inLanguage"    content="it">
+
+      <div class="article-eyebrow">
+        <div class="tag"><span class="tag-dot"></span>AI e Diritto</div>
+        <span class="article-meta-line">Marzo 2026 <span>·</span> 8 min di lettura</span>
+      </div>
+
+      <h1 class="article-title" itemprop="headline">
+        Training, fine-tuning, open source: <em>non è tutto uguale</em>, e la legge se ne sta accorgendo
+      </h1>
+
+      <p class="article-lead" itemprop="description">
+        Quando qualcuno dice di aver "creato un'AI", di solito non ha addestrato nulla da zero. Ha preso un modello esistente e lo ha adattato. Questa distinzione, che sembra tecnica, ha conseguenze giuridiche precise che entrano in gioco proprio adesso, mentre l'AI Act europeo assegna obblighi e responsabilità in base al ruolo che si ha nella catena di sviluppo.
+      </p>
+
+      <div class="article-divider"></div>
+
+      <div class="article-body" itemprop="articleBody">
+
+        <p>
+          C'è una confusione molto diffusa nel modo in cui si parla di intelligenza artificiale, e riguarda qualcosa di fondamentale: cosa significa "fare un'AI". Non è una distinzione tecnica fatta per il gusto di essere precisi. È una distinzione che, sotto l'AI Act europeo, determina chi sei, che obblighi hai, e di cosa puoi essere ritenuto responsabile se qualcosa va storto.
+        </p>
+
+        <p>
+          Ludovico Papalia, ricercatore in informatica giuridica all'Università di Bologna con un dottorato focalizzato su tecnologie distribuite e diritto, segue da vicino il modo in cui queste distinzioni stanno emergendo nel dibattito regolatorio europeo. Il punto di partenza è capire cosa c'è dietro queste diverse modalità, prima ancora di ragionare sulle implicazioni legali.
+        </p>
+
+        <h2>Il pre-training: <em>dove nasce davvero un modello</em></h2>
+
+        <p>
+          Alla base di tutto c'è l'addestramento iniziale, il cosiddetto <strong>pre-training</strong>. È il processo in cui un modello viene addestrato da zero su quantità enormi di testo: miliardi di pagine web, libri, articoli, codice sorgente. Questo processo richiede infrastrutture di calcolo che costano decine o centinaia di milioni di euro, cluster di migliaia di GPU che girano per settimane o mesi, e team specializzati di ricercatori e ingegneri.
+        </p>
+
+        <p>
+          Nella pratica, questo è territorio riservato a un piccolo numero di attori: OpenAI con GPT, Google con Gemini, Meta con Llama, Anthropic con Claude, Mistral con i propri modelli europei. Dire "addestro un modello da zero" per una startup o un singolo sviluppatore è tecnicamente possibile solo per modelli molto piccoli e limitati. <strong>Per i modelli linguistici di grandi dimensioni, il pre-training è fuori portata al di fuori delle Big Tech.</strong>
+        </p>
+
+        <p>
+          Questo livello è anche quello con la maggiore esposizione legale nella filiera. È qui che nascono i problemi di copyright sui dati di training, che le cause intentate da editori e artisti contro OpenAI, Google e altri stanno cercando di definire. È qui che si determina il comportamento di base del modello, incluse le sue tendenze, i suoi bias, le sue lacune.
+        </p>
+
+        <h2>Il fine-tuning: <em>adattare senza ricreare</em></h2>
+
+        <p>
+          Il passo successivo nella catena è il <strong>fine-tuning</strong>. Invece di addestrare tutto da zero, si prende un modello già addestrato e lo si adatta a un compito specifico usando un dataset molto più piccolo e mirato. Un modello fine-tunato su contratti legali italiani risponderà in modo molto più preciso a domande di diritto contrattuale italiano di quanto farebbe il modello base. Un modello fine-tunato su referti medici capirà meglio il linguaggio clinico.
+        </p>
+
+        <p>
+          Tecnicamente, le tecniche moderne di fine-tuning come <strong>LoRA</strong> (Low-Rank Adaptation) rendono questo processo accessibile anche con risorse limitate: invece di modificare tutti i miliardi di parametri del modello base, si aggiungono piccoli strati di pesi aggiuntivi che vengono addestrati sul nuovo dataset, mentre i parametri originali restano congelati. Il risultato è un modello specializzato che richiede una frazione del calcolo di un training completo.
+        </p>
+
+        <p>
+          Dal punto di vista giuridico, questa è la zona più complessa e meno regolata. Chi fa fine-tuning <em>non</em> ha costruito il modello base, ma lo ha modificato in modo significativo. Sotto l'AI Act, se hai fatto fine-tuning in modo sostanziale su un modello pre-esistente, puoi essere classificato come <strong>provider</strong> del sistema risultante, con tutti gli obblighi che ne derivano. Non sei più solo un deployer che usa uno strumento altrui: sei diventato responsabile di una parte di come il modello si comporta.
+        </p>
+
+        <div class="tech-levels">
+          <div class="tech-level-row header">
+            <div>Modalità</div>
+            <div>Cosa implica</div>
+            <div>Ruolo AI Act</div>
+          </div>
+          <div class="tech-level-row">
+            <div class="tech-level-name">Pre-training da zero</div>
+            <div class="tech-level-desc">Addestramento su dati di grandi dimensioni, infrastruttura propria, mesi di calcolo</div>
+            <div class="tech-level-who">Provider GPAI</div>
+          </div>
+          <div class="tech-level-row">
+            <div class="tech-level-name">Fine-tuning sostanziale</div>
+            <div class="tech-level-desc">Adattamento significativo di un modello esistente su dati propri</div>
+            <div class="tech-level-who">Spesso provider</div>
+          </div>
+          <div class="tech-level-row">
+            <div class="tech-level-name">Fine-tuning minore</div>
+            <div class="tech-level-desc">Piccole modifiche di stile o comportamento senza alterare le capacità fondamentali</div>
+            <div class="tech-level-who">Deployer</div>
+          </div>
+          <div class="tech-level-row">
+            <div class="tech-level-name">API / RAG</div>
+            <div class="tech-level-desc">Utilizzo del modello tramite interfaccia, senza modifiche ai pesi</div>
+            <div class="tech-level-who">Deployer</div>
+          </div>
+        </div>
+
+        <h2>RAG e prompt engineering: <em>usare senza modificare</em></h2>
+
+        <p>
+          Un terzo livello di intervento, sempre più diffuso, è quello che non tocca il modello base in alcun modo. Il <strong>RAG</strong> (Retrieval Augmented Generation) è una tecnica in cui si fornisce al modello, insieme alla domanda, del contesto rilevante recuperato in tempo reale da una base di dati esterna. Non si modifica come il modello ragiona: si modifica solo quale informazione ha a disposizione nel momento in cui elabora la risposta. Il <strong>prompt engineering</strong> è ancora un passo più indietro: si lavora esclusivamente su come si formula la domanda, senza toccare né il modello né la sua conoscenza.
+        </p>
+
+        <p>
+          Chi usa questi approcci è tipicamente un <strong>deployer</strong> sotto l'AI Act, non un provider. Non ha modificato il sistema AI, lo ha integrato in un contesto. Ha comunque obblighi, soprattutto per i sistemi ad alto rischio: trasparenza verso gli utenti, supervisione umana, documentazione. Ma la catena di responsabilità è diversa da quella di chi ha fatto fine-tuning.
+        </p>
+
+        <h2>L'open source che <em>non è open source</em></h2>
+
+        <p>
+          C'è un ultimo aspetto che vale la pena capire bene prima di prendere decisioni su quale modello usare. Non tutti i modelli "open source" sono uguali, e la differenza non è solo tecnica.
+        </p>
+
+        <p>
+          Un modello davvero open source dovrebbe rendere accessibili: il codice di addestramento, i dati usati per addestrarlo, i pesi risultanti. Nella realtà, quasi nessun modello rilascia tutto questo. Molti rilasciano solo i pesi, che permettono di usare e fine-tunare il modello ma non di sapere su quali dati è stato addestrato. Meta con Llama, per esempio, rilascia i pesi ma con restrizioni commerciali per le piattaforme con oltre 700 milioni di utenti mensili, e non ha mai divulgato completamente i dati di training.
+        </p>
+
+        <p>
+          In ricerca accademica questo fenomeno viene già chiamato <em>open washing</em>: dichiarare un modello open source principalmente per ragioni di marketing, mantenendo opacità sulle componenti più sensibili. Per chi usa questi modelli in produzione, l'opacità sui dati di training significa esposizione a rischi legali che non si conoscono. Se il modello è stato addestrato su materiale coperto da copyright senza licenza, chi lo usa potrebbe ritrovarsi coinvolto in dispute che riguardano decisioni prese molto a monte della propria catena di sviluppo.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Prendere un modello "open source" e metterlo online non è una zona franca. Si ereditano potenzialmente tutti i problemi legali del modello base, compresi quelli che il suo creatore non ha mai divulgato.
+          </p>
+        </div>
+
+        <h2>Il difetto strutturale <em>che la letteratura già segnala</em></h2>
+
+        <p>
+          L'AI Act europeo regolamenta i sistemi AI principalmente in base al loro livello di rischio: alto rischio, rischio limitato, rischio minimo. Questa classificazione ha senso per determinare quali misure di sicurezza adottare. Il problema, segnalato già in diversi studi istituzionali europei e accademici, è che <strong>due sistemi con lo stesso profilo di rischio percepito possono avere catene di responsabilità completamente diverse</strong> in base a come sono stati costruiti.
+        </p>
+
+        <p>
+          Un sistema di raccomandazione ad alto rischio sviluppato da zero da una grande azienda tecnologica e uno sviluppato da una startup tramite fine-tuning di Llama su dati proprietari sono tecnicamente nella stessa categoria di rischio. Ma il primo ha una filiera di responsabilità interna e compatta, mentre il secondo distribuisce la responsabilità tra il creatore del modello base, chi ha fatto il fine-tuning, chi ha costruito l'applicazione e chi la usa. Le garanzie che la norma richiede sono le stesse sulla carta, ma la capacità concreta di farle rispettare e di attribuire responsabilità quando qualcosa va storto è radicalmente diversa.
+        </p>
+
+        <p>
+          Questa è una delle ragioni per cui, come analizzato nell'articolo su <a href="/art-divulgativi/responsabilita-civile-ai-chi-risponde.html">chi risponde quando l'AI sbaglia</a>, costruire un sistema di risarcimento civile che funzioni davvero è più complicato di quanto possa sembrare guardando solo le categorie di rischio. E perché conoscere la differenza tra training, fine-tuning e deployment non è solo un esercizio di curiosità tecnica: è il prerequisito per capire dove si posiziona la propria responsabilità nella catena, e dove finisce quella di qualcun altro. Come ha già mostrato il caso degli <a href="/art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html">agenti AI autonomi</a>, quando la catena di sviluppo è opaca, le responsabilità si moltiplicano senza che nessuno le abbia davvero previste.
+        </p>
+
+      </div>
+
+      <!-- ─── DISCLAIMER ─────────────────────────────────────────── -->
+      <div class="article-disclaimer">
+        <p class="disclaimer-label">Disclaimer</p>
+        <p class="disclaimer-text">
+          Le opinioni espresse in questo sito, e in qualsiasi altra sede — online, offline o pubblica — incluse, senza limitazione alcuna, posizioni politiche, valutazioni sociali e giudizi di qualsiasi natura, sono esclusivamente e strettamente personali di Ludovico Papalia. Esse non sono in alcun modo riconducibili, né devono essere associate, a persone, istituzioni, enti, organizzazioni o editori con cui Ludovico Papalia collabora, ha collaborato o ha pubblicato.
+        </p>
+        <p class="disclaimer-text">
+          The views expressed on this website, and in any other context — online, offline, or public — including, without limitation, political positions, social assessments, and judgments of any kind, are solely and strictly personal to Ludovico Papalia. They are in no way attributable to, nor should they be associated with, any persons, institutions, entities, organizations, or publishers with whom Ludovico Papalia collaborates, has collaborated, or has published.
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <span class="footer-sig">Ludovico Papalia</span>
+    <a class="footer-back" href="/divulgativi-index.html">← Altri articoli</a>
+  </footer>
+
+</body>
+</html>
