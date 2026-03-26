@@ -665,14 +665,24 @@ function _injectDisclaimer() {
       'incluse, senza limitazione alcuna, posizioni politiche, valutazioni sociali e giudizi di qualsiasi natura, ' +
       'sono esclusivamente e strettamente personali di Ludovico Papalia. ' +
       'Esse non sono in alcun modo riconducibili, né devono essere associate, a persone, istituzioni, enti, ' +
-      'organizzazioni o editori con cui Ludovico Papalia collabora, ha collaborato o ha pubblicato.' +
+      'organizzazioni o editori con cui Ludovico Papalia collabora, ha collaborato o ha pubblicato. ' +
+      'Gli articoli presenti in questa sezione hanno carattere divulgativo e sono redatti a titolo strettamente personale nel tempo libero. ' +
+      'Pur essendo scritti con cura, non hanno alcuna pretesa di completezza o esaustività, non costituiscono in alcun modo consulenza legale o professionale ' +
+      'e non hanno superato alcun processo di revisione peer review. ' +
+      'Possono contenere imprecisioni o errori. ' +
+      'Per approfondimenti di carattere scientifico o professionale si rimanda alle fonti primarie.' +
     '</p>' +
     '<p class="disclaimer-text">' +
       'The views expressed on this website, and in any other context — online, offline, or public — ' +
       'including, without limitation, political positions, social assessments, and judgments of any kind, ' +
       'are solely and strictly personal to Ludovico Papalia. ' +
       'They are in no way attributable to, nor should they be associated with, any persons, institutions, ' +
-      'entities, organizations, or publishers with whom Ludovico Papalia collaborates, has collaborated, or has published.' +
+      'entities, organizations, or publishers with whom Ludovico Papalia collaborates, has collaborated, or has published. ' +
+      'The articles in this section are written in a popular science format and in a personal capacity in the author\'s free time. ' +
+      'While written with care, they make no claim to completeness or exhaustiveness, do not constitute legal or professional advice, ' +
+      'and have not undergone any peer review process. ' +
+      'They may contain inaccuracies or errors. ' +
+      'For scientific or professional in-depth analysis, please refer to the primary sources.' +
     '</p>';
 
   /* Appende come ultimo figlio di <article>, prima del footer di pagina */
