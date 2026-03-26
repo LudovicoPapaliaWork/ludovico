@@ -398,6 +398,30 @@ var LP_SCHEMA = {
     '  .nav-links { display: none; }',
     '  .nav-hamburger { display: flex; }',
     '}',
+
+    /* ─── DISCLAIMER ARTICOLO ─────────────────────────────────────────── */
+    '.article-disclaimer {',
+    '  margin-top: 3rem;',
+    '  padding: 1.4rem 1.8rem;',
+    '  background: var(--bg-card);',
+    '  border: 1px solid var(--border);',
+    '  border-radius: var(--radius);',
+    '  border-left: 3px solid var(--gold-dim);',
+    '}',
+    '.disclaimer-label {',
+    '  font-size: .68rem;',
+    '  letter-spacing: .18em;',
+    '  text-transform: uppercase;',
+    '  color: var(--gold-dim);',
+    '  margin-bottom: .75rem;',
+    '}',
+    '.disclaimer-text {',
+    '  font-size: .78rem;',
+    '  color: var(--muted);',
+    '  line-height: 1.8;',
+    '  margin-bottom: .6rem;',
+    '}',
+    ".disclaimer-text:last-child { margin-bottom: 0; }",
   ].join('\n');
   document.head.appendChild(s);
 }());
