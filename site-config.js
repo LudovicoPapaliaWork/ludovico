@@ -162,7 +162,8 @@ var LP_SCHEMA = {
         "https://dike.research.vub.be/en/ludovico-alessandro-papalia",
         "https://www.linkedin.com/in/ludovico-papalia/",
         "https://scholar.google.com/citations?user=WFQmMZIAAAAJ&hl=it",
-        "https://www.instagram.com/ludovicopapalia/"
+        "https://www.instagram.com/ludovicopapalia/",
+        "https://www.wikidata.org/wiki/Q138795841"
       ],
       "affiliation": [
         {
