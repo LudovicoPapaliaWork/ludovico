@@ -97,6 +97,8 @@
       gap: .6rem;
       margin-bottom: 1rem;
       animation: fadeUp .7s .22s ease both;
+      position: relative;
+      z-index: 300;
     }
 
     /* ─── SEARCH BAR ─────────────────────────────────────────── */
@@ -368,24 +370,6 @@
 
     <div class="search-row">
 
-      <!-- ─── BARRA DI RICERCA ─────────────────────────────────── -->
-      <div class="search-wrap">
-        <span class="search-icon">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
-            <circle cx="6.5" cy="6.5" r="5"/><path d="M10.5 10.5l3.5 3.5"/>
-          </svg>
-        </span>
-        <input
-          id="searchInput"
-          class="search-input"
-          type="search"
-          placeholder="Cerca per titolo, tema, parola chiave…"
-          autocomplete="off"
-          spellcheck="false"
-        >
-        <button class="search-clear" id="searchClear" aria-label="Cancella ricerca">✕</button>
-      </div>
-
       <!-- ─── SORT BUTTON ──────────────────────────────────────── -->
       <div class="sort-wrap">
         <button class="sort-btn" id="sortBtn" aria-label="Ordina articoli" aria-expanded="false">
@@ -420,6 +404,24 @@
             Dai più vecchi
           </button>
         </div>
+      </div>
+
+      <!-- ─── BARRA DI RICERCA ─────────────────────────────────── -->
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="6.5" cy="6.5" r="5"/><path d="M10.5 10.5l3.5 3.5"/>
+          </svg>
+        </span>
+        <input
+          id="searchInput"
+          class="search-input"
+          type="search"
+          placeholder="Cerca per titolo, tema, parola chiave…"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button class="search-clear" id="searchClear" aria-label="Cancella ricerca">✕</button>
       </div>
 
     </div>
