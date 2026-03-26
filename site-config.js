@@ -456,6 +456,7 @@ document.addEventListener('DOMContentLoaded', function () {
   _injectNav();
   _injectSchemaOrg();
   _injectTracking();
+  _injectDisclaimer();
 });
 
 /* ── D1. Nav HTML ─────────────────────────────────────────────────────────── */
@@ -644,4 +645,38 @@ function _injectTracking() {
     document.body.appendChild(ns);
   }
 }
+
+/* ── D4. Disclaimer personale ────────────────────────────────────────────── */
+function _injectDisclaimer() {
+  /* Cerca il tag <article> nella pagina.
+     Se non c'è (es. homepage, papers) la funzione esce silenziosamente. */
+  var article = document.querySelector('article');
+  if (!article) return;
+
+  /* Evita di iniettare due volte (es. se il file ha ancora il blocco statico) */
+  if (article.querySelector('.article-disclaimer')) return;
+
+  var div = document.createElement('div');
+  div.className = 'article-disclaimer';
+  div.innerHTML =
+    '<p class="disclaimer-label">Disclaimer</p>' +
+    '<p class="disclaimer-text">' +
+      'Le opinioni espresse in questo sito, e in qualsiasi altra sede — online, offline o pubblica — ' +
+      'incluse, senza limitazione alcuna, posizioni politiche, valutazioni sociali e giudizi di qualsiasi natura, ' +
+      'sono esclusivamente e strettamente personali di Ludovico Papalia. ' +
+      'Esse non sono in alcun modo riconducibili, né devono essere associate, a persone, istituzioni, enti, ' +
+      'organizzazioni o editori con cui Ludovico Papalia collabora, ha collaborato o ha pubblicato.' +
+    '</p>' +
+    '<p class="disclaimer-text">' +
+      'The views expressed on this website, and in any other context — online, offline, or public — ' +
+      'including, without limitation, political positions, social assessments, and judgments of any kind, ' +
+      'are solely and strictly personal to Ludovico Papalia. ' +
+      'They are in no way attributable to, nor should they be associated with, any persons, institutions, ' +
+      'entities, organizations, or publishers with whom Ludovico Papalia collaborates, has collaborated, or has published.' +
+    '</p>';
+
+  /* Appende come ultimo figlio di <article>, prima del footer di pagina */
+  article.appendChild(div);
+}
+
 
