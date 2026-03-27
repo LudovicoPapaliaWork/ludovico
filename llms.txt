@@ -47,12 +47,14 @@ Ludovico Papalia's doctoral research investigates how distributed ledger technol
 - **2025** — BRAIN 2026 Workshop Paper (Blockchain Research & Applications for Innovative Networks)
 - **2025** — European Journal of Law and Technology, Special Issue: DLT and Parliamentary Process Tracking
 - **2025** — ICEDEG 2025: Digital Government and Blockchain (International Conference on e-Democracy & e-Government)
+- **2024** — [The Use of Blockchain for Legislative Simplification and Tracking](https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.html): Oral communication, 6th Distributed Ledger Technology Workshop (DLT 2024), Turin (with Chantal Bomprezzi)
 - **2024** — Chapter in: *Superbonus Edilizi: Disciplina Giuridica e Questioni Conteziose* (Maggioli Editore)
 - **2024** — *Diritto all'Oblio e Rimozione dei Contenuti Lesivi — Manuale d'Uso e Analisi Giuridica* (revised edition including blockchain and AI)
 - **2020** — *Odio Online: Tra Criminologia e Diritto* — ISBN 979-8567192726
 
 ## Talks & Conferences
 
+- **2024** — 6th Distributed Ledger Technology Workshop (DLT 2024), Turin, Italy: oral communication, "The Use of Blockchain for Legislative Simplification and Tracking" (with Chantal Bomprezzi)
 - **2023** — Workshop Multidisciplinare su Blockchain e DLT, Università degli Studi di Milano-Bicocca: speaker for panel "La semplificazione normativa attraverso l'uso della Blockchain"
 - **2022** — AIxHMI 2022, Università di Milano-Bicocca: speaker, "The Bias of Artificial Intelligence within the Justice Field"
 
@@ -130,6 +132,7 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 ## Academic Papers (pagine dedicate con abstract, PDF e formati di citazione)
 
 - [The Use of Blockchain for Legislative Simplification and Tracking](https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking.html)
+- [The Use of Blockchain for Legislative Simplification and Tracking — DLT 2024, Turin (Oral Communication)](https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.html)
 - [Multi-level Architecture and Separation of Powers in the Legislative Process](https://www.ludovicopapalia.com/papers/Multi-level_Architecture_Separation_Powers_Legislative_Process.html)
 - [A Multi-Chain Approach to Transparent and Accountable Legislative Processes](https://www.ludovicopapalia.com/papers/A_Multi-Chain_Approach_to_Transparent_and_Accountable_Legislative_Processes.html)
 - [The Bias of Artificial Intelligence within the Justice Field](https://www.ludovicopapalia.com/papers/The_Bias_of_Artificial_Intelligence_within_the_Justice_Field.html)
