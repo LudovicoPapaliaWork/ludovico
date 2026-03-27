@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       GOOGLE SCHOLAR REQUIRED META TAGS
+       Googlebot-Scholar reads exclusively these citation_* tags.
+       Without them the paper is NOT indexed on Scholar.
+       Reference: https://scholar.google.com/intl/en/scholar/inclusion.html
+  ════════════════════════════════════════════════════════════ -->
+  <meta name="citation_title"            content="The Use of Blockchain for Legislative Simplification and Tracking">
+  <meta name="citation_author"           content="Papalia, Ludovico">
+  <meta name="citation_author"           content="Bomprezzi, Chantal">
+  <meta name="citation_publication_date" content="2024/05/14">
+  <meta name="citation_conference_title" content="6th Distributed Ledger Technology Workshop (DLT 2024)">
+  <meta name="citation_language"         content="en">
+  <meta name="citation_keywords"         content="blockchain; legislative simplification; document tracking; legal informatics; xleges; separation of powers; DLT; interoperability; Akoma Ntoso; Italian legislative process">
+  <meta name="citation_abstract_html_url" content="https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.html">
+  <meta name="citation_pdf_url"          content="https://www.ludovicopapalia.com/papers/pap-docs/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.pdf">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STANDARD SEO META TAGS
+  ════════════════════════════════════════════════════════════ -->
+  <title>The Use of Blockchain for Legislative Simplification and Tracking (DLT 2024) — Ludovico Papalia</title>
+  <meta name="description" content="Oral communication abstract presented at the 6th Distributed Ledger Technology Workshop (DLT 2024), Turin. Ludovico Papalia and Chantal Bomprezzi examine blockchain as a tool for interoperability and traceability in the Italian legislative process, building on the xLeges project.">
+  <meta name="author" content="Ludovico Papalia, Chantal Bomprezzi">
+  <meta name="keywords" content="blockchain, legislative simplification, document tracking, legal informatics, xleges, separation of powers, DLT, interoperability, Italian legislative process, Akoma Ntoso, Ludovico Papalia">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.html">
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="The Use of Blockchain for Legislative Simplification and Tracking (DLT 2024)">
+  <meta property="og:description" content="Oral communication presented at DLT 2024, Turin. Analysis of blockchain as an interoperability tool for the Italian legislative process, extending the xLeges P2P architecture.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.html">
+  <meta property="article:author" content="Ludovico Papalia">
+  <meta property="article:published_time" content="2024-05-14">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCHEMA.ORG — SCHOLARLYARTICLE (page-specific)
+       Person + WebSite nodes are injected globally by site-config.js.
+  ════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "The Use of Blockchain for Legislative Simplification and Tracking",
+    "name": "The Use of Blockchain for Legislative Simplification and Tracking",
+    "author": [
+      {
+        "@type": "Person",
+        "@id": "https://www.ludovicopapalia.com/#person",
+        "name": "Ludovico Papalia",
+        "url": "https://www.ludovicopapalia.com",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Università di Bologna"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Chantal Bomprezzi",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Università di Bologna"
+        }
+      }
+    ],
+    "datePublished": "2024-05-14",
+    "inLanguage": "en",
+    "keywords": ["blockchain", "legislative simplification", "document tracking", "legal informatics", "xleges", "separation of powers", "DLT", "interoperability", "Akoma Ntoso"],
+    "abstract": "This oral communication examines whether blockchain technology can address interoperability inefficiencies in the Italian legislative process. Building on the xLeges P2P architecture, the study analyses how blockchain properties — immutability, transparency, and decentralisation — can enhance document exchange, traceability, and versioning of legislative acts among institutional actors including the Chamber of Deputies, the Senate, the Prime Minister's Office, and the Ministry of Justice.",
+    "isPartOf": {
+      "@type": "PublicationEvent",
+      "name": "6th Distributed Ledger Technology Workshop (DLT 2024)",
+      "location": {
+        "@type": "Place",
+        "name": "Turin, Italy"
+      },
+      "startDate": "2024-05-14",
+      "endDate": "2024-05-15",
+      "url": "https://dlt2024.di.unito.it/"
+    },
+    "url": "https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.html",
+    "sameAs": "https://dlt2024.di.unito.it/wp-content/uploads/2024/05/DLT2024_paper_51.pdf"
+  }
+  </script>
+
+  <!-- ► Nav back-link override — must precede site-config.js -->
+  <script>
+    window.LP_NAV_TYPE = 'back';
+    window.LP_NAV_BACK = { href: '/index.html#publications', label: 'All publications' };
+  </script>
+
+  <!-- ► MASTER SITE CONFIG -->
+  <script src="/site-config.js"></script>
+
+  <style>
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* hero */
+    .paper-hero {
+      padding: 8rem 2.5rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeUp .8s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .paper-type-row {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .28rem .8rem;
+      border-radius: 99px;
+    }
+    .badge-type {
+      background: rgba(200,169,110,.1);
+      border: 1px solid rgba(200,169,110,.25);
+      color: var(--gold);
+    }
+    .badge-year {
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .paper-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .paper-title em { font-style: italic; color: var(--gold); }
+
+    .paper-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem 2rem;
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .paper-meta-item { display: flex; align-items: center; gap: .4rem; }
+    .paper-meta-item strong { color: var(--text); font-weight: 400; }
+
+    /* action buttons */
+    .paper-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .75rem 1.6rem;
+      border-radius: 99px;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      transition: all .22s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0c0c0b;
+      border: none;
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--gold-dim); color: var(--gold); transform: translateY(-1px); }
+
+    /* content body */
+    .paper-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2.5rem 6rem;
+    }
+
+    .content-section { margin-bottom: 3rem; }
+    .content-label {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: .9rem;
+    }
+    .abstract-text {
+      font-family: var(--ff-serif);
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.85;
+    }
+
+    /* keywords */
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .kw {
+      font-size: .75rem;
+      letter-spacing: .06em;
+      padding: .3rem .85rem;
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      color: var(--muted);
+      background: var(--bg-card);
+      transition: border-color .2s, color .2s;
+    }
+    .kw:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* citation box */
+    .citation-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      position: relative;
+    }
+    .citation-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-dim), transparent);
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .citation-formats {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .cite-tab {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem .85rem;
+      border-radius: 99px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: all .18s;
+      background: none;
+      font-family: var(--ff-sans);
+    }
+    .cite-tab.active { border-color: var(--gold-dim); color: var(--gold); background: rgba(200,169,110,.06); }
+    .citation-text {
+      font-family: 'Courier New', monospace;
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .copy-btn {
+      margin-top: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .75rem;
+      letter-spacing: .08em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: .35rem .9rem;
+      border-radius: 99px;
+      cursor: pointer;
+      background: none;
+      font-family: var(--ff-sans);
+      transition: all .2s;
+    }
+    .copy-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* related */
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      transition: border-color .2s, transform .2s;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .related-card:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+    .related-year { font-size: .68rem; letter-spacing: .1em; color: var(--gold-dim); }
+    .related-title {
+      font-family: var(--ff-serif);
+      font-size: 1rem;
+      color: var(--accent);
+      line-height: 1.3;
+    }
+    .related-venue { font-size: .78rem; color: var(--muted); }
+
+    /* divider */
+    .divider { width: 40px; height: 1px; background: var(--gold-dim); margin: .8rem 0 1.5rem; }
+
+    footer {
+      padding: 1.5rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    /* mobile */
+    @media (max-width: 700px) {
+      .paper-hero { padding: 7rem 1.5rem 3rem; }
+      .paper-body { padding: 0 1.5rem 4rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: .4rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── PAPER HERO ────────────────────────────────────────────── -->
+<header class="paper-hero">
+
+  <div class="paper-type-row">
+    <span class="badge badge-type">Oral Communication</span>
+    <span class="badge badge-year">2024</span>
+  </div>
+
+  <h1 class="paper-title">
+    The Use of <em>Blockchain</em><br>for Legislative Simplification and Tracking
+  </h1>
+
+  <div class="paper-meta">
+    <div class="paper-meta-item">
+      <strong>Authors</strong>
+      Ludovico Papalia, Chantal Bomprezzi
+    </div>
+    <div class="paper-meta-item">
+      <strong>Presented</strong>
+      14–15 May 2024
+    </div>
+    <div class="paper-meta-item">
+      <strong>Venue</strong>
+      6th DLT Workshop 2024 — Turin, Italy
+    </div>
+    <div class="paper-meta-item">
+      <strong>Language</strong>
+      English
+    </div>
+  </div>
+
+  <div class="paper-actions">
+    <a href="/papers/pap-docs/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l5 3 5-3M8 15V8M5 5l3-3 3 3M8 2v6"/></svg>
+      Download PDF
+    </a>
+    <a href="https://dlt2024.di.unito.it/wp-content/uploads/2024/05/DLT2024_paper_51.pdf" class="btn btn-secondary" target="_blank" rel="noopener">
+      Available at DLT2024 ↗
+    </a>
+    <a href="https://dlt2024.di.unito.it/" class="btn btn-secondary" target="_blank" rel="noopener">
+      Conference website ↗
+    </a>
+    <a href="#cite" class="btn btn-secondary">
+      Cite this paper
+    </a>
+  </div>
+
+</header>
+
+<!-- ─── PAPER BODY ────────────────────────────────────────────── -->
+<main class="paper-body">
+
+  <!-- Abstract -->
+  <div class="content-section">
+    <div class="content-label">Abstract</div>
+    <div class="divider"></div>
+    <p class="abstract-text">
+      In the Italian legislative process, documents exchanged between institutions such as the Senate, the Chamber of Deputies, the Prime Minister's Office, and the Ministry of Justice are not managed through a unified database system. This fragmented structure — required by the constitutional imperative to maintain separation of powers and by security and redundancy concerns — produces substantial inefficiencies in document exchange, traceability of legislative history, and public accessibility of regulatory information. This study examines whether blockchain technology can at least partially address these inefficiencies. Building on the xLeges project, an avant-garde P2P architecture for the electronic transmission of legislative documents developed since 2014 under the Italian government's Normattiva programme, the research analyses how blockchain properties — immutability, transparency, decentralisation, and security — can enhance interoperability among institutional actors, provide tamper-evident versioning of legislative acts, and facilitate document retrieval by both institutional operators and citizens. The paper assesses the technical and legal feasibility of such an implementation and draws on comparative analysis of blockchain applications in other jurisdictions.
+    </p>
+  </div>
+
+  <!-- Keywords -->
+  <div class="content-section">
+    <div class="content-label">Keywords</div>
+    <div class="divider"></div>
+    <div class="keyword-list">
+      <span class="kw">Blockchain</span>
+      <span class="kw">Legislative Simplification</span>
+      <span class="kw">Document Tracking</span>
+      <span class="kw">xLeges</span>
+      <span class="kw">Legal Informatics</span>
+      <span class="kw">Separation of Powers</span>
+      <span class="kw">Interoperability</span>
+      <span class="kw">DLT</span>
+      <span class="kw">Akoma Ntoso</span>
+      <span class="kw">Italian Legislative Process</span>
+    </div>
+  </div>
+
+  <!-- Citation -->
+  <div class="content-section" id="cite">
+    <div class="content-label">Cite this paper</div>
+    <div class="divider"></div>
+    <div class="citation-box">
+      <div class="citation-formats">
+        <button class="cite-tab active" onclick="switchCite(this,'apa')">APA</button>
+        <button class="cite-tab" onclick="switchCite(this,'bibtex')">BibTeX</button>
+        <button class="cite-tab" onclick="switchCite(this,'mla')">MLA</button>
+      </div>
+
+      <div id="cite-apa" class="citation-text">Papalia, L., &amp; Bomprezzi, C. (2024). The use of blockchain for legislative simplification and tracking [Oral communication]. In <em>Proceedings of the 6th Distributed Ledger Technology Workshop (DLT 2024)</em>, Turin, Italy. https://dlt2024.di.unito.it/wp-content/uploads/2024/05/DLT2024_paper_51.pdf</div>
+
+      <div id="cite-bibtex" class="citation-text" style="display:none">@inproceedings{papalia2024blockchaintorino,
+  title     = {The Use of Blockchain for Legislative Simplification and Tracking},
+  author    = {Papalia, Ludovico and Bomprezzi, Chantal},
+  booktitle = {Proceedings of the 6th Distributed Ledger Technology Workshop
+               (DLT 2024)},
+  address   = {Turin, Italy},
+  year      = {2024},
+  month     = {May},
+  note      = {Oral communication},
+  url       = {https://dlt2024.di.unito.it/wp-content/uploads/2024/05/DLT2024_paper_51.pdf}
+}</div>
+
+      <div id="cite-mla" class="citation-text" style="display:none">Papalia, Ludovico, and Chantal Bomprezzi. "The Use of Blockchain for Legislative Simplification and Tracking." <em>6th Distributed Ledger Technology Workshop (DLT 2024)</em>, May 2024, Turin, Italy. Oral communication. https://dlt2024.di.unito.it/wp-content/uploads/2024/05/DLT2024_paper_51.pdf.</div>
+
+      <button class="copy-btn" onclick="copyCitation()">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="5" width="9" height="9" rx="2"/><path d="M3 11H2a1 1 0 01-1-1V2a1 1 0 011-1h8a1 1 0 011 1v1"/></svg>
+        <span id="copy-label">Copy citation</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Related papers -->
+  <div class="content-section">
+    <div class="content-label">Related publications</div>
+    <div class="divider"></div>
+    <div class="related-grid">
+      <a href="/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking.html" class="related-card">
+        <span class="related-year">2025 — ICEDEG · IEEE</span>
+        <span class="related-title">The Use of Blockchain for Legislative Simplification and Tracking</span>
+        <span class="related-venue">Full paper — ICEDEG 2025</span>
+      </a>
+      <a href="/papers/A_Multi-Chain_Approach_to_Transparent_and_Accountable_Legislative_Processes.html" class="related-card">
+        <span class="related-year">2025</span>
+        <span class="related-title">A Multi-Chain Approach to Transparent and Accountable Legislative Processes</span>
+        <span class="related-venue">Extended work on blockchain and legislative tracking</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>© 2025 Ludovico Papalia</span>
+  <span>PhD Candidate · University of Bologna</span>
+</footer>
+
+<script>
+  // ─── Citation tab switcher ───────────────────────────────────
+  function switchCite(btn, id) {
+    document.querySelectorAll('.cite-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    ['apa','bibtex','mla'].forEach(k => {
+      document.getElementById('cite-' + k).style.display = k === id ? 'block' : 'none';
+    });
+  }
+
+  // ─── Copy citation to clipboard ─────────────────────────────
+  function copyCitation() {
+    var active = document.querySelector('.cite-tab.active').getAttribute('onclick').match(/'(\w+)'/)[1];
+    var text = document.getElementById('cite-' + active).innerText;
+    navigator.clipboard.writeText(text).then(function() {
+      var lbl = document.getElementById('copy-label');
+      lbl.textContent = 'Copied!';
+      setTimeout(function() { lbl.textContent = 'Copy citation'; }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
