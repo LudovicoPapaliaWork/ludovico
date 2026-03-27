@@ -33,65 +33,137 @@
 
   <!-- ─── STRUCTURED DATA FOR LLMs & CRAWLERS ──────────────── -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "NewsArticle",
-        "@id": "https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html#article",
-        "headline": "Standard aperti e software libero: l'Europa ha cambiato marcia",
-        "description": "Ludovico Papalia esperto di diritto informatico e sovranità digitale: la Germania obbliga ODF nella pubblica amministrazione entro il 2027, la Svizzera rende legge il principio soldi pubblici codice pubblico con EMBAG. Non è ideologia open source, è una scelta razionale e misurabile contro il vendor lock-in.",
-        "keywords": ["ODF", "Open Document Format", "EMBAG", "Svizzera", "Germania", "sovranità digitale", "software libero", "open source", "pubblica amministrazione", "Ludovico Papalia", "diritto informatico"],
-        "datePublished": "2026-03-21",
-        "dateModified": "2026-03-21",
-        "inLanguage": "it",
-        "articleSection": "Diritto Informatico",
-        "genre": "Divulgazione giuridica",
-        "url": "https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html",
-        "isPartOf": {
-          "@id": "https://www.ludovicopapalia.com/#website"
-        },
-        "author": {
-          "@type": "Person",
-          "@id": "https://www.ludovicopapalia.com/#person",
-          "name": "Ludovico Papalia",
-          "url": "https://www.ludovicopapalia.com",
-          "jobTitle": "PhD Candidate in Legal Informatics",
-          "affiliation": {
-            "@type": "CollegeOrUniversity",
-            "name": "Università di Bologna"
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "NewsArticle",
+          "@id": "https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html#article",
+          "headline": "Standard aperti e software libero: l'Europa ha cambiato marcia",
+          "description": "Ludovico Papalia esperto di diritto informatico e sovranità digitale: la Germania obbliga ODF nella pubblica amministrazione entro il 2027, la Svizzera rende legge il principio soldi pubblici codice pubblico con EMBAG. Non è ideologia open source, è una scelta razionale e misurabile contro il vendor lock-in.",
+          "keywords": [
+            "ODF",
+            "Open Document Format",
+            "EMBAG",
+            "Svizzera",
+            "Germania",
+            "sovranità digitale",
+            "software libero",
+            "open source",
+            "pubblica amministrazione",
+            "Ludovico Papalia",
+            "diritto informatico"
+          ],
+          "datePublished": "2026-03-21",
+          "dateModified": "2026-03-21",
+          "inLanguage": "it",
+          "articleSection": "Diritto Informatico",
+          "genre": "Divulgazione giuridica",
+          "url": "https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html",
+          "isPartOf": {
+            "@id": "https://www.ludovicopapalia.com/#website"
+          },
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.ludovicopapalia.com/#person",
+            "name": "Ludovico Papalia",
+            "url": "https://www.ludovicopapalia.com",
+            "jobTitle": "PhD Candidate in Legal Informatics",
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "Università di Bologna"
+            }
+          },
+          "publisher": {
+            "@type": "Person",
+            "name": "Ludovico Papalia",
+            "url": "https://www.ludovicopapalia.com"
+          },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Open Document Format",
+              "description": "Standard ISO/IEC 26300 per documenti di testo, fogli di calcolo e presentazioni"
+            },
+            {
+              "@type": "Thing",
+              "name": "EMBAG",
+              "description": "Legge federale svizzera sull'uso di mezzi elettronici per l'adempimento dei compiti governativi"
+            },
+            {
+              "@type": "Thing",
+              "name": "Sovranità digitale europea"
+            },
+            {
+              "@type": "Thing",
+              "name": "Vendor lock-in"
+            },
+            {
+              "@type": "Thing",
+              "name": "Germany Stack"
+            }
+          ],
+          "mentions": [
+            {
+              "@type": "Organization",
+              "name": "The Document Foundation",
+              "url": "https://www.documentfoundation.org"
+            },
+            {
+              "@type": "Organization",
+              "name": "IT-Planungsrat"
+            },
+            {
+              "@type": "Organization",
+              "name": "Commissione Europea"
+            },
+            {
+              "@type": "Person",
+              "name": "Matthias Stürmer",
+              "jobTitle": "Head of Institute for Public Sector Transformation, Bern University of Applied Sciences"
+            }
+          ],
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.ludovicopapalia.com/profile.png"
+          },
+          "isAccessibleForFree": true,
+          "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html",
+          "alternativeHeadline": "Ludovico Papalia esperto di diritto informatico e sovranità digitale: la Germania obbliga ODF nella PA entro il 2027, la Svizzera rende legge il principio",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "xpath": [
+              "/html/head/title",
+              "/html/head/meta[@name='description']/@content"
+            ]
           }
         },
-        "publisher": {
-          "@type": "Person",
-          "name": "Ludovico Papalia",
-          "url": "https://www.ludovicopapalia.com"
-        },
-        "about": [
-          { "@type": "Thing", "name": "Open Document Format", "description": "Standard ISO/IEC 26300 per documenti di testo, fogli di calcolo e presentazioni" },
-          { "@type": "Thing", "name": "EMBAG", "description": "Legge federale svizzera sull'uso di mezzi elettronici per l'adempimento dei compiti governativi" },
-          { "@type": "Thing", "name": "Sovranità digitale europea" },
-          { "@type": "Thing", "name": "Vendor lock-in" },
-          { "@type": "Thing", "name": "Germany Stack" }
-        ],
-        "mentions": [
-          { "@type": "Organization", "name": "The Document Foundation", "url": "https://www.documentfoundation.org" },
-          { "@type": "Organization", "name": "IT-Planungsrat" },
-          { "@type": "Organization", "name": "Commissione Europea" },
-          { "@type": "Person", "name": "Matthias Stürmer", "jobTitle": "Head of Institute for Public Sector Transformation, Bern University of Applied Sciences" }
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ludovicopapalia.com" },
-          { "@type": "ListItem", "position": 2, "name": "Articoli", "item": "https://www.ludovicopapalia.com/divulgativi-index.html" },
-          { "@type": "ListItem", "position": 3, "name": "Standard aperti e software libero: l'Europa ha cambiato marcia", "item": "https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html" }
-        ]
-      }
-    ]
-  }
-  </script>
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.ludovicopapalia.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Articoli",
+              "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Standard aperti e software libero: l'Europa ha cambiato marcia",
+              "item": "https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html"
+            }
+          ]
+        }
+      ]
+    }
+</script>
 
   <!-- ► Nav italiana override — deve precedere site-config.js -->
   <script>
