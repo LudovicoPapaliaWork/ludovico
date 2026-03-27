@@ -9,6 +9,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/responsabilita-civile-ai-chi-risponde.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-03-26T00:00:00+01:00</news:publication_date>
+      <news:title>Se l'AI ti dà un consiglio sbagliato, chi è responsabile?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-03-26T00:00:00+01:00</news:publication_date>
+      <news:title>Training, fine-tuning, open source: non è tutto uguale, e la legge se ne sta accorgendo</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html</loc>
     <news:news>
       <news:publication>
@@ -215,28 +237,6 @@
       </news:publication>
       <news:publication_date>2024-11-05T00:00:00+01:00</news:publication_date>
       <news:title>Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/responsabilita-civile-ai-chi-risponde.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-26T00:00:00+01:00</news:publication_date>
-      <news:title>Se l'AI ti dà un consiglio sbagliato, chi ha torto?</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-26T00:00:00+01:00</news:publication_date>
-      <news:title>Training, fine-tuning, open source: non è tutto uguale, e la legge se ne sta accorgendo</news:title>
     </news:news>
   </url>
 </urlset>
