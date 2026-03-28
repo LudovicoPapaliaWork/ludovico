@@ -242,7 +242,7 @@ var LP_SCHEMA = {
       "@type": "WebSite",
       "@id": "https://www.ludovicopapalia.com/#website",
       "url": "https://www.ludovicopapalia.com",
-      "name": "Ludovico Papalia — Legal Informatics Researcher",
+      "name": "Ludovico Papalia",
       "description": "Personal academic website of Ludovico Papalia, PhD Candidate in Legal Informatics at the University of Bologna.",
       "author": { "@id": "https://www.ludovicopapalia.com/#person" },
       "inLanguage": "en",
