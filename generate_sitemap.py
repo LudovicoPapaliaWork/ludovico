@@ -116,6 +116,46 @@ INCLUDE_EXTENSIONS = {".html", ".htm"}
 OUTPUT_SITEMAP      = os.path.join(SITE_ROOT, "sitemap.xml")
 OUTPUT_SITEMAP_NEWS = os.path.join(SITE_ROOT, "sitemap-news.xml")
 
+# ─────────────────────────────────────────────────────────────────────────────
+# RSS FEED CONFIG
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Percorso di output del feed RSS 2.0
+OUTPUT_RSS = os.path.join(SITE_ROOT, "feed.xml")
+
+# URL pubblico del feed (usato nel tag <atom:link> e nei log)
+RSS_FEED_URL = f"{BASE_URL}/feed.xml"
+
+# Metadati del canale RSS
+RSS_CHANNEL_TITLE       = "Ludovico Papalia — Articoli divulgativi"
+RSS_CHANNEL_DESCRIPTION = (
+    "Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. "
+    "Articoli divulgativi di Ludovico Papalia."
+)
+RSS_CHANNEL_LANGUAGE    = "it"
+# Immagine del canale RSS (mostrata da alcuni reader)
+RSS_CHANNEL_IMAGE_URL   = f"{BASE_URL}/assets/og-default.jpg"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# RSS FEED CONFIG
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Percorso di output del feed RSS 2.0
+OUTPUT_RSS = os.path.join(SITE_ROOT, "feed.xml")
+
+# URL pubblico del feed (usato nel tag <atom:link> e nei log)
+RSS_FEED_URL = f"{BASE_URL}/feed.xml"
+
+# Metadati del canale RSS
+RSS_CHANNEL_TITLE       = "Ludovico Papalia — Articoli divulgativi"
+RSS_CHANNEL_DESCRIPTION = (
+    "Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. "
+    "Articoli divulgativi di Ludovico Papalia."
+)
+RSS_CHANNEL_LANGUAGE    = "it"
+RSS_CHANNEL_IMAGE_URL   = f"{BASE_URL}/assets/og-default.jpg"  # immagine canale (opzionale)
+
 # Priorità per percorso (default 0.5 se non specificato)
 PRIORITY_MAP = {
     "/index.html":              "1.0",
@@ -386,6 +426,210 @@ def parse_articles_from_index() -> list[dict]:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# RSS FEED — generazione feed.xml RSS 2.0
+# ─────────────────────────────────────────────────────────────────────────────
+
+def extract_meta_description(abs_html: str) -> str:
+    """
+    Estrae il contenuto del tag <meta name="description"> da un file HTML.
+    Restituisce la stringa trovata, oppure una stringa vuota se non presente.
+
+    La priorità è:
+      1. <meta name="description" content="...">
+      2. <meta property="og:description" content="...">  (fallback)
+    """
+    try:
+        with open(abs_html, "r", encoding="utf-8") as f:
+            html = f.read()
+    except OSError as e:
+        print(f"  [RSS] Impossibile leggere {abs_html}: {e}")
+        return ""
+
+    # Priorità 1: meta name="description"
+    match = re.search(
+        r'<meta\s[^>]*name=["\'\']description["\'\'][^>]*content=["\'\']([^"\'\']*)["\'\']',
+        html, re.IGNORECASE,
+    )
+    if not match:
+        match = re.search(
+            r'<meta\s[^>]*content=["\'\']([^"\'\']*)["\'\'][^>]*name=["\'\']description["\'\']',
+            html, re.IGNORECASE,
+        )
+
+    if match:
+        desc = match.group(1).strip()
+        print(f"  [RSS] meta description trovata ({len(desc)} chars).")
+        return desc
+
+    # Fallback: og:description
+    match = re.search(
+        r'<meta\s[^>]*property=["\'\']og:description["\'\'][^>]*content=["\'\']([^"\'\']*)["\'\']',
+        html, re.IGNORECASE,
+    )
+    if match:
+        desc = match.group(1).strip()
+        print(f"  [RSS] Fallback og:description ({len(desc)} chars).")
+        return desc
+
+    print(f"  [RSS] AVVISO: nessuna description trovata in {os.path.basename(abs_html)}.")
+    return ""
+
+
+def extract_og_image(abs_html: str) -> str:
+    """
+    Estrae l'URL dell'immagine og:image dall'HTML dell'articolo.
+    Restituisce l'URL assoluto se trovato, stringa vuota altrimenti.
+    """
+    try:
+        with open(abs_html, "r", encoding="utf-8") as f:
+            html = f.read()
+    except OSError:
+        return ""
+
+    match = re.search(
+        r'<meta\s[^>]*property=["\'\']og:image["\'\'][^>]*content=["\'\']([^"\'\']*)["\'\']',
+        html, re.IGNORECASE,
+    )
+    if not match:
+        match = re.search(
+            r'<meta\s[^>]*content=["\'\']([^"\'\']*)["\'\'][^>]*property=["\'\']og:image["\'\']',
+            html, re.IGNORECASE,
+        )
+
+    if match:
+        img = match.group(1).strip()
+        if img.startswith("/"):
+            img = BASE_URL + img
+        return img
+
+    return ""
+
+
+def format_rfc2822(iso_date: str) -> str:
+    """
+    Converte una data ISO 8601 (es. '2025-12-15T00:00:00+01:00') in formato
+    RFC 2822 richiesto da RSS 2.0 (es. 'Sun, 15 Dec 2025 00:00:00 +0100').
+    Accetta anche solo la parte YYYY-MM-DD.
+    """
+    for fmt in (
+        "%Y-%m-%dT%H:%M:%S%z",
+        "%Y-%m-%dT%H:%M:%S",
+        "%Y-%m-%d",
+    ):
+        try:
+            date_str_clean = iso_date
+            if len(iso_date) > 19 and iso_date[19] in ("+", "-"):
+                # Rimuove il ':' in +01:00 -> +0100 per compatibilità Python
+                date_str_clean = iso_date[:22] + iso_date[23:]
+            dt = datetime.datetime.strptime(date_str_clean, fmt)
+            return dt.strftime("%a, %d %b %Y %H:%M:%S %z") if dt.tzinfo else \
+                   dt.strftime("%a, %d %b %Y %H:%M:%S +0100")
+        except ValueError:
+            continue
+
+    print(f"  [RSS] AVVISO: impossibile convertire data '{iso_date}' in RFC 2822, uso fallback.")
+    return datetime.datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0100")
+
+
+def build_rss_feed(articles: list[dict]) -> str:
+    """
+    Genera il contenuto XML del feed RSS 2.0 completo.
+
+    Ogni <item> contiene:
+      - <title>        : titolo dell'articolo
+      - <link>         : URL canonico
+      - <guid>         : stesso dell'URL (isPermaLink="true")
+      - <pubDate>      : data RFC 2822
+      - <description>  : meta description estratta dall'HTML
+      - <enclosure>    : immagine og:image se disponibile
+
+    Il canale include:
+      - <atom:link rel="self">  per autodescription del feed
+      - <lastBuildDate>         : timestamp di generazione
+      - <image>                 : immagine del canale
+
+    Gli articoli sono ordinati come in ARTICLES (più recente prima).
+    """
+    print("\n[RSS] Generazione feed.xml RSS 2.0...")
+
+    now_rfc = datetime.datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0100")
+
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<!-- ================================================================',
+        '     feed.xml — RSS 2.0 — ludovicopapalia.com',
+        '     Generato automaticamente da generate_sitemap.py',
+        '     Fonte: divulgativi-index.html (array ARTICLES)',
+        '     Aggiornato ad ogni esecuzione dello script.',
+        '================================================================ -->',
+        '<rss version="2.0"',
+        '     xmlns:atom="http://www.w3.org/2005/Atom"',
+        '     xmlns:content="http://purl.org/rss/1.0/modules/content/"',
+        '     xmlns:dc="http://purl.org/dc/elements/1.1/">',
+        '',
+        '  <channel>',
+        f'    <title>{xml_escape(RSS_CHANNEL_TITLE)}</title>',
+        f'    <link>{BASE_URL}/divulgativi-index.html</link>',
+        f'    <description>{xml_escape(RSS_CHANNEL_DESCRIPTION)}</description>',
+        f'    <language>{RSS_CHANNEL_LANGUAGE}</language>',
+        f'    <lastBuildDate>{now_rfc}</lastBuildDate>',
+        f'    <generator>generate_sitemap.py (ludovicopapalia.com)</generator>',
+        f'    <docs>https://www.rssboard.org/rss-specification</docs>',
+        f'    <atom:link href="{RSS_FEED_URL}" rel="self" type="application/rss+xml"/>',
+        '    <image>',
+        f'      <url>{RSS_CHANNEL_IMAGE_URL}</url>',
+        f'      <title>{xml_escape(RSS_CHANNEL_TITLE)}</title>',
+        f'      <link>{BASE_URL}/divulgativi-index.html</link>',
+        '    </image>',
+        '',
+    ]
+
+    items_written = 0
+    for article in articles:
+        full_url = BASE_URL + "/" + article["path"].lstrip("/")
+        abs_html = os.path.join(SITE_ROOT, article["path"])
+        pub_date = format_rfc2822(article["date"])
+        desc     = extract_meta_description(abs_html)
+        og_image = extract_og_image(abs_html)
+
+        print(f"  [RSS] item: {article['title'][:60]!r} | {pub_date}")
+
+        lines += [
+            '    <item>',
+            f'      <title>{xml_escape(article["title"])}</title>',
+            f'      <link>{full_url}</link>',
+            f'      <guid isPermaLink="true">{full_url}</guid>',
+            f'      <pubDate>{pub_date}</pubDate>',
+            f'      <dc:creator>Ludovico Papalia</dc:creator>',
+        ]
+
+        if desc:
+            lines.append(f'      <description>{xml_escape(desc)}</description>')
+        else:
+            lines.append(f'      <description>{xml_escape(article["title"])}</description>')
+
+        # Enclosure immagine opzionale — migliora la resa nei feed reader
+        if og_image:
+            lines.append(
+                f'      <enclosure url="{og_image}" type="image/jpeg" length="0"/>'
+            )
+
+        lines += [
+            '    </item>',
+            '',
+        ]
+        items_written += 1
+
+    lines += [
+        '  </channel>',
+        '</rss>',
+    ]
+
+    print(f"[RSS] Item scritti nel feed: {items_written}")
+    return "\n".join(lines)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # SITEMAP HELPERS
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -640,6 +884,27 @@ def main():
             f.write(xml_news)
         print(f"[DONE]  sitemap-news.xml salvata: {len(news_articles)} articoli inclusi.")
 
+    # ── RSS FEED ──────────────────────────────────────────────────────────────
+    # Riusa news_articles (stessa lista, stesso ordine più recente prima).
+    # Se news_articles è vuota (nessun articolo estratto) il feed non viene scritto
+    # per non sovrascrivere un feed già esistente con contenuto vuoto.
+    if news_articles:
+        rss_content = build_rss_feed(news_articles)
+        with open(OUTPUT_RSS, "w", encoding="utf-8") as f:
+            f.write(rss_content)
+        print(f"[DONE]  feed.xml salvato: {len(news_articles)} articoli inclusi.")
+        print()
+        print("  ╔══════════════════════════════════════════════════════════════╗")
+        print("  ║  RSS FEED AGGIORNATO                                         ║")
+        print(f"  ║  File locale : {OUTPUT_RSS}")
+        print(f"  ║  URL pubblico: {RSS_FEED_URL}")
+        print("  ║                                                              ║")
+        print("  ║  RICORDATI DI FARE IL PUSH del nuovo feed.xml               ║")
+        print(f"  ║  Localizzato in: {OUTPUT_RSS}")
+        print("  ╚══════════════════════════════════════════════════════════════╝")
+    else:
+        print("[AVVISO] RSS feed non aggiornato (nessun articolo disponibile).")
+
     # ── CHANGE TRACKING + INDEXNOW ────────────────────────────────────────────
     if INDEXNOW_ENABLED:
         old_state = load_state()
@@ -669,3 +934,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
