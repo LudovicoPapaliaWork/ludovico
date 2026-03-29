@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================
+     feed.xml — RSS 2.0 — ludovicopapalia.com
+     Generato automaticamente da generate_sitemap.py
+     Fonte: divulgativi-index.html (array ARTICLES)
+     Aggiornato ad ogni esecuzione dello script.
+================================================================ -->
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>Ludovico Papalia — Articoli divulgativi</title>
+    <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
+    <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
+    <language>it</language>
+    <lastBuildDate>Sun, 29 Mar 2026 22:45:16 +0100</lastBuildDate>
+    <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://www.ludovicopapalia.com/assets/og-default.jpg</url>
+      <title>Ludovico Papalia — Articoli divulgativi</title>
+      <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
+    </image>
+
+    <item>
+      <title>WhatsApp al governo: i metadati che parlano anche quando taci</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/whatsapp-governo-metadati-sicurezza.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/whatsapp-governo-metadati-sicurezza.html</guid>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di sicurezza digitale e sovranità tecnologica analizza i rischi strutturali delle app di messaggistica commerciale nelle comunicazioni governative: metadati, Cloud Act e il problema della dipendenza da infrastrutture straniere.</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Tap-to-pay: perché l'allarme NFC è quasi tutto rumore</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/tap-to-pay-allarme-nfc-rumore.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/tap-to-pay-allarme-nfc-rumore.html</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto digitale e pagamenti elettronici analizza il caso del borseggio contactless in Italia nel 2025: perché il rischio reale è molto inferiore all</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Leon Theremin non sapeva che stava inventando il pagamento con il telefono</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di storia della tecnologia e diritto digitale racconta come un microfono spia sovietico del 1945 abbia dato origine alla fisica dei pagamenti contactless: dalla Guerra Fredda al tap del telefono, la stessa onda radio.</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Capire l'algoritmo è il nuovo saper leggere</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html</guid>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto digitale e tecnologia spiega perché vietare i social ai ragazzi non è sufficiente, come funziona un sistema di raccomandazione e cosa significa costruire vera autonomia digitale.</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Se l'AI ti dà un consiglio sbagliato, chi è responsabile?</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/responsabilita-civile-ai-chi-risponde.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/responsabilita-civile-ai-chi-risponde.html</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>La Commissione europea ha ritirato la proposta di direttiva sulla responsabilità civile per l</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Training, fine-tuning, open source: non è tutto uguale, e la legge se ne sta accorgendo</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/training-finetuning-ai-differenze-legali.html</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Addestrare un modello AI da zero, farne il fine-tuning, usarlo tramite API o costruirci sopra una applicazione sono cose tecnicamente molto diverse. Questa distinzione ha conseguenze legali precise che entrano in gioco proprio adesso, con l</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Data certa, paternità incerta: cosa certifica davvero la blockchain</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/blockchain-data-certa-paternita.html</guid>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Mettere un file nella blockchain è gratis e tecnicamente inattaccabile. Ma quello che certifica non è quello che la maggior parte delle persone crede. E la distanza tra la matematica e il diritto è più grande del previsto.</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Il web non è più solo per te</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html</guid>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico e intelligenza artificiale analizza la transizione silenziosa del web: da interfaccia per occhi umani a infrastruttura per agenti AI. Cosa è MCP, perché Google ha fermato Project Mariner e cosa cambia davvero.</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Standard aperti e software libero: l'Europa ha cambiato marcia</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html</guid>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico e sovranità digitale: la Germania obbliga ODF nella PA entro il 2027, la Svizzera rende legge il principio</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico analizza Piracy Shield: uno strumento anti-pirateria che consente a società private di bloccare siti internet in 30 minuti senza supervisione giudiziaria, e le implicazioni per la libertà della rete.</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Riconoscimento biometrico in Italia: la proroga al 2027 e il vuoto normativo che nessuno vuole colmare</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/riconoscimento-biometrico-proroga-2027-vuoto-normativo.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/riconoscimento-biometrico-proroga-2027-vuoto-normativo.html</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di privacy e riconoscimento biometrico: il Milleproroghe 2026 ha esteso il divieto fino al 2027, ma l</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>OpenClaw: quando l'AI agisce per te, ma il diritto non sa ancora chi risponde</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di intelligenza artificiale e diritto degli agenti autonomi analizza OpenClaw: responsabilità civile, GDPR e vuoti normativi di una tecnologia che fa le cose al posto tuo senza che tu lo sappia.</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
+
+    <item>
+      <title>Signalgate: Signal funzionava. La legge no.</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/signalgate-federal-records-act.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/signalgate-federal-records-act.html</guid>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico analizza il Signalgate: il vero problema non è la sicurezza dell</description>
+    </item>
+
+    <item>
+      <title>SIM Swap: il tuo numero di telefono non è una prova d'identità</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/sim-swap-il-numero-non-e-identita.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/sim-swap-il-numero-non-e-identita.html</guid>
+      <pubDate>Fri, 09 May 2025 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di SIM swap e truffe digitali spiega come funziona la frode del cambio SIM, perché i codici bancari via SMS sono vulnerabili e come proteggersi concretamente in Italia.</description>
+    </item>
+
+    <item>
+      <title>Hai la 2FA attiva: sei ancora vulnerabile</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/autenticazione-due-fattori-punto-debole.html</guid>
+      <pubDate>Fri, 09 May 2025 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Password manager, 2FA, OTP e passkey: Ludovico Papalia esperto di cybersicurezza e diritto digitale spiega la gerarchia dei sistemi di autenticazione e perché l</description>
+    </item>
+
+    <item>
+      <title>SPID per i siti adulti: la privacy è davvero protetta?</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/spid-siti-adulti-privacy.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/spid-siti-adulti-privacy.html</guid>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di privacy digitale e verifica dell</description>
+    </item>
+
+    <item>
+      <title>Browser AI agentici: cosa possono fare (e cosa possono fare di male)</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/browser-ai-agentici.html</guid>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di intelligenza artificiale e sicurezza informatica analizza i browser AI agentici Atlas e Comet: potenzialità, prompt injection e rischi reali per gli utenti.</description>
+    </item>
+
+    <item>
+      <title>Quanto inquina l'AI? Non tutti i modelli sono uguali</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/ai-impatto-ambientale-consumo-energetico.html</guid>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>L</description>
+    </item>
+
+    <item>
+      <title>L'AI non ruba lavoro, lo trasforma: una storia vecchia</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/ai-lavoro-trasformazione.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/ai-lavoro-trasformazione.html</guid>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>L</description>
+    </item>
+
+    <item>
+      <title>SIAE contro Meta: chi ha perso davvero?</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/siae-contro-meta.html</guid>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>La SIAE ha tolto la musica italiana da Instagram e Facebook chiedendo compensi più alti a Meta. Risultato: gli artisti italiani sono spariti dalla piattaforma più usata al mondo. Chi ha sbagliato calcolo?</description>
+    </item>
+
+    <item>
+      <title>Instagram Teen Account: il profilo privato non è più una scelta</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/instagram-teen-account-profilo-privato-minori.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/instagram-teen-account-profilo-privato-minori.html</guid>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico spiega i nuovi Instagram Teen Account: profilo privato automatico, supervisione genitori e limiti per gli under 16.</description>
+    </item>
+
+    <item>
+      <title>Vietare il cellulare a scuola: la norma c'è, ma funziona?</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/cellulare-scuola-divieto-applicabile.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/cellulare-scuola-divieto-applicabile.html</guid>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico e minori e digitale analizza il divieto del cellulare a scuola: dalla circolare Valditara 2024 ai limiti reali di applicazione.</description>
+    </item>
+
+    <item>
+      <title>I social creano dipendenza come le sigarette? Arriva la causa legale</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/social-dipendenza-minori-class-action.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/social-dipendenza-minori-class-action.html</guid>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico spiega la prima class action italiana contro Meta e TikTok per dipendenza da social nei minori, tra algoritmi persuasivi e responsabilità delle piattaforme.</description>
+    </item>
+
+    <item>
+      <title>La chat dei genitori viola la privacy dei tuoi figli</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/chat-genitori-scuola-dati-sensibili-privacy.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/chat-genitori-scuola-dati-sensibili-privacy.html</guid>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico spiega perché le chat WhatsApp dei genitori scolastici violano la privacy: dati BES e DSA, foto delle gite, GDPR e responsabilità dei docenti.</description>
+    </item>
+
+    <item>
+      <title>Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html</guid>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0100</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico e responsabilità genitoriale digitale spiega cosa succede legalmente quando un genitore cede un cellulare a un minore: SIM, responsabilità civile e penale.</description>
+    </item>
+
+  </channel>
+</rss>
