@@ -99,6 +99,8 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 
 - [Signalgate: Signal funzionava. La legge no.](https://www.ludovicopapalia.com/art-divulgativi/signalgate-federal-records-act.html) — Aprile 2025. Ludovico Papalia esperto di diritto informatico e comunicazioni governative analizza il caso Signalgate: funzionari dell'amministrazione Trump coordinano attacchi militari in Yemen su Signal con auto-cancellazione, violando il Federal Records Act. Il problema non era tecnico, era giuridico.
 
+- [WhatsApp al governo: i metadati che parlano anche quando taci](https://www.ludovicopapalia.com/art-divulgativi/whatsapp-governo-metadati-sicurezza.html) — Marzo 2026. Ludovico Papalia esperto di sicurezza digitale e sovranità tecnologica analizza i rischi strutturali dell'uso di app di messaggistica commerciale nelle comunicazioni governative: metadati non cifrati, Cloud Act, dipendenza da infrastrutture straniere e il confronto tra la scelta europea di Signal e il progetto italiano TelsyInTouch.
+
 ### Minori e Social Media
 
 - [Instagram Teen Account: il profilo privato non è più una scelta](https://www.ludovicopapalia.com/art-divulgativi/instagram-teen-account-profilo-privato-minori.html) — Novembre 2024. Ludovico Papalia esperto di tutela dei minori online analizza la nuova policy di Meta sui Teen Account: profilo privato obbligatorio, parental control e implicazioni rispetto al Digital Services Act e al GDPR minori.
