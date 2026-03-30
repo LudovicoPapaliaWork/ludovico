@@ -98,6 +98,8 @@ EXCLUDE_FILES = {
     "divulgativo-template.html",
     "paper-template.html",
     "UNUSED-papers-index.html",
+    # Pagine escluse per coerenza con robots.txt Disallow
+    "chi-sono.html",
 }
 
 # Cartelle da escludere (nomi, non path completi)
@@ -107,6 +109,8 @@ EXCLUDE_DIRS = {
     "node_modules",
     "assets",
     "cdn-cgi",
+    # Cartelle escluse per coerenza con robots.txt Disallow
+    "curriculum",
 }
 
 # Estensioni da includere nella sitemap standard
@@ -642,7 +646,34 @@ def url_for_path(abs_path: str) -> str:
 
 
 def get_lastmod(abs_path: str) -> str:
-    """Restituisce la data di ultima modifica del file in formato W3C (YYYY-MM-DD)."""
+    """
+    Restituisce la data di ultima modifica del file in formato W3C (YYYY-MM-DD).
+
+    Per gli articoli HTML cerca prima il campo 'datePublished' nel JSON-LD
+    (che riflette la data di pubblicazione reale, non il mtime del filesystem).
+    Il mtime è inaffidabile su git clone perché tutti i file risultano
+    modificati nello stesso momento (quello del clone).
+    Fallback: mtime del filesystem.
+    """
+    # Prova a estrarre datePublished dal JSON-LD (articoli divulgativi e paper)
+    if abs_path.endswith(".html"):
+        try:
+            with open(abs_path, "r", encoding="utf-8") as f:
+                html_content = f.read()
+            # Cerca datePublished nel JSON-LD o nei meta itemprop
+            match = re.search(r'"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})', html_content)
+            if not match:
+                match = re.search(
+                    r'<meta\s[^>]*itemprop=["\'\']datePublished["\'\'][^>]*content=["\'\']'
+                    r'(\d{4}-\d{2}-\d{2})', html_content, re.IGNORECASE
+                )
+            if match:
+                date_str = match.group(1)
+                print(f"  [LASTMOD] datePublished trovato: {date_str} ({os.path.basename(abs_path)})")
+                return date_str
+        except (OSError, Exception):
+            pass
+    # Fallback: mtime del filesystem
     mtime = os.path.getmtime(abs_path)
     return datetime.datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
 
