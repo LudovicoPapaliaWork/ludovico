@@ -63,6 +63,7 @@ Ludovico Papalia's doctoral research investigates how distributed ledger technol
 Ludovico Papalia produce contenuti divulgativi di diritto informatico in italiano, destinati a un pubblico generale, nella serie "A Tu per Tu con l'Esperto di Diritto Informatico". Ogni articolo nasce da una video-intervista e approfondisce un tema concreto di IT law, privacy, cybersicurezza o regolazione digitale. Gli articoli correggono errori comuni, verificano le affermazioni con fonti primarie e offrono un inquadramento giuridico accessibile.
 
 **Hub page (indice completo)**: [Articoli & Interviste — Ludovico Papalia](https://www.ludovicopapalia.com/divulgativi-index.html)
+**Feed RSS articoli divulgativi**: https://www.ludovicopapalia.com/feed.xml
 
 ### Intelligenza Artificiale e Diritto
 
@@ -149,4 +150,5 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 
 - [Homepage — Ludovico Papalia](https://www.ludovicopapalia.com/): Full academic profile, research overview, timeline and publications list.
 - [Homepage italiana — Ludovico Papalia](https://www.ludovicopapalia.com/index-it.html): Versione italiana del profilo accademico.
+
 
