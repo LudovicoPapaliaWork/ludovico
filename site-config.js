@@ -447,6 +447,7 @@ document.addEventListener('DOMContentLoaded', function () {
   _injectSchemaOrg();
   _injectTracking();
   _injectDisclaimer();
+  _injectRssFeedLink();
 });
 
 /* ── D1. Nav HTML ─────────────────────────────────────────────────────────── */
@@ -679,4 +680,24 @@ function _injectDisclaimer() {
   article.appendChild(div);
 }
 
+
+/* ── D5. RSS feed autodiscovery ──────────────────────────────────────────── */
+function _injectRssFeedLink() {
+  /* Inietta il tag <link rel="alternate" type="application/rss+xml"> nell'<head>
+     SOLO per le pagine divulgative italiane (LP_NAV_TYPE === 'it').
+     Sono esclusi automaticamente: homepage (it-home), paper (back), EN (default).
+     Evita duplicati nel caso il tag fosse già presente nel markup statico. */
+
+  if ((window.LP_NAV_TYPE || 'default') !== 'it') return;
+
+  /* Già presente? (es. divulgativi-index.html ce l'ha già nel markup) */
+  if (document.querySelector('link[type="application/rss+xml"]')) return;
+
+  var link = document.createElement('link');
+  link.rel   = 'alternate';
+  link.type  = 'application/rss+xml';
+  link.title = 'Ludovico Papalia — Articoli divulgativi';
+  link.href  = 'https://www.ludovicopapalia.com/feed.xml';
+  document.head.appendChild(link);
+}
 
