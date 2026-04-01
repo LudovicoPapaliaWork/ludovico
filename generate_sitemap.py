@@ -632,11 +632,6 @@ def build_rss_feed(articles: list[dict]) -> str:
         else:
             lines.append(f'      <description>{xml_escape(article["title"])}</description>')
 
-        # Enclosure immagine opzionale — migliora la resa nei feed reader
-        if og_image:
-            lines.append(
-                f'      <enclosure url="{og_image}" type="image/jpeg" length="0"/>'
-            )
 
         lines += [
             '    </item>',
