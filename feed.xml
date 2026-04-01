@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Wed, 01 Apr 2026 18:39:16 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 23:05:01 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,15 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>Artemis II è partita. E adesso chi fa le regole sulla Luna?</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/artemis-ii-luna-diritto-spazio-risorse.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/artemis-ii-luna-diritto-spazio-risorse.html</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto spaziale e tecnologia analizza il lancio di Artemis II: dalle risorse della Luna all'elio-3, dai vecchi trattati del 1967 agli Accordi Artemis, fino alle tecnologie che dallo spazio entreranno nella nostra vita quotidiana.</description>
+    </item>
 
     <item>
       <title>Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta che fa funzionare davvero un agente AI</title>
