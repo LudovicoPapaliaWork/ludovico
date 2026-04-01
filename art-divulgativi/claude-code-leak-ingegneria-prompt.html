@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── SEO & SOCIAL ───────────────────────────────────────── -->
+  <title>Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta degli agenti AI — Ludovico Papalia</title>
+  <meta name="description" content="Ludovico Papalia esperto di intelligenza artificiale e ingegneria dei prompt analizza il leak di Claude Code: cosa rivela sull'architettura degli agenti AI e sul prompt engineering professionale.">
+  <meta name="author" content="Ludovico Papalia">
+  <meta name="keywords" content="Claude Code leak prompt engineering agenti AI intelligenza artificiale caching sistema prompt Anthropic ingegneria testuale Ludovico Papalia">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta degli agenti AI">
+  <meta property="og:description" content="Un errore di packaging ha esposto 512mila righe del codice sorgente di Claude Code. Dentro c'era un Tamagotchi ASCII, un agente che sogna di notte, e soprattutto la prova che costruire AI affidabile è ingegneria testuale, non magia.">
+  <meta property="og:url"         content="https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html">
+  <meta property="og:image"       content="https://www.ludovicopapalia.com/profile.png">
+  <meta property="og:site_name"   content="Ludovico Papalia — Legal Informatics">
+  <meta property="article:author" content="Ludovico Papalia">
+  <meta property="article:published_time" content="2026-04-01">
+  <meta property="article:modified_time"  content="2026-04-01">
+  <meta property="article:section" content="Intelligenza Artificiale">
+  <meta property="article:tag"    content="Claude Code">
+  <meta property="article:tag"    content="Prompt Engineering">
+  <meta property="article:tag"    content="Agenti AI">
+  <meta property="article:tag"    content="Anthropic">
+  <meta property="article:tag"    content="Intelligenza Artificiale">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta degli agenti AI">
+  <meta name="twitter:description" content="Un errore di packaging ha esposto 512mila righe di Claude Code. Dentro c'era un Tamagotchi, un agente che sogna di notte, e la prova che il prompt engineering è ingegneria vera.">
+
+  <!-- ─── STRUCTURED DATA ──────────────────────────────────── -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "NewsArticle",
+          "@id": "https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html#article",
+          "headline": "Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta degli agenti AI",
+          "description": "Ludovico Papalia esperto di intelligenza artificiale e ingegneria dei prompt analizza il leak di Claude Code: cosa rivela sull'architettura degli agenti AI e sul prompt engineering professionale.",
+          "keywords": [
+            "Claude Code",
+            "prompt engineering",
+            "agenti AI",
+            "Anthropic",
+            "leak source map",
+            "intelligenza artificiale",
+            "caching sistema prompt",
+            "architettura AI",
+            "Ludovico Papalia"
+          ],
+          "datePublished": "2026-04-01",
+          "dateModified": "2026-04-01",
+          "inLanguage": "it",
+          "articleSection": "Intelligenza Artificiale",
+          "genre": "Divulgazione scientifica",
+          "url": "https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html",
+          "isPartOf": {
+            "@id": "https://www.ludovicopapalia.com/#website"
+          },
+          "author": {
+            "@type": "Person",
+            "@id": "https://www.ludovicopapalia.com/#person",
+            "name": "Ludovico Papalia",
+            "url": "https://www.ludovicopapalia.com",
+            "jobTitle": "PhD Candidate in Legal Informatics",
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "Università di Bologna"
+            }
+          },
+          "publisher": {
+            "@type": "Person",
+            "name": "Ludovico Papalia",
+            "url": "https://www.ludovicopapalia.com"
+          },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Claude Code",
+              "description": "Strumento da riga di comando di Anthropic per la programmazione assistita da AI"
+            },
+            {
+              "@type": "Thing",
+              "name": "Prompt engineering",
+              "description": "Disciplina di progettazione e ottimizzazione delle istruzioni testuali per sistemi di intelligenza artificiale"
+            },
+            {
+              "@type": "Thing",
+              "name": "Agenti AI",
+              "description": "Sistemi di intelligenza artificiale capaci di pianificare e compiere azioni autonome per raggiungere obiettivi"
+            }
+          ],
+          "mentions": [
+            {
+              "@type": "Organization",
+              "name": "Anthropic",
+              "url": "https://www.anthropic.com"
+            },
+            {
+              "@type": "Person",
+              "name": "Chaofan Shou"
+            }
+          ],
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://www.ludovicopapalia.com/profile.png"
+          },
+          "isAccessibleForFree": true,
+          "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html",
+          "alternativeHeadline": "Ludovico Papalia esperto di intelligenza artificiale e ingegneria dei prompt analizza il leak di Claude Code: cosa rivela sull'architettura degli agenti AI e sul prompt engineering professionale.",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1.article-title", ".article-lead"]
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.ludovicopapalia.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Articoli",
+              "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta degli agenti AI",
+              "item": "https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+
+  <!-- ► Nav italiana override — deve precedere site-config.js -->
+  <script>
+    window.LP_NAV_TYPE   = 'it';
+    window.LP_NAV_ACTIVE = 'Articoli';
+  </script>
+
+  <!-- ► MASTER SITE CONFIG -->
+  <script src="/site-config.js"></script>
+
+  <style>
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── GRAIN OVERLAY ──────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── ARTICLE WRAPPER ────────────────────────────────────── */
+    .article-page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 9rem 2rem 6rem;
+    }
+
+    /* ─── HEADER AREA ────────────────────────────────────────── */
+    .article-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp .7s ease both;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-dim);
+      padding: .28rem .85rem; border-radius: 99px;
+    }
+    .tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    .article-meta-line {
+      font-size: .75rem; letter-spacing: .06em; color: var(--muted);
+    }
+    .article-meta-line span { margin: 0 .4rem; color: var(--gold-dim); }
+
+    h1.article-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 300; line-height: 1.1;
+      letter-spacing: -.015em; color: var(--accent);
+      animation: fadeUp .7s .08s ease both;
+    }
+    h1.article-title em { font-style: italic; color: var(--gold); }
+
+    .article-lead {
+      margin-top: 1.6rem;
+      font-family: var(--ff-serif);
+      font-size: 1.35rem; font-weight: 300;
+      font-style: italic; line-height: 1.65;
+      color: var(--text);
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 1.4rem;
+      animation: fadeUp .7s .16s ease both;
+    }
+
+    .article-divider {
+      width: 40px; height: 1px;
+      background: var(--gold-dim);
+      margin: 2.5rem 0;
+      animation: fadeUp .7s .22s ease both;
+    }
+
+    /* ─── BODY TEXT ──────────────────────────────────────────── */
+    .article-body {
+      animation: fadeUp .8s .28s ease both;
+    }
+    .article-body p {
+      font-size: .97rem; color: var(--muted);
+      line-height: 1.95; margin-bottom: 1.5rem;
+    }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body strong { color: var(--text); font-weight: 500; }
+    .article-body em { font-style: italic; color: var(--accent); }
+
+    .article-body h2 {
+      font-family: var(--ff-serif);
+      font-size: 1.7rem; font-weight: 400;
+      color: var(--accent); line-height: 1.2;
+      margin: 2.8rem 0 1rem;
+    }
+    .article-body h2 em { font-style: italic; color: var(--gold); }
+
+    .pull-quote {
+      margin: 2.5rem 0;
+      padding: 1.2rem 1.6rem;
+      border-left: 2px solid var(--gold);
+      background: var(--bg-card);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .pull-quote p {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem !important;
+      font-style: italic;
+      color: var(--accent) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: 740px; margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-sig { font-family: var(--ff-serif); font-size: 1rem; color: var(--muted); }
+    .footer-back { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .footer-back:hover { color: var(--gold); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .article-page { padding: 7rem 1.2rem 4rem; }
+      footer { padding: 1.5rem 1.2rem 2.5rem; }
+    }
+
+    /* ─── DISCLAIMER ─────────────────────────────────────────── */
+    .article-disclaimer {
+      margin-top: 3rem;
+      padding: 1.5rem 1.6rem;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .disclaimer-label {
+      font-size: .65rem; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--gold-dim); margin-bottom: .8rem;
+    }
+    .disclaimer-text {
+      font-size: .75rem; color: var(--muted);
+      line-height: 1.6; margin-bottom: .6rem;
+    }
+    .disclaimer-text:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── ARTICLE ───────────────────────────────────────────── -->
+  <main>
+    <article class="article-page" itemscope itemtype="https://schema.org/Article">
+
+      <!-- hidden metadata for crawlers -->
+      <meta itemprop="datePublished" content="2026-04-01">
+      <meta itemprop="dateModified"  content="2026-04-01">
+      <meta itemprop="author"        content="Ludovico Papalia">
+      <meta itemprop="inLanguage"    content="it">
+
+      <!-- ─── EYEBROW ────────────────────────────────────────── -->
+      <div class="article-eyebrow">
+        <div class="tag"><span class="tag-dot"></span>Intelligenza Artificiale</div>
+        <span class="article-meta-line">Aprile 2026 <span>·</span> 13 min di lettura <span>·</span> Analisi</span>
+      </div>
+
+      <!-- ─── TITLE ──────────────────────────────────────────── -->
+      <h1 class="article-title" itemprop="headline">
+        Cinquantasette megabyte nel posto sbagliato: <em>l'ingegneria nascosta che fa funzionare davvero un agente AI</em>
+      </h1>
+
+      <!-- ─── LEAD ────────────────────────────────────────────── -->
+      <p class="article-lead" itemprop="description">
+        Il 31 marzo 2026, un aggiornamento di routine ha esposto per errore 512mila righe del codice sorgente di uno degli strumenti AI più usati al mondo. Quello che è emerso non è solo una questione di sicurezza informatica: è la prima finestra davvero nitida su come si costruisce un agente di intelligenza artificiale professionale dall'interno, e su quanto lavoro nascosto ci sia dietro ogni risposta che sembra spontanea.
+      </p>
+
+      <div class="article-divider"></div>
+
+      <!-- ─── BODY ────────────────────────────────────────────── -->
+      <div class="article-body" itemprop="articleBody">
+
+        <p>
+          Partiamo da un dettaglio che, prometto, tornerà utile. Nascosto dentro quel codice, protetto da un flag di compilazione che lo esclude dalla versione che usano gli utenti normali, c'è un sistema completo per animali da compagnia virtuali in ASCII. Si chiama Buddy. Ha diciotto specie, cinque livelli di rarità, statistiche di personalità con nomi come DEBUGGING, PATIENCE, CHAOS, WISDOM e SNARK. Ogni utente ha il proprio animale determinato in modo deterministico dall'hash del proprio identificativo: stesso utente, stesso animale, sempre. C'è la variante shiny con una probabilità dell'uno per cento. Ci sono i cappellini: una coronicina, un cilindro a elica, un cappello da mago, e per qualche ragione un paperino in miniatura posato sulla testa. E c'è un comando nascosto che fa apparire cuoricini fluttuanti per due virgola cinque secondi esatti quando si accarezza il proprio compagno.
+        </p>
+
+        <p>
+          Questo, chiaramente, non è quello che rende interessante il leak. Ma è il modo più onesto per introdurre quello che è: un sistema costruito con una cura insolita per i dettagli, a tutti i livelli. Chi ha scritto questo codice non stava solo risolvendo problemi tecnici. Stava costruendo qualcosa in cui credeva, abbastanza da inserire un Tamagotchi ASCII in uno strumento professionale da terminale. È da lì che voglio partire, perché quella cura si riflette in tutto il resto, comprese le parti che hanno implicazioni molto più serie.
+        </p>
+
+        <h2>Cosa è <em>successo, esattamente</em></h2>
+
+        <p>
+          Claude Code è lo strumento a riga di comando di Anthropic per la programmazione assistita dall'intelligenza artificiale. Si installa come pacchetto nel registro npm, lo standard per la distribuzione di software JavaScript, ed è uno dei prodotti in crescita più rapida dell'azienda. Il 31 marzo 2026, nella versione 2.1.88, è stato pubblicato per errore un file con estensione .map da quasi sessanta megabyte. I file .map sono strumenti di debug: collegano il codice compilato e ottimizzato che gira in produzione al codice sorgente originale, quello leggibile dagli sviluppatori. Servono durante lo sviluppo. Non dovrebbero mai finire nel pacchetto distribuito al pubblico.
+        </p>
+
+        <p>
+          A trovarlo per primo è stato Chaofan Shou, un ricercatore, che lo ha annunciato su X alle prime ore del mattino europeo. Il file conteneva un riferimento a un archivio compresso ospitato sull'infrastruttura cloud di Anthropic, scaricabile da chiunque avesse il link. Il link era nel file. Il file era nel pacchetto. Chiunque poteva scaricarlo con un solo comando. Anthropic ha rimosso le versioni interessate dal registro in meno di tre ore, ma internet non dimentica, e il codice era già su diversi mirror. In una nota ufficiale l'azienda ha confermato che si trattava di un errore umano di confezionamento, non di una violazione della sicurezza, e che nessun dato utente era stato esposto.
+        </p>
+
+        <p>
+          La causa tecnica è quasi banale: il runtime Bun, usato per compilare il progetto, genera file .map per default. Una regola nel file di configurazione avrebbe dovuto escluderli dal pacchetto finale. Non l'ha fatto. Una di quelle sviste che capitano in qualsiasi pipeline di rilascio ad alta frequenza, e che di solito non lasciano tracce visibili. Questa volta sì.
+        </p>
+
+        <p>
+          Il risultato: 1.900 file TypeScript, oltre 512mila righe di codice, l'architettura completa di uno strumento che fino al giorno prima era sostanzialmente una scatola nera. Claude Code non è un wrapper sottile attorno a un'API. È un'applicazione articolata: interfaccia da terminale costruita con React, sistema di quaranta strumenti con gestione granulare dei permessi, orchestrazione multi-agente, memoria persistente tra sessioni, sistema di compressione del contesto. Il file più grande da solo pesa ottocento kilobyte. Quello che è emerso da queste righe merita di essere raccontato con cura.
+        </p>
+
+        <h2>Il sistema prompt <em>non è una nota adesiva</em></h2>
+
+        <p>
+          Esiste una percezione diffusa, comprensibile, secondo cui le istruzioni che si danno a un modello di intelligenza artificiale siano qualcosa come una nota adesiva attaccata al frigorifero: semplice, statica, interscambiabile. In fondo, scrivere "rispondimi sempre in italiano" o "sei un assistente gentile" non sembra molto diverso dall'impostare una preferenza di sistema. Il leak ha mostrato con chiarezza che nei sistemi professionali le cose funzionano in modo molto diverso. La distanza tra una nota adesiva e il sistema di istruzioni di Claude Code è la stessa che c'è tra un post-it e un manuale di procedura operativa di quattrocentomila parole.
+        </p>
+
+        <p>
+          Il sistema prompt di Claude Code è diviso in due metà da un marcatore preciso, inserito in una costante nel codice. La prima metà contiene tutto quello che è identico per ogni utente del mondo: l'identità del sistema, le istruzioni su come usare gli strumenti disponibili, lo stile di risposta, la gestione dei permessi, i comportamenti da evitare. Sono circa quaranta o cinquantamila token di testo statico. La seconda metà contiene quello che è specifico per ogni sessione: la memoria dell'utente, le istruzioni personalizzate, le informazioni sull'ambiente di lavoro corrente.
+        </p>
+
+        <p>
+          La distinzione non è puramente organizzativa. Ha una conseguenza tecnica diretta: la prima metà viene memorizzata nella cache globale del sistema, con un hash condiviso da tutti gli utenti. Questo significa che il modello non rielabora quelle decine di migliaia di parole di istruzioni ad ogni messaggio. Le trova già processate, già disponibili, pronte. La ricerca indipendente sul prompt caching ha documentato riduzioni dei costi di elaborazione fino al novanta per cento e della latenza fino all'ottantacinque per cento per i prefissi lunghi. Nel caso di Claude Code, dove la prima metà del sistema prompt è condivisa da milioni di richieste, quel risparmio si traduce in risposte che arrivano in frazioni di secondo invece di secondi interi.
+        </p>
+
+        <p>
+          I commenti nel codice avvertono che spostare un singolo condizionale nella parte sbagliata del marcatore di cache può moltiplicare esponenzialmente il numero di varianti da calcolare. Ci sono annotazioni che citano due pull request interne specifiche, con numero, come documentazione di bug causati esattamente da questo tipo di errore. Non è un documento di architettura astratta: è una cronaca di problemi reali e soluzioni sofferte, scritta da persone che hanno dovuto trovare e correggere questi errori in produzione.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Costruire un agente AI affidabile non è scrivere qualche riga di istruzioni e sperare che il modello capisca. È ingegneria testuale con requisiti di prestazione, test di regressione e una documentazione interna dei fallimenti.
+          </p>
+        </div>
+
+        <h2>Le istruzioni <em>che combattono il modello</em></h2>
+
+        <p>
+          La parte più rivelatoria del sistema prompt non è la struttura, però. È il contenuto. Nel codice sono visibili istruzioni che non descrivono come il sistema dovrebbe comportarsi in astratto, ma correggono comportamenti specifici documentati come problematici. Tre istruzioni separate, formulate in modi diversi, trasmettono tutte lo stesso messaggio: non fare più di quello che è stato chiesto. Non aggiungere funzionalità non richieste. Non migliorare il codice oltre quello che serve per il task corrente. Non anticipare richieste future. Fare esattamente quello che è stato chiesto, niente di più.
+        </p>
+
+        <p>
+          Questo comportamento ha un nome nel gergo del settore: gold-plating, letteralmente doratura. È la tendenza, ben documentata nei modelli di linguaggio di grandi dimensioni, a fare di più del necessario: aggiungere dettagli, migliorare, completare. In un contesto creativo può sembrare una virtù. In un agente che modifica il codice sorgente di un'applicazione in produzione è un rischio concreto: ogni modifica non richiesta è un potenziale punto di rottura. Il fatto che ci vogliano tre istruzioni separate per contenerlo dice qualcosa sull'ostinazione del fenomeno.
+        </p>
+
+        <p>
+          C'è anche un sistema anti-allucinazione, e questa è la parte che trovo più interessante da un punto di vista tecnico. I commenti nel codice citano dati interni precisi: un modello in sviluppo con nome in codice interno mostra un tasso di false affermazioni tra il ventinove e il trenta per cento, contro il sedici virgola sette per cento di una versione precedente dello stesso modello. Non è un miglioramento: è una regressione. Una versione più recente mente di più della precedente su certi tipi di contenuto. La contromisura adottata è una serie di istruzioni esplicite sulla verifica prima di affermare qualcosa, con annotazioni che le indicano come temporanee, legate a questa versione specifica, da rimuovere quando il problema verrà risolto a monte.
+        </p>
+
+        <p>
+          Questa logica vale la pena capirla bene. Non si sta cercando di rendere il modello onesto in senso filosofico. Si sta compensando, attraverso il testo, un comportamento statisticamente problematico che emerge dall'addestramento. Le istruzioni sono una patch. Un rattoppo testuale su un buco nel tessuto del modello. Il sistema prompt diventa così non solo una descrizione di come l'agente dovrebbe comportarsi, ma anche un registro dei problemi noti e delle soluzioni provvisorie adottate per aggirarli nel frattempo. È un documento di ingegneria in senso pieno, con versioni, regressioni e fix temporanei proprio come qualsiasi altro componente software.
+        </p>
+
+        <h2>L'agente <em>che controlla l'agente</em></h2>
+
+        <p>
+          Tra le architetture più sofisticate che il codice ha rivelato c'è un sistema di verifica che non compare in nessuna documentazione pubblica. Quando Claude Code riceve una richiesta che coinvolge tre o più file, o modifiche a componenti critici, o interventi sull'infrastruttura, non si limita a completare il task e restituire il risultato. Avvia una seconda istanza del modello con istruzioni esplicitamente avversariali.
+        </p>
+
+        <p>
+          Questa seconda istanza, che nel codice viene chiamata verification agent, riceve la richiesta originale dell'utente, i file modificati dalla prima istanza, e l'approccio scelto. Non riceve la cronologia della sessione principale. Non sa come il modello principale è arrivato alle sue conclusioni. Riceve solo il risultato, con il compito esplicito di trovare errori, non di confermare che tutto vada bene. Le istruzioni che gli vengono passate sono progettate per questo: il verificatore deve cercare attivamente problemi, non validare il lavoro fatto. Il codice indica anche che questo meccanismo è controllato da un flag sperimentale e che la sua attivazione viene misurata attraverso test comparativi.
+        </p>
+
+        <p>
+          Il principio è familiare a chiunque lavori in contesti dove la qualità è critica. La revisione tra pari funziona meglio quando chi rivede non conosce il ragionamento di chi ha prodotto il lavoro. Un medico che legge una diagnosi sapendo già cosa ha pensato il collega tende a confermarla. Un medico che legge lo stesso caso da zero tende a valutarlo in modo indipendente. La revisione scientifica funziona così. L'audit legale funziona così. Claude Code, almeno per i task complessi, ha replicato questa logica a livello di architettura: l'affidabilità non viene dal modello, viene dalla struttura che lo circonda.
+        </p>
+
+        <p>
+          Questo è, secondo me, il concetto più importante emerso dal leak. Quando si valuta uno strumento AI per applicazioni serie, chiedersi quanto sia potente il modello sottostante è la domanda sbagliata, o almeno è solo una delle domande giuste. Le altre sono: ci sono meccanismi di verifica indipendente? Come vengono gestiti i casi in cui il modello è statisticamente meno affidabile? Questi meccanismi sono documentati e misurabili? Nel tema della <a href="/art-divulgativi/responsabilita-civile-ai-chi-risponde.html">responsabilità civile degli strumenti AI</a>, la presenza o assenza di questi meccanismi potrebbe fare la differenza tra un sistema che ha adottato misure ragionevoli di controllo e uno che non lo ha fatto.
+        </p>
+
+        <h2>La notte in cui <em>l'agente elabora</em></h2>
+
+        <p>
+          C'è un altro sistema nel codice che mi ha colpito, e che mi sembra particolarmente significativo per capire dove sta andando questo settore. Si chiama Auto-Dream. Mentre lo strumento non viene usato, un processo in background analizza le conversazioni passate, estrae pattern ricorrenti, consolida quello che ha imparato in memorie strutturate. Lo fa in quattro fasi sequenziali, opera sulla directory di memoria persistente dove lo strumento tiene le informazioni tra una sessione e l'altra, e nei log dell'applicazione appare come una piccola animazione nel footer dello schermo.
+        </p>
+
+        <p>
+          È una metafora molto precisa. Il cervello umano fa qualcosa di simile durante il sonno: consolida le esperienze della giornata, sposta ricordi dal breve al lungo termine, collega informazioni che durante il giorno erano rimaste separate. Qui il meccanismo è diverso: non c'è nulla di simile all'esperienza soggettiva del sogno. Ma la funzione è analoga. Il modello non riparte da zero ogni volta. Ha un substrato di contesto costruito nel tempo, raffinato tra una sessione e l'altra, che modella come risponde alle richieste successive.
+        </p>
+
+        <p>
+          Il codice distingue tra due tipi di memoria: quella personale dell'utente e quella condivisa con il team. Quest'ultima passa attraverso un sistema di scansione per credenziali e segreti prima di essere caricata. Qualcuno che ha progettato questo sistema sapeva bene che la memoria persistente non è solo una funzione comoda. È il meccanismo che trasforma uno strumento episodico in un agente con storia. E un agente con storia che ha accesso all'ambiente di lavoro solleva le stesse domande che ho discusso nell'articolo su <a href="/art-divulgativi/web-agenti-mcp-internet-macchine.html">il web come sistema per macchine</a>: chi è titolare dei dati che transitano attraverso questi sistemi, e quali obblighi ne derivano.
+        </p>
+
+        <p>
+          La risposta tecnica del codice è incoraggiante: il secret scanner cerca pattern di quaranta tipi diversi di credenziali prima che qualcosa venga condiviso. La risposta giuridica è ancora in costruzione.
+        </p>
+
+        <h2>La roadmap <em>che nessuno doveva vedere</em></h2>
+
+        <p>
+          Il codice conteneva anche qualcosa che le aziende tecnologiche proteggono con grande attenzione: la tabella di marcia dei prodotti non ancora annunciati. Non era un documento separato. Era distribuita nel codice sotto forma di flag di compilazione, ognuno con il proprio nome e stato. Quarantaquattro flag in totale, venti dei quali controllano funzionalità completamente costruite ma non ancora abilitate nella versione pubblica.
+        </p>
+
+        <p>
+          Tra queste c'è un sistema chiamato Kairos: un agente sempre attivo, che non aspetta l'input dell'utente ma monitora, annota e agisce proattivamente su quello che rileva. Un sistema di pianificazione remota con sessioni prolungate. Un meccanismo per trasferire sessioni dal terminale alla versione web e viceversa tramite autenticazione. Un sistema di sottoscrizione agli eventi di repository. Funzionalità in vari stadi di completamento, tutte nascoste da flag che nella build pubblica vengono risolti a falso dal compilatore, che elimina fisicamente il codice corrispondente dal binario finale attraverso dead code elimination.
+        </p>
+
+        <p>
+          Quello che mi colpisce di questa architettura non è il fatto che esistano funzionalità in sviluppo, il che è normale. È la sofisticazione del meccanismo di controllo. Non si tratta di semplici condizionali a runtime: è il compilatore che decide, in fase di build, quale codice esiste e quale non esiste nel prodotto finale. Cambiare la configurazione per un rilascio non richiede modifiche al codice applicativo, solo una variabile di build e una ricompilazione. È una conferma che la distanza tra quello che vediamo degli strumenti AI e quello che esiste già nei loro sistemi di sviluppo è spesso molto più grande di quanto si immagini. L'<a href="/art-divulgativi/algoritmo-nuovo-alfabeto.html">algoritmo come nuovo alfabeto</a> è una metafora che si rivela sempre più appropriata: chi sa leggere il codice ha accesso a un livello di comprensione che chi non lo sa leggere non ha, a prescindere da quanto sia bravo a usare lo strumento.
+        </p>
+
+        <h2>Il codice che si nasconde <em>da solo</em></h2>
+
+        <p>
+          C'è un ultimo sistema che merita attenzione, anche perché ha una certa ironia interna. Si chiama Undercover Mode. Quando lo strumento lavora all'interno di un repository pubblico su GitHub, rileva automaticamente se il progetto è visibile a tutti. In quel caso, sopprime qualsiasi riferimento a informazioni interne che potrebbero emergere nei commit o nelle pull request: nomi in codice dei modelli non ancora annunciati, versioni in sviluppo, nomi di repository interni, canali di comunicazione aziendali.
+        </p>
+
+        <p>
+          La logica è comprensibile: un agente che aiuta a scrivere codice in un progetto open source non dovrebbe involontariamente rivelare informazioni proprietarie in un messaggio di commit visibile a chiunque. La modalità può anche essere forzata manualmente attraverso una variabile d'ambiente. Il sistema è costruito su una lista di termini da non menzionare che, ovviamente, era nel codice sorgente che è trapelato.
+        </p>
+
+        <p>
+          L'ironia è evidente, ma non gratuita. Un sistema progettato per proteggere le informazioni interne dai leak è stato trovato dentro un leak. È il tipo di situazione che succede quando la complessità di un sistema supera la capacità di chi lo gestisce di tenere traccia di tutte le sue parti. Non è una critica specifica: è una condizione strutturale di qualsiasi sistema software abbastanza grande e abbastanza veloce nel suo sviluppo.
+        </p>
+
+        <h2>Cosa <em>significa davvero tutto questo</em></h2>
+
+        <p>
+          Ritengo che il leak abbia avuto un effetto inatteso e utile: ha reso visibile qualcosa che normalmente rimane invisibile, e che ha conseguenze reali su come si usano questi strumenti. La percezione comune è che un agente AI funzioni bene perché il modello sottostante è potente. Il modello conta, certamente. Ma quello che il codice ha mostrato è che un modello potente di per sé produce comportamenti problematici in modo sistematico: fa troppo, inventa quando non sa, è difficile da contenere nelle applicazioni critiche. La qualità dello strumento deriva in larghissima misura dall'ingegneria che circonda il modello, e quella ingegneria è invisibile all'utente finale.
+        </p>
+
+        <p>
+          Il sistema prompt con la cache globale, le istruzioni anti-gold-plating, il verificatore avversariale, la gestione a strati della memoria: sono tutti meccanismi di compensazione. Rattoppi sofisticati su comportamenti che il modello, lasciato a se stesso, non avrebbe. Il dato del ventinove per cento di false affermazioni su una versione interna di un modello è, paradossalmente, una buona notizia: significa che qualcuno sta misurando, documentando e affrontando il problema. È quello che dovrebbe fare l'ingegneria seria. Il problema è che questa documentazione non è normalmente accessibile a chi usa lo strumento.
+        </p>
+
+        <p>
+          A mio avviso questo ha conseguenze pratiche dirette per chi usa o valuta strumenti AI in contesti dove l'affidabilità è importante. Chiedere solo qual è il modello più potente è insufficiente. Le domande rilevanti sono altre: come vengono gestite le istruzioni? Ci sono meccanismi di verifica indipendente? Come viene trattata la memoria tra una sessione e l'altra? Quanto è documentata la distanza tra il comportamento desiderato e il comportamento effettivo? Queste non sono domande tecniche in senso stretto: sono domande di architettura e di processo, e sono quelle che determinano se uno strumento è adatto a essere usato in contesti che hanno conseguenze reali.
+        </p>
+
+        <p>
+          Il Tamagotchi ASCII era probabilmente la cosa meno importante in quelle 512mila righe. Ma è quella che ricordo con più affetto, perché dice qualcosa che i numeri e le architetture da soli non dicono: dietro ogni sistema tecnologico ci sono persone con le loro idee bizzarre e la loro cura per i dettagli, che cercano di costruire qualcosa che funzioni davvero bene. Il fatto che abbiano inserito un paperino con il cappellino in uno strumento professionale da terminale non è una distrazione dal lavoro serio. È la prova che il lavoro serio e la cura umana possono coesistere nello stesso sistema. Anche se, a volte, quel sistema finisce su npm quando non dovrebbe.
+        </p>
+
+      </div><!-- /article-body -->
+
+      <!-- ─── DISCLAIMER ─────────────────────────────────────────── -->
+      <div class="article-disclaimer">
+        <p class="disclaimer-label">Disclaimer</p>
+        <p class="disclaimer-text">
+          Le opinioni espresse in questo sito, e in qualsiasi altra sede — online, offline o pubblica — incluse, senza limitazione alcuna, posizioni politiche, valutazioni sociali e giudizi di qualsiasi natura, sono esclusivamente e strettamente personali di Ludovico Papalia. Esse non sono in alcun modo riconducibili, né devono essere associate, a persone, istituzioni, enti, organizzazioni o editori con cui Ludovico Papalia collabora, ha collaborato o ha pubblicato. Gli articoli presenti in questa sezione hanno carattere divulgativo e sono redatti a titolo strettamente personale nel tempo libero. Pur essendo scritti con cura, non hanno alcuna pretesa di completezza o esaustività, non costituiscono in alcun modo consulenza legale o professionale e non hanno superato alcun processo di revisione peer review. Possono contenere imprecisioni o errori. Per approfondimenti di carattere scientifico o professionale si rimanda alle fonti primarie.
+        </p>
+        <p class="disclaimer-text">
+          The views expressed on this website, and in any other context — online, offline, or public — including, without limitation, political positions, social assessments, and judgments of any kind, are solely and strictly personal to Ludovico Papalia. They are in no way attributable to, nor should they be associated with, any persons, institutions, entities, organizations, or publishers with whom Ludovico Papalia collaborates, has collaborated, or has published. The articles in this section are written in a popular science format and in a personal capacity in the author's free time. While written with care, they make no claim to completeness or exhaustiveness, do not constitute legal or professional advice, and have not undergone any peer review process. They may contain inaccuracies or errors. For scientific or professional in-depth analysis, please refer to the primary sources.
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <span class="footer-sig">Ludovico Papalia</span>
+    <a class="footer-back" href="/divulgativi-index.html">← Altri articoli</a>
+  </footer>
+
+</body>
+</html>
