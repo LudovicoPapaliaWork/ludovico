@@ -8,7 +8,7 @@
   <title>Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta degli agenti AI — Ludovico Papalia</title>
   <meta name="description" content="Ludovico Papalia esperto di intelligenza artificiale e ingegneria dei prompt analizza il leak di Claude Code: cosa rivela sull'architettura degli agenti AI e sul prompt engineering professionale.">
   <meta name="author" content="Ludovico Papalia">
-  <meta name="keywords" content="Claude Code leak prompt engineering agenti AI intelligenza artificiale caching sistema prompt Anthropic ingegneria testuale Ludovico Papalia">
+  <meta name="keywords" content="Claude Code leak prompt engineering agenti AI intelligenza artificiale caching prompt di sistema Anthropic ingegneria testuale Ludovico Papalia">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html">
 
@@ -49,7 +49,7 @@
             "Anthropic",
             "leak source map",
             "intelligenza artificiale",
-            "caching sistema prompt",
+            "caching prompt di sistema",
             "architettura AI",
             "Ludovico Papalia"
           ],
@@ -368,18 +368,18 @@
           Il risultato: 1.900 file TypeScript, oltre 512mila righe di codice, l'architettura completa di uno strumento che fino al giorno prima era sostanzialmente una scatola nera. Claude Code non è un wrapper sottile attorno a un'API. È un'applicazione articolata: interfaccia da terminale costruita con React, sistema di quaranta strumenti con gestione granulare dei permessi, orchestrazione multi-agente, memoria persistente tra sessioni, sistema di compressione del contesto. Il file più grande da solo pesa ottocento kilobyte. Quello che è emerso da queste righe merita di essere raccontato con cura.
         </p>
 
-        <h2>Il sistema prompt <em>non è un postit</em></h2>
+        <h2>Il prompt di sistema <em>non è un postit</em></h2>
 
         <p>
           Esiste una percezione diffusa, comprensibile, secondo cui le istruzioni che si danno a un modello di intelligenza artificiale siano qualcosa come un postit attaccato al frigorifero: un'annotazione marginale, rapida, semplice, statica, interscambiabile. In fondo, scrivere "rispondimi sempre in italiano" o "sei un assistente gentile" non sembra molto diverso dall'impostare una preferenza di sistema. Il leak ha mostrato con chiarezza che nei sistemi professionali le cose funzionano in modo molto diverso. La distanza tra un postit, quell'annotazione marginale di due righe che scarabocchiamo a bordo pagina, e il sistema di istruzioni di Claude Code è la stessa che c'è tra un promemoria e un manuale di procedura operativa di quattrocentomila parole.
         </p>
 
         <p>
-          Il sistema prompt di Claude Code è diviso in due metà da un marcatore preciso, inserito in una costante nel codice. La prima metà contiene tutto quello che è identico per ogni utente del mondo: l'identità del sistema, le istruzioni su come usare gli strumenti disponibili, lo stile di risposta, la gestione dei permessi, i comportamenti da evitare. Sono circa quaranta o cinquantamila token di testo statico. La seconda metà contiene quello che è specifico per ogni sessione: la memoria dell'utente, le istruzioni personalizzate, le informazioni sull'ambiente di lavoro corrente.
+          Il prompt di sistema di Claude Code è diviso in due metà da un marcatore preciso, inserito in una costante nel codice. La prima metà contiene tutto quello che è identico per ogni utente del mondo: l'identità del sistema, le istruzioni su come usare gli strumenti disponibili, lo stile di risposta, la gestione dei permessi, i comportamenti da evitare. Sono circa quaranta o cinquantamila token di testo statico. La seconda metà contiene quello che è specifico per ogni sessione: la memoria dell'utente, le istruzioni personalizzate, le informazioni sull'ambiente di lavoro corrente.
         </p>
 
         <p>
-          La distinzione non è puramente organizzativa. Ha una conseguenza tecnica diretta: la prima metà viene memorizzata nella cache globale del sistema, con un hash condiviso da tutti gli utenti. Questo significa che il modello non rielabora quelle decine di migliaia di parole di istruzioni ad ogni messaggio. Le trova già processate, già disponibili, pronte. La ricerca indipendente sul prompt caching ha documentato riduzioni dei costi di elaborazione fino al novanta per cento e della latenza fino all'ottantacinque per cento per i prefissi lunghi. Nel caso di Claude Code, dove la prima metà del sistema prompt è condivisa da milioni di richieste, quel risparmio si traduce in risposte che arrivano in frazioni di secondo invece di secondi interi.
+          La distinzione non è puramente organizzativa. Ha una conseguenza tecnica diretta: la prima metà viene memorizzata nella cache globale del sistema, con un hash condiviso da tutti gli utenti. Questo significa che il modello non rielabora quelle decine di migliaia di parole di istruzioni ad ogni messaggio. Le trova già processate, già disponibili, pronte. La ricerca indipendente sul prompt caching ha documentato riduzioni dei costi di elaborazione fino al novanta per cento e della latenza fino all'ottantacinque per cento per i prefissi lunghi. Nel caso di Claude Code, dove la prima metà del prompt di sistema è condivisa da milioni di richieste, quel risparmio si traduce in risposte che arrivano in frazioni di secondo invece di secondi interi.
         </p>
 
         <p>
@@ -395,7 +395,7 @@
         <h2>Le istruzioni <em>che combattono il modello</em></h2>
 
         <p>
-          La parte più rivelatoria del sistema prompt non è la struttura, però. È il contenuto. Nel codice sono visibili istruzioni che non descrivono come il sistema dovrebbe comportarsi in astratto, ma correggono comportamenti specifici documentati come problematici. Tre istruzioni separate, formulate in modi diversi, trasmettono tutte lo stesso messaggio: non fare più di quello che è stato chiesto. Non aggiungere funzionalità non richieste. Non migliorare il codice oltre quello che serve per il task corrente. Non anticipare richieste future. Fare esattamente quello che è stato chiesto, niente di più.
+          La parte più rivelatoria del prompt di sistema non è la struttura, però. È il contenuto. Nel codice sono visibili istruzioni che non descrivono come il sistema dovrebbe comportarsi in astratto, ma correggono comportamenti specifici documentati come problematici. Tre istruzioni separate, formulate in modi diversi, trasmettono tutte lo stesso messaggio: non fare più di quello che è stato chiesto. Non aggiungere funzionalità non richieste. Non migliorare il codice oltre quello che serve per il task corrente. Non anticipare richieste future. Fare esattamente quello che è stato chiesto, niente di più.
         </p>
 
         <p>
@@ -407,7 +407,7 @@
         </p>
 
         <p>
-          Questa logica vale la pena capirla bene. Non si sta cercando di rendere il modello onesto in senso filosofico. Si sta compensando, attraverso il testo, un comportamento statisticamente problematico che emerge dall'addestramento. Le istruzioni sono una patch. Un rattoppo testuale su un buco nel tessuto del modello. Il sistema prompt diventa così non solo una descrizione di come l'agente dovrebbe comportarsi, ma anche un registro dei problemi noti e delle soluzioni provvisorie adottate per aggirarli nel frattempo. È un documento di ingegneria in senso pieno, con versioni, regressioni e fix temporanei proprio come qualsiasi altro componente software.
+          Questa logica vale la pena capirla bene. Non si sta cercando di rendere il modello onesto in senso filosofico. Si sta compensando, attraverso il testo, un comportamento statisticamente problematico che emerge dall'addestramento. Le istruzioni sono una patch. Un rattoppo testuale su un buco nel tessuto del modello. Il prompt di sistema diventa così non solo una descrizione di come l'agente dovrebbe comportarsi, ma anche un registro dei problemi noti e delle soluzioni provvisorie adottate per aggirarli nel frattempo. È un documento di ingegneria in senso pieno, con versioni, regressioni e fix temporanei proprio come qualsiasi altro componente software.
         </p>
 
         <h2>L'agente <em>che controlla l'agente</em></h2>
@@ -485,7 +485,7 @@
         </p>
 
         <p>
-          Il sistema prompt con la cache globale, le istruzioni anti-gold-plating, il verificatore avversariale, la gestione a strati della memoria: sono tutti meccanismi di compensazione. Rattoppi sofisticati su comportamenti che il modello, lasciato a se stesso, non avrebbe. Il dato del ventinove per cento di false affermazioni su una versione interna di un modello è, paradossalmente, una buona notizia: significa che qualcuno sta misurando, documentando e affrontando il problema. È quello che dovrebbe fare l'ingegneria seria. Il problema è che questa documentazione non è normalmente accessibile a chi usa lo strumento.
+          Il prompt di sistema con la cache globale, le istruzioni anti-gold-plating, il verificatore avversariale, la gestione a strati della memoria: sono tutti meccanismi di compensazione. Rattoppi sofisticati su comportamenti che il modello, lasciato a se stesso, non avrebbe. Il dato del ventinove per cento di false affermazioni su una versione interna di un modello è, paradossalmente, una buona notizia: significa che qualcuno sta misurando, documentando e affrontando il problema. È quello che dovrebbe fare l'ingegneria seria. Il problema è che questa documentazione non è normalmente accessibile a chi usa lo strumento.
         </p>
 
         <p>
