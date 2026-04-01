@@ -574,8 +574,7 @@ def build_rss_feed(articles: list[dict]) -> str:
 
     # FIX: lastBuildDate con timezone corretta (CET/CEST italiana)
     tz_offset = "+0200" if datetime.datetime.now().month in {4,5,6,7,8,9,10} else "+0100"
-    now_rfc_tz = datetime.datetime.now().strftime
-("%a, %d %b %Y %H:%M:%S +0100")
+    now_rfc_tz = datetime.datetime.now().strftime("%a, %d %b %Y %H:%M:%S ") + tz_offset
 
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
