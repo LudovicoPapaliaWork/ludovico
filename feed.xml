@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Sun, 29 Mar 2026 22:45:16 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 14:37:03 +0100</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -24,6 +24,16 @@
       <title>Ludovico Papalia — Articoli divulgativi</title>
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
+
+    <item>
+      <title>Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta che fa funzionare davvero un agente AI</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di intelligenza artificiale e ingegneria dei prompt analizza il leak di Claude Code: cosa rivela sull</description>
+      <enclosure url="https://www.ludovicopapalia.com/profile.png" type="image/jpeg" length="0"/>
+    </item>
 
     <item>
       <title>WhatsApp al governo: i metadati che parlano anche quando taci</title>
