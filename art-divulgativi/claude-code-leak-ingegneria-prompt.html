@@ -368,10 +368,10 @@
           Il risultato: 1.900 file TypeScript, oltre 512mila righe di codice, l'architettura completa di uno strumento che fino al giorno prima era sostanzialmente una scatola nera. Claude Code non è un wrapper sottile attorno a un'API. È un'applicazione articolata: interfaccia da terminale costruita con React, sistema di quaranta strumenti con gestione granulare dei permessi, orchestrazione multi-agente, memoria persistente tra sessioni, sistema di compressione del contesto. Il file più grande da solo pesa ottocento kilobyte. Quello che è emerso da queste righe merita di essere raccontato con cura.
         </p>
 
-        <h2>Il sistema prompt <em>non è una nota adesiva</em></h2>
+        <h2>Il sistema prompt <em>non è un postit</em></h2>
 
         <p>
-          Esiste una percezione diffusa, comprensibile, secondo cui le istruzioni che si danno a un modello di intelligenza artificiale siano qualcosa come una nota adesiva attaccata al frigorifero: semplice, statica, interscambiabile. In fondo, scrivere "rispondimi sempre in italiano" o "sei un assistente gentile" non sembra molto diverso dall'impostare una preferenza di sistema. Il leak ha mostrato con chiarezza che nei sistemi professionali le cose funzionano in modo molto diverso. La distanza tra una nota adesiva e il sistema di istruzioni di Claude Code è la stessa che c'è tra un post-it e un manuale di procedura operativa di quattrocentomila parole.
+          Esiste una percezione diffusa, comprensibile, secondo cui le istruzioni che si danno a un modello di intelligenza artificiale siano qualcosa come un postit attaccato al frigorifero: un'annotazione marginale, rapida, semplice, statica, interscambiabile. In fondo, scrivere "rispondimi sempre in italiano" o "sei un assistente gentile" non sembra molto diverso dall'impostare una preferenza di sistema. Il leak ha mostrato con chiarezza che nei sistemi professionali le cose funzionano in modo molto diverso. La distanza tra un postit, quell'annotazione marginale di due righe che scarabocchiamo a bordo pagina, e il sistema di istruzioni di Claude Code è la stessa che c'è tra un promemoria e un manuale di procedura operativa di quattrocentomila parole.
         </p>
 
         <p>
@@ -411,6 +411,10 @@
         </p>
 
         <h2>L'agente <em>che controlla l'agente</em></h2>
+
+        <p class="article-lead" style="border-left: none; padding-left: 0; font-size: 1rem; margin-top: .6rem; margin-bottom: 1.8rem; animation: none; color: var(--gold);">
+          <em>Quis custodiet ipsos custodes?</em>
+        </p>
 
         <p>
           Tra le architetture più sofisticate che il codice ha rivelato c'è un sistema di verifica che non compare in nessuna documentazione pubblica. Quando Claude Code riceve una richiesta che coinvolge tre o più file, o modifiche a componenti critici, o interventi sull'infrastruttura, non si limita a completare il task e restituire il risultato. Avvia una seconda istanza del modello con istruzioni esplicitamente avversariali.
