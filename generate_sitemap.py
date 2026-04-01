@@ -450,32 +450,38 @@ def extract_meta_description(abs_html: str) -> str:
         return ""
 
     # Priorità 1: meta name="description"
+    # FIX (apostrophe bug): usa backreference sul delimitatore di apertura del valore
+    # dell'attributo, in modo che apostrofi nel testo (es. "sull'architettura")
+    # non troncino il match. Gestisce entrambi gli ordini degli attributi.
     match = re.search(
-        r'<meta\s[^>]*name=["\'\']description["\'\'][^>]*content=["\'\']([^"\'\']*)["\'\']',
-        html, re.IGNORECASE,
+        r'<meta\s[^>]*\bname=(?P<q1>["\'])description(?P=q1)[^>]*\bcontent=(?P<q2>["\'])(.*?)(?P=q2)',
+        html, re.IGNORECASE | re.DOTALL,
     )
-    if not match:
-        match = re.search(
-            r'<meta\s[^>]*content=["\'\']([^"\'\']*)["\'\'][^>]*name=["\'\']description["\'\']',
-            html, re.IGNORECASE,
-        )
-
     if match:
-        desc = match.group(1).strip()
+        desc = match.group(3).strip()
         print(f"  [RSS] meta description trovata ({len(desc)} chars).")
+        return desc
+
+    match = re.search(
+        r'<meta\s[^>]*\bcontent=(?P<q2>["\'])(.*?)(?P=q2)[^>]*\bname=(?P<q1>["\'])description(?P=q1)',
+        html, re.IGNORECASE | re.DOTALL,
+    )
+    if match:
+        desc = match.group(2).strip()
+        print(f"  [RSS] meta description (content-first) trovata ({len(desc)} chars).")
         return desc
 
     # Fallback: og:description
     match = re.search(
-        r'<meta\s[^>]*property=["\'\']og:description["\'\'][^>]*content=["\'\']([^"\'\']*)["\'\']',
-        html, re.IGNORECASE,
+        r'<meta\s[^>]*\bproperty=(?P<q1>["\'])og:description(?P=q1)[^>]*\bcontent=(?P<q2>["\'])(.*?)(?P=q2)',
+        html, re.IGNORECASE | re.DOTALL,
     )
     if match:
-        desc = match.group(1).strip()
+        desc = match.group(3).strip()
         print(f"  [RSS] Fallback og:description ({len(desc)} chars).")
         return desc
 
-    print(f"  [RSS] AVVISO: nessuna description trovata in {os.path.basename(abs_html)}.")
+        print(f"  [RSS] AVVISO: nessuna description trovata in {os.path.basename(abs_html)}.")
     return ""
 
 
@@ -483,6 +489,7 @@ def extract_og_image(abs_html: str) -> str:
     """
     Estrae l'URL dell'immagine og:image dall'HTML dell'articolo.
     Restituisce l'URL assoluto se trovato, stringa vuota altrimenti.
+    FIX: usa backreference per non troncare URL con apostrofo nel percorso.
     """
     try:
         with open(abs_html, "r", encoding="utf-8") as f:
@@ -491,23 +498,27 @@ def extract_og_image(abs_html: str) -> str:
         return ""
 
     match = re.search(
-        r'<meta\s[^>]*property=["\'\']og:image["\'\'][^>]*content=["\'\']([^"\'\']*)["\'\']',
-        html, re.IGNORECASE,
+        r'<meta\s[^>]*\bproperty=(?P<q1>["\'])og:image(?P=q1)[^>]*\bcontent=(?P<q2>["\'])(.*?)(?P=q2)',
+        html, re.IGNORECASE | re.DOTALL,
     )
     if not match:
         match = re.search(
-            r'<meta\s[^>]*content=["\'\']([^"\'\']*)["\'\'][^>]*property=["\'\']og:image["\'\']',
-            html, re.IGNORECASE,
+            r'<meta\s[^>]*\bcontent=(?P<q2>["\'])(.*?)(?P=q2)[^>]*\bproperty=(?P<q1>["\'])og:image(?P=q1)',
+            html, re.IGNORECASE | re.DOTALL,
         )
+        if match:
+            img = match.group(2).strip()
+            if img.startswith("/"):
+                img = BASE_URL + img
+            return img
 
     if match:
-        img = match.group(1).strip()
+        img = match.group(3).strip()
         if img.startswith("/"):
             img = BASE_URL + img
         return img
 
     return ""
-
 
 def format_rfc2822(iso_date: str) -> str:
     """
@@ -527,7 +538,7 @@ def format_rfc2822(iso_date: str) -> str:
                 date_str_clean = iso_date[:22] + iso_date[23:]
             dt = datetime.datetime.strptime(date_str_clean, fmt)
             return dt.strftime("%a, %d %b %Y %H:%M:%S %z") if dt.tzinfo else \
-                   dt.strftime("%a, %d %b %Y %H:%M:%S +0100")
+                   dt.strftime("%a, %d %b %Y %H:%M:%S ") + tz_offset
         except ValueError:
             continue
 
@@ -556,7 +567,15 @@ def build_rss_feed(articles: list[dict]) -> str:
     """
     print("\n[RSS] Generazione feed.xml RSS 2.0...")
 
-    now_rfc = datetime.datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0100")
+    # FIX: ordina per data ISO 8601 descrescente (più recente prima)
+    # indipendentemente dall'ordine in ARTICLES in divulgativi-index.html
+    articles_sorted = sorted(articles, key=lambda a: a["date"], reverse=True)
+    print(f"[RSS] Articoli ordinati per data: {len(articles_sorted)} item")
+
+    # FIX: lastBuildDate con timezone corretta (CET/CEST italiana)
+    tz_offset = "+0200" if datetime.datetime.now().month in {4,5,6,7,8,9,10} else "+0100"
+    now_rfc_tz = datetime.datetime.now().strftime
+("%a, %d %b %Y %H:%M:%S +0100")
 
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -576,7 +595,7 @@ def build_rss_feed(articles: list[dict]) -> str:
         f'    <link>{BASE_URL}/divulgativi-index.html</link>',
         f'    <description>{xml_escape(RSS_CHANNEL_DESCRIPTION)}</description>',
         f'    <language>{RSS_CHANNEL_LANGUAGE}</language>',
-        f'    <lastBuildDate>{now_rfc}</lastBuildDate>',
+        f'    <lastBuildDate>{now_rfc_tz}</lastBuildDate>',
         f'    <generator>generate_sitemap.py (ludovicopapalia.com)</generator>',
         f'    <docs>https://www.rssboard.org/rss-specification</docs>',
         f'    <atom:link href="{RSS_FEED_URL}" rel="self" type="application/rss+xml"/>',
@@ -585,16 +604,17 @@ def build_rss_feed(articles: list[dict]) -> str:
         f'      <title>{xml_escape(RSS_CHANNEL_TITLE)}</title>',
         f'      <link>{BASE_URL}/divulgativi-index.html</link>',
         '    </image>',
+        # TTL: suggerisce ai reader di ricontrollare ogni 60 minuti
+        '    <ttl>60</ttl>',
         '',
     ]
 
     items_written = 0
-    for article in articles:
+    for article in articles_sorted:
         full_url = BASE_URL + "/" + article["path"].lstrip("/")
         abs_html = os.path.join(SITE_ROOT, article["path"])
         pub_date = format_rfc2822(article["date"])
         desc     = extract_meta_description(abs_html)
-        og_image = extract_og_image(abs_html)
 
         print(f"  [RSS] item: {article['title'][:60]!r} | {pub_date}")
 
