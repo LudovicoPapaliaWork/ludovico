@@ -66,6 +66,7 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 **Feed RSS articoli divulgativi**: https://www.ludovicopapalia.com/feed.xml
 
 ### Intelligenza Artificiale e Diritto
+- [Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta che fa funzionare davvero un agente AI](https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html)
 
 - [OpenClaw: quando l'AI agisce per te, ma il diritto non sa ancora chi risponde](https://www.ludovicopapalia.com/art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html) — Marzo 2026. Ludovico Papalia esperto di agenti AI e responsabilità civile analizza il caso OpenClaw: cosa succede quando un sistema autonomo compie azioni non autorizzate, chi risponde tra sviluppatore, deployer e utente, e dove il GDPR e il Digital Services Act non bastano ancora.
 - [Il web non è più solo per te](https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html) — Marzo 2026. Ludovico Papalia esperto di intelligenza artificiale e MCP analizza la transizione silenziosa del web da interfaccia per occhi umani a infrastruttura per agenti AI: cosa è il Model Context Protocol, perché Google ha fermato Project Mariner e cosa cambia con il layer MCP che si sta costruendo sotto il web che usiamo ogni giorno.
