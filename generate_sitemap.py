@@ -920,10 +920,41 @@ def main():
     print(f"\n[DONE]  sitemap.xml salvata: {len(files)} URL incluse.")
 
     # ── SITEMAP NEWS ──────────────────────────────────────────────────────────
-    news_articles = parse_articles_from_index()
-    if not news_articles:
+    news_articles_all = parse_articles_from_index()
+
+    # ── Filtro 48 ore (regola Google News) ────────────────────────────────────
+    # La Google News sitemap deve contenere SOLO articoli pubblicati nelle
+    # ultime 48 ore. Gli articoli più vecchi vengono esclusi automaticamente.
+    # Ref: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
+    from datetime import datetime, timezone, timedelta
+    _now = datetime.now(timezone.utc)
+    _cutoff = _now - timedelta(hours=48)
+    news_articles = []
+    for _a in news_articles_all:
+        try:
+            # La data è in formato ISO 8601 con offset (es. 2026-04-01T00:00:00+02:00)
+            # Python 3.7+ supporta fromisoformat ma non tutti gli offset:
+            # usiamo un parser robusto
+            _ds = _a["date"].replace("+02:00", "+0200").replace("+01:00", "+0100")
+            _d  = datetime.strptime(_ds, "%Y-%m-%dT%H:%M:%S%z")
+            if _d >= _cutoff:
+                news_articles.append(_a)
+                print(f"  [NEWS-48H] INCLUSO  {_a['path']}  ({_a['date']})")
+            else:
+                print(f"  [NEWS-48H] ESCLUSO  {_a['path']}  ({_a['date']}) — più vecchio di 48h")
+        except Exception as _e:
+            # Se la data non è parsabile, includiamo l'articolo per sicurezza
+            print(f"  [NEWS-48H] INCLUSO (parse error: {_e})  {_a['path']}")
+            news_articles.append(_a)
+
+    print(f"\n[NEWS-48H] Articoli negli ultimi 48h: {len(news_articles)} / {len(news_articles_all)} totali")
+
+    if not news_articles_all:
         print("[AVVISO] Nessun articolo estratto. sitemap-news.xml non verrà aggiornata.")
     else:
+        # Se la lista filtrata è vuota, la news sitemap sarà vuota.
+        # Google stesso prevede questo caso e non lo considera un errore:
+        # vedremo solo un avviso "Empty Sitemap" in Search Console, che è normale.
         xml_news = build_sitemap_news(news_articles)
         with open(OUTPUT_SITEMAP_NEWS, "w", encoding="utf-8") as f:
             f.write(xml_news)
