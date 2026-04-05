@@ -40,137 +40,129 @@
   <!-- WebSite + Person nodes sono iniettati globalmente da site-config.js. -->
   <!-- Qui restano solo i nodi specifici di questa pagina.                  -->
   <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "NewsArticle",
+      "@id": "https://www.ludovicopapalia.com/articoli/siae-meta#article",
+      "headline": "SIAE contro Meta: chi ha perso davvero?",
+      "description": "La SIAE ha chiesto a Meta compensi più alti per ogni riproduzione di musica italiana su Instagram e Facebook. Meta ha detto no e ha rimosso tutto il catalogo. Un'analisi dei rapporti di forza nel diritto d'autore digitale.",
+      "keywords": [
+        "SIAE",
+        "Meta",
+        "Instagram",
+        "diritto d'autore",
+        "copyright",
+        "musica italiana",
+        "diritto informatico"
+      ],
+      "datePublished": "2023-04-01T00:00:00Z",
+      "dateModified": "2023-04-01T00:00:00Z",
+      "inLanguage": "it",
+      "articleSection": "Diritto Informatico",
+      "genre": "Divulgazione giuridica",
+      "url": "https://www.ludovicopapalia.com/articoli/siae-meta",
+      "isPartOf": {
+        "@id": "https://www.ludovicopapalia.com/#website"
+      },
+      "author": {
+        "@id": "https://www.ludovicopapalia.com/#person"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ludovico Papalia",
+        "url": "https://www.ludovicopapalia.com"
+      },
+      "about": [
         {
-          "@type": "NewsArticle",
-          "@id": "https://www.ludovicopapalia.com/articoli/siae-meta#article",
-          "headline": "SIAE contro Meta: chi ha perso davvero?",
-          "description": "La SIAE ha chiesto a Meta compensi più alti per ogni riproduzione di musica italiana su Instagram e Facebook. Meta ha detto no e ha rimosso tutto il catalogo. Un'analisi dei rapporti di forza nel diritto d'autore digitale.",
-          "keywords": [
-            "SIAE",
-            "Meta",
-            "Instagram",
-            "diritto d'autore",
-            "copyright",
-            "musica italiana",
-            "diritto informatico"
-          ],
-          "datePublished": "2023-04-01",
-          "dateModified": "2023-04-01",
-          "inLanguage": "it",
-          "articleSection": "Diritto Informatico",
-          "genre": "Divulgazione giuridica",
-          "url": "https://www.ludovicopapalia.com/articoli/siae-meta",
-          "isPartOf": {
-            "@id": "https://www.ludovicopapalia.com/#website"
-          },
-          "author": {
-            "@type": "Person",
-            "@id": "https://www.ludovicopapalia.com/#person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com",
-            "jobTitle": "PhD Candidate in Legal Informatics",
-            "affiliation": {
-              "@type": "CollegeOrUniversity",
-              "name": "Università di Bologna"
-            }
-          },
-          "publisher": {
-            "@type": "Person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com"
-          },
-          "about": [
-            {
-              "@type": "Thing",
-              "name": "SIAE",
-              "description": "Società Italiana degli Autori ed Editori, ente di gestione del diritto d'autore in Italia"
-            },
-            {
-              "@type": "Thing",
-              "name": "Meta Platforms",
-              "description": "Società che gestisce Facebook, Instagram e WhatsApp"
-            },
-            {
-              "@type": "Thing",
-              "name": "Diritto d'autore digitale"
-            },
-            {
-              "@type": "Thing",
-              "name": "Creator economy"
-            }
-          ],
-          "mentions": [
-            {
-              "@type": "Organization",
-              "name": "SIAE",
-              "url": "https://www.siae.it"
-            },
-            {
-              "@type": "Organization",
-              "name": "Meta Platforms",
-              "url": "https://www.meta.com"
-            },
-            {
-              "@type": "Person",
-              "name": "Laura Pausini"
-            },
-            {
-              "@type": "Person",
-              "name": "Marracash"
-            }
-          ],
-          "video": {
-            "@type": "VideoObject",
-            "name": "Intervista a Ludovico Papalia: SIAE, scatola nera e diritto digitale",
-            "embedUrl": "https://www.youtube-nocookie.com/embed/dha48MXC3t8",
-            "url": "https://youtu.be/dha48MXC3t8",
-            "description": "Ludovico Papalia spiega la disputa SIAE-Meta, i rapporti di forza nel diritto d'autore digitale e le implicazioni legali per i creator.",
-            "uploadDate": "2023-04-01"
-          },
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://www.ludovicopapalia.com/profile.png"
-          },
-          "isAccessibleForFree": true,
-          "mainEntityOfPage": "https://www.ludovicopapalia.com/articoli/siae-meta",
-          "alternativeHeadline": "La SIAE ha tolto la musica italiana da Instagram e Facebook chiedendo compensi più alti a Meta. Risultato: gli artisti italiani sono spariti dalla piattaforma più usata al mondo. Chi ha sbagliato calcolo?",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "xpath": [
-              "/html/head/title",
-              "/html/head/meta[@name='description']/@content"
-            ]
-          }
+          "@type": "Thing",
+          "name": "SIAE",
+          "description": "Società Italiana degli Autori ed Editori, ente di gestione del diritto d'autore in Italia"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.ludovicopapalia.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Articoli",
-              "item": "https://www.ludovicopapalia.com/articoli"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "SIAE contro Meta: chi ha perso davvero?",
-              "item": "https://www.ludovicopapalia.com/articoli/siae-meta"
-            }
-          ]
+          "@type": "Thing",
+          "name": "Meta Platforms",
+          "description": "Società che gestisce Facebook, Instagram e WhatsApp"
+        },
+        {
+          "@type": "Thing",
+          "name": "Diritto d'autore digitale"
+        },
+        {
+          "@type": "Thing",
+          "name": "Creator economy"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "SIAE",
+          "url": "https://www.siae.it"
+        },
+        {
+          "@type": "Organization",
+          "name": "Meta Platforms",
+          "url": "https://www.meta.com"
+        },
+        {
+          "@type": "Person",
+          "name": "Laura Pausini"
+        },
+        {
+          "@type": "Person",
+          "name": "Marracash"
+        }
+      ],
+      "video": {
+        "@type": "VideoObject",
+        "name": "Intervista a Ludovico Papalia: SIAE, scatola nera e diritto digitale",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/dha48MXC3t8",
+        "url": "https://youtu.be/dha48MXC3t8",
+        "description": "Ludovico Papalia spiega la disputa SIAE-Meta, i rapporti di forza nel diritto d'autore digitale e le implicazioni legali per i creator.",
+        "uploadDate": "2023-04-01"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ludovicopapalia.com/profile.png"
+      },
+      "isAccessibleForFree": true,
+      "mainEntityOfPage": "https://www.ludovicopapalia.com/articoli/siae-meta",
+      "alternativeHeadline": "La SIAE ha tolto la musica italiana da Instagram e Facebook chiedendo compensi più alti a Meta. Risultato: gli artisti italiani sono spariti dalla piattaforma più usata al mondo. Chi ha sbagliato calcolo?",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.ludovicopapalia.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articoli",
+          "item": "https://www.ludovicopapalia.com/articoli"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SIAE contro Meta: chi ha perso davvero?",
+          "item": "https://www.ludovicopapalia.com/articoli/siae-meta"
         }
       ]
     }
-</script>
+  ]
+}
+  </script>
 
   <!-- ► Nav italiana override — deve precedere site-config.js -->
   <script>
