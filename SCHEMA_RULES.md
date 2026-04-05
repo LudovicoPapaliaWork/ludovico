@@ -2,7 +2,7 @@
 
 > Documento di riferimento per la struttura tecnica di `ludovicopapalia.com`.  
 > Va aggiornato ogni volta che si modifica la struttura dell'head o dello schema.  
-> Ultima revisione: 2026-04-05
+> Ultima revisione: 2026-04-05 (verificato vs pagine reali)
 
 ---
 
@@ -570,7 +570,7 @@ Obbligatorio su ogni articolo divulgativo. Non necessario su paper accademici.
 
 ### Speakable
 
-Usare `cssSelector` (non `xpath`):
+Usare `cssSelector` per i nuovi articoli (non `xpath`):
 
 ```json
 "speakable": {
@@ -578,6 +578,8 @@ Usare `cssSelector` (non `xpath`):
   "cssSelector": ["h1.article-title", ".article-lead"]
 }
 ```
+
+> **Nota:** Gli articoli pubblicati prima di aprile 2026 usano `xpath` puntando a `title` e `meta[@name='description']` nell'head. Entrambi sono validi per Google. Il template è stato aggiornato a `cssSelector`. Gli articoli esistenti non richiedono migrazione urgente.
 
 ---
 
@@ -636,6 +638,8 @@ Google Scholar indicizza i paper tramite i meta tag `citation_*`. Senza questi t
 | `citation_keywords` | Includi sempre "Ludovico Papalia" |
 | `citation_language` | `en` o `it` |
 | `citation_firstpage` | Pagina di inizio nei proceedings |
+
+> **Nota:** `og:image` è obbligatorio anche nell'head dei paper (non solo negli articoli). Usare `profile.png` come fallback se non disponibile immagine tematica.
 
 ### Tag opzionali (journal paper)
 
