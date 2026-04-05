@@ -231,15 +231,6 @@ var LP_SCHEMA = {
       "author": { "@id": "https://www.ludovicopapalia.com/#person" },
       "inLanguage": "en",
       "about": { "@id": "https://www.ludovicopapalia.com/#person" }
-    },
-    {
-      "@type": "ProfilePage",
-      "@id": "https://www.ludovicopapalia.com/#profilepage",
-      "url": "https://www.ludovicopapalia.com/",
-      "name": "Ludovico Papalia — Legal Informatics Researcher",
-      "isPartOf": { "@id": "https://www.ludovicopapalia.com/#website" },
-      "about": { "@id": "https://www.ludovicopapalia.com/#person" },
-      "inLanguage": "en"
     }
   ]
 };
