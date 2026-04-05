@@ -32,81 +32,118 @@
 
   <!-- ─── STRUCTURED DATA ───────────────────────────────────── -->
   <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "NewsArticle",
+      "@id": "https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html#article",
+      "headline": "Leon Theremin non sapeva che stava inventando il pagamento con il telefono",
+      "description": "Ludovico Papalia esperto di storia della tecnologia e diritto digitale racconta come un microfono spia sovietico del 1945 abbia dato origine alla fisica dei pagamenti contactless: dalla Guerra Fredda al tap del telefono, la stessa onda radio.",
+      "alternativeHeadline": "Ludovico Papalia esperto di storia della tecnologia e diritto digitale racconta come un microfono spia sovietico del 1945 abbia dato origine alla fisica dei pagamenti contactless: dalla Guerra Fredda",
+      "keywords": [
+        "Leon Theremin",
+        "NFC",
+        "RFID",
+        "storia della tecnologia",
+        "pagamenti contactless",
+        "chip EMV",
+        "banda magnetica",
+        "Guerra Fredda",
+        "Ludovico Papalia"
+      ],
+      "datePublished": "2026-03-28T00:00:00Z",
+      "dateModified": "2026-03-28T00:00:00Z",
+      "inLanguage": "it",
+      "articleSection": "Tecnologia e Società",
+      "genre": "Divulgazione",
+      "url": "https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html",
+      "isPartOf": {
+        "@id": "https://www.ludovicopapalia.com/#website"
+      },
+      "author": {
+        "@id": "https://www.ludovicopapalia.com/#person"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ludovico Papalia",
+        "url": "https://www.ludovicopapalia.com"
+      },
+      "about": [
         {
-          "@type": "NewsArticle",
-          "@id": "https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html#article",
-          "headline": "Leon Theremin non sapeva che stava inventando il pagamento con il telefono",
-          "description": "Ludovico Papalia esperto di storia della tecnologia e diritto digitale racconta come un microfono spia sovietico del 1945 abbia dato origine alla fisica dei pagamenti contactless: dalla Guerra Fredda al tap del telefono, la stessa onda radio.",
-          "alternativeHeadline": "Ludovico Papalia esperto di storia della tecnologia e diritto digitale racconta come un microfono spia sovietico del 1945 abbia dato origine alla fisica dei pagamenti contactless: dalla Guerra Fredda",
-          "keywords": [
-            "Leon Theremin",
-            "NFC",
-            "RFID",
-            "storia della tecnologia",
-            "pagamenti contactless",
-            "chip EMV",
-            "banda magnetica",
-            "Guerra Fredda",
-            "Ludovico Papalia"
-          ],
-          "datePublished": "2026-03-28",
-          "dateModified": "2026-03-28",
-          "inLanguage": "it",
-          "articleSection": "Tecnologia e Società",
-          "genre": "Divulgazione",
-          "url": "https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html",
-          "isPartOf": { "@id": "https://www.ludovicopapalia.com/#website" },
-          "author": {
-            "@type": "Person",
-            "@id": "https://www.ludovicopapalia.com/#person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com",
-            "jobTitle": "PhD Candidate in Legal Informatics",
-            "affiliation": {
-              "@type": "CollegeOrUniversity",
-              "name": "Università di Bologna"
-            }
-          },
-          "publisher": {
-            "@type": "Person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com"
-          },
-          "about": [
-            { "@type": "Person", "name": "Leon Theremin", "description": "Inventore russo, creatore del theremin e della spia sovietica The Thing" },
-            { "@type": "Thing", "name": "RFID", "description": "Radio Frequency Identification, tecnologia alla base dei pagamenti contactless" },
-            { "@type": "Thing", "name": "NFC", "description": "Near Field Communication, standard moderno per pagamenti contactless" },
-            { "@type": "Thing", "name": "Chip EMV", "description": "Standard di sicurezza per carte di pagamento con microchip" }
-          ],
-          "mentions": [
-            { "@type": "Person", "name": "Leon Theremin" },
-            { "@type": "Person", "name": "Forrest Parry" },
-            { "@type": "Person", "name": "Mario Cardullo" }
-          ],
-          "image": { "@type": "ImageObject", "url": "https://www.ludovicopapalia.com/profile.png" },
-          "isAccessibleForFree": true,
-          "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "xpath": [
-              "/html/head/title",
-              "/html/head/meta[@name='description']/@content"
-            ]
-          }
+          "@type": "Person",
+          "name": "Leon Theremin",
+          "description": "Inventore russo, creatore del theremin e della spia sovietica The Thing"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home",     "item": "https://www.ludovicopapalia.com" },
-            { "@type": "ListItem", "position": 2, "name": "Articoli", "item": "https://www.ludovicopapalia.com/divulgativi-index.html" },
-            { "@type": "ListItem", "position": 3, "name": "Leon Theremin non sapeva che stava inventando il pagamento con il telefono", "item": "https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html" }
-          ]
+          "@type": "Thing",
+          "name": "RFID",
+          "description": "Radio Frequency Identification, tecnologia alla base dei pagamenti contactless"
+        },
+        {
+          "@type": "Thing",
+          "name": "NFC",
+          "description": "Near Field Communication, standard moderno per pagamenti contactless"
+        },
+        {
+          "@type": "Thing",
+          "name": "Chip EMV",
+          "description": "Standard di sicurezza per carte di pagamento con microchip"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Person",
+          "name": "Leon Theremin"
+        },
+        {
+          "@type": "Person",
+          "name": "Forrest Parry"
+        },
+        {
+          "@type": "Person",
+          "name": "Mario Cardullo"
+        }
+      ],
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ludovicopapalia.com/profile.png"
+      },
+      "isAccessibleForFree": true,
+      "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.ludovicopapalia.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articoli",
+          "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Leon Theremin non sapeva che stava inventando il pagamento con il telefono",
+          "item": "https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html"
         }
       ]
     }
+  ]
+}
   </script>
 
   <!-- ► Nav italiana override -->
