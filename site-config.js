@@ -150,7 +150,6 @@ var LP_SCHEMA = {
       "name": "Ludovico Papalia",
       "givenName": "Ludovico",
       "familyName": "Papalia",
-      "birthDate": "1996-11-22",
       "nationality": { "@type": "Country", "name": "Italy" },
       "jobTitle": "PhD Candidate in Legal Informatics",
       "description": "PhD researcher at the University of Bologna specialising in blockchain technology applied to legislative simplification and parliamentary process tracking. Co-tutela with Vrije Universiteit Brussel. Collaborates with the IOTA Foundation within the PRIN2022/ERC HyperModeLex project.",
@@ -247,6 +246,16 @@ var LP_SCHEMA = {
       "author": { "@id": "https://www.ludovicopapalia.com/#person" },
       "inLanguage": "en",
       "about": { "@id": "https://www.ludovicopapalia.com/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://www.ludovicopapalia.com/#profilepage",
+      "url": "https://www.ludovicopapalia.com/",
+      "name": "Ludovico Papalia — Legal Informatics Researcher",
+      "isPartOf": { "@id": "https://www.ludovicopapalia.com/#website" },
+      "about": { "@id": "https://www.ludovicopapalia.com/#person" },
+      "author": { "@id": "https://www.ludovicopapalia.com/#person" },
+      "inLanguage": "en"
     }
   ]
 };
