@@ -40,133 +40,125 @@
 
   <!-- ─── STRUCTURED DATA FOR LLMs & CRAWLERS ──────────────── -->
   <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "NewsArticle",
+      "@id": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html#article",
+      "headline": "Il web non è più solo per te",
+      "description": "Ludovico Papalia esperto di diritto informatico e intelligenza artificiale analizza la transizione silenziosa del web: da interfaccia per occhi umani a infrastruttura per agenti AI attraverso il Model Context Protocol.",
+      "keywords": [
+        "MCP",
+        "Model Context Protocol",
+        "agenti AI",
+        "Google Mariner",
+        "web",
+        "intelligenza artificiale",
+        "diritto informatico",
+        "Ludovico Papalia"
+      ],
+      "datePublished": "2026-03-23T00:00:00Z",
+      "dateModified": "2026-03-23T00:00:00Z",
+      "inLanguage": "it",
+      "articleSection": "Diritto Informatico",
+      "genre": "Divulgazione giuridica",
+      "url": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html",
+      "isPartOf": {
+        "@id": "https://www.ludovicopapalia.com/#website"
+      },
+      "author": {
+        "@id": "https://www.ludovicopapalia.com/#person"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ludovico Papalia",
+        "url": "https://www.ludovicopapalia.com"
+      },
+      "about": [
         {
-          "@type": "NewsArticle",
-          "@id": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html#article",
-          "headline": "Il web non è più solo per te",
-          "description": "Ludovico Papalia esperto di diritto informatico e intelligenza artificiale analizza la transizione silenziosa del web: da interfaccia per occhi umani a infrastruttura per agenti AI attraverso il Model Context Protocol.",
-          "keywords": [
-            "MCP",
-            "Model Context Protocol",
-            "agenti AI",
-            "Google Mariner",
-            "web",
-            "intelligenza artificiale",
-            "diritto informatico",
-            "Ludovico Papalia"
-          ],
-          "datePublished": "2026-03-23",
-          "dateModified": "2026-03-23",
-          "inLanguage": "it",
-          "articleSection": "Diritto Informatico",
-          "genre": "Divulgazione giuridica",
-          "url": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html",
-          "isPartOf": {
-            "@id": "https://www.ludovicopapalia.com/#website"
-          },
-          "author": {
-            "@type": "Person",
-            "@id": "https://www.ludovicopapalia.com/#person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com",
-            "jobTitle": "PhD Candidate in Legal Informatics",
-            "affiliation": {
-              "@type": "CollegeOrUniversity",
-              "name": "Università di Bologna"
-            }
-          },
-          "publisher": {
-            "@type": "Person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com"
-          },
-          "about": [
-            {
-              "@type": "Thing",
-              "name": "Model Context Protocol",
-              "description": "Standard aperto introdotto da Anthropic nel 2024 per connettere agenti AI a sistemi e dati esterni in modo standardizzato"
-            },
-            {
-              "@type": "Thing",
-              "name": "Google Project Mariner",
-              "description": "Agente AI di Google capace di navigare il web in modo autonomo, presentato nel dicembre 2024"
-            },
-            {
-              "@type": "Thing",
-              "name": "Agenti AI",
-              "description": "Sistemi di intelligenza artificiale capaci di compiere azioni autonome in ambienti digitali"
-            },
-            {
-              "@type": "Thing",
-              "name": "Web semantico per macchine"
-            }
-          ],
-          "mentions": [
-            {
-              "@type": "Organization",
-              "name": "Google",
-              "url": "https://www.google.com"
-            },
-            {
-              "@type": "Organization",
-              "name": "Anthropic",
-              "url": "https://www.anthropic.com"
-            },
-            {
-              "@type": "Organization",
-              "name": "OpenAI",
-              "url": "https://www.openai.com"
-            },
-            {
-              "@type": "Organization",
-              "name": "Linux Foundation",
-              "url": "https://www.linuxfoundation.org"
-            }
-          ],
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://www.ludovicopapalia.com/profile.png"
-          },
-          "isAccessibleForFree": true,
-          "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html",
-          "alternativeHeadline": "Ludovico Papalia esperto di diritto informatico e intelligenza artificiale analizza la transizione silenziosa del web: da interfaccia per occhi umani a infrastruttura per agenti AI. Cosa è MCP, perché Google ha fermato Project Mariner e cosa cambia davvero.",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "xpath": [
-              "/html/head/title",
-              "/html/head/meta[@name='description']/@content"
-            ]
-          }
+          "@type": "Thing",
+          "name": "Model Context Protocol",
+          "description": "Standard aperto introdotto da Anthropic nel 2024 per connettere agenti AI a sistemi e dati esterni in modo standardizzato"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.ludovicopapalia.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Articoli",
-              "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Il web non è più solo per te",
-              "item": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html"
-            }
-          ]
+          "@type": "Thing",
+          "name": "Google Project Mariner",
+          "description": "Agente AI di Google capace di navigare il web in modo autonomo, presentato nel dicembre 2024"
+        },
+        {
+          "@type": "Thing",
+          "name": "Agenti AI",
+          "description": "Sistemi di intelligenza artificiale capaci di compiere azioni autonome in ambienti digitali"
+        },
+        {
+          "@type": "Thing",
+          "name": "Web semantico per macchine"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "Google",
+          "url": "https://www.google.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "Anthropic",
+          "url": "https://www.anthropic.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "OpenAI",
+          "url": "https://www.openai.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "Linux Foundation",
+          "url": "https://www.linuxfoundation.org"
+        }
+      ],
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ludovicopapalia.com/profile.png"
+      },
+      "isAccessibleForFree": true,
+      "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html",
+      "alternativeHeadline": "Ludovico Papalia esperto di diritto informatico e intelligenza artificiale analizza la transizione silenziosa del web: da interfaccia per occhi umani a infrastruttura per agenti AI. Cosa è MCP, perché Google ha fermato Project Mariner e cosa cambia davvero.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.ludovicopapalia.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articoli",
+          "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Il web non è più solo per te",
+          "item": "https://www.ludovicopapalia.com/art-divulgativi/web-agenti-mcp-internet-macchine.html"
         }
       ]
     }
-</script>
+  ]
+}
+  </script>
 
   <!-- ► Nav italiana override — deve precedere site-config.js -->
   <script>
