@@ -36,141 +36,133 @@
   <!-- WebSite + Person nodes sono iniettati globalmente da site-config.js. -->
   <!-- Qui restano solo i nodi specifici di questa pagina.                  -->
   <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "NewsArticle",
+      "@id": "https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html#article",
+      "headline": "Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata",
+      "description": "Ludovico Papalia esperto di diritto informatico analizza Piracy Shield e la battaglia legale di Cloudflare contro AGCOM: uno strumento anti-pirateria che consente a società private di bloccare siti internet in 30 minuti senza supervisione giudiziaria.",
+      "keywords": [
+        "Piracy Shield",
+        "AGCOM",
+        "Cloudflare",
+        "Digital Services Act",
+        "censura internet",
+        "copyright",
+        "diritto informatico",
+        "Ludovico Papalia"
+      ],
+      "datePublished": "2026-03-19T00:00:00Z",
+      "dateModified": "2026-03-19T00:00:00Z",
+      "inLanguage": "it",
+      "articleSection": "Diritto Informatico",
+      "genre": "Divulgazione giuridica",
+      "url": "https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html",
+      "isPartOf": {
+        "@id": "https://www.ludovicopapalia.com/#website"
+      },
+      "author": {
+        "@id": "https://www.ludovicopapalia.com/#person"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ludovico Papalia",
+        "url": "https://www.ludovicopapalia.com"
+      },
+      "about": [
         {
-          "@type": "NewsArticle",
-          "@id": "https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html#article",
-          "headline": "Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata",
-          "description": "Ludovico Papalia esperto di diritto informatico analizza Piracy Shield e la battaglia legale di Cloudflare contro AGCOM: uno strumento anti-pirateria che consente a società private di bloccare siti internet in 30 minuti senza supervisione giudiziaria.",
-          "keywords": [
-            "Piracy Shield",
-            "AGCOM",
-            "Cloudflare",
-            "Digital Services Act",
-            "censura internet",
-            "copyright",
-            "diritto informatico",
-            "Ludovico Papalia"
-          ],
-          "datePublished": "2026-03-19",
-          "dateModified": "2026-03-19",
-          "inLanguage": "it",
-          "articleSection": "Diritto Informatico",
-          "genre": "Divulgazione giuridica",
-          "url": "https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html",
-          "isPartOf": {
-            "@id": "https://www.ludovicopapalia.com/#website"
-          },
-          "author": {
-            "@type": "Person",
-            "@id": "https://www.ludovicopapalia.com/#person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com",
-            "jobTitle": "PhD Candidate in Legal Informatics",
-            "affiliation": {
-              "@type": "CollegeOrUniversity",
-              "name": "Università di Bologna"
-            }
-          },
-          "publisher": {
-            "@type": "Person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com"
-          },
-          "about": [
-            {
-              "@type": "Thing",
-              "name": "Piracy Shield",
-              "description": "Sistema italiano di blocco anti-pirateria gestito da AGCOM"
-            },
-            {
-              "@type": "Thing",
-              "name": "AGCOM",
-              "description": "Autorità per le Garanzie nelle Comunicazioni, regolatore italiano delle comunicazioni"
-            },
-            {
-              "@type": "Organization",
-              "name": "Cloudflare",
-              "description": "Società americana di infrastruttura internet e CDN"
-            },
-            {
-              "@type": "Thing",
-              "name": "Digital Services Act",
-              "description": "Regolamento europeo sui servizi digitali"
-            },
-            {
-              "@type": "Thing",
-              "name": "Diritto d'autore digitale"
-            }
-          ],
-          "mentions": [
-            {
-              "@type": "Organization",
-              "name": "AGCOM",
-              "url": "https://www.agcom.it"
-            },
-            {
-              "@type": "Organization",
-              "name": "Cloudflare",
-              "url": "https://www.cloudflare.com"
-            },
-            {
-              "@type": "Organization",
-              "name": "Commissione europea",
-              "url": "https://ec.europa.eu"
-            },
-            {
-              "@type": "Organization",
-              "name": "Lega Nazionale Professionisti Serie A"
-            },
-            {
-              "@type": "Organization",
-              "name": "Università di Twente"
-            }
-          ],
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://www.ludovicopapalia.com/profile.png"
-          },
-          "isAccessibleForFree": true,
-          "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html",
-          "alternativeHeadline": "Ludovico Papalia esperto di diritto informatico analizza Piracy Shield: uno strumento anti-pirateria che consente a società private di bloccare siti internet in 30 minuti senza supervisione giudiziaria, e le implicazioni per la libertà della rete.",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "xpath": [
-              "/html/head/title",
-              "/html/head/meta[@name='description']/@content"
-            ]
-          }
+          "@type": "Thing",
+          "name": "Piracy Shield",
+          "description": "Sistema italiano di blocco anti-pirateria gestito da AGCOM"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.ludovicopapalia.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Articoli",
-              "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata",
-              "item": "https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html"
-            }
-          ]
+          "@type": "Thing",
+          "name": "AGCOM",
+          "description": "Autorità per le Garanzie nelle Comunicazioni, regolatore italiano delle comunicazioni"
+        },
+        {
+          "@type": "Organization",
+          "name": "Cloudflare",
+          "description": "Società americana di infrastruttura internet e CDN"
+        },
+        {
+          "@type": "Thing",
+          "name": "Digital Services Act",
+          "description": "Regolamento europeo sui servizi digitali"
+        },
+        {
+          "@type": "Thing",
+          "name": "Diritto d'autore digitale"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "AGCOM",
+          "url": "https://www.agcom.it"
+        },
+        {
+          "@type": "Organization",
+          "name": "Cloudflare",
+          "url": "https://www.cloudflare.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "Commissione europea",
+          "url": "https://ec.europa.eu"
+        },
+        {
+          "@type": "Organization",
+          "name": "Lega Nazionale Professionisti Serie A"
+        },
+        {
+          "@type": "Organization",
+          "name": "Università di Twente"
+        }
+      ],
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ludovicopapalia.com/profile.png"
+      },
+      "isAccessibleForFree": true,
+      "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html",
+      "alternativeHeadline": "Ludovico Papalia esperto di diritto informatico analizza Piracy Shield: uno strumento anti-pirateria che consente a società private di bloccare siti internet in 30 minuti senza supervisione giudiziaria, e le implicazioni per la libertà della rete.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.ludovicopapalia.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articoli",
+          "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata",
+          "item": "https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html"
         }
       ]
     }
-</script>
+  ]
+}
+  </script>
 
   <!-- ► Nav italiana override — deve precedere site-config.js -->
   <script>
