@@ -220,21 +220,6 @@ var LP_SCHEMA = {
           "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Università La Sapienza di Roma" },
           "description": "Graduated 110/110 cum laude"
         }
-      ],
-      "author": [
-        {
-          "@type": "Book",
-          "name": "Odio Online: Tra Criminologia e Diritto",
-          "datePublished": "2020",
-          "isbn": "979-8567192726"
-        },
-        {
-          "@type": "ScholarlyArticle",
-          "name": "The Bias of Artificial Intelligence within the Justice Field",
-          "datePublished": "2022",
-          "publisher": { "@type": "Organization", "name": "CEUR-WS" },
-          "isPartOf": { "@type": "PublicationVolume", "name": "CEUR-WS Vol. 3368" }
-        }
       ]
     },
     {
@@ -254,7 +239,6 @@ var LP_SCHEMA = {
       "name": "Ludovico Papalia — Legal Informatics Researcher",
       "isPartOf": { "@id": "https://www.ludovicopapalia.com/#website" },
       "about": { "@id": "https://www.ludovicopapalia.com/#person" },
-      "author": { "@id": "https://www.ludovicopapalia.com/#person" },
       "inLanguage": "en"
     }
   ]
