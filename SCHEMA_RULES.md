@@ -2,7 +2,7 @@
 
 > Documento di riferimento per la struttura tecnica di `ludovicopapalia.com`.  
 > Va aggiornato ogni volta che si modifica la struttura dell'head o dello schema.  
-> Ultima revisione: 2026-04-05 (verificato vs pagine reali)
+> Ultima revisione: 2026-04-05 (verificato vs pagine reali — speakable migrato a cssSelector)
 
 ---
 
@@ -579,7 +579,7 @@ Usare `cssSelector` per i nuovi articoli (non `xpath`):
 }
 ```
 
-> **Nota:** Gli articoli pubblicati prima di aprile 2026 usano `xpath` puntando a `title` e `meta[@name='description']` nell'head. Entrambi sono validi per Google. Il template è stato aggiornato a `cssSelector`. Gli articoli esistenti non richiedono migrazione urgente.
+> **Nota:** Tutti gli articoli (inclusi quelli precedenti ad aprile 2026) usano `cssSelector`. Migrazione xpath→cssSelector completata il 2026-04-05.
 
 ---
 
