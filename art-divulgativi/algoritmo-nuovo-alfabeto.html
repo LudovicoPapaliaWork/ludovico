@@ -33,112 +33,104 @@
 
   <!-- ─── STRUCTURED DATA FOR LLMs & CRAWLERS ──────────────── -->
   <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "NewsArticle",
+      "@id": "https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html#article",
+      "headline": "Capire l'algoritmo è il nuovo saper leggere",
+      "description": "Ludovico Papalia esperto di diritto digitale e tecnologia spiega perché vietare i social ai ragazzi non è sufficiente, come funziona un sistema di raccomandazione e cosa significa costruire vera autonomia digitale.",
+      "keywords": [
+        "Ludovico Papalia",
+        "algoritmi social media",
+        "dipendenza digitale",
+        "media literacy",
+        "parental mediation",
+        "educazione digitale",
+        "alfabetizzazione algoritmica",
+        "engagement-driven design"
+      ],
+      "datePublished": "2026-03-27T00:00:00Z",
+      "dateModified": "2026-03-27T00:00:00Z",
+      "inLanguage": "it",
+      "articleSection": "Diritto Informatico",
+      "genre": "Divulgazione giuridica",
+      "url": "https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html",
+      "isPartOf": {
+        "@id": "https://www.ludovicopapalia.com/#website"
+      },
+      "author": {
+        "@id": "https://www.ludovicopapalia.com/#person"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ludovico Papalia",
+        "url": "https://www.ludovicopapalia.com"
+      },
+      "about": [
         {
-          "@type": "NewsArticle",
-          "@id": "https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html#article",
-          "headline": "Capire l'algoritmo è il nuovo saper leggere",
-          "description": "Ludovico Papalia esperto di diritto digitale e tecnologia spiega perché vietare i social ai ragazzi non è sufficiente, come funziona un sistema di raccomandazione e cosa significa costruire vera autonomia digitale.",
-          "keywords": [
-            "Ludovico Papalia",
-            "algoritmi social media",
-            "dipendenza digitale",
-            "media literacy",
-            "parental mediation",
-            "educazione digitale",
-            "alfabetizzazione algoritmica",
-            "engagement-driven design"
-          ],
-          "datePublished": "2026-03-27",
-          "dateModified": "2026-03-27",
-          "inLanguage": "it",
-          "articleSection": "Diritto Informatico",
-          "genre": "Divulgazione giuridica",
-          "url": "https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html",
-          "isPartOf": {
-            "@id": "https://www.ludovicopapalia.com/#website"
-          },
-          "author": {
-            "@type": "Person",
-            "@id": "https://www.ludovicopapalia.com/#person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com",
-            "jobTitle": "PhD Candidate in Legal Informatics",
-            "affiliation": {
-              "@type": "CollegeOrUniversity",
-              "name": "Università di Bologna"
-            }
-          },
-          "publisher": {
-            "@type": "Person",
-            "name": "Ludovico Papalia",
-            "url": "https://www.ludovicopapalia.com"
-          },
-          "about": [
-            {
-              "@type": "Thing",
-              "name": "Algoritmi di raccomandazione",
-              "description": "Sistemi automatizzati che selezionano e propongono contenuti agli utenti in base al loro comportamento precedente"
-            },
-            {
-              "@type": "Thing",
-              "name": "Engagement-driven design",
-              "description": "Approccio progettuale che ottimizza le interfacce digitali per massimizzare il tempo di permanenza degli utenti"
-            },
-            {
-              "@type": "Thing",
-              "name": "Media literacy algoritmica",
-              "description": "Capacità di comprendere il funzionamento degli algoritmi di raccomandazione e di interagire consapevolmente con essi"
-            },
-            {
-              "@type": "Thing",
-              "name": "Parental mediation attiva",
-              "description": "Strategia genitoriale basata sul dialogo e sulla spiegazione dei meccanismi digitali, contrapposta alla mediazione restrittiva"
-            }
-          ],
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://www.ludovicopapalia.com/profile.png"
-          },
-          "isAccessibleForFree": true,
-          "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html",
-          "alternativeHeadline": "Ludovico Papalia esperto di diritto digitale e tecnologia spiega perché vietare i social ai ragazzi non è sufficiente, come funziona un sistema di raccomandazione e cosa significa costruire vera autonomia digitale.",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "xpath": [
-              "/html/head/title",
-              "/html/head/meta[@name='description']/@content"
-            ]
-          }
+          "@type": "Thing",
+          "name": "Algoritmi di raccomandazione",
+          "description": "Sistemi automatizzati che selezionano e propongono contenuti agli utenti in base al loro comportamento precedente"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.ludovicopapalia.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Articoli",
-              "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Capire l'algoritmo è il nuovo saper leggere",
-              "item": "https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html"
-            }
-          ]
+          "@type": "Thing",
+          "name": "Engagement-driven design",
+          "description": "Approccio progettuale che ottimizza le interfacce digitali per massimizzare il tempo di permanenza degli utenti"
+        },
+        {
+          "@type": "Thing",
+          "name": "Media literacy algoritmica",
+          "description": "Capacità di comprendere il funzionamento degli algoritmi di raccomandazione e di interagire consapevolmente con essi"
+        },
+        {
+          "@type": "Thing",
+          "name": "Parental mediation attiva",
+          "description": "Strategia genitoriale basata sul dialogo e sulla spiegazione dei meccanismi digitali, contrapposta alla mediazione restrittiva"
+        }
+      ],
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.ludovicopapalia.com/profile.png"
+      },
+      "isAccessibleForFree": true,
+      "mainEntityOfPage": "https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html",
+      "alternativeHeadline": "Ludovico Papalia esperto di diritto digitale e tecnologia spiega perché vietare i social ai ragazzi non è sufficiente, come funziona un sistema di raccomandazione e cosa significa costruire vera autonomia digitale.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.ludovicopapalia.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articoli",
+          "item": "https://www.ludovicopapalia.com/divulgativi-index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Capire l'algoritmo è il nuovo saper leggere",
+          "item": "https://www.ludovicopapalia.com/art-divulgativi/algoritmo-nuovo-alfabeto.html"
         }
       ]
     }
-</script>
+  ]
+}
+  </script>
 
   <!-- ► Nav italiana override — deve precedere site-config.js -->
   <script>
