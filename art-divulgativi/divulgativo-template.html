@@ -18,10 +18,11 @@
   <meta property="og:url"         content="https://www.ludovicopapalia.com/art-divulgativi/siae-meta">
 
   <!-- ─── OG:IMAGE ─────────────────────────────────────────────────────────
-       OBBLIGATORIO per Google News. Se l'articolo non ha un video embed,
-       usa profile.png come fallback. Se hai un'immagine tematica, usala.
-       Minimo 696px di larghezza.
-       Fallback: https://www.ludovicopapalia.com/profile.png
+       OBBLIGATORIO per Google News. Minimo 696px di larghezza per og:image.
+       Per il campo "image" nel JSON-LD NewsArticle: minimo 696px larghezza.
+       REGOLA: se l'immagine dell'articolo è < 696px → usa profile.png (768px).
+       Se hai un'immagine tematica >= 696px → usala sia in og:image che in JSON-LD.
+       Fallback sempre disponibile: https://www.ludovicopapalia.com/profile.png (768×1376)
   ──────────────────────────────────────────────────────────────────────── -->
   <meta property="og:image" content="https://www.ludovicopapalia.com/profile.png">  <meta property="og:site_name"   content="Ludovico Papalia — Legal Informatics">
   <meta property="article:author" content="Ludovico Papalia">
@@ -67,10 +68,22 @@
         "@id": "https://www.ludovicopapalia.com/#website"
       },
       "author": {
-        "@id": "https://www.ludovicopapalia.com/#person"
+        "@type": "Person",
+        "@id": "https://www.ludovicopapalia.com/#person",
+        "name": "Ludovico Papalia",
+        "url": "https://www.ludovicopapalia.com",
+        "sameAs": [
+          "https://orcid.org/0009-0003-8751-9445",
+          "https://scholar.google.com/citations?user=WFQmMZIAAAAJ",
+          "https://www.linkedin.com/in/ludovico-papalia/",
+          "https://www.wikidata.org/wiki/Q138795841"
+        ]
       },
       "publisher": {
-        "@id": "https://www.ludovicopapalia.com/#person"
+        "@type": "Person",
+        "@id": "https://www.ludovicopapalia.com/#person",
+        "name": "Ludovico Papalia",
+        "url": "https://www.ludovicopapalia.com"
       },
       "about": [
         {
@@ -366,14 +379,7 @@
 
   <!-- ─── ARTICLE ───────────────────────────────────────────── -->
   <main>
-    <article class="article-page" itemscope itemtype="https://schema.org/Article">
-
-      <!-- hidden metadata for crawlers -->
-      <meta itemprop="datePublished" content="2023-04-01">
-      <meta itemprop="dateModified"  content="2023-04-01">
-      <meta itemprop="author"        content="Ludovico Papalia">
-      <meta itemprop="inLanguage"    content="it">
-
+    <article class="article-page">
       <!-- ─── EYEBROW ────────────────────────────────────────── -->
       <div class="article-eyebrow">
         <div class="tag"><span class="tag-dot"></span>Diritto d'autore</div>
@@ -381,19 +387,19 @@
       </div>
 
       <!-- ─── TITLE ──────────────────────────────────────────── -->
-      <h1 class="article-title" itemprop="headline">
+      <h1 class="article-title">
         SIAE contro Meta: <em>chi ha perso davvero?</em>
       </h1>
 
       <!-- ─── LEAD ────────────────────────────────────────────── -->
-      <p class="article-lead" itemprop="description">
+      <p class="article-lead">
         La SIAE ha chiesto a Meta compensi più alti per ogni riproduzione di musica italiana su Instagram. Meta ha detto no e ha rimosso tutto. Gli artisti italiani sono spariti dalle storie di milioni di persone. Qualcuno non ha fatto i conti bene, e non è Meta.
       </p>
 
       <div class="article-divider"></div>
 
       <!-- ─── BODY ────────────────────────────────────────────── -->
-      <div class="article-body" itemprop="articleBody">
+      <div class="article-body">
 
         <p>
           Per capire quello che è successo tra SIAE e Meta bisogna partire da una domanda semplice: <strong>chi dipende da chi?</strong> Per anni la risposta era ovvia — le radio, le tv, le piattaforme dipendevano dalla SIAE per poter trasmettere musica italiana. La SIAE aveva il potere di chiudere il rubinetto. Era lei il gatekeeper.
