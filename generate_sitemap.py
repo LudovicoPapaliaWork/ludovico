@@ -922,13 +922,17 @@ def main():
     # ── SITEMAP NEWS ──────────────────────────────────────────────────────────
     news_articles_all = parse_articles_from_index()
 
-    # ── Filtro 48 ore (regola Google News) ────────────────────────────────────
-    # La Google News sitemap deve contenere SOLO articoli pubblicati nelle
-    # ultime 48 ore. Gli articoli più vecchi vengono esclusi automaticamente.
-    # Ref: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
+    # ── Filtro 30 giorni (regola Google News adattata) ───────────────────────
+    # La specifica ufficiale Google suggerisce 48h, ma Gary Illyes (Google)
+    # ha confermato in un Q&A che il limite reale prima dell'esclusione è
+    # 30 giorni. Per siti con crawl lento (messi in coda da Google), il
+    # filtro a 48h fa sparire gli articoli PRIMA che Google li legga, quindi
+    # usiamo 30 giorni come compromesso documentato e non penalizzante.
+    # Ref ufficiale: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
+    # Ref Gary Illyes: https://www.searchenginejournal.com/google-seo-tips-for-news-articles-lastmod-tag-separate-sitemaps/478103/
     from datetime import datetime, timezone, timedelta
     _now = datetime.now(timezone.utc)
-    _cutoff = _now - timedelta(hours=48)
+    _cutoff = _now - timedelta(days=30)
     news_articles = []
     for _a in news_articles_all:
         try:
@@ -939,15 +943,15 @@ def main():
             _d  = datetime.strptime(_ds, "%Y-%m-%dT%H:%M:%S%z")
             if _d >= _cutoff:
                 news_articles.append(_a)
-                print(f"  [NEWS-48H] INCLUSO  {_a['path']}  ({_a['date']})")
+                print(f"  [NEWS-30D] INCLUSO  {_a['path']}  ({_a['date']})")
             else:
-                print(f"  [NEWS-48H] ESCLUSO  {_a['path']}  ({_a['date']}) — più vecchio di 48h")
+                print(f"  [NEWS-30D] ESCLUSO  {_a['path']}  ({_a['date']}) — più vecchio di 30 giorni")
         except Exception as _e:
             # Se la data non è parsabile, includiamo l'articolo per sicurezza
-            print(f"  [NEWS-48H] INCLUSO (parse error: {_e})  {_a['path']}")
+            print(f"  [NEWS-30D] INCLUSO (parse error: {_e})  {_a['path']}")
             news_articles.append(_a)
 
-    print(f"\n[NEWS-48H] Articoli negli ultimi 48h: {len(news_articles)} / {len(news_articles_all)} totali")
+    print(f"\n[NEWS-30D] Articoli negli ultimi 30 giorni: {len(news_articles)} / {len(news_articles_all)} totali")
 
     if not news_articles_all:
         print("[AVVISO] Nessun articolo estratto. sitemap-news.xml non verrà aggiornata.")
