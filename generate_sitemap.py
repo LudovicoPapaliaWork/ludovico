@@ -964,11 +964,11 @@ def main():
     # Riusa news_articles (stessa lista, stesso ordine più recente prima).
     # Se news_articles è vuota (nessun articolo estratto) il feed non viene scritto
     # per non sovrascrivere un feed già esistente con contenuto vuoto.
-    if news_articles:
-        rss_content = build_rss_feed(news_articles)
+    if news_articles_all:
+        rss_content = build_rss_feed(news_articles_all)  # RSS usa TUTTI gli articoli, non solo ultimi 48h
         with open(OUTPUT_RSS, "w", encoding="utf-8") as f:
             f.write(rss_content)
-        print(f"[DONE]  feed.xml salvato: {len(news_articles)} articoli inclusi.")
+        print(f"[DONE]  feed.xml salvato: {len(news_articles_all)} articoli inclusi.")
         print()
         print("  ╔══════════════════════════════════════════════════════════════╗")
         print("  ║  RSS FEED AGGIORNATO                                         ║")
