@@ -11,7 +11,7 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
 
   <channel>
-    <title>Ludovico Papalia — Articoli divulgativi</title>
+    <title>Codice & Norma — di Ludovico Papalia</title>
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
@@ -21,7 +21,7 @@
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://www.ludovicopapalia.com/assets/rss-logo.png</url>
-      <title>Ludovico Papalia — Articoli divulgativi</title>
+      <title>Codice & Norma — di Ludovico Papalia</title>
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
