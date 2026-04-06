@@ -131,7 +131,7 @@ OUTPUT_RSS = os.path.join(SITE_ROOT, "feed.xml")
 RSS_FEED_URL = f"{BASE_URL}/feed.xml"
 
 # Metadati del canale RSS
-RSS_CHANNEL_TITLE       = "Ludovico Papalia — Articoli divulgativi"
+RSS_CHANNEL_TITLE       = "Codice & Norma — di Ludovico Papalia"
 RSS_CHANNEL_DESCRIPTION = (
     "Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. "
     "Articoli divulgativi di Ludovico Papalia."
@@ -152,7 +152,7 @@ OUTPUT_RSS = os.path.join(SITE_ROOT, "feed.xml")
 RSS_FEED_URL = f"{BASE_URL}/feed.xml"
 
 # Metadati del canale RSS
-RSS_CHANNEL_TITLE       = "Ludovico Papalia — Articoli divulgativi"
+RSS_CHANNEL_TITLE       = "Codice & Norma — di Ludovico Papalia"
 RSS_CHANNEL_DESCRIPTION = (
     "Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. "
     "Articoli divulgativi di Ludovico Papalia."
