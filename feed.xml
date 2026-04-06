@@ -20,7 +20,7 @@
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
-      <url>https://www.ludovicopapalia.com/assets/og-default.jpg</url>
+      <url>https://www.ludovicopapalia.com/assets/rss-logo.png</url>
       <title>Ludovico Papalia — Articoli divulgativi</title>
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
