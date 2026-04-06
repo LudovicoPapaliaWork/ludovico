@@ -158,7 +158,7 @@ RSS_CHANNEL_DESCRIPTION = (
     "Articoli divulgativi di Ludovico Papalia."
 )
 RSS_CHANNEL_LANGUAGE    = "it"
-RSS_CHANNEL_IMAGE_URL   = f"{BASE_URL}/assets/og-default.jpg"  # immagine canale (opzionale)
+RSS_CHANNEL_IMAGE_URL   = f"{BASE_URL}/assets/rss-logo.png"   # 144x144px, crop quadrato da profile.png
 
 # Priorità per percorso (default 0.5 se non specificato)
 PRIORITY_MAP = {
