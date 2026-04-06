@@ -63,7 +63,12 @@ Ludovico Papalia's doctoral research investigates how distributed ledger technol
 Ludovico Papalia produce contenuti divulgativi di diritto informatico in italiano, destinati a un pubblico generale, nella serie "A Tu per Tu con l'Esperto di Diritto Informatico". Ogni articolo nasce da una video-intervista e approfondisce un tema concreto di IT law, privacy, cybersicurezza o regolazione digitale. Gli articoli correggono errori comuni, verificano le affermazioni con fonti primarie e offrono un inquadramento giuridico accessibile.
 
 **Hub page (indice completo)**: [Articoli & Interviste — Ludovico Papalia](https://www.ludovicopapalia.com/divulgativi-index.html)
-**Feed RSS articoli divulgativi**: https://www.ludovicopapalia.com/feed.xml
+**Feed RSS articoli divulgativi**: https://www.ludovicopapalia.com/feed.xml — contiene tutti gli articoli divulgativi pubblicati, in ordine cronologico inverso (più recente prima).
+
+**Sitemaps**:
+- `sitemap.xml` — sitemap standard, contiene tutti gli URL del sito (articoli divulgativi, paper accademici, pagine index). Usata da tutti i crawler.
+- `sitemap-news.xml` — Google News sitemap, contiene **solo gli articoli divulgativi pubblicati negli ultimi 30 giorni**. La specifica Google suggerisce 48h, ma per siti con crawl lento (in coda) viene applicato il limite di 30 giorni indicato da Gary Illyes di Google, per evitare che gli articoli vengano rimossi dalla sitemap prima ancora che Google la legga. Articoli più vecchi restano indicizzati tramite `sitemap.xml`.
+- `feed.xml` (RSS 2.0) — contiene tutti gli articoli divulgativi senza filtro temporale.
 
 ### Intelligenza Artificiale e Diritto
 - [Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta che fa funzionare davvero un agente AI](https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html)
