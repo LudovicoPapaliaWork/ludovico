@@ -9,6 +9,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-piu-velocita-accesso-diseguaglianza.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-04-12T00:00:00+02:00</news:publication_date>
+      <news:title>L'AI a più velocità: il grande equalizzatore che non equalizza</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/wifi-sensing-privacy-casa.html</loc>
     <news:news>
       <news:publication>
