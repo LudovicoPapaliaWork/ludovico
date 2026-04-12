@@ -71,6 +71,8 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 - `feed.xml` (RSS 2.0) — contiene tutti gli articoli divulgativi senza filtro temporale.
 
 ### Intelligenza Artificiale e Diritto
+- [L'AI a più velocità: il grande equalizzatore che non equalizza](https://www.ludovicopapalia.com/art-divulgativi/ai-piu-velocita-accesso-diseguaglianza.html) — Aprile 2026. Ludovico Papalia esperto di intelligenza artificiale e diritto digitale analizza il divario tra AI gratuita e AI a pagamento: da ChatGPT a 200 euro al mese non si ottiene lo stesso prodotto, il confronto con i Bloomberg terminal, il caso del mercato del lavoro e l'effetto composto delle decisioni.
+
 - [Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta che fa funzionare davvero un agente AI](https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html)
 
 - [OpenClaw: quando l'AI agisce per te, ma il diritto non sa ancora chi risponde](https://www.ludovicopapalia.com/art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html) — Marzo 2026. Ludovico Papalia esperto di agenti AI e responsabilità civile analizza il caso OpenClaw: cosa succede quando un sistema autonomo compie azioni non autorizzate, chi risponde tra sviluppatore, deployer e utente, e dove il GDPR e il Digital Services Act non bastano ancora.
