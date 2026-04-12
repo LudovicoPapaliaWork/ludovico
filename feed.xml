@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Tue, 07 Apr 2026 18:00:02 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2026 10:25:51 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,15 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>L'AI a più velocità: il grande equalizzatore che non equalizza</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/ai-piu-velocita-accesso-diseguaglianza.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/ai-piu-velocita-accesso-diseguaglianza.html</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di intelligenza artificiale e diritto digitale analizza il divario tra AI gratuita e AI a pagamento: da ChatGPT a 200 euro al mese, non si ottiene lo stesso prodotto.</description>
+    </item>
 
     <item>
       <title>Il router sa dove sei in casa: Wi-Fi sensing, sorveglianza e diritti in Europa</title>
