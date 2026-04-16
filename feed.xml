@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Thu, 16 Apr 2026 17:06:10 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 18:22:43 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,15 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>Quando un foglio di calcolo diventa una questione di Stato</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/euro-office-sovranita-digitale.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/euro-office-sovranita-digitale.html</guid>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico esamina Euro Office: perché il Cloud Act americano rende insufficiente qualsiasi data center europeo di un'azienda USA, e cosa cambia con una governance sotto diritto europeo.</description>
+    </item>
 
     <item>
       <title>Digital Omnibus: fare ordine nel diritto digitale europeo ha un prezzo</title>
