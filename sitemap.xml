@@ -188,19 +188,31 @@
   </url>
   <url>
     <loc>https://www.ludovicopapalia.com/divulgativi-index.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ludovicopapalia.com/faq-it.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/faq.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/index-it.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ludovicopapalia.com/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
