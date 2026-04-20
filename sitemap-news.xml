@@ -9,6 +9,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/cloud-act-francia-linux-sovranita-digitale.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-04-08T00:00:00+02:00</news:publication_date>
+      <news:title>Quando la legge americana decide i dati europei: il CLOUD Act e la Francia</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/euro-office-sovranita-digitale.html</loc>
     <news:news>
       <news:publication>
@@ -182,50 +193,6 @@
       </news:publication>
       <news:publication_date>2026-03-23T00:00:00+01:00</news:publication_date>
       <news:title>Il web non è più solo per te</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/odf-open-source-sovranita-digitale-europa.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-21T00:00:00+01:00</news:publication_date>
-      <news:title>Standard aperti e software libero: l'Europa ha cambiato marcia</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-censura-privatizzata.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-19T00:00:00+01:00</news:publication_date>
-      <news:title>Piracy Shield: quando la lotta alla pirateria diventa censura privatizzata</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/riconoscimento-biometrico-proroga-2027-vuoto-normativo.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-19T00:00:00+01:00</news:publication_date>
-      <news:title>Riconoscimento biometrico in Italia: la proroga al 2027 e il vuoto normativo che nessuno vuole colmare</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/openclaw-agenti-ai-responsabilita-diritto.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-19T00:00:00+01:00</news:publication_date>
-      <news:title>OpenClaw: quando l'AI agisce per te, ma il diritto non sa ancora chi risponde</news:title>
     </news:news>
   </url>
 </urlset>
