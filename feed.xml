@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Thu, 16 Apr 2026 18:22:43 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2026 10:21:38 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -51,6 +51,15 @@
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0200</pubDate>
       <dc:creator>Ludovico Papalia</dc:creator>
       <description>Ludovico Papalia esperto di intelligenza artificiale e diritto digitale analizza il divario tra AI gratuita e AI a pagamento: tra un'AI gratuita e una da 200 euro al mese, non si ottiene lo stesso prodotto.</description>
+    </item>
+
+    <item>
+      <title>Quando la legge americana decide i dati europei: il CLOUD Act e la Francia</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/cloud-act-francia-linux-sovranita-digitale.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/cloud-act-francia-linux-sovranita-digitale.html</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico e sovranità digitale: il CLOUD Act del 2018 obbliga Microsoft a consegnare dati governativi europei agli USA, a prescindere da dove siano i server. La Francia ha deciso di abbandonare Windows su 2,5 milioni di postazioni per questa ragione.</description>
     </item>
 
     <item>
