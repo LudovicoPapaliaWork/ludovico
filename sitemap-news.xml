@@ -9,6 +9,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/verifica-eta-sistema-operativo-linux.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-04-26T00:00:00+02:00</news:publication_date>
+      <news:title>Dal 2027 il sistema operativo sa quanti anni hai: perché è la scelta sbagliata</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/mdm-scuole-dispositivo-personale-gdpr.html</loc>
     <news:news>
       <news:publication>
