@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Sun, 26 Apr 2026 10:47:05 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2026 12:00:35 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,15 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>Dal 2027 il sistema operativo sa quanti anni hai: perché è la scelta sbagliata</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/verifica-eta-sistema-operativo-linux.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/verifica-eta-sistema-operativo-linux.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico e privacy digitale analizza AB 1043 e il Parents Decide Act: perché trasformare il sistema operativo in un registro anagrafico è sproporzionato, Linux ne è la prova, e l'educazione resta la risposta migliore.</description>
+    </item>
 
     <item>
       <title>Il tuo dispositivo, il loro profilo: MDM, scuole e GDPR spiegati da zero</title>
