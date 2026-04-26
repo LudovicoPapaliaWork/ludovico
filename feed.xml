@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Mon, 20 Apr 2026 10:30:18 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2026 10:47:05 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,24 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>Il tuo dispositivo, il loro profilo: MDM, scuole e GDPR spiegati da zero</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/mdm-scuole-dispositivo-personale-gdpr.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/mdm-scuole-dispositivo-personale-gdpr.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Milioni di studenti usano tablet di famiglia a scuola con profili MDM installati. Pochi sanno cosa può vedere chi controlla quel profilo, né come il GDPR regola questo tipo di trattamento dei dati di un minore.</description>
+    </item>
+
+    <item>
+      <title>Sorvegliare non protegge: il paradosso del controllo digitale sui minori</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/sorveglianza-minori-protezione-pretesto.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/sorveglianza-minori-protezione-pretesto.html</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Gli adulti installano software di controllo sui dispositivi dei minori senza capire cosa abilitano. La sorveglianza tecnica non protegge i ragazzi: crea l'illusione della protezione, mentre la stessa logica si ripete in scala legislativa.</description>
+    </item>
 
     <item>
       <title>Quando un foglio di calcolo diventa una questione di Stato</title>
