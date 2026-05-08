@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Sun, 26 Apr 2026 12:00:35 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 16:46:26 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,15 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>VPN nel mirino: la tech policy che nessuno ha votato</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/vpn-tech-policy-democrazia-digitale.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/vpn-tech-policy-democrazia-digitale.html</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di privacy digitale e diritto informatico analizza perché il vero problema delle leggi anti-VPN non è tecnico ma democratico: in nome di chi agisce la tech policy quando i cittadini si oppongono?</description>
+    </item>
 
     <item>
       <title>Dal 2027 il sistema operativo sa quanti anni hai: perché è la scelta sbagliata</title>
