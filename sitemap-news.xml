@@ -9,6 +9,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/vpn-tech-policy-democrazia-digitale.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-08T00:00:00+02:00</news:publication_date>
+      <news:title>VPN nel mirino: la tech policy che nessuno ha votato</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/verifica-eta-sistema-operativo-linux.html</loc>
     <news:news>
       <news:publication>
@@ -42,17 +53,6 @@
     </news:news>
   </url>
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/cloud-act-francia-linux-sovranita-digitale.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-08T00:00:00+02:00</news:publication_date>
-      <news:title>Quando la legge americana decide i dati europei: il CLOUD Act e la Francia</news:title>
-    </news:news>
-  </url>
-  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/euro-office-sovranita-digitale.html</loc>
     <news:news>
       <news:publication>
@@ -83,94 +83,6 @@
       </news:publication>
       <news:publication_date>2026-04-12T00:00:00+02:00</news:publication_date>
       <news:title>L'AI a più velocità: il grande equalizzatore che non equalizza</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/wifi-sensing-privacy-casa.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-07T00:00:00+02:00</news:publication_date>
-      <news:title>Il router sa dove sei in casa: Wi-Fi sensing, sorveglianza e diritti in Europa</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/content-id-youtube-copyright.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-06T00:00:00+02:00</news:publication_date>
-      <news:title>Il robot del copyright che ha rimosso Nvidia da YouTube</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/uffizi-hacker-ransomware-chiavi-museo.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-03T00:00:00+02:00</news:publication_date>
-      <news:title>Hacker agli Uffizi: quando i dati rubati diventano le chiavi del museo</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/artemis-ii-luna-diritto-spazio-risorse.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-01T00:00:00+02:00</news:publication_date>
-      <news:title>Artemis II è partita. E adesso chi fa le regole sulla Luna?</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-01T00:00:00+02:00</news:publication_date>
-      <news:title>Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta che fa funzionare davvero un agente AI</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/whatsapp-governo-metadati-sicurezza.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-30T00:00:00+01:00</news:publication_date>
-      <news:title>WhatsApp al governo: i metadati che parlano anche quando taci</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/tap-to-pay-allarme-nfc-rumore.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-28T00:00:00+01:00</news:publication_date>
-      <news:title>Tap-to-pay: perché l'allarme NFC è quasi tutto rumore</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/leon-theremin-inventava-pagamento-contactless.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-03-28T00:00:00+01:00</news:publication_date>
-      <news:title>Leon Theremin non sapeva che stava inventando il pagamento con il telefono</news:title>
     </news:news>
   </url>
 </urlset>
