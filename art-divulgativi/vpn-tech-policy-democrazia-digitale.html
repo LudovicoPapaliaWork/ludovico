@@ -265,6 +265,20 @@
     .article-body strong { color: var(--text); font-weight: 500; }
     .article-body em { font-style: italic; color: var(--accent); }
 
+    /* ─── INLINE LINKS ───────────────────────────────────────── */
+    .article-body a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-decoration-color: var(--gold-dim);
+      text-underline-offset: 3px;
+      transition: color .2s, text-decoration-color .2s;
+    }
+    .article-body a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--gold);
+    }
+
+
     .article-body h2 {
       font-family: var(--ff-serif);
       font-size: 1.7rem; font-weight: 400;
@@ -362,7 +376,7 @@
         </p>
 
         <p>
-          Il 6 maggio 2026 lo Utah è diventato il primo stato al mondo ad approvare una legge che rende le aziende legalmente responsabili per gli utenti che usano una VPN per aggirare i controlli sull'età. Il Senate Bill 73 stabilisce che un utente si considera fisicamente nello Utah indipendentemente da quale indirizzo IP mostri: se è lì fisicamente, il sito web è responsabile comunque. La stessa legge proibisce alle piattaforme di fornire qualsiasi informazione su come funzionano le VPN agli utenti.
+          Il 6 maggio 2026 lo Utah è diventato il primo stato americano ad approvare una legge che rende le aziende legalmente responsabili per gli utenti che usano una VPN per aggirare i controlli sull'età. Paesi come Russia e Cina limitano le VPN da anni, ma si tratta di regimi autoritari che le usano per ragioni di controllo politico; questa è la prima volta che uno stato democratico occidentale affronta il problema con uno strumento legislativo diretto. Il Senate Bill 73 stabilisce che un utente si considera fisicamente nello Utah indipendentemente da quale indirizzo IP mostri: se è lì fisicamente, il sito web è responsabile comunque. La stessa legge proibisce alle piattaforme di fornire qualsiasi informazione su come funzionano le VPN agli utenti.
         </p>
 
         <p>
@@ -393,14 +407,14 @@
           Perché la risposta a quell'argomento è ovvia: se le VPN commerciali sono un ostacolo, si vietano le VPN commerciali. Lo strumento usato da giornalisti per proteggere le fonti, da avvocati per tutelare la riservatezza delle comunicazioni, da aziende per proteggere le reti aziendali, e da chiunque voglia semplicemente impedire al proprio provider Internet di registrare ogni sito che visita diventa illegale, o inutilizzabile, in nome di un obiettivo che peraltro la norma stessa non raggiunge.
         </p>
 
-        <h2>Un episodio di <em>un pattern più lungo</em></h2>
+        <h2>Un episodio di <em>un pattern più articolato</em></h2>
 
         <p>
-          Questo non è un fatto isolato. È l'ultimo capitolo di una storia con una logica interna molto precisa.
+          Questo non è un fatto isolato. È l'ultimo capitolo di una storia con una logica interna molto precisa e un pattern più articolato di quanto sembri.
         </p>
 
         <p>
-          Ho già scritto di come <a href="/art-divulgativi/spid-siti-adulti-privacy.html">la verifica dell'età tramite SPID per i siti adulti</a> abbia creato un sistema di accesso identificato a contenuti perfettamente legali, e di come il problema reale non fosse il meccanismo tecnico ma il precedente normativo che crea. Poi la California ha firmato una legge che <a href="/art-divulgativi/verifica-eta-sistema-operativo-linux.html">trasforma ogni sistema operativo in un registro anagrafico</a>, e i grandi operatori tecnologici l'hanno appoggiata con entusiasmo, il che non sorprende a chi segue la materia. E ora Bruxelles sta costruendo un'infrastruttura di verifica dell'età a livello continentale, con un'app ufficiale che i ricercatori di sicurezza hanno violato in pochi minuti dalla pubblicazione del codice sorgente.
+          Ho già scritto di come <a href="/art-divulgativi/spid-siti-adulti-privacy.html">la verifica dell'età tramite SPID per i siti adulti</a> abbia creato un sistema di accesso identificato a contenuti perfettamente legali e di come il problema reale non fosse il meccanismo tecnico ma il precedente normativo che crea. Poi la California ha firmato una legge che <a href="/art-divulgativi/verifica-eta-sistema-operativo-linux.html">trasforma ogni sistema operativo in un registro anagrafico</a>, e i grandi operatori tecnologici l'hanno appoggiata con entusiasmo, il che non sorprende a chi segue la materia. E ora Bruxelles sta costruendo un'infrastruttura di verifica dell'età a livello continentale, con un'app ufficiale che i ricercatori di sicurezza hanno violato in pochi minuti dalla pubblicazione del codice sorgente, un episodio che si inserisce in un quadro di problemi strutturali che ho già analizzato <a href="/art-divulgativi/spid-siti-adulti-privacy.html">parlando dei rischi reali della verifica dell'età online</a>.
         </p>
 
         <p>
@@ -414,7 +428,7 @@
         <h2>La domanda che <em>non viene fatta</em></h2>
 
         <p>
-          Chat Control, verifica dell'età obbligatoria, VPN nel mirino: c'è un filo che collega tutto questo. E quello che trovo più rilevante non è il contenuto delle singole proposte, ma la loro tenuta rispetto al consenso popolare.
+          <a href="/art-divulgativi/sorveglianza-minori-protezione-pretesto.html">Chat Control</a>, verifica dell'età obbligatoria, VPN nel mirino: c'è un filo che collega tutto questo. E quello che trovo più rilevante non è il contenuto delle singole proposte, ma la loro tenuta rispetto al consenso popolare.
         </p>
 
         <p>
@@ -440,11 +454,11 @@
         </p>
 
         <p>
-          Nel frattempo, il pannello di esperti della stessa Commissione sui limiti di età nei social media non avrà le sue conclusioni prima dell'estate. Si agisce prima che l'analisi sia completa, perché gli stati membri "si stanno già muovendo" e la pressione politica è più forte del calendario dell'istruttoria tecnica.
+          Nel frattempo, il gruppo di esperti della stessa Commissione sui limiti di età nei social media non avrà le sue conclusioni prima dell'estate. Si agisce prima che l'analisi sia completa, perché gli stati membri "si stanno già muovendo" e la pressione politica è più forte del calendario dell'istruttoria tecnica.
         </p>
 
         <p>
-          Costruire l'infrastruttura prima che la valutazione sia finita, presentarla come standard europeo prima che sia dimostrata sicura, e trattare gli strumenti di privacy come scappatoie da chiudere piuttosto che come diritti da bilanciare: ritengo che questo modo di fare politica digitale meriti molta più attenzione pubblica di quella che riceve. Non come questione tecnica. Come questione di come vengono prese le decisioni, e nell'interesse di chi.
+          Costruire l'infrastruttura prima che la valutazione sia finita, presentarla come standard europeo prima che sia dimostrata sicura e trattare gli strumenti di privacy come scappatoie da chiudere piuttosto che come diritti da bilanciare: ritengo che questo modo di fare politica digitale meriti molta più attenzione pubblica di quella che riceve. Non come questione tecnica. Come questione di come vengono prese le decisioni, e nell'interesse di chi.
         </p>
 
       </div><!-- /article-body -->
