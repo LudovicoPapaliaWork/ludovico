@@ -71,6 +71,8 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 - `feed.xml` (RSS 2.0) — contiene tutti gli articoli divulgativi senza filtro temporale.
 
 ### Intelligenza Artificiale e Diritto
+- [Il tuo passaporto decide quale IA puoi usare](https://www.ludovicopapalia.com/art-divulgativi/fable5-ban-passaporto-ia.html) — Giugno 2026. Ludovico Papalia esperto di IA e diritto informatico analizza il caso Fable 5: il governo americano ha bloccato per i non-cittadini USA i modelli AI più potenti di Anthropic, 72 ore dopo il lancio, con implicazioni enormi per la sovranità digitale europea.
+
 - [L'AI a più velocità: il grande equalizzatore che non equalizza](https://www.ludovicopapalia.com/art-divulgativi/ai-piu-velocita-accesso-diseguaglianza.html) — Aprile 2026. Ludovico Papalia esperto di intelligenza artificiale e diritto digitale analizza il divario tra AI gratuita e AI a pagamento: da ChatGPT a 200 euro al mese non si ottiene lo stesso prodotto, il confronto con i Bloomberg terminal, il caso del mercato del lavoro e l'effetto composto delle decisioni.
 
 - [Cinquantasette megabyte nel posto sbagliato: l'ingegneria nascosta che fa funzionare davvero un agente AI](https://www.ludovicopapalia.com/art-divulgativi/claude-code-leak-ingegneria-prompt.html)
