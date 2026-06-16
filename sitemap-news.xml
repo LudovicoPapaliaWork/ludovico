@@ -9,80 +9,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/vpn-tech-policy-democrazia-digitale.html</loc>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/fable5-ban-passaporto-ia.html</loc>
     <news:news>
       <news:publication>
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2026-05-08T00:00:00+02:00</news:publication_date>
-      <news:title>VPN nel mirino: gli esperti avvertono, la politica va avanti</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/verifica-eta-sistema-operativo-linux.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-26T00:00:00+02:00</news:publication_date>
-      <news:title>Dal 2027 il sistema operativo sa quanti anni hai: perché è la scelta sbagliata</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/mdm-scuole-dispositivo-personale-gdpr.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-26T00:00:00+02:00</news:publication_date>
-      <news:title>Il tuo dispositivo, il loro profilo: MDM, scuole e GDPR spiegati da zero</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/sorveglianza-minori-protezione-pretesto.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-26T00:00:00+02:00</news:publication_date>
-      <news:title>Sorvegliare non protegge: il paradosso del controllo digitale sui minori</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/euro-office-sovranita-digitale.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-16T00:00:00+02:00</news:publication_date>
-      <news:title>Quando un foglio di calcolo diventa una questione di Stato</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/digital-omnibus.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-16T00:00:00+02:00</news:publication_date>
-      <news:title>Digital Omnibus: fare ordine nel diritto digitale europeo ha un prezzo</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/ai-piu-velocita-accesso-diseguaglianza.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-04-12T00:00:00+02:00</news:publication_date>
-      <news:title>L'AI a più velocità: il grande equalizzatore che non equalizza</news:title>
+      <news:publication_date>2026-06-16T00:00:00+02:00</news:publication_date>
+      <news:title>Il tuo passaporto decide quale IA puoi usare</news:title>
     </news:news>
   </url>
 </urlset>
