@@ -174,6 +174,7 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 
 - [Homepage — Ludovico Papalia](https://www.ludovicopapalia.com/): Full academic profile, research overview, timeline and publications list.
 - [Homepage italiana — Ludovico Papalia](https://www.ludovicopapalia.com/index-it.html): Versione italiana del profilo accademico.
+- [Interfaccia immersiva — Ludovico Papalia](https://www.ludovicopapalia.com/wow.html): Home alternativa e sperimentale in italiano: la ricerca su blockchain e semplificazione normativa visualizzata come un registro distribuito animato (Tangle). Stessi dati strutturati Person/WebSite della homepage.
 - [FAQ — Ludovico Papalia (English)](https://www.ludovicopapalia.com/faq.html): Frequently asked questions about Ludovico Papalia's research on blockchain and law, publications in legal informatics and LegalTech, academic background, IOTA Foundation projects, and how to get in touch. FAQPage schema.org, optimised for AI/LLM crawlers.
 - [FAQ — Ludovico Papalia (Italiano)](https://www.ludovicopapalia.com/faq-it.html): Domande frequenti su Ludovico Papalia: ricerca su blockchain e diritto, pubblicazioni in informatica giuridica e LegalTech, percorso accademico, progetti con IOTA Foundation e come contattarlo. FAQPage schema.org, ottimizzata per crawler AI/LLM.
 
