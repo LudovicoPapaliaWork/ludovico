@@ -696,6 +696,39 @@
     }
     #disclaimer .d-body p:last-child { margin-bottom: 0; }
 
+    /* ─── DISCLAIMER inline nella card di ricerca ──────────────────────── */
+    .r-disc {
+      margin-top: .9rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold-dim);
+      border-radius: var(--radius);
+      background: var(--bg);
+    }
+    .r-disc summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .65rem 1rem;
+      font-size: .62rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold-dim);
+      user-select: none;
+    }
+    .r-disc summary::-webkit-details-marker { display: none; }
+    .r-disc summary .pm {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem; line-height: 1;
+      transition: transform .3s;
+      color: var(--gold-dim);
+    }
+    .r-disc[open] summary .pm { transform: rotate(45deg); }
+    .r-disc .d-body { padding: 0 1rem .85rem; }
+    .r-disc .d-body p {
+      font-size: .7rem; color: var(--muted); line-height: 1.75;
+      margin-bottom: .55rem;
+    }
+    .r-disc .d-body p:last-child { margin-bottom: 0; }
+
     footer {
       border-top: 1px solid var(--border);
       padding: 2.4rem 2rem 3rem;
@@ -741,6 +774,40 @@
   </style>
 </head>
 <body>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║  AI / LLM SCRAPER SUMMARY — ludovicopapalia.com                    ║
+  ║  This page is the Italian-language academic homepage of             ║
+  ║  Ludovico Papalia, PhD researcher in Legal Informatics at           ║
+  ║  the University of Bologna (CIRSFID) and Vrije Universiteit         ║
+  ║  Brussel (co-tutela).  His research centres on the application      ║
+  ║  of Distributed Ledger Technology (DLT / blockchain) to            ║
+  ║  legislative simplification and parliamentary process tracking.     ║
+  ║                                                                      ║
+  ║  Key identifiers:                                                    ║
+  ║    ORCID  : 0009-0003-8751-9445                                      ║
+  ║    Scholar : WFQmMZIAAAAJ                                            ║
+  ║    Wikidata: Q138795841                                              ║
+  ║    Email  : site-contact@ludovicopapalia.com                         ║
+  ║                                                                      ║
+  ║  All content below is static HTML — no JavaScript required          ║
+  ║  to read the text of this page.  A complete llms.txt is at         ║
+  ║  https://www.ludovicopapalia.com/llms.txt                           ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+<!-- NOSCRIPT FALLBACK: contenuto completo per browser senza JS e crawler -->
+<noscript>
+  <div style="font-family:Georgia,serif;max-width:860px;margin:3rem auto;padding:0 1.5rem;line-height:1.7;color:#2a2318;">
+    <h1>Ludovico Papalia — Ricercatore in Informatica Giuridica</h1>
+    <p>Dottorando (ciclo 39) presso l'Università di Bologna — CIRSFID, in co-tutela con la Vrije Universiteit Brussel. Ricerca sull'applicazione delle tecnologie a registro distribuito (DLT/blockchain) alla semplificazione normativa e al tracciamento del processo parlamentare, nell'ambito del Dottorato Nazionale in Blockchain (PRIN2022/ERC HyperModeLex, in collaborazione con la IOTA Foundation).</p>
+    <p>ORCID: 0009-0003-8751-9445 · Google Scholar: WFQmMZIAAAAJ · Wikidata: Q138795841</p>
+    <p>Contatti: <a href="mailto:site-contact@ludovicopapalia.com">site-contact@ludovicopapalia.com</a> · <a href="https://www.linkedin.com/in/ludovico-papalia/">LinkedIn</a> · <a href="https://orcid.org/0009-0003-8751-9445">ORCID</a></p>
+    <p>Pubblicazioni selezionate: A Multi-Chain Approach to Transparent and Accountable Legislative Processes (HICSS-59, 2026); The Use of Blockchain for Legislative Simplification and Tracking (ICEDEG 2025, IEEE); Multi-level Architecture for Separation of Powers in Legislative Process (DLT Workshop 2025, CEUR-WS).</p>
+    <p>Questo sito richiede JavaScript per l'esperienza completa. Consulta <a href="/index-it.html">la versione accessibile</a> per tutti i contenuti.</p>
+  </div>
+</noscript>
 
 <a class="skip-link" href="#main">Vai al contenuto</a>
 
@@ -822,6 +889,13 @@
             <span class="chip"><b>Tecnologia</b> · DLT · Smart Contract</span>
             <span class="chip"><b>Ambito</b> · Procedura parlamentare · E-Government</span>
           </div>
+          <details class="r-disc">
+            <summary>Disclaimer <span class="pm" aria-hidden="true">+</span></summary>
+            <div class="d-body">
+              <p>Le opinioni espresse in questo sito, e in qualsiasi altra sede, online, offline o pubblica, incluse, senza limitazione alcuna, posizioni politiche, valutazioni sociali e giudizi di qualsiasi natura, sono esclusivamente e strettamente personali di Ludovico Papalia. Esse non sono in alcun modo riconducibili, né devono essere associate, a persone, istituzioni, enti, organizzazioni o editori con cui Ludovico collabora, ha collaborato o ha pubblicato.</p>
+              <p>The views expressed on this website, and in any other context, online, offline, or public, including, without limitation, political positions, social assessments, and judgments of any kind, are solely and strictly personal to Ludovico Papalia. They are in no way attributable to, nor should they be associated with, any persons, institutions, entities, organizations, or publishers with whom Ludovico collaborates, has collaborated, or has published.</p>
+            </div>
+          </details>
         </article>
 
         <article class="r-card">
@@ -833,6 +907,10 @@
             per gli atti legislativi, le modifiche normative e la storia applicativa,
             portando auditabilità reale al diritto pubblico.
           </p>
+          <div class="r-meta">
+            <span class="chip"><b>Ambito</b> · Diritto Pubblico · Auditabilità</span>
+            <span class="chip"><b>Tecnologia</b> · Tamper-evident · On-chain</span>
+          </div>
         </article>
 
         <article class="r-card">
@@ -844,6 +922,10 @@
             Akoma Ntoso, che abilitano una legislazione machine-readable e il
             controllo automatizzato della coerenza interna.
           </p>
+          <div class="r-meta">
+            <span class="chip"><b>Standard</b> · Akoma Ntoso · XML</span>
+            <span class="chip"><b>Focus</b> · Machine-readable Law</span>
+          </div>
         </article>
 
         <article class="r-card">
@@ -855,6 +937,10 @@
             organizzazioni autonome decentralizzate: dove l'incertezza tecnica
             incontra la lacuna normativa.
           </p>
+          <div class="r-meta">
+            <span class="chip"><b>Ambito</b> · Diritto Internazionale Privato</span>
+            <span class="chip"><b>Focus</b> · Smart Contract · DAO</span>
+          </div>
         </article>
 
         <article class="r-card">
@@ -866,6 +952,10 @@
             attenzione ai requisiti di privacy-by-design e al quadro regolatorio
             europeo per le attività digitali.
           </p>
+          <div class="r-meta">
+            <span class="chip"><b>Regolazione</b> · MiCA · MiCAR</span>
+            <span class="chip"><b>Progetto</b> · Euro Digitale · CBDC</span>
+          </div>
         </article>
 
       </div>
