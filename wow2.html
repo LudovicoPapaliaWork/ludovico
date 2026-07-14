@@ -395,10 +395,11 @@
     }
     .statement-text .w {
       color: var(--muted);
-      transition: color .35s ease;
+      font-weight: 400;
+      transition: color .3s ease, font-weight .15s ease;
     }
-    .statement-text .w.lit { color: var(--accent); }
-    .statement-text .w.gold.lit { color: var(--gold); font-style: italic; }
+    .statement-text .w.lit { color: var(--accent); font-weight: 600; }
+    .statement-text .w.gold.lit { color: var(--gold); font-style: italic; font-weight: 600; }
 
     /* ─── STRUTTURA SEZIONI ────────────────────────────────────────────── */
     .wrap { max-width: 1120px; margin: 0 auto; }
