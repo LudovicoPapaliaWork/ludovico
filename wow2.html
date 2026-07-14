@@ -508,19 +508,25 @@
     .portrait {
       position: relative;
       width: min(100%, 380px);
+      aspect-ratio: 1 / 1;
       margin: 0 auto;
-      border-radius: 999px 999px var(--radius) var(--radius);   /* arco: l'aula, il portale */
+      border-radius: var(--radius);
       overflow: hidden;
       border: 1px solid var(--gold-dim);
-      box-shadow: 0 40px 80px -50px var(--accent);
+      box-shadow: 0 20px 60px -40px var(--accent);
       will-change: transform;
     }
-    .portrait img { width: 100%; height: auto; }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
     .portrait::after {
       content: '';
       position: absolute; inset: 0;
       border-radius: inherit;
-      box-shadow: inset 0 0 0 6px var(--bg);
+      box-shadow: inset 0 0 0 1px var(--gold-dim);
       pointer-events: none;
     }
     .stats {
@@ -888,6 +894,7 @@
             <span class="chip"><b>Framework</b> · Akoma Ntoso · Costituzionalismo digitale</span>
             <span class="chip"><b>Tecnologia</b> · DLT · Smart Contract</span>
             <span class="chip"><b>Ambito</b> · Procedura parlamentare · E-Government</span>
+            <span class="chip"><b>Principio</b> · Sovranità digitale · Democrazia tecnologica</span>
           </div>
           <details class="r-disc">
             <summary>Disclaimer <span class="pm" aria-hidden="true">+</span></summary>
@@ -908,7 +915,7 @@
             portando auditabilità reale al diritto pubblico.
           </p>
           <div class="r-meta">
-            <span class="chip"><b>Ambito</b> · Diritto Pubblico · Auditabilità</span>
+            <span class="chip"><b>Ambito</b> · Diritto Pubblico · Sovranità digitale</span>
             <span class="chip"><b>Tecnologia</b> · Tamper-evident · On-chain</span>
           </div>
         </article>
