@@ -270,6 +270,19 @@
       font-style: italic;
     }
 
+    /* authors */
+    .authors-grid { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .author-pill {
+      font-size: .8rem; padding: .3rem .9rem;
+      border: 1px solid var(--border); border-radius: 99px;
+      color: var(--muted); background: var(--bg-card);
+      transition: border-color .2s, color .2s;
+    }
+    .author-pill.primary {
+      border-color: var(--gold-dim); color: var(--gold);
+      background: rgba(138,98,32,.06);
+    }
+
     /* keywords */
     .keyword-list {
       display: flex;
@@ -416,9 +429,9 @@
   </h1>
 
   <div class="paper-meta">
-    <div class="paper-meta-item" title="Ludovico Papalia; Marco Giacalone">
+    <div class="paper-meta-item">
       <strong>Authors</strong>
-      Ludovico Papalia et al.
+      Ludovico Papalia · Marco Giacalone
     </div>
 
     <div class="paper-meta-item">
@@ -453,6 +466,16 @@
 
 <!-- ─── PAPER BODY ─────────────────────────────────────────── -->
 <main class="paper-body">
+
+  <!-- Authors -->
+  <div class="content-section">
+    <div class="content-label">Authors</div>
+    <div class="divider"></div>
+    <div class="authors-grid">
+      <span class="author-pill primary">Ludovico Papalia</span>
+      <span class="author-pill">Marco Giacalone</span>
+    </div>
+  </div>
 
   <div class="content-section">
     <div class="content-label">Abstract</div>
