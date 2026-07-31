@@ -250,6 +250,19 @@
     }
 
     .content-section { margin-bottom: 3rem; }
+
+    /* authors */
+    .authors-grid { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .author-pill {
+      font-size: .8rem; padding: .3rem .9rem;
+      border: 1px solid var(--border); border-radius: 99px;
+      color: var(--muted); background: var(--bg-card);
+      transition: border-color .2s, color .2s;
+    }
+    .author-pill.primary {
+      border-color: var(--gold-dim); color: var(--gold);
+      background: rgba(138,98,32,.06);
+    }
     .content-label {
       font-size: .68rem;
       letter-spacing: .18em;
@@ -453,6 +466,16 @@
 
 <!-- ─── PAPER BODY ────────────────────────────────────────────── -->
 <main class="paper-body">
+
+  <!-- Authors -->
+  <div class="content-section">
+    <div class="content-label">Autori</div>
+    <div class="divider"></div>
+    <div class="authors-grid">
+      <span class="author-pill">Flaviano Peluso</span>
+      <span class="author-pill primary">Ludovico Papalia</span>
+    </div>
+  </div>
 
   <!-- Sommario -->
   <div class="content-section">
