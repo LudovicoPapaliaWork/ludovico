@@ -118,6 +118,7 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 - [SIM Swap: il tuo numero di telefono non è una prova d'identità](https://www.ludovicopapalia.com/art-divulgativi/sim-swap-il-numero-non-e-identita.html) — Maggio 2025. Ludovico Papalia esperto di SIM swap e frodi telematiche analizza la truffa del cambio SIM: come funziona tecnicamente, dati italiani e internazionali, quadro normativo AGCOM, responsabilità degli operatori e misure di protezione.
 
 ### Comunicazioni e Sicurezza Istituzionale
+- [Piero non esita più: la Germania autorizza i suoi hacker di Stato](https://www.ludovicopapalia.com/art-divulgativi/germania-hacker-di-stato-bnd.html) — Agosto 2026. Ludovico Papalia esperto di diritto informatico e sicurezza digitale analizza la riforma tedesca che autorizza BND e BfV a condurre hacking offensivo e sabotaggio: poteri in vigore dal 2027, controllo indipendente operativo solo dal 2029, e il peso storico del Trennungsgebot del dopoguerra.
 
 - [Signalgate: Signal funzionava. La legge no.](https://www.ludovicopapalia.com/art-divulgativi/signalgate-federal-records-act.html) — Aprile 2025. Ludovico Papalia esperto di diritto informatico e comunicazioni governative analizza il caso Signalgate: funzionari dell'amministrazione Trump coordinano attacchi militari in Yemen su Signal con auto-cancellazione, violando il Federal Records Act. Il problema non era tecnico, era giuridico.
 
