@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Fri, 31 Jul 2026 09:45:51 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2026 16:12:30 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,15 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>Piero non esita più: la Germania autorizza i suoi hacker di Stato</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/germania-hacker-di-stato-bnd.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/germania-hacker-di-stato-bnd.html</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto informatico analizza la riforma tedesca che autorizza BND e BfV a condurre operazioni di hacking offensivo e sabotaggio, e il vuoto di controllo che l'accompagna prima del 2029.</description>
+    </item>
 
     <item>
       <title>Il tuo passaporto decide quale IA puoi usare</title>
