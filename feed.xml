@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Sat, 15 Aug 2026 16:12:30 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 18:42:37 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,24 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>Piracy Shield: il TAR conferma tutto, anche per i fornitori esteri</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/tar-lazio-cloudflare-fornitori-esteri.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/tar-lazio-cloudflare-fornitori-esteri.html</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto digitale analizza le sentenze del TAR Lazio che respingono i ricorsi di Cloudflare contro AGCOM: il criterio degli effetti, l'estensione ai fornitori esteri e la revisione dello studio sull'overblocking.</description>
+    </item>
+
+    <item>
+      <title>Pirateria sportiva, l'UE studia un Piracy Shield europeo</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-europeo.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-europeo.html</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di diritto digitale analizza lo studio commissionato dal Parlamento europeo per trasformare il Piracy Shield italiano in un regolamento continentale, e i dati sull'overblocking che lo stesso studio non nasconde.</description>
+    </item>
 
     <item>
       <title>Piero non esita più: la Germania autorizza i suoi hacker di Stato</title>
