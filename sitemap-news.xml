@@ -9,6 +9,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/tar-lazio-cloudflare-fornitori-esteri.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-28T00:00:00+02:00</news:publication_date>
+      <news:title>Piracy Shield: il TAR conferma tutto, anche per i fornitori esteri</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/piracy-shield-europeo.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
+        <news:language>it</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-28T00:00:00+02:00</news:publication_date>
+      <news:title>Pirateria sportiva, l'UE studia un Piracy Shield europeo</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.ludovicopapalia.com/art-divulgativi/germania-hacker-di-stato-bnd.html</loc>
     <news:news>
       <news:publication>
