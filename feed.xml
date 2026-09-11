@@ -15,7 +15,7 @@
     <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     <description>Diritto informatico, blockchain, privacy e AI spiegati senza fronzoli. Articoli divulgativi di Ludovico Papalia.</description>
     <language>it</language>
-    <lastBuildDate>Tue, 08 Sep 2026 04:50:50 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 07:00:33 +0200</lastBuildDate>
     <generator>generate_sitemap.py (ludovicopapalia.com)</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <atom:link href="https://www.ludovicopapalia.com/feed.xml" rel="self" type="application/rss+xml"/>
@@ -25,6 +25,15 @@
       <link>https://www.ludovicopapalia.com/divulgativi-index.html</link>
     </image>
     <ttl>60</ttl>
+
+    <item>
+      <title>Quando internet inventa un'invenzione: il caso Sandra Bullock</title>
+      <link>https://www.ludovicopapalia.com/art-divulgativi/internet-inventa-invenzione-sandra-bullock.html</link>
+      <guid isPermaLink="true">https://www.ludovicopapalia.com/art-divulgativi/internet-inventa-invenzione-sandra-bullock.html</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0200</pubDate>
+      <dc:creator>Ludovico Papalia</dc:creator>
+      <description>Ludovico Papalia esperto di disinformazione digitale e media literacy racconta come una battuta di Sandra Bullock del 1995 sia diventata, trent'anni dopo, la prova online che avrebbe inventato l'autenticazione a due fattori.</description>
+    </item>
 
     <item>
       <title>VPN e pirateria sportiva: da strumento di privacy a intermediario da bloccare</title>
