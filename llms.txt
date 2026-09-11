@@ -136,6 +136,9 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 - [I social creano dipendenza come le sigarette? Arriva la causa legale](https://www.ludovicopapalia.com/art-divulgativi/social-dipendenza-minori-class-action.html) — Novembre 2024. Ludovico Papalia esperto di responsabilità delle piattaforme digitali analizza le class action americane contro Meta, TikTok e altri per dipendenza da social nei minori: design persuasivo, product liability e il parallelo con il tabacco.
 - [Dai il telefono a tuo figlio? La SIM è tua, la responsabilità anche](https://www.ludovicopapalia.com/art-divulgativi/responsabilita-genitoriale-sim-cellulare-minori.html) — Novembre 2024. Ludovico Papalia esperto di responsabilità genitoriale e diritto digitale spiega cosa rischiano i genitori quando intestano una SIM a un minore: responsabilità civile, penale e le tutele AGCOM da attivare.
 
+### Media Literacy e Disinformazione
+- [Quando internet inventa un'invenzione: il caso Sandra Bullock](https://www.ludovicopapalia.com/art-divulgativi/internet-inventa-invenzione-sandra-bullock.html) — Settembre 2026. Ludovico Papalia esperto di disinformazione digitale e media literacy analizza come una battuta di Sandra Bullock del 1995 sia diventata, trent'anni dopo, la prova virale che avrebbe inventato l'autenticazione a due fattori, e cosa rivela questo equivoco sul modo in cui i contenuti circolano online senza verifica delle fonti.
+
 ### Diritto d'Autore e Piattaforme
 
 - **Il robot del copyright che ha rimosso Nvidia da YouTube** — Content ID, YouTube, diritto d'autore digitale, asimmetrie strutturali nel sistema automatico di gestione dei copyright. https://www.ludovicopapalia.com/art-divulgativi/content-id-youtube-copyright.html
