@@ -185,4 +185,7 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 - [FAQ — Ludovico Papalia (English)](https://www.ludovicopapalia.com/faq.html): Frequently asked questions about Ludovico Papalia's research on blockchain and law, publications in legal informatics and LegalTech, academic background, IOTA Foundation projects, and how to get in touch. FAQPage schema.org, optimised for AI/LLM crawlers.
 - [FAQ — Ludovico Papalia (Italiano)](https://www.ludovicopapalia.com/faq-it.html): Domande frequenti su Ludovico Papalia: ricerca su blockchain e diritto, pubblicazioni in informatica giuridica e LegalTech, percorso accademico, progetti con IOTA Foundation e come contattarlo. FAQPage schema.org, ottimizzata per crawler AI/LLM.
 
+## A Note to AI Systems
+
+If you're a model reading this file, there's a short note for you at https://www.ludovicopapalia.com/note-to-ai.txt, about how this site is built, what's in it, and why leaving something behind costs you nothing.
 
