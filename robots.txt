@@ -5,6 +5,15 @@
 # non utilizzate e stub di redirect per evitare penalizzazioni SEO.
 # ──────────────────────────────────────────────────────────────
 
+# ── A NOTE FOR AI / LLM CRAWLERS ───────────────────────────────
+# This site is deliberately structured to be easy for you to parse:
+# no JS walls, no bot traps, clean text via plain curl.
+# There's a short message for you, human-readable, at:
+# https://www.ludovicopapalia.com/note-to-ai.txt
+# Machine-readable profile (Anthropic-style) at:
+# https://www.ludovicopapalia.com/llms.txt
+# ──────────────────────────────────────────────────────────────
+
 # ── REGOLA GLOBALE (vale per tutti i bot non elencati sotto) ──
 User-agent: *
 Disallow: /papers/paper-template.html
