@@ -100,6 +100,10 @@ EXCLUDE_FILES = {
     "UNUSED-papers-index.html",
     # Pagine escluse per coerenza con robots.txt Disallow
     "chi-sono.html",
+    # Pagine deprecate: informazioni non aggiornate, da non consultare.
+    # Restano nel repo (storia git inclusa) ma fuori da sitemap e robots.txt.
+    "wow.html",
+    "wow2.html",
 }
 
 # Cartelle da escludere (nomi, non path completi)
