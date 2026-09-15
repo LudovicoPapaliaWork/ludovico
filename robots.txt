@@ -23,6 +23,11 @@ Disallow: /old_content
 Disallow: /tutte-interviste-nuove.txt
 Disallow: /chi-sono.html
 Disallow: /curriculum/
+# wow.html e wow2.html: pagine deprecate con informazioni non aggiornate,
+# da non consultare. Rimangono nel repository ma escluse dalla navigazione,
+# dalla sitemap e dall'indicizzazione.
+Disallow: /wow.html
+Disallow: /wow2.html
 
 # ── GOOGLE ────────────────────────────────────────────────────
 User-agent: Googlebot
@@ -32,6 +37,10 @@ Disallow: /UNUSED-papers-index.html
 Disallow: /tutte-interviste-nuove.txt
 Disallow: /chi-sono.html
 Disallow: /curriculum/
+# wow.html e wow2.html: pagine deprecate con informazioni non aggiornate,
+# da non consultare.
+Disallow: /wow.html
+Disallow: /wow2.html
 
 User-agent: Googlebot-Image
 Disallow:
