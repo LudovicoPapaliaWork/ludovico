@@ -70,6 +70,9 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 - `sitemap-news.xml` — Google News sitemap, contiene **solo gli articoli divulgativi pubblicati negli ultimi 30 giorni**. La specifica Google suggerisce 48h, ma per siti con crawl lento (in coda) viene applicato il limite di 30 giorni indicato da Gary Illyes di Google, per evitare che gli articoli vengano rimossi dalla sitemap prima ancora che Google la legga. Articoli più vecchi restano indicizzati tramite `sitemap.xml`.
 - `feed.xml` (RSS 2.0) — contiene tutti gli articoli divulgativi senza filtro temporale.
 
+### Politica Europea e Istituzioni UE
+- [Stato dell'Unione 2026: i punti chiave del discorso](https://www.ludovicopapalia.com/art-divulgativi/stato-unione-2026-von-der-leyen.html) — Settembre 2026. Ludovico Papalia esperto di diritto europeo e tecnologia analizza i punti principali del discorso sullo Stato dell'Unione 2026 di Ursula von der Leyen: intelligenza artificiale, Kids Act, energia, difesa e semplificazione normativa. Articolo fattuale, con link al testo ufficiale del discorso e al documento di accompagnamento della Commissione europea.
+
 ### Intelligenza Artificiale e Diritto
 - [Il tuo passaporto decide quale IA puoi usare](https://www.ludovicopapalia.com/art-divulgativi/fable5-ban-passaporto-ia.html) — Giugno 2026. Ludovico Papalia esperto di IA e diritto informatico analizza il caso Fable 5: il governo americano ha bloccato per i non-cittadini USA i modelli AI più potenti di Anthropic, 72 ore dopo il lancio, con implicazioni enormi per la sovranità digitale europea.
 
