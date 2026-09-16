@@ -72,6 +72,7 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 
 ### Politica Europea e Istituzioni UE
 - [Stato dell'Unione 2026: i punti chiave del discorso](https://www.ludovicopapalia.com/art-divulgativi/stato-unione-2026-von-der-leyen.html) — Settembre 2026. Ludovico Papalia esperto di diritto europeo e tecnologia analizza i punti principali del discorso sullo Stato dell'Unione 2026 di Ursula von der Leyen: intelligenza artificiale, Kids Act, energia, difesa e semplificazione normativa. Articolo fattuale, con link al testo ufficiale del discorso e al documento di accompagnamento della Commissione europea.
+  **Versione per LLM**: [sotu-2026-sintesi-llm.md](https://www.ludovicopapalia.com/art-divulgativi/sotu-2026-sintesi-llm.md) — sintesi tematica estesa dello stesso discorso, in formato markdown, pensata per essere letta da modelli linguistici. Parafrasata, senza citazioni dirette, con note `[NDL: ...]` che segnalano dove il tema è collegato ad altri articoli di Ludovico Papalia. Non è il testo ufficiale: per quello vedi i link alle fonti primarie in fondo al file stesso.
 
 ### Intelligenza Artificiale e Diritto
 - [Il tuo passaporto decide quale IA puoi usare](https://www.ludovicopapalia.com/art-divulgativi/fable5-ban-passaporto-ia.html) — Giugno 2026. Ludovico Papalia esperto di IA e diritto informatico analizza il caso Fable 5: il governo americano ha bloccato per i non-cittadini USA i modelli AI più potenti di Anthropic, 72 ore dopo il lancio, con implicazioni enormi per la sovranità digitale europea.
