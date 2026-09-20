@@ -458,8 +458,22 @@
 
       </div><!-- /article-body -->
 
-      <!-- ─── VIDEO EMBED ──────────────────────────────────────── -->
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dha48MXC3t8?si=Abo9U42Hr03hMMFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <!-- ─── VIDEO EMBED (caricato solo al click, youtube-nocookie) ─── -->
+      <div class="video-section">
+        <div class="video-label-row">
+          <span class="video-label-text">Guarda l'intervista</span>
+          <div class="video-label-line"></div>
+        </div>
+        <div class="video-container" onclick="loadVideo()">
+          <div class="video-thumb" id="vthumb">
+            <div class="play-ring">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <span class="video-cta">Guarda su YouTube</span>
+          </div>
+          <iframe id="ytframe" src="" title="Intervista a Ludovico Papalia: SIAE, scatola nera e diritto digitale" allowfullscreen allow="autoplay" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
 
     
 
