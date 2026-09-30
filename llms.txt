@@ -42,6 +42,7 @@ Ludovico Papalia's doctoral research investigates how distributed ledger technol
 
 ## Publications
 
+- **2026** — [The Emergence of the Digital Euro: DLT-Inspired Design Principles and Tiered Architecture for Balancing Privacy and Regulatory Compliance](https://www.ludovicopapalia.com/papers/The_Emergence_of_the_Digital_Euro.html): Conference paper, ICEDEG 2026 (12th International Conference on eDemocracy & eGovernment), IEEE, Lisbon, Portugal. DOI: 10.1109/ICEDEG70169.2026.11695551
 - [The Bias of Artificial Intelligence within the Justice Field](https://www.ludovicopapalia.com/papers/The_Bias_of_Artificial_Intelligence_within_the_Justice_Field.html): Conference paper, AIxHMI 2022, CEUR-WS Vol. 3368. Analysis of algorithmic bias in judicial and law enforcement contexts.
 - **2025** — HICSS-59: paper on blockchain and legislative tracking (Hawaii International Conference on System Sciences)
 - **2026** — [Implementing Role-Based Access Control through Multi-Layered Blockchain Solutions](https://www.ludovicopapalia.com/papers/Implementing_Role_Based_Access_Control_Multi-Layered_Blockchain.html): Workshop paper, BRAIN 2026 (7th Workshop on Blockchain theoRy and ApplicatIoNs), IEEE PerCom 2026 Workshops, Pisa, Italy. DOI: 10.1109/PerComWorkshops68308.2026.11585484
@@ -175,6 +176,7 @@ Ludovico Papalia produce contenuti divulgativi di diritto informatico in italian
 
 ## Academic Papers (pagine dedicate con abstract, PDF e formati di citazione)
 
+- [The Emergence of the Digital Euro: DLT-Inspired Design Principles and Tiered Architecture for Balancing Privacy and Regulatory Compliance](https://www.ludovicopapalia.com/papers/The_Emergence_of_the_Digital_Euro.html)
 - [The Use of Blockchain for Legislative Simplification and Tracking](https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking.html)
 - [The Use of Blockchain for Legislative Simplification and Tracking — DLT 2024, Turin (Oral Communication)](https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.html)
 - [Multi-level Architecture and Separation of Powers in the Legislative Process](https://www.ludovicopapalia.com/papers/Multi-level_Architecture_Separation_Powers_Legislative_Process.html)
