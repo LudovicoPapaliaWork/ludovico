@@ -9,47 +9,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/regola-giusta-solo-vincitore.html</loc>
+    <loc>https://www.ludovicopapalia.com/art-divulgativi/limiti-reali-ia-classificatore-trasparenza.html</loc>
     <news:news>
       <news:publication>
         <news:name>Ludovico Papalia — Diritto Informatico</news:name>
         <news:language>it</news:language>
       </news:publication>
-      <news:publication_date>2026-09-16T00:00:00+02:00</news:publication_date>
-      <news:title>La regola giusta che ha un solo vincitore</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/stato-unione-2026-von-der-leyen.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-16T00:00:00+02:00</news:publication_date>
-      <news:title>Stato dell'Unione 2026: i punti chiave del discorso</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/internet-inventa-invenzione-sandra-bullock.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-11T00:00:00+02:00</news:publication_date>
-      <news:title>Quando internet inventa un'invenzione: il caso Sandra Bullock</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.ludovicopapalia.com/art-divulgativi/vpn-intermediari-funzionali-piracy-shield.html</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Ludovico Papalia — Diritto Informatico</news:name>
-        <news:language>it</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-08T00:00:00+02:00</news:publication_date>
-      <news:title>VPN e pirateria sportiva: da strumento di privacy a intermediario da bloccare</news:title>
+      <news:publication_date>2026-10-27T00:00:00+02:00</news:publication_date>
+      <news:title>Il confine che nessuno vede: i limiti reali dell'IA</news:title>
     </news:news>
   </url>
 </urlset>
