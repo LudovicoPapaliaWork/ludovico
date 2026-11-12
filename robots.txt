@@ -21,6 +21,7 @@ Disallow: /art-divulgativi/divulgativo-template.html
 Disallow: /UNUSED-papers-index.html
 Disallow: /old_content
 Disallow: /tutte-interviste-nuove.txt
+Disallow: /pubblicazioni-unlisted.txt
 Disallow: /chi-sono.html
 Disallow: /curriculum/
 # wow.html e wow2.html: pagine deprecate con informazioni non aggiornate,
@@ -35,6 +36,7 @@ Disallow: /papers/paper-template.html
 Disallow: /art-divulgativi/divulgativo-template.html
 Disallow: /UNUSED-papers-index.html
 Disallow: /tutte-interviste-nuove.txt
+Disallow: /pubblicazioni-unlisted.txt
 Disallow: /chi-sono.html
 Disallow: /curriculum/
 # wow.html e wow2.html: pagine deprecate con informazioni non aggiornate,

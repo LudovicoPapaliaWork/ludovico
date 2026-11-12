@@ -1,0 +1,11 @@
+# Pubblicazioni con pagina dedicata ma NON presenti in home (index.html / index-it.html)
+# File interno, non linkato dal sito e escluso dai motori di ricerca tramite robots.txt (Disallow).
+# Aggiornato: 2026-11-12. Un URL per riga.
+https://www.ludovicopapalia.com/papers/A_Security_Analysis_Cross-Chain_Bridges_Multi-Chain.html
+https://www.ludovicopapalia.com/papers/Chapter_Asser_Institute_Blockchain_Smart_Contracts.html
+https://www.ludovicopapalia.com/papers/Chapter_PRIN_Slots_Legislative_DLT.html
+https://www.ludovicopapalia.com/papers/Commento_Art1_Legge_Cybersicurezza_90_2024.html
+https://www.ludovicopapalia.com/papers/Gli_attacchi_informatici_e_la_risposta_dei_CSIRT.html
+https://www.ludovicopapalia.com/papers/Procedura_stragiudiziale_Infortunistica_Stradale.html
+https://www.ludovicopapalia.com/papers/Software_pubblici_privati_Bonus_110.html
+https://www.ludovicopapalia.com/papers/The_Use_of_Blockchain_for_Legislative_Simplification_and_Tracking_torino.html
